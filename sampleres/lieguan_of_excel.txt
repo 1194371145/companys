@@ -1,0 +1,59 @@
+ /**
+     * 同步zt_sample表格
+     * 原理同上
+     */
+    public function sample()
+    {
+        //查询所以空的数据zt_out-----后期将查询条件id去掉
+        $array=$this->dao->select('id,device,proline,ae')->from('zt_sample')->where('proline')->eq('')->orwhere('ae')->eq('')->fetchAll();
+        $array= $this->admin->object2Array($array);
+        $dbms='mysql'; //数据库类型
+        $host='localhost'; //数据库主机名
+        $dbName='proindpur'; //使用的数据库
+        $user='root'; //数据库连接用户名
+        $pass='123456';  //对应的密码
+        $dsn="$dbms:host=$host;dbname=$dbName";
+        try {
+            $dbh = new PDO($dsn, $user, $pass); //初始化一个PDO对象
+        } catch (PDOException $e) {
+             die ("Error!: " . $e->getMessage() . "<br/>");
+        }
+        $rows=[];
+        $rewms=[];
+        $warm=0;//初始化未能运输的数据量
+        foreach ($array as $value){
+            $val=$value[device];
+            $vproline=$value[proline];//proline
+            $vae=$value[ae];//需要修改的俩个条件
+            $val_arr=["device"=>$val];
+            $sql="select proline,ae from zt_wgcprorelease where partnumber ='$val' ";
+            $res=$dbh->query($sql);
+            $rewms= $res->fetch(PDO::FETCH_ASSOC);
+            if(!$rewms){//如果外链中未查到则不做任何修改操作
+                $warm++;
+            }else{
+                if(empty($vproline) and !empty($vae)){//proline为空时
+                    $rewms['ae']=$vae;
+                }elseif(empty($vae) and !empty($vproline)){//ae为空时
+                    $rewms['proline']=$vproline;
+                }elseif (empty($vproline) and empty($vae)){//俩个值都为空时
+                    //不进行任何操作
+                }else{
+                    echo js::alert('未知错误 ');
+                }
+                $rewms_merge=array_merge($rewms,$val_arr);
+                $rows[]=$rewms_merge;//$row_count = $stmt->rowCount(); //记录数，2
+            }
+        }
+        $arrayresq= $this->admin->sampleUpdate($rows, 'device');//高效批量修改方案
+        $result=$this->dao->exec($arrayresq);
+        $rows = null;$pdo = null;//释放查询结果并关闭连接
+        if($result){
+            echo js::alert("导入成功，其中有{$warm}条数据不能导入");
+        }else{
+            echo js::alert("失误导入");
+        }
+
+
+
+    }

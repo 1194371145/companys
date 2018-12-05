@@ -1,0 +1,514 @@
+<?php
+class sampleoutModel extends model
+{
+	public function sampleoutModel()
+	{
+		parent::__construct();
+	}
+	public function out($orderBy,$pager,$demo)
+	{
+		if($demo=='sample')
+		{
+			$outs=$this->dao->select("*")->from('zt_out')->where('rtype')->notlike('%demo%')->orderBy($orderBy)->page($pager)->fetchAll('id');
+		}
+		else 
+		{
+			$outs=$this->dao->select("*")->from('zt_out')->where('rtype')->like('%demo%')->orderBy($orderBy)->page($pager)->fetchAll('id');
+		}
+		$wheres=explode("WHERE",$this->dao->get());
+		$wheres=explode("ORDER BY",$wheres[1]);
+		$orderbys=explode("limit",$wheres[1]);
+		$this->session->set('exportsampleout',$wheres[0]);
+		$this->session->set('exportsampleoutorderby',$orderbys[0]);
+		$outswait=$this->dao->select("*")->from('zt_out')->where('id')->in(array_keys($outs))->andWhere('close')->eq('wait')->orderBy($orderBy)->fetchAll('id');
+		$outsdone=$this->dao->select("*")->from('zt_out')->where('id')->in(array_keys($outs))->andWhere('close')->eq('done')->orderBy($orderBy)->fetchAll('id');
+		foreach($outswait as $k=>$v)
+		{
+				$sampleo=array();
+				$sampleo[0]="";
+				$sample=$this->dao->select("*")->from('zt_sample')
+									   ->where("device")->eq($v->partn)
+									   ->andWhere('deleted')->eq(0)
+									   ->andWhere('note')->eq("1")
+									   ->andWhere('inventry')->gt(0)
+									   ->fetchAll();
+				if(!$sample)
+				{					   
+					$sample=$this->dao->select("*")->from('zt_sample')
+									   ->where("device")->eq($v->partn)
+									   ->andWhere('deleted')->eq(0)
+									   ->andWhere('note')->ne("0")
+									   ->andWhere('inventry')->gt(0)
+									   ->fetchAll();
+				}
+				foreach($sample as $vv)
+				{
+					$qty=$this->dao->select("sum(aqty) as q")->from('zt_out')
+												  ->where('type')->eq('2')
+												  ->andWhere('mid')->eq($vv->id)
+												  ->andWhere("close")->eq("wait")
+												  ->andWhere('id')->ne($v->id)
+												  ->fetch()
+												  ;
+					if($qty->q)
+					{	
+						if($vv->qty - $qty->q >0)
+						{							  
+							$sampleo[$vv->id.'sample']="样品/ID:{$vv->id}/数量:{$vv->inventry}/Note:{$vv->note}/NO:{$vv->no}";
+						}
+					}
+					else 
+					{
+						$sampleo[$vv->id.'sample']="样品/ID:{$vv->id}/数量:{$vv->inventry}/Note:{$vv->note}/NO:{$vv->no}";
+					}
+				}
+				$mps=$this->dao->select("*")->from('zt_mp')
+									   ->where("device")->eq($v->partn)
+									   ->andWhere('deleted')->eq(0)
+									   ->andWhere('status')->eq("可送")
+									   ->andWhere('qty')->gt(0)
+									   ->fetchAll();
+				foreach($mps as $vv)
+				{
+					$qty=$this->dao->select("sum(aqty) as q")->from('zt_out')
+												  ->where('type')->eq('1')
+												  ->andWhere('mid')->eq($vv->id)
+												  ->andWhere("close")->eq("wait")
+												  ->andWhere('id')->ne($v->id)
+												  ->fetch()
+												  ;
+					if($qty->q)
+					{	
+						if($vv->qty - $qty->q >0)
+						{							  
+							$sampleo[$vv->id.'mp']="量产/ID:{$vv->id}/数量:{$vv->qty}/NO:{$vv->no}/Status:{$vv->status}";
+						}
+					}
+					else 
+					{
+						$sampleo[$vv->id.'mp']="量产/ID:{$vv->id}/数量:{$vv->qty}/NO:{$vv->no}/Status:{$vv->status}";
+					}
+				}
+				$v->wait=$sampleo;
+		}
+		$outs=$outswait + $outsdone;
+		return $outs;
+	}
+	public function getoutbysearch($where,$pager,$orderBy,$demo)
+	{
+		if($demo=='sample')
+		{
+			$outs=$this->dao->select("*")->from('zt_out')
+									 ->where($where)
+									 ->andWhere('rtype')->notlike("%demo%")
+									 ->orderBy($orderBy)
+									 ->page($pager)
+									 ->fetchAll('id');
+		}
+		else 
+		{
+			$outs=$this->dao->select("*")->from('zt_out')
+									 ->where($where)
+									 ->andWhere('rtype')->like("%demo%")
+									 ->orderBy($orderBy)
+									 ->page($pager)
+									 ->fetchAll('id');
+		}
+		$wheres=explode("WHERE",$this->dao->get());
+		$wheres=explode("ORDER BY",$wheres[1]);
+		$orderbys=explode("limit",$wheres[1]);
+		$this->session->set('exportsampleout',$wheres[0]);
+		$this->session->set('exportsampleoutorderby',$orderbys[0]);
+		$outswait=$this->dao->select("*")->from('zt_out')->where('id')->in(array_keys($outs))->andWhere($where)->andWhere('close')->eq('wait')->fetchAll('id');
+		$outsdone=$this->dao->select("*")->from('zt_out')->where('id')->in(array_keys($outs))->andWhere($where)->andWhere('close')->eq('done')->fetchAll('id');							 
+		foreach($outswait as $k=>$v)
+		{
+				$sampleo=array();
+				$sampleo[0]="";
+				$sample=$this->dao->select("*")->from('zt_sample')
+									   ->where("device")->eq($v->partn)
+									   ->andWhere('deleted')->eq(0)
+									   ->andWhere('note')->eq("1")
+									   ->andWhere('inventry')->gt(0)
+									   ->fetchAll();
+				if(!$sample)
+				{
+					$sample=$this->dao->select("*")->from('zt_sample')
+									   ->where("device")->eq($v->partn)
+									   ->andWhere('deleted')->eq(0)
+									   ->andWhere('note')->ne("0")
+									   ->andWhere('inventry')->gt(0)
+									   ->fetchAll();
+				}			
+				foreach($sample as $vv)
+				{
+					$qty=$this->dao->select("sum(aqty) as q")->from('zt_out')
+												  ->where('type')->eq('2')
+												  ->andWhere('mid')->eq($vv->id)
+												  ->andWhere("close")->eq("wait")
+												  ->andWhere('id')->ne($v->id)
+												  ->fetch()
+												  ;
+					if($qty->q)
+					{	
+						if($vv->qty - $qty->q >0)
+						{							  
+							$sampleo[$vv->id.'sample']="样品/ID:{$vv->id}/数量:{$vv->inventry}/Note:{$vv->note}/No:{$vv->no}";
+						}
+					}
+					else 
+					{
+						$sampleo[$vv->id.'sample']="样品/ID:{$vv->id}/数量:{$vv->inventry}/Note:{$vv->note}/NO:{$vv->no}";
+					}
+				}
+				$mps=$this->dao->select("*")->from('zt_mp')
+									   ->where("device")->eq($v->partn)
+									   ->andWhere('deleted')->eq(0)
+									   ->andWhere('status')->eq("可送")
+									   ->andWhere('qty')->gt(0)
+									   ->fetchAll();
+				foreach($mps as $vv)
+				{
+					$qty=$this->dao->select("sum(aqty) as q")->from('zt_out')
+												  ->where('type')->eq('1')
+												  ->andWhere('mid')->eq($vv->id)
+												  ->andWhere("close")->eq("wait")
+												  ->andWhere('id')->ne($v->id)
+												  ->fetch()
+												  ;
+					if($qty->q)
+					{	
+						if($vv->qty - $qty->q >0)
+						{							  
+							$sampleo[$vv->id.'mp']="量产/ID:{$vv->id}/数量:{$vv->qty}/No:{$vv->no}/Status:{$vv->status}";
+						}
+					}
+					else 
+					{
+						$sampleo[$vv->id.'mp']="量产/ID:{$vv->id}/数量:{$vv->qty}/No{$vv->no}/Status:{$vv->status}";
+					}
+				}
+				$v->wait=$sampleo;
+		}
+		$outs=$outswait+$outsdone;
+		return $outs;
+	}
+	function getbyid($id)
+	{
+		$re=$this->dao->select("*")->from('zt_out')->where('id')->eq($id)->fetch();
+		if($re->close=='wait')
+		{
+			$sampleo[0]="";
+			$sample=$this->dao->select("*")->from('zt_sample')
+			->where("device")->eq($re->partn)
+			->andWhere('deleted')->eq(0)
+			->andWhere('note')->eq("1")
+			->andWhere('inventry')->gt(0)
+			->fetchAll();
+			if(!$sample)
+			{
+				$sample=$this->dao->select("*")->from('zt_sample')
+			->where("device")->eq($re->partn)
+			->andWhere('deleted')->eq(0)
+			->andWhere('note')->eq("1")
+			->andWhere('inventry')->gt(0)
+			->fetchAll();
+			}
+			foreach($sample as $vv)
+			{
+				$qty=$this->dao->select("sum(aqty) as q")->from('zt_out')
+				->where("close")->eq("wait")
+				->andWhere('type')->eq(2)
+				->andWhere('mid')->eq($vv->id)
+				->andWhere('id')->ne($re->id)
+				->fetch()
+				;
+				if($qty->q)
+				{
+					if($vv->qty - $qty->q >0)
+					{
+						$sampleo[$vv->id.'sample']="样品/ID:{$vv->id}/数量:{$vv->inventry}/Note:{$vv->note}/No:{$vv->no}";
+					}
+				}
+				else
+				{
+					$sampleo[$vv->id.'sample']="样品/ID:{$vv->id}/数量:{$vv->inventry}/Note:{$vv->note}/NO:{$vv->no}";
+				}
+			}
+			$mps=$this->dao->select("*")->from('zt_mp')
+			->where("device")->eq($re->partn)
+			->andWhere('deleted')->eq(0)
+			->andWhere('status')->eq("可送")
+			->andWhere('qty')->gt(0)
+			->fetchAll();
+			foreach($mps as $vv)
+			{
+				$qty=$this->dao->select("sum(aqty) as q")->from('zt_out')
+				->where("close")->eq("wait")
+				->andWhere('type')->eq(1)
+				->andWhere('mid')->eq($vv->id)
+				->andWhere('id')->ne($re->id)
+				->fetch()
+				;
+				if($qty->q)
+				{
+					if($vv->qty - $qty->q >0)
+					{
+						$sampleo[$vv->id.'mp']="量产/ID:{$vv->id}/数量:{$vv->qty}/No:{$vv->no}/Status:{$vv->status}";
+					}
+				}
+				else
+				{
+					$sampleo[$vv->id.'mp']="量产/ID:{$vv->id}/数量:{$vv->qty}/No{$vv->no}/Status:{$vv->status}";
+				}
+			}
+			$re->wait=$sampleo;
+		}
+		return $re;
+	}
+	function getbyidofauto($id)
+	{
+		$re=$this->dao->select("*")->from('zt_out')->where('id')->eq($id)->fetch();
+		if($re->close=='wait')
+		{
+			$sampleo=array();
+			$mps=$this->dao->select("*")->from('zt_mp')
+			->where("device")->eq($re->partn)
+			->andWhere('deleted')->eq(0)
+			->andWhere('status')->eq("可送")
+			->andWhere('qty')->gt(0)
+			->fetchAll();
+			foreach($mps as $vv)
+			{
+				$qty=$this->dao->select("sum(aqty) as q")->from('zt_out')
+				->where("close")->eq("wait")
+				->andWhere('type')->eq(1)
+				->andWhere('mid')->eq($vv->id)
+				->andWhere('id')->ne($re->id)
+				->fetch()
+				;
+				if($qty->q)
+				{
+					if($vv->qty - $qty->q >0)
+					{
+						$sampleo[$vv->id.'mp']="量产/ID:{$vv->id}/数量:{$vv->qty}/No:{$vv->no}/Status:{$vv->status}";
+					}
+				}
+				else
+				{
+					$sampleo[$vv->id.'mp']="量产/ID:{$vv->id}/数量:{$vv->qty}/No{$vv->no}/Status:{$vv->status}";
+				}
+			}
+			$sample=$this->dao->select("*")->from('zt_sample')
+			->where("device")->eq($re->partn)
+			->andWhere('deleted')->eq(0)
+			->andWhere('note')->eq("1")
+			->andWhere('inventry')->gt(0)
+			->fetchAll();
+			foreach($sample as $vv)
+			{
+				$qty=$this->dao->select("sum(aqty) as q")->from('zt_out')
+				->where("close")->eq("wait")
+				->andWhere('type')->eq(2)
+				->andWhere('mid')->eq($vv->id)
+				->andWhere('id')->ne($re->id)
+				->fetch()
+				;
+				if($qty->q)
+				{
+					if($vv->qty - $qty->q >0)
+					{
+						$sampleo[$vv->id.'sample']="样品/ID:{$vv->id}/数量:{$vv->inventry}/Note:{$vv->note}/No:{$vv->no}";
+					}
+				}
+				else
+				{
+					$sampleo[$vv->id.'sample']="样品/ID:{$vv->id}/数量:{$vv->inventry}/Note:{$vv->note}/NO:{$vv->no}";
+				}
+			}
+			$re->wait=$sampleo;
+		}
+		return $sampleo;
+	}
+	public function getwaitbypart($part)
+	{
+			$sampleo[0]="";
+			$sample=$this->dao->select("*")->from('zt_sample')
+			->where("device")->eq($part)
+			->andWhere('deleted')->eq(0)
+			//->andWhere('note')->eq("1")
+			->andWhere('inventry')->gt(0)
+			->fetchAll();
+			foreach($sample as $vv)
+			{
+				$qty=$this->dao->select("sum(aqty) as q")->from('zt_out')
+				->where("close")->eq("wait")
+				->andWhere('type')->eq(2)
+				->andWhere('mid')->eq($vv->id)
+				->fetch()
+				;
+				if($qty->q)
+				{
+					if($vv->qty - $qty->q >0)
+					{
+						$sampleo[$vv->id.'sample']="样品/ID:{$vv->id}/数量:{$vv->inventry}/Note:{$vv->note}/No:{$vv->no}";
+					}
+				}
+				else
+				{
+					$sampleo[$vv->id.'sample']="样品/ID:{$vv->id}/数量:{$vv->inventry}/Note:{$vv->note}/NO:{$vv->no}";
+				}
+			}
+			$mps=$this->dao->select("*")->from('zt_mp')
+			->where("device")->eq($part)
+			->andWhere('deleted')->eq(0)
+			->andWhere('status')->eq("可送")
+			->andWhere('qty')->gt(0)
+			->fetchAll();
+			foreach($mps as $vv)
+			{
+				$qty=$this->dao->select("sum(aqty) as q")->from('zt_out')
+				->where("close")->eq("wait")
+				->andWhere('type')->eq(1)
+				->andWhere('mid')->eq($vv->id)
+				->fetch()
+				;
+				if($qty->q)
+				{
+					if($vv->qty - $qty->q >0)
+					{
+						$sampleo[$vv->id.'mp']="量产/ID:{$vv->id}/数量:{$vv->qty}/No:{$vv->no}/Status:{$vv->status}";
+					}
+				}
+				else
+				{
+					$sampleo[$vv->id.'mp']="量产/ID:{$vv->id}/数量:{$vv->qty}/No{$vv->no}/Status:{$vv->status}";
+				}
+			}
+			return $sampleo;
+	}
+	public function outis_daoru($v)
+	{
+		$where="";
+		foreach($v as $k=>$v)
+		{
+			$where.="$k = '$v' and ";
+		}
+		$where=substr($where,0,-5);
+		$re=$this->dao->select("*")->from('zt_out')->where($where)->fetch();
+		if($re->id>0)
+		{
+			return $re->id;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	public function batchuhuo($outids)
+	{
+		$outs=$this->dao->select("*")->from('zt_out')->where('id')->in($outids)->fetchAll();
+		foreach($outs as $k=>$v)
+		{
+				$sampleo=array();
+				$mps=$this->dao->select("*")->from('zt_mp')
+									   ->where("device")->eq($v->partn)
+									   ->andWhere('deleted')->eq(0)
+									   ->andWhere('status')->eq("可送")
+									   ->andWhere('qty')->gt(0)
+									   ->fetchAll();
+				foreach($mps as $vv)
+				{
+					$qty=$this->dao->select("sum(aqty) as q")->from('zt_out')
+												  ->where('type')->eq('1')
+												  ->andWhere('mid')->eq($vv->id)
+												  ->andWhere("close")->eq("wait")
+												  ->andWhere('id')->ne($v->id)
+												  ->fetch()
+												  ;
+					if($qty->q)
+					{	
+						if($vv->qty - $qty->q >0)
+						{							  
+							$sampleo[$vv->id.'mp']="量产/ID:{$vv->id}/数量:{$vv->qty}/No:{$vv->no}/Status:{$vv->status}";
+						}
+					}
+					else 
+					{
+						$sampleo[$vv->id.'mp']="量产/ID:{$vv->id}/数量:{$vv->qty}/No{$vv->no}/Status:{$vv->status}";
+					}
+				}
+				$sample=$this->dao->select("*")->from('zt_sample')
+									   ->where("device")->eq($v->partn)
+									   ->andWhere('deleted')->eq(0)
+									   ->andWhere('note')->eq("1")
+									   ->andWhere('inventry')->gt(0)
+									   ->fetchAll();
+				foreach($sample as $vv)
+				{
+					$qty=$this->dao->select("sum(aqty) as q")->from('zt_out')
+												  ->where('type')->eq('2')
+												  ->andWhere('mid')->eq($vv->id)
+												  ->andWhere("close")->eq("wait")
+												  ->andWhere('id')->ne($v->id)
+												  ->fetch()
+												  ;
+					if($qty->q)
+					{	
+						if($vv->qty - $qty->q >0)
+						{							  
+							$sampleo[$vv->id.'sample']="样品/ID:{$vv->id}/数量:{$vv->inventry}/Note:{$vv->note}/No:{$vv->no}";
+						}
+					}
+					else 
+					{
+						$sampleo[$vv->id.'sample']="样品/ID:{$vv->id}/数量:{$vv->inventry}/Note:{$vv->note}/NO:{$vv->no}";
+					}
+				}
+				$v->wait=$sampleo;
+		}
+		return $outs;
+	}
+	public function batchuhuoofdemo($outids)
+	{
+		$outs=$this->dao->select("*")->from('zt_out')->where('id')->in($outids)->fetchAll();
+		foreach($outs as $k=>$v)
+		{
+				$sampleo=array();
+				$sampleo[0]="";
+				$v->wait=$sampleo;
+		}
+		return $outs;
+	}
+	function getpay($orderby,$pager)
+	{
+		 $re=$this->dao->select("*")->from("zt_out")
+									  ->where('revtype')->eq('需要付费')
+									  ->andWhere('area')->ne('SC')
+									  ->orderBy("pay_desc,".$orderby)
+									  ->page($pager)
+									  ->fetchAll();
+									  $wheres=explode("WHERE",$this->dao->get());
+									  $wheres=explode("ORDER BY",$wheres[1]);
+									  $orderbys=explode("limit",$wheres[1]);
+									  $this->session->set('exportsampleout',$wheres[0]);
+									  $this->session->set('exportsampleoutorderby',$orderbys[0]);
+									  return $re;
+	}
+	function getpaybysearch($orderby,$pager,$where)
+	{
+		$re=$this->dao->select("*")->from("zt_out")
+									  ->where('revtype')->eq('需要付费')
+									  ->andWhere('area')->ne('SC')
+									  ->andWhere($where)
+									  ->orderBy($orderby)
+									  ->page($pager)
+									  ->fetchAll();
+									  $wheres=explode("WHERE",$this->dao->get());
+									  $wheres=explode("ORDER BY",$wheres[1]);
+									  $orderbys=explode("limit",$wheres[1]);
+									  $this->session->set('exportsampleout',$wheres[0]);
+									  $this->session->set('exportsampleoutorderby',$orderbys[0]);
+									  return $re;
+	}
+}

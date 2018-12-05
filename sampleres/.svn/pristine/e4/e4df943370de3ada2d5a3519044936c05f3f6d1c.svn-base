@@ -1,0 +1,172 @@
+<?php
+/**
+ * The control file of admin module of ZenTaoPMS.
+ *
+ * @copyright   Copyright 2009-2013 青岛易软天创网络科技有限公司 (QingDao Nature Easy Soft Network Technology Co,LTD www.cnezsoft.com)
+ * @license     LGPL (http://www.gnu.org/licenses/lgpl.html)
+ * @author      Chunsheng Wang <chunsheng@cnezsoft.com>
+ * @package     admin
+ * @version     $Id: control.php 4460 2013-02-26 02:28:02Z chencongzhi520@gmail.com $
+ * @link        http://www.zentao.net
+ */
+class admin extends control
+{
+    /**
+     * Index page.
+     * @access public
+     * @return void
+     */
+    public function index()
+    {
+    	/*$url=$this->createLink('mail','index');
+    	$this->locate($url);
+        $community = zget($this->config->global, 'community');
+        if(!$community or $community == 'na')
+        {
+            $this->view->bind    = false;
+            $this->view->account = false;
+            $this->view->ignore  = $community == 'na';
+        }
+        else
+        {
+            $this->view->bind    = true;
+            $this->view->account = $community;
+            $this->view->ignore  = false;
+        }
+		$this->app->loadLang('misc');
+        $this->view->title      = $this->lang->admin->common;
+        $this->view->position[] = $this->lang->admin->index;*/
+		$this->display();
+    }
+    
+    public function template($id="")
+    {
+    	if(!empty($id))
+    	{
+    		if($id==1){$file_name="mpbasic.xls";}
+    		if($id==2){$file_name="mpin.xls";}
+    		if($id==3){$file_name="mpout.xls";}
+    		if($id==4){$file_name="sample.xls";}
+    		if($id==5){$file_name="sample.xls";}
+    		if($id==6){$file_name="sampleout.xls";}
+    		$file_dir = '../../www/data/template/';
+			$file = fopen ( $file_dir . $file_name, "r" );
+			Header ( "Content-type: application/octet-stream" );
+			Header ( "Accept-Ranges: bytes" );
+			Header ( "Accept-Length: " . filesize ( $file_dir . $file_name ) );
+			Header ( "Content-Disposition: attachment; filename=" . $file_name);
+			echo fread ( $file, filesize ( $file_dir . $file_name ) );
+			fclose ( $file );
+			exit ();
+    	}
+    	$this->display();
+    }
+
+	/**
+	 * Ignore notice of register and bind.
+	 * 
+	 * @access public
+	 * @return void
+	 */
+	public function ignore()
+	{
+		$this->loadModel('setting')->setItem('system.common.global.community', 'na');
+		die(js::locate(inlink('index'), 'parent'));
+	}
+
+	/**
+	 * Register zentao.
+	 * 
+	 * @access public
+	 * @return void
+	 */
+	public function register()
+	{
+		if($_POST)
+		{
+			$response = $this->admin->registerByAPI();
+			if($response == 'success') 
+			{
+				$this->loadModel('setting')->setItem('system.common.global.community', $this->post->account);
+				echo js::alert($this->lang->admin->register->success);
+				die(js::locate(inlink('index'), 'parent'));
+			}
+			die($response);
+		}
+        $this->view->title      = $this->lang->admin->register->caption;
+        $this->view->position[] = $this->lang->admin->register->caption;
+		$this->view->register   = $this->admin->getRegisterInfo();
+		$this->view->sn         = $this->config->global->sn;
+		$this->display();
+	}
+
+	/**
+	 * Bind zentao.
+	 * 
+	 * @access public
+	 * @return void
+	 */
+	public function bind()
+	{
+		if($_POST)
+		{
+			$response = $this->admin->bindByAPI();	
+			if($response == 'success') 
+			{
+				$this->loadModel('setting')->setItem('system.common.global.community', $this->post->account);
+				echo js::alert($this->lang->admin->bind->success);
+				die(js::locate(inlink('index'), 'parent'));
+			}
+			die($response);
+		}
+        $this->view->title      = $this->lang->admin->bind->caption;
+        $this->view->position[] = $this->lang->admin->bind->caption;
+		$this->view->sn         = $this->config->global->sn;
+		$this->display();
+	}
+
+    /**
+     * Check all tables.
+     * 
+     * @access public
+     * @return void
+     */
+    public function checkDB()
+    {
+        $tables = $this->dbh->query('SHOW TABLES')->fetchAll();
+        foreach($tables as $table)
+        {
+            $tableName = current((array)$table);
+            $result = $this->dbh->query("REPAIR TABLE $tableName")->fetch();
+            echo "Repairing TABLE: " . $result->Table . "\t" . $result->Msg_type . ":" . $result->Msg_text . "\n";
+        }
+    }
+
+    /**
+     *申请记录同步产线
+     */
+    public function sqjltbcx()
+    {
+        //查询所以空的数据zt_out
+        $array=$this->dao->select('partn')->from('zt_out')->where('proline')->eq('')
+			//->andWhere('id')->in(array(13,10,4,9))
+		    ->andWhere('close')->eq('wait')
+			->fetchPairs('partn','partn');
+        // 需要同步的数据partn类型字符串
+        $dbms='mysql'; //数据库类型
+        $host=$this->config->db->host16; //数据库主机名
+        $dbName=$this->config->db->name16inside;; //使用的数据库
+        $user=$this->config->db->user16; //数据库连接用户名
+        $pass=$this->config->db->password16;  //对应的密码
+        $dsn="$dbms:host=$host;dbname=$dbName";
+        $dbh = new PDO($dsn, $user, $pass); //初始化一个PDO对象
+		foreach ($array as $v)
+		{
+			$sql="select newproline from zt_wgcprorelease where partnumber like'%$v%' ";
+			$res=$dbh->query($sql);
+			$rewms= $res->fetch(PDO::FETCH_ASSOC);
+			if($rewms)$this->dao->update('zt_out')->set('proline')->eq($rewms['newproline'])->where('partn')->eq($v)->exec();
+		}
+		echo "<script type='text/javascript'>alert('Success!!');</script>";
+    }
+}

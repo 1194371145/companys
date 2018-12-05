@@ -1,0 +1,1042 @@
+<?php
+class sampleout extends control
+{
+	public function sampleout()
+	{
+		parent::__construct();
+		$this->loadModel('search');
+		$this->loadModel("action");
+		$this->loadModel('mp');
+		$this->loadModel('sample');
+	}
+	public function out($type='normal',$param='0',$orderBy='close_asc,id_desc',$recTotal=0,$recPerPage=50,$pageID=1)
+	{
+		header("content-type:text/html;charset=utf8;");
+		$pager=pager::init($recTotal,$recPerPage,$pageID);
+		if($type=='normal')
+		{
+			$out=$this->sampleout->out($orderBy,$pager,'sample');
+			
+		}
+		if($type=='bysearch')
+		{
+			$queryID=(int)$param;
+			if($queryID)
+			{
+				$query=$this->search->getQuery($queryID);
+				if($query)
+				{
+					$this->session->set("sampleoutQuery",$query->sql);
+					$this->session->set("sampleoutForm",$query->form);
+				}
+				else 
+				{
+					$this->session->set("sampleoutQuery","1 = 1");
+				}
+			}
+			else 
+			{
+				if($this->session->sampleoutQuery == false) $this->session->set('sampleoutQuery', ' 1 = 1');
+			}
+			$where=$this->session->sampleoutQuery;
+			
+			
+			$out=$this->sampleout->getoutbysearch($where,$pager,$orderBy,'sample');
+		}
+		$this->config->sampleout->out->search['actionURL']=$this->createLink('sampleout','out',"type=bysearch&param=myQueryID");
+		$this->config->sampleout->out->search['queryID']=$queryID;
+		$this->view->searchForm=$this->fetch('search','buildForm',$this->config->sampleout->out->search);
+		$this->view->out=$out;
+		$this->view->pager=$pager;
+		$this->view->param=$param;
+		$this->view->orderBy=$orderBy;
+		$this->view->type=$type;
+		$this->view->browseType=$type;
+		$this->display();
+	}
+	public function demo($type='normal',$param='0',$orderBy='close_asc,id_desc',$recTotal=0,$recPerPage=50,$pageID=1)
+	{
+		header("content-type:text/html;charset=utf8;");
+		$pager=pager::init($recTotal,$recPerPage,$pageID);
+		if($type=='normal')
+		{
+			$out=$this->sampleout->out($orderBy,$pager,'demo');
+			
+		}
+		if($type=='bysearch')
+		{
+			$queryID=(int)$param;
+			if($queryID)
+			{
+				$query=$this->search->getQuery($queryID);
+				if($query)
+				{
+					$this->session->set("sampleoutQuery",$query->sql);
+					$this->session->set("sampleoutForm",$query->form);
+				}
+				else 
+				{
+					$this->session->set("sampleoutQuery","1 = 1");
+				}
+			}
+			else 
+			{
+				if($this->session->sampleoutQuery == false) $this->session->set('sampleoutQuery', ' 1 = 1');
+			}
+			$where=$this->session->sampleoutQuery;
+			
+			$out=$this->sampleout->getoutbysearch($where,$pager,$orderBy,"demo");
+		}
+		$this->config->sampleout->out->search['actionURL']=$this->createLink('sampleout','demo',"type=bysearch&param=myQueryID");
+		$this->config->sampleout->out->search['queryID']=$queryID;
+		$this->view->searchForm=$this->fetch('search','buildForm',$this->config->sampleout->out->search);
+		$this->view->out=$out;
+		$this->view->pager=$pager;
+		$this->view->param=$param;
+		$this->view->orderBy=$orderBy;
+		$this->view->type=$type;
+		$this->view->browseType=$type;
+		$this->display();
+	}
+	public function pay($type='normal',$param='0',$orderBy='close_asc,id_desc',$recTotal=0,$recPerPage=50,$pageID=1)
+	{
+		header("content-type:text/html;charset=utf8;");
+		$pager=pager::init($recTotal,$recPerPage,$pageID);
+		if($type=='normal')
+		{
+			$out=$this->sampleout->getpay($orderBy,$pager);
+		}
+		if($type=='bysearch')
+		{
+			$queryID=(int)$param;
+			if($queryID)
+			{
+				$query=$this->search->getQuery($queryID);
+				if($query)
+				{
+					$this->session->set("sampleoutQuery",$query->sql);
+					$this->session->set("sampleoutForm",$query->form);
+				}
+				else 
+				{
+					$this->session->set("sampleoutQuery","1 = 1");
+				}
+			}
+			else 
+			{
+				if($this->session->sampleoutQuery == false) $this->session->set('sampleoutQuery', ' 1 = 1');
+			}
+			$where=$this->session->sampleoutQuery;
+			$out=$this->sampleout->getpaybysearch($orderBy,$pager,$where);
+		}
+		$this->config->sampleout->out->search['actionURL']=$this->createLink('sampleout','pay',"type=bysearch&param=myQueryID");
+		$this->config->sampleout->out->search['queryID']=$queryID;
+		$this->view->searchForm=$this->fetch('search','buildForm',$this->config->sampleout->out->search);
+		$this->view->out=$out;
+		$this->view->pager=$pager;
+		$this->view->param=$param;
+		$this->view->orderBy=$orderBy;
+		$this->view->type=$type;
+		$this->view->browseType=$type;
+		$this->display();
+	}
+	function signpay()
+	{
+		if(!empty($_POST))
+		{
+			$this->dao->update('zt_out')->set('pay')->eq('done')
+										->where('id')->in($_POST['pay'])
+										->andWhere('pay')->eq('wait')
+										->andWhere('revtype')->eq('需要付费')
+										->exec();
+			die(js::locate($this->inlink('pay'),'parent'));							
+		}
+	}
+	public function deleteout($id,$confirm='no')
+	{
+		if($confirm=='no'){die(js::confirm("确定要删除吗 次删除无法恢复",$this->inlink('deleteout',"id=$id&confirm=yes")));}
+		if($confirm!='no')
+		{
+			$this->dao->delete()->from('zt_out')->where('id')->eq($id)->exec();
+			$this->action->create('sampleout',$id,"删除");
+			echo "<script language='javascript'>parent.location.reload();</script>";
+		}
+	}
+	public function importout()
+	{
+		header("content-type:text/html;charset=utf8");
+		if(!empty($_FILES['file']))
+		{
+			if($_FILES['file']['tmp_name'])
+			{
+				include '../../lib/PHPExcel/PHPExcel.php';
+				include "../../lib/PHPExcel/PHPExcel/IOFactory.php";
+				$ob=PHPExcel_IOFactory::load($_FILES['file']['tmp_name']);
+				$sheetob=$ob->setActiveSheetIndex();
+				//$A3=trim($ob->getActiveSheet()->getCell("A3")->getValue());
+				//$B3=trim($ob->getActiveSheet()->getCell("B3")->getValue());
+				//$C3=trim($ob->getActiveSheet()->getCell("C3")->getValue());
+				//if($A3!='Name' or $B3!='Request Date' or $C3!='RF' ){die(js::error("请选择正确的文件"));}
+				$A13=trim($ob->getActiveSheet()->getCell("A13")->getValue());
+				$B13=trim($ob->getActiveSheet()->getCell("B13")->getValue());
+				$C13=trim($ob->getActiveSheet()->getCell("C13")->getValue());
+				if($A13!='Request Type' or $B13!='Part Number' or $C13!='Package Type' ){die(js::error("请选择正确的文件"));}
+				$allrows=$sheetob->getHighestRow();
+				$fields=array(
+						//"A"=>"person"    , "F"=>"package",
+						//"B"=>"rdate"     , "G"=>"endname",
+						//				   "H"=>"distributor",
+						//"C"=>"rf"        , "I"=>"projectname",
+						//"D"=>'rtype'    , "J"=>"stage",
+						//"E"=>"partn"     , "K"=>"qty",
+						//"L"=>"aqty"      , "M"=>"price",
+						//"N"=>"rev" ,"O"=>"shiporder",
+						//"P"=>"shipdate","Q"=>'remark'
+						"A"=>"rtype","B"=>"partn",
+						"C"=>"package","D"=>'endname',
+						"E"=>"projectname","F"=>"stage",
+						"G"=>'qty',"I"=>"remark","H"=>"set",
+						"J"=>"person","K"=>"distributor",
+						"L"=>"price",
+						);
+				$repeat=0;
+				$success=0;
+				$invalid=0;	
+				$str="";
+				for($row=14;$row<=$allrows;$row++)
+				{
+					$data=array();
+					for($col="A";$col<="L";$col++)
+					{
+						$data[$fields[$col]]=trim($ob->getActiveSheet()->getCell("$col$row")->getValue());
+					}
+					unset($data['set']);
+					if(empty($data['partn']) or empty($data['rtype'])){$invalid++;continue;}
+					/*if(empty($data['rdate']))
+					{
+						$data['rdate']=date("Y-m-d");
+					}
+					else 
+					{
+						if(!strtotime($data['rdate']))
+						{
+							$data['rdate']=date("Y-m-d",strtotime($this->mp->excelTime($data['rdate'])));
+						}
+						else 
+						{
+							$data['rdate']=date("Y-m-d",strtotime($data['rdate']));
+						}
+					}*/
+					$data['rf']=date("YmdHis");
+					$data['rdate']=date("Y-m-d");
+					$data['shipdate']="0000-00-00";
+					$data['area']=$this->post->area;
+					$data['openby']=$this->app->user->account;
+					$data['createdate']=date("Y-m-d H:i:s");
+					$data['qty']=(int)$data['qty'];$data['aqty']=(int)$data['qty'];$data['price']=(float)$data['price'];
+					$data['rev']=$data['aqty'] * $data['price'];
+					if($data['qty']>=100 and $data['revtype']!='需要付费' and strpos("KR,TW",$data['area'])===false){$data['approve']='1';}
+					if($data['qty']>=500 and $data['revtype']!='需要付费' and strpos("KR,TW",$data['area'])!==false){$data['approve']='1';}
+					$is_dao=$this->sampleout->outis_daoru($data);
+					if($is_dao){$repeat++;continue;}
+					$this->dao->insert('zt_out')->data($data)->autoCheck()->exec();
+					if(dao::isError()){die(js::error(dao::getError()));}
+					$id=$this->dao->lastInsertID();
+					$this->action->create('sampleout',"$id","Open");
+					$success++;
+					if($data['qty']>=100 and $data['revtype']!='需要付费' and strpos("KR,TW",$data['area'])===false)
+					{
+						$str.="<tr><td>{$data['partn']}</td><td>{$data['person']}</td><td>{$data['qty']}</td><td>{$data['endname']}</td><td>{$data['distributor']}</td><td>{$data['revtype']}</td><td>{$data['price']}</td></tr>";
+					}
+					if($data['qty']>=500 and $data['revtype']!='需要付费' and strpos("KR,TW",$data['area'])!==false)
+					{
+						$str.="<tr><td>{$data['partn']}</td><td>{$data['person']}</td><td>{$data['qty']}</td><td>{$data['endname']}</td><td>{$data['distributor']}</td><td>{$data['revtype']}</td><td>{$data['price']}</td></tr>";
+					}
+				}
+				if(!empty($str))
+				{
+					$str="<table border='1' cellspacing='0'><tr><td>申请人</td><td>产品型号</td><td>申请数量</td><td>EndName</td><td>DisName</td><td>付费</td><td>价格</td></tr>".$str."</table>";
+					//$this->loadModel('mail')->send("lynn",'样品申请审核(审核结果请邮件给黄莉)',$str,'');
+				}
+				echo "<script type='text/javascript'>alert('成功:$success"."条记录 \\n 重复：$repeat"."条记录\\n 无效：$invalid"."条记录');parent.location.reload();</script>";			
+			}
+			else
+			{
+				echo js::alert("请选择文件");
+			}
+		}
+		$this->display();
+	}
+	
+	public function exportout()
+	{
+		$sampleouts=$this->dao->select("*")->from('zt_out')->where($this->session->exportsampleout)
+														   //->andWhere('close')->eq('done')
+														   ->orderBy($this->session->exportsampleoutorderby)
+														   ->fetchAll();
+	    include "../../lib/PHPExcel/PHPExcel.php";
+	    include "../../lib/PHPExcel/PHPExcel/IOFactory.php";
+	    $pathfile="./sampleout.xls";
+	    $ob=PHPExcel_IOFactory::load($pathfile);
+	    $ob->setActiveSheetIndex(0);
+	    $style=$ob->getActiveSheet()->getStyle('B4');
+	    $row=4;
+	    foreach($sampleouts as $v)
+	    {
+	    	$ob->getActiveSheet()->setCellValue("A$row",$v->person)
+	    						 ->setCellValue("B$row",$v->rdate)
+	    						 ->setCellValue("C$row",$v->rf)
+	    						 ->setCellValue("D$row",$v->rtype)
+	    						 ->setCellValue("E$row",$v->partn)
+	    						 ->setCellValue("F$row",$v->package)
+	    						 ->setCellValue("G$row",$v->endname)
+	    						 ->setCellValue("H$row",$v->distributor)
+	    						 ->setCellValue("I$row",$v->projectname)
+	    						 ->setCellValue("J$row",$v->stage)
+	    						 ->setCellValue("K$row",$v->qty)
+	    						 ->setCellValue("L$row",$v->aqty)
+	    						 ->setCellValue("M$row",$v->price)
+	    						 ->setCellValue("N$row",$v->rev)
+	    						 ->setCellValue("O$row",$v->shiporder)
+	    						 ->setCellValue("P$row",$v->shipdate)
+	    						 ->setCellValue("Q$row",$v->remark)
+	    						 ->setCellValue("R$row",$v->area)
+	    						 ->setCellValue("S$row",$v->revtype)
+	    						 ->setCellValue("T$row",$this->lang->sampleout->type[$v->type])
+	    						 ;$row++;
+	    }
+	    $ob->getActiveSheet()->duplicateStyle($style,"A4:T".$row);
+	    $ob->getActiveSheet()->setTitle('申请记录');
+	    $wob=PHPExcel_IOFactory::createWriter($ob,"Excel5");
+	    if(PATH_SEPARATOR!=":"){$filename="申请记录.xls";}else{$filename=iconv("UTF8", auto, "申请记录").".xls";}
+		header("Content-type:application/vnd.ms-excel");
+		header("Content-Disposition:attachment;filename=$filename");
+		header("Cache-Control:max-age=0");
+		$wob->save('php://output');
+	}
+	public function createout()
+	{
+		if($_POST)
+		{
+			if(!isset($_GET['type']))
+			{
+				if(filter_var($_POST['aqty'],FILTER_VALIDATE_FLOAT)===false or filter_var($_POST['price'],FILTER_VALIDATE_FLOAT)===false
+				or filter_var($_POST['qty'],FILTER_VALIDATE_FLOAT)===false or filter_var($_POST['rev'],FILTER_VALIDATE_FLOAT)===false
+				)
+				{
+					die(js::error("申请数量,发货数量,价格,金额 必须为数字"));
+				}
+				$data=fixer::input('post')
+				->stripTags()
+				->addIF(strpos(trim($_POST['mid']),'sample')!==false,'type','2')
+				->addIF(strpos(trim($_POST['mid']),'mp')!==false and strpos(trim($_POST['mid']),'sample')===false,'type','1')
+				->addIF(trim($_POST['mid'])=='0','type','3')
+				->addIF(intval($_POST['qty'])>=100 and $_POST['revtype']!='需要付费','approve','1')
+				->setForce('mid',intval($_POST['mid']))
+				->setForce("rev",$_POST['aqty'] * $_POST['price'])
+				->add('openby',$this->app->user->account)
+				->add('createdate',date("Y-m-d H:i:s"))
+				->get();
+				$this->dao->insert('zt_out')->data($data)->autoCheck()
+				->check('partn','notempty')
+				->checkIF($_POST['revtype']=='需要付费','distributor',"notempty")
+				->checkIF($_POST['revtype']=='需要付费','price',"notempty")
+				->batchCheck('shipdate,rdate,createdate','date')
+				->exec();
+				if(dao::isError()){die(js::error(dao::getError()));}
+				$id=$this->dao->lastInsertId();
+				$actionID=$this->action->create("sampleout",$id,"Open");
+				//if(intval($_POST['qty'])>=100 and $_POST['revtype']!='需要付费')
+				//{
+					//$str="<table border='1'><tr><td>申请人</td><td>产品</td><td>申请数量</td></tr><tr><td>{$_POST['person']}</td><td>{$_POST['partn']}</td><td>{$_POST['qty']}</td></tr></table>";
+					//$this->loadModel('mail')->send("lynn",'样品申请审核(审核结果请邮件给黄莉)',$str,'admin');
+				//}
+			}
+			if(isset($_GET['type']))
+			{
+				//if(intval($_POST['qty'])>=100){die(js::error("大于100K必须通过审核才能发货"));}
+				if(filter_var($_POST['aqty'],FILTER_VALIDATE_FLOAT)===false or filter_var($_POST['qty'],FILTER_VALIDATE_FLOAT)===false
+				or filter_var($_POST['price'],FILTER_VALIDATE_FLOAT)===false or filter_var($_POST['rev'],FILTER_VALIDATE_FLOAT)===FALSE
+				)
+				{
+					die(js::error("申请数量,发货数量,价格,金额 必须为数字"));
+				}
+				if(intval($_POST['aqty'])==0){die(js::error("出货数量不能为0"));}
+				$data=fixer::input('post')
+				->stripTags()
+				->addIF(strpos(trim($_POST['mid']),'sample')!==false,'type','2')
+				->addIF(strpos(trim($_POST['mid']),'mp')!==false and strpos(trim($_POST['mid']),'sample')===false,'type','1')
+				->addIF(trim($_POST['mid'])=='0','type','3')
+				->setForce('mid',intval($_POST['mid']))
+				->add('openby',$this->app->user->account)
+				->add('createdate',date("Y-m-d H:i:s"))
+				->add('close','done')
+				->setForce("rev",$_POST['aqty'] * $_POST['price'])
+				->get();
+				$this->dao->insert('zt_out')->data($data)->autoCheck()
+				->checkIF($_POST['revtype']=='需要付费','distributor',"notempty")
+				->checkIF($_POST['revtype']=='需要付费','price',"notempty")
+				->batchCheck('shiporder,shipdate','notempty')
+				->batchCheck('shipdate,rdate,createdate','date')
+				->check('partn','notempty')
+				->exec();
+				if(dao::isError()){die(js::error(dao::getError()));}
+				$id=$this->dao->lastInsertID();
+				$actionID=$this->action->create("sampleout",$id,"OpenAnd完成出货");
+				if(strpos(trim($_POST['mid']),'mp')!==false and strpos(trim($_POST['mid']),'sample')===false)
+				{
+					$mp=$this->mp->getmpbyid(intval($_POST['mid']));
+					$mqty=$mp->qty;
+					if($mqty < $_POST['aqty'])
+					{
+						echo js::alert("关联主数据的库存数量已不能满足本条出库记录的需求  因此系统会自动重新生成一条出库记录(原来出库的需求量 - 主数据以满足的量) 请注意关联主数据");
+						$this->dao->update('zt_mp')->set('qty')->eq(0)->autoCheck()->where('id')->eq(intval($_POST['mid']))->exec();
+						if(dao::isError()){js::error(dao::getError());}
+						$actionID=$this->action->create("mpbasic",intval($_POST['mid']),"出库:".$mqty." 出库ID：".$id);
+						$mpn=(object)array();
+						$mpn->qty=0;
+						if(common::createChanges($mp, $mpn))
+						{
+							$this->action->logHistory($actionID,common::createChanges($mp, $mpn));
+						}
+						$this->dao->update('zt_out')->set('rev')->eq($_POST['price']*$mqty)
+						->set('aqty')->eq($mqty)
+						->autoCheck()
+						->where('id')->eq($id)
+						->exec();
+						$data->aqty=$_POST['aqty']-$mqty;
+						$data->mid=0;
+						$data->type='3';
+						$data->close='wait';
+						$data->revtype='不需付费';
+						$this->dao->insert("zt_out")->data($data)->autoCheck()->exec();
+						if(dao::isError()){die(js::error(dao::getError()));}
+						$lastid=$this->dao->lastInsertID();
+						$this->action->create("sampleout","$lastid","Open");
+					}
+					else
+					{
+						$this->dao->update('zt_mp')->set('qty')->eq($mqty-intval($_POST['aqty']))->autoCheck()->where('id')->eq(intval($_POST['mid']))->exec();
+						if(dao::isError()){die(js::error(dao::getError()));}
+						$actionID=$this->action->create("mpbasic",intval($_POST['mid']),"出库:".$_POST['aqty']." 出库ID：".$id);
+						$mpn=(object)array();
+						$mpn->qty=$mp->qty - $_POST['aqty'];
+						if(common::createChanges($mp, $mpn))
+						{
+							$this->action->logHistory($actionID,common::createChanges($mp, $mpn));
+						}
+					}
+				}
+				elseif(strpos($_POST['mid'],'sample')!==false)
+				{
+					$sample=$this->sample->getsamplebyid(intval($_POST['mid']));
+					$mqty=$sample->inventry;
+					if($mqty < $_POST['aqty'])
+					{
+						echo js::alert("关联主数据的库存数量已不能满足本条出库记录的需求  因此系统会自动重新生成一条出库记录(原来出库的需求量 - 主数据以满足的量) 请注意关联主数据");
+						$this->dao->update('zt_sample')->set('inventry')->eq(0)->autoCheck()->where('id')->eq(intval($_POST['mid']))->exec();
+						if(dao::isError()){js::error(dao::getError());}
+						$actionID=$this->action->create("sample",intval($_POST['mid']),"出库:".$mqty." 出库ID：".$id);
+						$samplen=(object)array();
+						$samplen->inventry=0;
+						if(common::createChanges($sample, $samplen))
+						{
+							$this->action->logHistory($actionID,common::createChanges($sample, $samplen));
+						}
+						$this->dao->update('zt_out')->set('aqty')->eq($mqty)
+						->set('rev')->eq($_POST['price']*$mqty)
+						->autoCheck()->where('id')->eq($id)->exec();
+						$data->aqty=$_POST['aqty']-$mqty;
+						$data->mid=0;
+						$data->close='wait';
+						$data->revtype='不需付费';
+						$data->type='3';
+						$this->dao->insert("zt_out")->data($data)->autoCheck()->exec();
+						if(dao::isError()){die(js::error(dao::getError()));}
+						$lastid=$this->dao->lastInsertID();
+						$this->action->create("sampleout","$lastid","Open");
+					}
+					else
+					{
+						$this->dao->update('zt_sample')->set('inventry')->eq($mqty-intval($_POST['aqty']))->autoCheck()->where('id')->eq(intval($_POST['mid']))->exec();
+						if(dao::isError()){die(js::error(dao::getError()));}
+						$actionID=$this->action->create("sample",intval($_POST['mid']),"出库:".$_POST['aqty']." 出库ID：".$id);
+						$samplen=(object)array();
+						$samplen->inventry=$sample->inventry - $_POST['aqty'];
+						if(common::createChanges($sample, $samplen))
+						{
+							$this->action->logHistory($actionID,common::createChanges($sample, $samplen));
+						}
+					}
+				}
+			}
+			//die(js::locate($this->inlink('out'),'parent'));
+			if(strpos(strtolower($_POST['rtype']),demo)!==false)die(js::locate($this->inlink('demo'),'parent'));
+			if(strpos(strtolower($_POST['rtype']),demo)===false)die(js::locate($this->inlink('out'),'parent'));
+		}
+		$this->view->position[]='<a href="">填写申请记录</a>';
+		$this->display();
+	}
+	public function getwaitbypart()
+	{
+		if(!empty($_POST))
+		{
+			$part=trim($_POST['part']);
+			$re=$this->sampleout->getwaitbypart($part);
+			$str="";
+			foreach($re as $k=>$v)
+			{
+				$str.="<option value='".$k."'>".$v."</option>";
+			}
+			echo $str;
+		}
+	}
+	public function editout()
+	{
+		if($_POST)
+		{
+			$out=$this->sampleout->getbyid($_POST['id']);
+			if(!$out)die;
+			if(isset($_POST['anniu']))
+			{
+				if(filter_var($_POST['aqty'],FILTER_VALIDATE_FLOAT)===false or filter_var($_POST['price'],FILTER_VALIDATE_FLOAT)===false
+				or filter_var($_POST['qty'],FILTER_VALIDATE_FLOAT)===false or filter_var($_POST['rev'],FILTER_VALIDATE_FLOAT)===false
+				)
+				{
+					die(js::error("申请数量,发货数量,price,rev 必须为数字"));
+				}
+				$data=fixer::input('post')
+				->stripTags()
+				->addIF(strpos(trim($_POST['mid']),'sample')!==false,'type','2')
+				->addIF(strpos(trim($_POST['mid']),'mp')!==false and strpos(trim($_POST['mid']),'sample')===false,'type','1')
+				->addIF(trim($_POST['mid'])=='0','type','3')
+				->setForce('mid',intval($_POST['mid']))
+				->setForce("rev",$_POST['aqty'] * $_POST['price'])
+				->remove('anniu')
+				->get();
+				$this->dao->update('zt_out')->data($data)->autoCheck()
+				->check('partn','notempty')
+				->checkIF($_POST['revtype']=='需要付费','distributor',"notempty")
+				->checkIF($_POST['revtype']=='需要付费','price',"notempty")
+				->batchCheck('shipdate,rdate,createdate','date')
+				->where('id')->eq($_POST['id'])
+				->exec();
+				if(dao::isError()){die(js::error(dao::getError()));}
+				$actionID=$this->action->create("sampleout",$_POST['id'],"编辑");
+				if(common::createChanges($out, $data))
+				{
+					$this->action->logHistory($actionID,common::createChanges($out, $data));
+				}
+			}
+			if(!isset($_POST['anniu']))
+			{
+				if(filter_var($_POST['aqty'],FILTER_VALIDATE_FLOAT)===false or filter_var($_POST['qty'],FILTER_VALIDATE_FLOAT)===false
+				or filter_var($_POST['price'],FILTER_VALIDATE_FLOAT)===false or filter_var($_POST['rev'],FILTER_VALIDATE_FLOAT)===FALSE
+				)
+				{
+					die(js::error("申请数量,发货数量,price,rev 必须为数字"));
+				}
+				if(intval($_POST['aqty'])==0){die(js::error("出货数量不能为0"));}
+				$_POST['shipdate']=date("Y-m-d");
+				$data=fixer::input('post')
+				->stripTags()
+				->addIF(strpos(trim($_POST['mid']),'sample')!==false,'type','2')
+				->addIF(strpos(trim($_POST['mid']),'mp')!==false and strpos(trim($_POST['mid']),'sample')===false,'type','1')
+				->addIF(trim($_POST['mid'])=='0','type','3')
+				->setForce('mid',intval($_POST['mid']))
+				->add('close','done')
+				->setForce("rev",$_POST['aqty'] * $_POST['price'])
+				->get();
+				$this->dao->update('zt_out')->data($data)->autoCheck()
+				->checkIF($_POST['revtype']=='需要付费','distributor',"notempty")
+				->checkIF($_POST['revtype']=='需要付费','price',"notempty")
+				->batchCheck('shiporder,shipdate','notempty')
+				->batchCheck('shipdate,rdate,createdate','date')
+				->check('partn','notempty')
+				->where('id')->eq($_POST['id'])->exec();
+				if(dao::isError()){die(js::error(dao::getError()));}
+				$actionID=$this->action->create("sampleout",$_POST['id'],"完成出货");
+				if(common::createChanges($out, $data))
+				{
+					$this->action->logHistory($actionID,common::createChanges($out, $data));
+				}
+				if(strpos(trim($_POST['mid']),'mp')!==false and strpos(trim($_POST['mid']),'sample')===false)
+				{
+					$mp=$this->mp->getmpbyid(intval($_POST['mid']));
+					$mqty=$mp->qty;
+					if($mqty < $_POST['aqty'])
+					{
+						echo js::alert("关联主数据的库存数量已不能满足本条出库记录的需求  因此系统会自动重新生成一条出库记录(原来出库的需求量 - 主数据以满足的量) 请注意关联主数据");
+						$this->dao->update('zt_mp')->set('qty')->eq(0)->autoCheck()->where('id')->eq(intval($_POST['mid']))->exec();
+						if(dao::isError()){js::error(dao::getError());}
+						$actionID=$this->action->create("mpbasic",intval($_POST['mid']),"出库:".$mqty." 出库ID：".$_POST['id']);
+						$mpn=(object)array();
+						$mpn->qty=0;
+						if(common::createChanges($mp, $mpn))
+						{
+							$this->action->logHistory($actionID,common::createChanges($mp, $mpn));
+						}
+						$this->dao->update('zt_out')->set('rev')->eq($_POST['price']*$mqty)
+						->set('aqty')->eq($mqty)
+						->autoCheck()
+						->where('id')->eq($_POST['id'])
+						->exec();
+						$data->aqty=$_POST['aqty']-$mqty;
+						$data->mid=0;
+						$data->type='3';
+						$data->close='wait';
+						$data->revtype='不需付费';
+						$this->dao->insert("zt_out")->data($data)->autoCheck()->exec();
+						if(dao::isError()){die(js::error(dao::getError()));}
+						$lastid=$this->dao->lastInsertID();
+						$this->action->create("sampleout","$lastid","Open");
+					}
+					else
+					{
+						$this->dao->update('zt_mp')->set('qty')->eq($mqty-intval($_POST['aqty']))->autoCheck()->where('id')->eq(intval($_POST['mid']))->exec();
+						if(dao::isError()){die(js::error(dao::getError()));}
+						$actionID=$this->action->create("mpbasic",intval($_POST['mid']),"出库:".$_POST['aqty']." 出库ID：".$_POST['id']);
+						$mpn=(object)array();
+						$mpn->qty=$mp->qty - $_POST['aqty'];
+						if(common::createChanges($mp, $mpn))
+						{
+							$this->action->logHistory($actionID,common::createChanges($mp, $mpn));
+						}
+					}
+				}
+				elseif(strpos($_POST['mid'],'sample')!==false)
+				{
+					$sample=$this->sample->getsamplebyid(intval($_POST['mid']));
+					$mqty=$sample->inventry;
+					if($mqty < $_POST['aqty'])
+					{
+						echo js::alert("关联主数据的库存数量已不能满足本条出库记录的需求  因此系统会自动重新生成一条出库记录(原来出库的需求量 - 主数据以满足的量) 请注意关联主数据");
+						$this->dao->update('zt_sample')->set('inventry')->eq(0)->autoCheck()->where('id')->eq(intval($_POST['mid']))->exec();
+						if(dao::isError()){js::error(dao::getError());}
+						$actionID=$this->action->create("sample",intval($_POST['mid']),"出库:".$mqty." 出库ID：".$_POST['id']);
+						$samplen=(object)array();
+						$samplen->inventry=0;
+						if(common::createChanges($sample, $samplen))
+						{
+							$this->action->logHistory($actionID,common::createChanges($sample, $samplen));
+						}
+						$this->dao->update('zt_out')->set('aqty')->eq($mqty)
+						->set('rev')->eq($_POST['price']*$mqty)
+						->autoCheck()->where('id')->eq($_POST['id'])->exec();
+						$data->aqty=$_POST['aqty']-$mqty;
+						$data->mid=0;
+						$data->close='wait';
+						$data->revtype='不需付费';
+						$data->type='3';
+						$this->dao->insert("zt_out")->data($data)->autoCheck()->exec();
+						if(dao::isError()){die(js::error(dao::getError()));}
+						$lastid=$this->dao->lastInsertID();
+						$this->action->create("sampleout","$lastid","Open");
+					}
+					else
+					{
+						$this->dao->update('zt_sample')->set('inventry')->eq($mqty-intval($_POST['aqty']))->autoCheck()->where('id')->eq(intval($_POST['mid']))->exec();
+						if(dao::isError()){die(js::error(dao::getError()));}
+						$actionID=$this->action->create("sample",intval($_POST['mid']),"出库:".$_POST['aqty']." 出库ID：".$_POST['id']);
+						$samplen=(object)array();;
+						$samplen->inventry=$sample->inventry - $_POST['aqty'];
+						if(common::createChanges($sample, $samplen))
+						{
+							$this->action->logHistory($actionID,common::createChanges($sample, $samplen));
+						}
+					}
+				}
+			}
+			//die(js::locate($this->inlink('out'),'parent'));
+			echo "<script type='text/javascript'>parent.location.reload();</script>";
+		}
+	}
+	public function viewout($id)
+	{
+		$out=$this->sampleout->getbyid($id);
+		$this->view->out=$out;
+		$this->view->position[]="<a href=''>申请记录视图</a>";
+		$this->view->actions=$this->action->getList('sampleout',$id);
+		$this->display();
+	}
+	public function vieweditout($id)
+	{
+		header("content-type:text/html;charset=utf8");
+		$out=$this->sampleout->getbyid($id);
+		if(!$out)die;
+		if($_POST)
+		{
+			if(!isset($_GET['type']))
+			{
+				if(filter_var($_POST['aqty'],FILTER_VALIDATE_FLOAT)===false or filter_var($_POST['price'],FILTER_VALIDATE_FLOAT)===false
+				or filter_var($_POST['qty'],FILTER_VALIDATE_FLOAT)===false or filter_var($_POST['rev'],FILTER_VALIDATE_FLOAT)===false
+				)
+				{
+					die(js::error("申请数量,发货数量,价格,金额 必须为数字"));
+				}
+				$data=fixer::input('post')
+				->stripTags()
+				->addIF(strpos(trim($_POST['mid']),'sample')!==false,'type','2')
+				->addIF(strpos(trim($_POST['mid']),'mp')!==false and strpos(trim($_POST['mid']),'sample')===false,'type','1')
+				->addIF(trim($_POST['mid'])=='0','type','3')
+				->setForce('mid',intval($_POST['mid']))
+				->setForce("rev",$_POST['aqty'] * $_POST['price'])
+				->get();
+				$this->dao->update('zt_out')->data($data)->autoCheck()
+				->check('partn','notempty')
+				->checkIF($_POST['revtype']=='需要付费','distributor',"notempty")
+				->checkIF($_POST['revtype']=='需要付费','price',"notempty")
+				->batchCheck('shipdate,rdate,createdate','date')
+				->where('id')->eq($id)
+				->exec();
+				if(dao::isError()){die(js::error(dao::getError()));}
+				$actionID=$this->action->create("sampleout",$id,"编辑");
+				if(common::createChanges($out, $data))
+				{
+					$this->action->logHistory($actionID,common::createChanges($out, $data));
+				}
+				echo "<script type='text/javascript'>parent.location.reload();</script>";
+			}
+			if(isset($_GET['type']))
+			{
+				if(filter_var($_POST['aqty'],FILTER_VALIDATE_FLOAT)===false or filter_var($_POST['qty'],FILTER_VALIDATE_FLOAT)===false
+				or filter_var($_POST['price'],FILTER_VALIDATE_FLOAT)===false or filter_var($_POST['rev'],FILTER_VALIDATE_FLOAT)===FALSE
+				)
+				{
+					die(js::error("申请数量,发货数量,价格,金额 必须为数字"));
+				}
+				if(intval($_POST['aqty'])==0){die(js::error("出货数量不能为0"));}
+				$_POST['shipdate']=date("Y-m-d");
+				$data=fixer::input('post')
+				->stripTags()
+				->addIF(strpos(trim($_POST['mid']),'sample')!==false,'type','2')
+				->addIF(strpos(trim($_POST['mid']),'mp')!==false and strpos(trim($_POST['mid']),'sample')===false,'type','1')
+				->addIF(trim($_POST['mid'])=='0','type','3')
+				->setForce('mid',intval($_POST['mid']))
+				->add('close','done')
+				->setForce("rev",$_POST['aqty'] * $_POST['price'])
+				->get();
+				$this->dao->update('zt_out')->data($data)->autoCheck()
+				->checkIF($_POST['revtype']=='需要付费','distributor',"notempty")
+				->checkIF($_POST['revtype']=='需要付费','price',"notempty")
+				->batchCheck('shiporder,shipdate','notempty')
+				->batchCheck('shipdate,rdate,createdate','date')
+				->check('partn','notempty')
+				->where('id')->eq($id)->exec();
+				if(dao::isError()){die(js::error(dao::getError()));}
+				$actionID=$this->action->create("sampleout",$id,"完成出货");
+				if(common::createChanges($out, $data))
+				{
+					$this->action->logHistory($actionID,common::createChanges($out, $data));
+				}
+				if(strpos(trim($_POST['mid']),'mp')!==false and strpos(trim($_POST['mid']),'sample')===false)
+				{
+					$mp=$this->mp->getmpbyid(intval($_POST['mid']));
+					$mqty=$mp->qty;
+					if($mqty < $_POST['aqty'])
+					{
+						echo js::alert("关联主数据的库存数量已不能满足本条出库记录的需求  因此系统会自动重新生成一条出库记录(原来出库的需求量 - 主数据以满足的量) 请注意关联主数据");
+						$this->dao->update('zt_mp')->set('qty')->eq(0)->autoCheck()->where('id')->eq(intval($_POST['mid']))->exec();
+						if(dao::isError()){js::error(dao::getError());}
+						$actionID=$this->action->create("mpbasic",intval($_POST['mid']),"出库:".$mqty." 出库ID：".$id);
+						$mpn=(object)array();
+						$mpn->qty=0;
+						if(common::createChanges($mp, $mpn))
+						{
+							$this->action->logHistory($actionID,common::createChanges($mp, $mpn));
+						}
+						$this->dao->update('zt_out')->set('rev')->eq($_POST['price']*$mqty)
+						->set('aqty')->eq($mqty)
+						->autoCheck()
+						->where('id')->eq($id)
+						->exec();
+						$data->aqty=$_POST['aqty']-$mqty;
+						$data->mid=0;
+						$data->type='3';
+						$data->close='wait';
+						$data->revtype='不需付费';
+						$this->dao->insert("zt_out")->data($data)->autoCheck()->exec();
+						if(dao::isError()){die(js::error(dao::getError()));}
+						$lastid=$this->dao->lastInsertID();
+						$this->action->create("sampleout","$lastid","Open");
+					}
+					else
+					{
+						$this->dao->update('zt_mp')->set('qty')->eq($mqty-intval($_POST['aqty']))->autoCheck()->where('id')->eq(intval($_POST['mid']))->exec();
+						if(dao::isError()){die(js::error(dao::getError()));}
+						$actionID=$this->action->create("mpbasic",intval($_POST['mid']),"出库:".$_POST['aqty']." 出库ID：".$id);
+						$mpn=(object)array();
+						$mpn->qty=$mp->qty - $_POST['aqty'];
+						if(common::createChanges($mp, $mpn))
+						{
+							$this->action->logHistory($actionID,common::createChanges($mp, $mpn));
+						}
+					}
+				}
+				elseif(strpos($_POST['mid'],'sample')!==false)
+				{
+					$sample=$this->sample->getsamplebyid(intval($_POST['mid']));
+					$mqty=$sample->inventry;
+					if($mqty < $_POST['aqty'])
+					{
+						echo js::alert("关联主数据的库存数量已不能满足本条出库记录的需求  因此系统会自动重新生成一条出库记录(原来出库的需求量 - 主数据以满足的量) 请注意关联主数据");
+						$this->dao->update('zt_sample')->set('inventry')->eq(0)->autoCheck()->where('id')->eq(intval($_POST['mid']))->exec();
+						if(dao::isError()){js::error(dao::getError());}
+						$actionID=$this->action->create("sample",intval($_POST['mid']),"出库:".$mqty." 出库ID：".$id);
+						$samplen=(object)array();
+						$samplen->inventry=0;
+						if(common::createChanges($sample, $samplen))
+						{
+							$this->action->logHistory($actionID,common::createChanges($sample, $samplen));
+						}
+						$this->dao->update('zt_out')->set('aqty')->eq($mqty)
+						->set('rev')->eq($_POST['price']*$mqty)
+						->autoCheck()->where('id')->eq($id)->exec();
+						$data->aqty=$_POST['aqty']-$mqty;
+						$data->mid=0;
+						$data->close='wait';
+						$data->revtype='不需付费';
+						$data->type='3';
+						$this->dao->insert("zt_out")->data($data)->autoCheck()->exec();
+						if(dao::isError()){die(js::error(dao::getError()));}
+						$lastid=$this->dao->lastInsertID();
+						$this->action->create("sampleout","$lastid","Open");
+					}
+					else
+					{
+						$this->dao->update('zt_sample')->set('inventry')->eq($mqty-intval($_POST['aqty']))->autoCheck()->where('id')->eq(intval($_POST['mid']))->exec();
+						if(dao::isError()){die(js::error(dao::getError()));}
+						$actionID=$this->action->create("sample",intval($_POST['mid']),"出库:".$_POST['aqty']." 出库ID：".$id);
+						$samplen=(object)array();
+						$samplen->inventry=$sample->inventry - $_POST['aqty'];
+						if(common::createChanges($sample, $samplen))
+						{
+							$this->action->logHistory($actionID,common::createChanges($sample, $samplen));
+						}
+					}
+				}
+				//die(js::locate($this->inlink('out'),'parent'));
+				//echo "<script type='text/javascript'>history.go(-1);parent.location.reload();</script>";
+				if(strpos(strtolower($_POST['rtype']),demo)!==false)die(js::locate($this->inlink('demo'),'parent'));
+				if(strpos(strtolower($_POST['rtype']),demo)===false)die(js::locate($this->inlink('out'),'parent'));
+			}
+		}
+		$this->view->out=$out;
+		$this->view->actions=$this->action->getList('sampleout',$id);
+		$this->view->position[]="详细编辑";
+		$this->display();
+	}
+	function shenhe()
+	{
+		$id=$this->dao->update('zt_out')->set('approve')->eq(2)->where('id')->eq($_POST['id'])->exec();
+		$old=(object)array();
+		$new=(object)array();
+		$old->approve=1;
+		if($id)
+		{
+	      $new->approve=2;
+		  $actionID=$this->action->create("sampleout",intval($_POST['id']),'申请审核');	
+		  if(common::createChanges($old, $new))
+		  {
+				$this->action->logHistory($actionID,common::createChanges($old, $new));
+		  }
+		  echo "1";
+		}
+	}
+	public  function mailsample()
+	{
+		$outs=$this->dao->select("*")->from('zt_out')
+									 ->where('createdate')->like(date("Y-m-d")."%")
+									 //->andWhere('createdate')->eq("2016-04-06")
+									 ->andWhere('close')->eq('wait')
+									 ->andWhere('approve')->eq("1")
+									 ->fetchAll();
+		$str="<table cellspacing='0' border='1'><tr><td>申请时间</td><td>申请人</td><td>申请数量</td><td>申请产品</td><td>申请费用</td><td>代理商</td><td>终端</td><td>价格</td></tr>";
+		foreach($outs as $v)
+		{
+			$str.="<tr><td>$v->rdate</td><td>$v->person</td><td>$v->qty</td><td>$v->partn</td><td>$v->revtype</td><td>$v->distributor</td><td>$v->endname</td><td>$v->price</td></tr>";
+		}
+		$str.="</table>";
+		if($outs)$this->loadModel('mail')->send("lynn",date("Y-m-d").'样品申请审核(审核结果请邮件给黄莉)',$str,'admin,huangli',true);
+		//if($outs)$this->loadModel('mail')->send("lynn","2016-04-06".'样品申请审核(审核结果请邮件给黄莉)',$str,'admin,huangli',true);
+	}
+	public function maildemo()
+	{
+		if(date("Y-m-d H:i:s") <= date("Y-m-d")." 14:01:00")
+		{
+			$start=date("Y-m-d")." 00:00:01";
+			$end=date("Y-m-d")." 14:00:00";
+		}
+		if(date("Y-m-d H:i:s") > date("Y-m-d")." 14:01:00")
+		{
+			$start=date("Y-m-d")." 14:00:01";
+			$end=date("Y-m-d")." 23:59:59";
+		}
+		//$start="2016-05-30 00:00:01";
+		//$end="2016-05-30 14:00:00";
+		$outs=$this->dao->select("*")->from('zt_out')
+									 ->where('createdate')->ge($start)
+									 ->andWhere('createdate')->le($end)
+									 ->andWhere('close')->eq('wait')
+									 ->andWhere('rtype')->like("%demo%")
+									 ->fetchAll();
+		
+		$str="<table cellspacing='0' border='1'><tr><td>申请时间</td><td>申请人</td><td>申请数量</td><td>Request Type</td><td>申请产品</td><td>说明</td><td>代理商</td><td>终端</td><td>Stage</td><td>Package</td></tr>";
+		foreach($outs as $v)
+		{
+			$str.="<tr><td>$v->rdate</td><td>$v->person</td><td>$v->qty</td><td>$v->rtype</td><td>$v->partn</td><td>$v->remark</td><td>$v->distributor</td><td>$v->endname</td><td>$v->stage</td><td>$v->package</td></tr>";
+		}
+		$str.="</table>";
+		if($outs){$this->loadModel('mail')->send("aesystem,houshaohai,liaojianfeng,weihuiyou,xianteam,xiamenteam,chenfuyong,louhanglei",date("Y-m-d")."当天".date("H:i:s")."前的Demo产品申请",$str,'admin,huangli',true);}
+		//if($outs){$this->loadModel('mail')->send("opp",date("Y-m-d")."当天".date("H:i:s")."前的Demo产品申请",$str,'admin',true);}
+		//if($outs){$this->loadModel('mail')->send("houshaohai,liaojianfeng,weihuiyou,xianteam,xiamenteam,chenfuyong,louhanglei","2016-04-11"."当天".'全部'."的Demo产品申请",$str,'admin,huangli',true);}
+		
+	}
+	public function batchuhuo()
+	{
+		header("content-type:text/html;charset=utf8");
+		$outids=$this->post->sampleid;
+		$outids=explode(",",$outids);
+		$outids=array_unique($outids);
+		unset($outids[0]);
+		if(!empty($_POST['id']))
+		{
+			$shiporder="";
+			foreach($_POST['id'] as $k=>$v)
+			{
+				$data=array();
+				if(!isset($_POST['mid'][$k]))continue;
+				$id=intval($_POST['mid'][$k]);
+				$type=str_replace($id,"",$_POST['mid'][$k]);
+				if($type=='mp')
+				{
+					$mp=$this->mp->getmpbyid($id);
+					if($mp->qty<$_POST['aqty'][$k])continue;
+					if(empty($_POST['shiporder'][$k]))continue;
+					if($_POST['shiporder'][$k]=='同上' and !empty($shiporder))
+					{
+						$_POST['shiporder'][$k]=$shiporder;
+					}
+					else 
+					{
+						if($_POST['shiporder'][$k]!='同上'){$shiporder=$_POST['shiporder'][$k];}
+					}
+					$data['person']=$_POST['person'][$k];$data['rdate']=$_POST['rdate'][$k];$data['remark']=$_POST['remark'][$k];$data['rtype']=$_POST['rtype'][$k];$data['partn']=$_POST['partn'][$k];$data['endname']=$_POST['endname'][$k];
+					$data['distributor']=$_POST['distributor'][$k];$data['projectname']=$_POST['projectname'][$k];$data['stage']=$_POST['stage'][$k];$data['qty']=$_POST['qty'][$k];$data['aqty']=$_POST['aqty'][$k];$data['price']=$_POST['price'][$k];
+					$data['rev']=$_POST['aqty'][$k] * $_POST['price'][$k];$data['shiporder']=$_POST['shiporder'][$k];$data['shipdate']=$_POST['shipdate'][$k];$data['area']=$_POST['area'][$k];$data['revtype']=$_POST['revtype'][$k];$data['mid']=$id;
+					$data['type']=1;$data['close']='done';
+					$sampleout=$this->sampleout->getbyid($v);
+					if(!$sampleout)continue;
+					$this->dao->update('zt_out')->data($data)->where("id")->eq($v)->exec();
+					if(!dao::isError())
+					{
+						$actionID=$this->action->create('sampleout',$v,"完成出货");
+						if(common::createChanges($sampleout, $data))
+						{
+							$this->action->logHistory($actionID,common::createChanges($sampleout, $data));
+						}
+					}
+					$this->dao->update('zt_mp')->set('qty')->eq($mp->qty-$_POST['aqty'][$k])->where('id')->eq($id)->exec();
+					$old=(object)array();
+					$new=(object)array();
+					$old->qty=$mp->qty;
+					$new->qty=$mp->qty - $_POST['aqty'][$k];
+					$actionID=$this->action->create("mpbasic",$id,"出库:".$_POST['aqty'][$k]." 出库ID：".$v);
+					if(common::createChanges($old, $new))
+					{
+						$this->action->logHistory($actionID,common::createChanges($old, $new));
+					}
+				}
+				if($type=='sample')
+				{
+					$sample=$this->sample->getsamplebyid($id);
+					if($sample->inventry<$_POST['aqty'][$k])continue;
+					if(empty($_POST['shiporder'][$k]))continue;
+					if($_POST['shiporder'][$k]=='同上' and !empty($shiporder))
+					{
+						$_POST['shiporder'][$k]=$shiporder;
+					}
+					else 
+					{
+						if($_POST['shiporder'][$k]!='同上'){$shiporder=$_POST['shiporder'][$k];}
+					}
+					$data['person']=$_POST['person'][$k];$data['rdate']=$_POST['rdate'][$k];$data['remark']=$_POST['remark'][$k];$data['rtype']=$_POST['rtype'][$k];$data['partn']=$_POST['partn'][$k];$data['endname']=$_POST['endname'][$k];
+					$data['distributor']=$_POST['distributor'][$k];$data['projectname']=$_POST['projectname'][$k];$data['stage']=$_POST['stage'][$k];$data['qty']=$_POST['qty'][$k];$data['aqty']=$_POST['aqty'][$k];$data['price']=$_POST['price'][$k];
+					$data['rev']=$_POST['aqty'][$k] * $_POST['price'][$k];$data['shiporder']=$_POST['shiporder'][$k];$data['shipdate']=$_POST['shipdate'][$k];$data['area']=$_POST['area'][$k];$data['revtype']=$_POST['revtype'][$k];$data['mid']=$id;
+					$data['type']=2;$data['close']='done';
+					$sampleout=$this->sampleout->getbyid($v);
+					if(!$sampleout)continue;
+					$this->dao->update('zt_out')->data($data)->where("id")->eq($v)->exec();
+					if(!dao::isError())
+					{
+						$actionID=$this->action->create('sampleout',$v,"完成出货");
+						if(common::createChanges($sampleout, $data))
+						{
+							$this->action->logHistory($actionID,common::createChanges($sampleout, $data));
+						}
+					}
+					$this->dao->update('zt_sample')->set('inventry')->eq($sample->inventry-$_POST['aqty'][$k])->where('id')->eq($id)->exec();
+					$old=(object)array();
+					$new=(object)array();
+					$old->inventry=$sample->inventry;
+					$new->inventry=$sample->inventry - $_POST['aqty'][$k];
+					$actionID=$this->action->create("sample",$id,"出库:".$_POST['aqty'][$k]." 出库ID：".$v);
+					if(common::createChanges($old, $new))
+					{
+						$this->action->logHistory($actionID,common::createChanges($old, $new));
+					}
+				}
+			}
+			echo js::alert("Success");
+			die(js::locate($this->inlink('out'),'parent'));
+			
+		}
+		$this->view->outs=$this->sampleout->batchuhuo($outids);
+		$this->display();
+	}
+	public function batchuhuoofdemo()
+	{
+		header("content-type:text/html;charset=utf8");
+		$outids=$this->post->sampleid;
+		$outids=explode(",",$outids);
+		$outids=array_unique($outids);
+		unset($outids[0]);
+		if(!empty($_POST['id']))
+		{
+			$shiporder="";
+			foreach($_POST['id'] as $k=>$v)
+			{
+					$data=array();
+					if(empty($_POST['shiporder'][$k]))continue;
+					if($_POST['shiporder'][$k]=='同上' and !empty($shiporder))
+					{
+						$_POST['shiporder'][$k]=$shiporder;
+					}
+					else 
+					{
+						if($_POST['shiporder'][$k]!='同上'){$shiporder=$_POST['shiporder'][$k];}
+					}
+					$data['person']=$_POST['person'][$k];$data['rdate']=$_POST['rdate'][$k];$data['remark']=$_POST['remark'][$k];$data['rtype']=$_POST['rtype'][$k];$data['partn']=$_POST['partn'][$k];$data['endname']=$_POST['endname'][$k];
+					$data['distributor']=$_POST['distributor'][$k];$data['projectname']=$_POST['projectname'][$k];$data['stage']=$_POST['stage'][$k];$data['qty']=$_POST['qty'][$k];$data['aqty']=$_POST['aqty'][$k];$data['price']=$_POST['price'][$k];
+					$data['rev']=$_POST['aqty'][$k] * $_POST['price'][$k];$data['shiporder']=$_POST['shiporder'][$k];$data['shipdate']=$_POST['shipdate'][$k];$data['area']=$_POST['area'][$k];$data['revtype']=$_POST['revtype'][$k];$data['mid']=0;
+					$data['type']=3;$data['close']='done';
+					$sampleout=$this->sampleout->getbyid($v);
+					$this->dao->update('zt_out')->data($data)->where("id")->eq($v)->exec();
+					if(!dao::isError())
+					{
+						$actionID=$this->action->create('sampleout',$v,"完成出货");
+						if(common::createChanges($sampleout, $data))
+						{
+							$this->action->logHistory($actionID,common::createChanges($sampleout, $data));
+						}
+					}
+			}
+			echo js::alert("Success");
+			die(js::locate($this->inlink('demo'),'parent'));
+			
+		}
+		$this->view->outs=$this->sampleout->batchuhuoofdemo($outids);
+		$this->display();
+	} 
+	
+}

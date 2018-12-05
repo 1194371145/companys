@@ -1,0 +1,71 @@
+<?php include "../../common/view/header.html.php";?>
+<?php include '../../common/view/treeview.html.php';?>
+<?php include '../../common/view/colorize.html.php';?>
+<div id='featurebar'>
+<div class='f-right'>
+<?php echo html::a($this->createLink('project','exportdatasample',"type=re"),'Export Data','');?>
+&nbsp;
+<?php echo html::a($this->createLink('project','exportdatasample',"type=All"),'Export All Data','');?>
+</div>
+</div>
+<script language='Javascript'>
+var browseType = '<?php echo $browseType;?>';
+</script>
+<div id='querybox'><?php echo $searchForm;?></div>
+<table class='table-1 fixed colored tablesorter datatable' style="overflow:auto;">
+<thead>
+<tr class='colhead'><?php $vars="type=$type&param=$param&orderBy=%s";?>
+<th style="width:70px;"><font color='red'><b>View</b></font></th>
+<th><?php common::printOrderLink('person', $orderBy, $vars, "Name");?></th>
+<th><?php common::printOrderLink('rdate', $orderBy, $vars, "RequestDate");?></th>
+<th><?php common::printOrderLink('rf', $orderBy, $vars, "RF")?></th>
+<th><?php common::printOrderLink('rtype', $orderBy, $vars, "RequstType")?></th>
+<th><?php common::printOrderLink('partn', $orderBy, $vars, "partnumber")?></th>
+<th><?php common::printOrderLink('package', $orderBy, $vars, "package")?></th>
+<th><?php common::printOrderLink('endname', $orderBy, $vars, "EndName")?></th>
+<th><?php common::printOrderLink('distributor', $orderBy, $vars, "DisName")?></th>
+<th><?php common::printOrderLink('qty', $orderBy, $vars, "Quantity")?></th>
+<th><?php common::printOrderLink('aqty', $orderBy, $vars, "Ship qty")?></th>
+<th><?php common::printOrderLink('price', $orderBy, $vars, "price")?></th>
+<th><?php common::printOrderLink('rev', $orderBy, $vars, "Rev")?></th>
+<th><?php common::printOrderLink('shiporder', $orderBy, $vars, "ShipOrder")?></th>
+<th><?php common::printOrderLink('shipdate', $orderBy, $vars, "ShipDate")?></th>
+<th><?php common::printOrderLink('close', $orderBy, $vars, "Status")?></th>
+<th>Remark</th>
+</tr>
+</thead>
+<?php 
+$account=$this->app->user->account;
+foreach($samplelist as $v)
+{
+?>
+<tr style="text-align:center;">
+<td><?php echo html::a($this->createLink('project','getsample',"id={$v['id']}"),"<font color='red'><b>View</b></font>");?>
+&nbsp;
+		<?php if((strpos($v['person'],$account)!==false or strpos($v['openby'],$account)!==false)  and $v['close']=='wait'){ common::printLink("project","deletesample","id={$v['id']}","Delete",'hiddenwin');}?>
+</td>
+		<td><?php echo $v['person'];?></td>
+		<td><?php echo $v['rdate'];?></td>
+		<td><?php echo $v['rf'];?></td>
+		<td><?php echo $v['rtype'];?></td>
+		<td><?php echo $v['partn'];?></td>
+		<td><?php echo $v['package']?></td>
+		<td><?php echo $v['endname'];?></td>
+		<td><?php echo $v['distributor'];?></td>
+		<td><?php echo $v['qty'];?></td>
+		<td><?php echo $v['aqty']?></td>
+		<td><?php echo $v['price'];?></td>
+		<td><?php echo $v['rev'];?></td>
+		<td><?php echo $v['shiporder'];?></td>
+		<td><?php echo $v['shipdate'];?></td>
+		<td><?php 
+		if($v['close']=='wait'){echo "<b style='color:red;'>Not shipped</td>";}
+		if($v['close']=='done'){echo "<b style='color:green;'>shipped</b>";}
+		?></td>
+		<td title="<?php echo $v['remark'];?>"><?php echo $v['remark'];?></td>
+</tr>
+<?php 
+}
+?>
+</table>
+<?php include "../../common/view/footer.html.php";?>

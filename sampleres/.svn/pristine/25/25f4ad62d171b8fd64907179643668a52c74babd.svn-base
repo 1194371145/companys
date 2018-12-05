@@ -1,0 +1,20 @@
+<?php include "../../common/view/header.lite.html.php";?>
+<div class='container mw-500px'>
+  <form class='form-condensed' method='post' target='' enctype="multipart/form-data">
+    <table align='center' class='table table-form w-p100'> 
+      <tr>
+        <th class='rowhead w-80px'><?php echo "文件";?></th>
+        <td><?php echo html::file('file',"class='form-control chosen'")?></td>
+      </tr>
+      <tr>
+      <th class='rowhead w-80px'><?php echo "区域";?></th>
+       <td><?php echo html::select('area',array("NC"=>"NC","SC"=>"SC","KR"=>"KR","TW"=>"TW","US"=>"US"),"","class='text-3'");?></td>
+      </tr> 
+      <tr>
+      <th class='rowhead w-80px'></th>
+        <td><?php echo html::submitButton('', '', 'btn-primary');?><b style="color:red;">批量导入模板已经更新需要付费的请注明！！！    partnumber or Request Type不能为空否则将视为无效记录</b></td>
+      </tr> 
+    </table>
+  </form>  
+</div>
+<?php include "../../common/view/footer.lite.html.php";?>

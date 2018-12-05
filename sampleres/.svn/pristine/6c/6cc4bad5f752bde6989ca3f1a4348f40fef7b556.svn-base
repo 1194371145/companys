@@ -1,0 +1,225 @@
+<?php
+/**
+ * The model file of admin module of ZenTaoPMS.
+ *
+ * @copyright   Copyright 2009-2013 青岛易软天创网络科技有限公司 (QingDao Nature Easy Soft Network Technology Co,LTD www.cnezsoft.com)
+ * @license     LGPL (http://www.gnu.org/licenses/lgpl.html)
+ * @author      Chunsheng Wang <chunsheng@cnezsoft.com>
+ * @package     admin
+ * @version     $Id: model.php 5148 2013-07-16 01:31:08Z chencongzhi520@gmail.com $
+ * @link        http://www.zentao.net
+ */
+?>
+<?php
+class adminModel extends model
+{
+    /**
+     * The api agent(use snoopy).
+     * 
+     * @var object   
+     * @access public
+     */
+    public $agent;
+
+    /**
+     * The api root.
+     * 
+     * @var string
+     * @access public
+     */
+    public $apiRoot;
+
+    /**
+     * The construct function.
+     * 
+     * @access public
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->setAgent();
+    }
+
+    /**
+     * Set the api agent.
+     * 
+     * @access public
+     * @return void
+     */
+    public function setAgent()
+    {
+        $this->agent = $this->app->loadClass('snoopy');
+    }
+
+    /**
+     * Post data form  API 
+     * 
+     * @param  string $url 
+     * @param  string $formvars 
+     * @access public
+     * @return void
+     */
+    public function postAPI($url, $formvars = "")
+    {
+		$this->agent->cookies['lang'] = $this->cookie->lang;
+    	$this->agent->submit($url, $formvars);
+		return $this->agent->results;
+    }
+
+    /**
+     * Get status of zentaopms.
+     * 
+     * @access public
+     * @return void
+     */
+    public function getStatOfPMS()
+    {
+        $sql = "SHOW TABLE STATUS";
+        $tables = $this->dbh->query($sql)->fetchALL();
+    }
+
+    /**
+     * Get state of company.
+     * 
+     * @param  int    $companyID 
+     * @access public
+     * @return void
+     */
+    public function getStatOfCompany($companyID)
+    {
+    }
+
+    /**
+     * Get system info.
+     * 
+     * @access public
+     * @return void
+     */
+    public function getStatOfSys()
+    {
+
+    }
+
+	/**
+	 * Register zentao by API. 
+	 * 
+	 * @access public
+	 * @return void
+	 */
+	public function registerByAPI()
+	{
+		$apiURL = 'http://www.zentao.net/user-register.json';
+		return $this->postAPI($apiURL, $_POST);
+	}
+
+	/**
+	 * Login zentao by API.
+	 * 
+	 * @access public
+	 * @return void
+	 */
+	public function bindByAPI()
+	{
+		$apiURL = 'http://www.zentao.net/user-login.json';
+		return $this->postAPI($apiURL, $_POST);
+	}
+
+	/**
+	 * Get register information. 
+	 * 
+	 * @access public
+	 * @return object
+	 */
+	public function getRegisterInfo()
+    {
+        $register = new stdclass();
+		$register->company = $this->app->company->name;
+		$register->email   = $this->app->user->email;
+		return $register;
+	}
+    /**
+     * 对象转数组
+     *
+     * @param $object
+     * @return array
+     */
+    static function object2Array($object)
+    {
+        $result = array();
+        if (!$object) {return $result;}
+        $object = is_object($object) ? get_object_vars($object) : $object;
+        foreach ($object as $key => $val) {
+            $val = (is_object($val) || is_array($val)) ? self::object2Array($val) : $val;
+            $result[$key] = $val;
+        }
+        return $result;
+    }
+    /**
+     * 批量更新函数
+     * @param $data array 待更新的数据，二维数组格式
+     * @param array $params array 值相同的条件，键值对应的一维数组
+     * @param string $field string 值不同的条件，默认为id
+     * @return bool|string
+     */
+
+    public function batchUpdate($data, $field, $params = [])
+    {
+        if (!is_array($data) || !$field || !is_array($params)) {
+            return false;
+        }
+        $updates =$this->parseUpdate($data, $field);
+        $where = $this->parseParams($params);
+
+//        print_r($updates);die;
+        // 获取所有键名为$field列的值，值两边加上单引号，保存在$fields数组中
+        // array_column()函数需要PHP5.5.0+，如果小于这个版本，可以自己实现，
+        // 参考地址：http://php.net/manual/zh/function.array-column.php#118831
+        $fields = array_column($data, $field);
+        $fields = implode(',', array_map(function($value) {
+            return "'".$value."'";
+        }, $fields));
+        $sql = sprintf("UPDATE `%s` SET %s WHERE `%s` IN (%s) %s", 'zt_out', $updates, $field, $fields, $where);
+          return $sql;
+
+    }
+
+
+
+    /**
+     * 将二维数组转换成CASE WHEN THEN的批量更新条件
+     * @param $data array 二维数组
+     * @param $field string 列名
+     * @return string sql语句
+     */
+
+    public function parseUpdate($data, $field)
+    {
+        $sql = '';
+        $keys = array_keys(current($data));
+        foreach ($keys as $column) {
+            $sql .= sprintf("`%s` = CASE `%s` \n", $column, $field);
+            foreach ($data as $line) {
+                $sql .= sprintf("WHEN '%s' THEN '%s' \n", $line[$field], $line[$column]);
+            }
+            $sql .= "END,";
+        }
+        return rtrim($sql, ',');
+    }
+
+
+
+    /**
+     * 解析where条件
+     * @param $params
+     * @return array|string
+     */
+    public function parseParams($params)
+    {
+        $where = [];
+        foreach ($params as $key => $value) {
+            $where[] = sprintf("`%s` = '%s'", $key, $value);
+        }
+        return $where ? ' AND ' . implode(' AND ', $where) : '';
+    }
+}

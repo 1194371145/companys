@@ -1,0 +1,128 @@
+<?php include "../../common/view/header.html.php";?>
+<?php include '../../common/view/kindeditor.html.php';?>
+<?php include '../../common/view/datepicker.html.php';include '../../common/view/treeview.html.php';?>
+<?php include "../../common/view/autocomplete.html.php";?>
+<style type="text/css">
+.table-1 th{width:15%;text-align:right;padding-right:10px;}
+</style>
+<form action="" method='post' target="hiddenwin" id='confirmsubmit'>
+<table class="table-1">
+<caption style="padding-left:15%;font-size:15px;">Sample Application Form</caption>
+<tr>	
+	<th>Name:</th>
+	<td><?php echo html::input('person',$app->user->account,"class='text-3'");?></td>
+</tr>
+<tr>	
+	<th>RF#:</th>
+	<td><?php echo html::input('rf',date("YmdHis"),"class='text-3'");?></td>
+</tr>
+<tr>		
+	<th>Request Date:</th>
+	<td><?php echo html::input('rdate',date("Y-m-d"),"class='text-3 date'");?></td>
+</tr>
+<tr>		
+	<th>Request Type:</th>
+	<td><?php echo html::select('rtype',array("sample"=>"sample","demo"=>"demo"),"sample","class='text-3'");?></td>
+</tr>
+<tr>		
+	<th>Part Number:</th>
+	<td><?php echo html::input('partn',"","class='text-3'");?></td>
+</tr>
+<tr>		
+	<th>Package Type:</th>
+	<td><?php echo html::input('package',"","class='text-3'");?></td>
+</tr>
+<tr>	
+	<th>Mode of payment:</th>
+	<td><?php echo html::select('revtype',array('不需付费'=>"Free","需要付费"=>"Pay"),"","class='text-3' onchange='qingkong();'");?><b style='color:red;display:none;'></b></td>
+</tr>
+<tr>		
+	<th>End Customer:</th>
+	<td><?php echo html::input('endname',"","class='text-3'");?></td>
+</tr>
+<tr>	
+	<th>Distributor:</th>
+	<td><?php echo html::select('distributor',$dis,"","class='text-3'");?><span id='span'></span><b style='color:red;'>If the samples are paid , must select a distributor . </b></td>
+</tr>
+<tr>	
+	<th>Price:</th>
+	<td><?php echo html::input('price',0,"class='text-3'");?></td>
+</tr>
+<tr>	
+	<th>Project Name:</th>
+	<td><?php echo html::input('projectname',"","class='text-3'");?></td>
+</tr>
+<tr>	
+	<th>Quantity:</th>
+	<td><?php echo html::input('qty',0,"class='text-3'");?></td>
+</tr>
+<tr>
+<tr>	
+	<th>Stage(1-7#):</th>
+	<td><?php echo html::input('stage',"","class='text-3'");?></td>
+</tr>
+<tr>	
+	<th>Area:</th>
+	<td><?php echo html::select('area',array("NC"=>"NC","SC"=>"SC","KR"=>"KR","TW"=>"TW","US"=>"US","Japan"=>"Japan","India"=>"India"),"","class='text-3'");?></td>
+</tr>
+
+<tr>	
+	<th>Remark:</th>
+	<td><?php echo html::textarea('remark',$out->remark,"class='area-1' rows=6");?>
+	<?php echo html::hidden('createdate',date("Y-m-d H:i:s"));?>
+   <?php echo html::hidden('openby',$this->app->user->account);?>
+	</td>
+</tr>
+<tr><td></td>
+	<td>
+	<?php echo html::commonButton("Save","onclick='confirmsubmit();'");?>
+	</td>
+</tr>
+</table>
+</form>
+<script type="text/javascript">
+var autoList = "<?php echo join(',', $autolist);?>".split(',');
+$(function(){
+    $("#partn").autocomplete(autoList,{multiple: false,mustMatch: true});
+});
+function checkdis()
+{
+	if($("#revtype").val()=='需要付费')
+		{
+	var disv=$("#distributor").val();
+	$.ajax({
+		url:"<?php echo $this->createLink("project",'checksampledis');?>" +"&dis="+disv,
+		type:"post",
+		data:"dis="+disv,
+		dataType:"html",
+		success:function(e){
+		if(e)
+		{
+			//alert(e);
+			$("#span").text(e);
+		}
+		else
+		{
+			//alert(e);
+			$("#span").html("<b style='margin-right:10px;font-size:15px;'>not match</b>");
+			$("#distributor").val("");
+		}	
+		}
+		});
+}
+	else{$("#span").html("");}
+	
+}
+function qingkong()
+{
+	$("#distributor").val("");
+}
+function confirmsubmit()
+{
+	if(confirm("Are you sure to submit it? You will not be able to edit after submit."))
+	{
+		$("#confirmsubmit").submit();
+	}
+}
+</script>
+<?php include "../../common/view/footer.html.php";?>

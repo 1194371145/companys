@@ -1,0 +1,17 @@
+<?php include '../../common/view/header.html.php';?>
+
+<div class='container mw-500px'>
+ <div id='titlebar'>
+    <div class='heading'><i class='icon-key'></i> <?php echo $lang->sample->importbasicdata;?></div>
+  </div>
+  <form class='form-condensed' method='post' target='hiddenwin'  enctype='multipart/form-data'>
+    <table align='center' class='table table-form w-p100'> 
+      <tr>
+        <th class='rowhead w-80px'><?php echo $lang->sample->file;?></th>
+        <td><?php echo html::file('file',"class='form-control chosen'")?></td>
+        <td><?php echo html::submitButton('', '', 'btn-primary');?></td>
+      </tr>  
+    </table>
+  </form>  
+</div>
+<?php include '../../common/view/footer.html.php';?>

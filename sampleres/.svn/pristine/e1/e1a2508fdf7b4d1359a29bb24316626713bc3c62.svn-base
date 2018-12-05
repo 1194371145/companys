@@ -1,0 +1,219 @@
+<?php
+/* Fields. */
+$lang->project->common        = 'RFQ';
+$lang->project->id            = 'ID';
+$lang->project->company       = 'Company';
+//add insidesales
+$lang->project->rfqcode = "RFQ#";
+$lang->project->date = "DATE";
+$lang->project->status = "Status";
+$lang->project->end_cus_code = "End Customer Code";
+$lang->project->partnumber = "Part NO.";
+$lang->project->end_customer = "End Customer";
+$lang->project->distributor = "Distributor";
+$lang->project->valid_period = "Valid Period";
+$lang->project->price_cus = "Resell Price";
+$lang->project->price_dis = "Dist. Price";
+$lang->project->usage = "Useage per Year (kpcs)";
+$lang->project->commission = "Commission";
+$lang->project->reason = "Reason<br/>(add competition analysis)";
+$lang->project->requestby = "Request by";
+$lang->project->region = "Region";
+$lang->project->sales = "Sales";
+$lang->project->fae = "Fae";
+$lang->project->purpose = "purpose";
+$lang->project->endapp = "End APP.";
+$lang->project->endapp = "endapp";
+$lang->project->oldrfq = "Old RFQ.";
+
+//region array
+$lang->project->regions->no = "Select";
+$lang->project->regions->southchina = "South China";
+$lang->project->regions->northchina = "North China";
+$lang->project->regions->taiwan = "Taiwan";
+$lang->project->regions->strategy = "Strategy";
+$lang->project->regions->us = "USA";
+$lang->project->regions->nxp = "nxp";
+$lang->project->regions->europe = "Europe";
+$lang->project->regions->korea = "Korea";
+$lang->project->regions->japan = "Japan";
+$lang->project->regions->india = "India";
+$lang->project->regions->asean = "Southeast Asia";
+$lang->project->regions->asia = "Asia Other";
+
+
+//end product category
+$lang->project->endcat->A = "A-NB/PC";
+$lang->project->endcat->B = "B-TV/Monitor";
+$lang->project->endcat->C = "C-STB";
+$lang->project->endcat->D = "D-NC:XDSL,WiFi,3G/LTE Datacard, xPON, AP router,Cable Moderm";
+$lang->project->endcat->E = "E-LED lighting";
+$lang->project->endcat->F = "F-MIDs/Pad";
+////$lang->project->endcat->G = "G-Media(Media player, GPS, MP3/MP4)";
+$lang->project->endcat->H = "H-Power bank/Charger";
+$lang->project->endcat->J = "J-DVD";
+$lang->project->endcat->K = "K-Surveillance";
+$lang->project->endcat->L = "L-Portable medical devices(like)";
+$lang->project->endcat->M = "M-Automotive electronics";
+$lang->project->endcat->N = "N-Portable/POS";
+$lang->project->endcat->P = "P-IPC(Industrial PC)/Server";
+$lang->project->endcat->Q = "Q-Electrical/meters";
+$lang->project->endcat->R = "R-Storage(UDisk, Xhardisc, SSD, NAS)";
+$lang->project->endcat->S = "S-Cell Phones";
+////$lang->project->endcat->T = "T-Wafer";
+$lang->project->endcat->U = "U-Audio equipment/speaker/amplifier";
+$lang->project->endcat->V = "V-Household appliance(White goods)";
+$lang->project->endcat->W = "W-AC/DC";
+$lang->project->endcat->Z = "Z-Others(Wafer/Toys/LED sign display/POS/Wireless Mouse/Keyboard)";
+
+
+
+$lang->team->account    = 'Account';
+$lang->team->role       = 'Role';
+$lang->team->join       = 'Join date';
+$lang->team->hours      = 'Hour/Day';
+$lang->team->days       = 'Workdays';
+$lang->team->totalHours = 'Total';
+
+
+
+
+$lang->project->aclList['private'] = 'Private(Only team members can visit)';
+$lang->project->aclList['open']    = 'Default(Having the priviledge of project module can visit this project)';
+$lang->project->aclList['custom']  = 'Whitelist(Team members and who belongs to the whitelist grups can visit)';
+
+/* Methods.*/
+$lang->project->index           = "Index";
+$lang->project->ajaxgetpartno   = "Ajax get part no";
+$lang->project->ajaxGetDisCode   = "Ajax get Dis code";
+$lang->project->ajaxGetEndCode   = "Ajax get End Code";
+$lang->project->parttips   = "part tips";
+$lang->project->customtips   = "custom tips";
+
+$lang->project->export   = "Export RFQ";
+$lang->project->task            = 'Task';
+$lang->project->groupTask       = 'View task by group';
+$lang->project->story           = 'Story';
+$lang->project->bug             = 'Bug';
+$lang->project->dynamic         = 'Dynamic';
+$lang->project->build           = 'Build';
+$lang->project->testtask        = 'Testtask';
+$lang->project->burn            = 'Burndown chart';
+$lang->project->computeBurn     = 'Update burndown';
+$lang->project->burnData        = 'Burndown data';
+$lang->project->team            = 'Team';
+$lang->project->doc             = 'Doc';
+$lang->project->getApprovePdf   = 'Download PDF File';
+$lang->project->view            = "Info";
+$lang->project->create          = "Add";
+$lang->project->delete          = "Delete";
+$lang->project->browse          = "Browse";
+$lang->project->edit            = "Edit";
+$lang->project->manageMembers   = 'Manage team members';
+//$lang->project->unlinkMember    = 'Remove member';
+$lang->project->createout   = 'Sample Application';
+$lang->project->getsamplelist='Samplelist';
+$lang->project->sampletmp='sampletmp';
+$lang->project->importout='Importsample';
+$lang->project->getsample='getsample';
+$lang->project->deletesample='deletesample';
+$lang->project->exportdatasample='exportdatasample';
+$lang->project->editdemo='editdemo';
+$lang->project->demolist='demolist';
+$lang->project->exportdatademo='exportdatademo';
+
+$lang->project->ajaxGetProducts = "API: get project's products";
+/*add wgc project methods */
+$lang->project->rfqlist      = "RFQ. List";
+$lang->project->holdrfq      = "Hold";
+$lang->project->importPro      = "Import Project";
+$lang->project->upnote      = "Edit Visit Note";
+$lang->project->order      = "Order";
+$lang->project->cancel    = "Cancel";
+
+$lang->project->SBOrfqimport    = "SBOrfqimport";
+
+
+/* Browse. */
+$lang->project->allTasks             = 'All';
+$lang->project->assignedToMe         = 'To me';
+$lang->project->finishedByMe         = 'My done';
+$lang->project->statusWait           = 'Pending';
+$lang->project->statusDoing          = 'Progressing';
+$lang->project->statusUndone         = 'Not final';
+$lang->project->statusDone           = 'Done';
+$lang->project->statusClosed         = 'Closed';
+$lang->project->delayed              = 'Delayed';
+$lang->project->groups['']           = 'Group View';
+$lang->project->groups['story']      = 'Group by story';
+$lang->project->groups['status']     = 'Group by status';
+$lang->project->groups['pri']        = 'Group by priority';
+$lang->project->groups['openedby']   = 'Group by openedBy';
+$lang->project->groups['assignedTo'] = 'Group by assignedTo';
+$lang->project->groups['finishedby'] = 'Group by finishedBy';
+$lang->project->groups['closedby']   = 'Group by closedBy';
+$lang->project->groups['estimate']   = 'Group by estimate';
+$lang->project->groups['consumed']   = 'Group by consumed';
+$lang->project->groups['left']       = 'Group by left';
+$lang->project->groups['type']       = 'Group by type';
+$lang->project->groups['deadline']   = 'Group by deadline';
+$lang->project->listTaskNeedConfrim  = 'Story changed';
+$lang->project->byQuery              = 'Search';
+
+/* Browse tabs. */
+$lang->project->allProject      = 'All projects';
+$lang->project->aboveAllProduct = 'Above all products';
+$lang->project->aboveAllProject = 'Above all projects';
+
+/* Notcie. */
+$lang->project->selectProject   = "Select project";
+$lang->project->beginAndEnd     = 'Begin and end';
+$lang->project->lblStats        = 'Stats';
+$lang->project->stats           = 'Total work days is 『%s』, <br />Total estimate is『%s』days,<br />Total confused is『%s』days<br />Total left is『%s』days';
+$lang->project->oneLineStats    = "Project『%s』, code is『%s』, products is『%s』,begin from『%s』to 『%s』,total estimate『%s』hours,consumed『%s』hours,left『%s』hours.";
+$lang->project->taskSummary     = "Total RFQ Form shown: <strong>%s</strong> ";
+$lang->project->memberHours     = "%s has <strong>%s</strong> workhours, ";
+$lang->project->groupSummary    = "<strong>%s</strong> tasks in this group, wait:<strong>%s</strong>, doing:<strong>%s</strong>, estimate <strong>%s</strong>, consumed <strong>%s</strong>, left <strong>%s</strong> hours.";
+$lang->project->wbs             = "WBS";
+$lang->project->largeBurnChart  = 'View large';
+$lang->project->howToUpdateBurn = "<a href='%s' class='helplink'><i>How?</i></a>";
+$lang->project->whyNoStories    = "There no active stories to added to this project. Please check the linked product.";
+$lang->project->doneProjects    = 'Done';
+$lang->project->unDoneProjects  = 'Undone';
+
+/* Confirm. */
+$lang->project->confirmDelete         = 'Are you sure to delete project [%s]?';
+$lang->project->confirmUnlinkMember   = 'Are you sure to remove this user from this project?';
+$lang->project->confirmUnlinkStory    = 'Are you sure to remove the story from this project?';
+$lang->project->errorNoLinkedProducts = 'There is no linked products, go to the link page.';
+$lang->project->accessDenied          = 'Access to this project denied.';
+$lang->project->tips                  = 'Tips';
+$lang->project->afterInfo             = 'Successful and you can do:';
+$lang->project->setTeam               = 'Set team';
+$lang->project->linkStory             = 'Link story';
+$lang->project->createTask            = 'Create task';
+$lang->project->goback                = 'Go back（Automatically after 5 seconds）';
+
+
+
+$lang->project->stop        = "Stop";
+$lang->project->parents     = "Parent Project";
+
+
+/*region manager*/
+$lang->project->mgrgroup['CN'] = "10";
+$lang->project->mgrgroup['SCN'] = "10";
+$lang->project->mgrgroup['NCN'] = "36";
+$lang->project->mgrgroup['TW'] = "15";
+$lang->project->mgrgroup['KR'] = "16";
+$lang->project->mgrgroup['JP'] = "18";
+$lang->project->mgrgroup['US'] = "48";
+$lang->project->mgrgroup['EU'] = "22";
+$lang->project->mgrgroup['NXP'] = "44";
+$lang->project->mgrgroup['EU'] = "48";
+
+
+//$lang->project->chenwei = "frankie,nick,johnny,shiyong,henry,answer,sanny,frankzheng,jackson,harvey,vinson,davidtimm,jimmyjiang,victorma";
+$lang->project->chenwei = "frankie,nick,henry,davidtimm,lynn,michael";
+$lang->project->sample->specialpart=array("SY13103-G1"=>"SY13103-G1","SY13103-G11"=>"SY13103-G11","SY3103-D11"=>"SY3103-D11","SY3103-D2"=>"SY3103-D2","SY3103-D21"=>"SY3103-D21","SY3103-E2"=>"SY3103-E2","SY3103-E21"=>"SY3103-E21","SY3103-B1"=>"SY3103-B1","SY13077-G1"=>"SY13077-G1","SY3077-B2"=>"SY3077-B2","SY3077-C2"=>"SY3077-C2","SY3077-J1"=>"SY3077-J1","SY3077-J11"=>"SY3077-J11","SY3077-J13"=>"SY3077-J13","SY13086-G2"=>"SY13086-G2","SY3086-M1"=>"SY3086-M1","SY3086-M2"=>"SY3086-M2","SY3055-B2"=>"SY3055-B2","SY3055-B2"=>"SY3055-B2","SY3058-A2"=>"SY3058-A2","SY3058-B2"=>"SY3058-B2","SY13087-G4"=>"SY13087-G4","SY13061-G1"=>"SY13061-G1","SY13080-G01"=>"SY13080-G01","SY13080-G02"=>"SY13080-G02","SY13110-G0"=>"SY13110-G0");
+
