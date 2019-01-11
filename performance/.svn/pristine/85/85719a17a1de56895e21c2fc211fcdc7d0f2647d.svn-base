@@ -1,0 +1,36 @@
+<?php
+
+class survey extends control
+{
+
+    public function __construct($module = '', $method = '')
+    {
+        parent::__construct($module, $method);
+        $this->loadModel('user');
+        $this->loadModel('dept');
+        //$this->my->setMenu();
+    }
+    
+	public function surveylist()
+	{
+		$this->display();
+	}
+	public function createsurvey()
+	{
+		//var_dump($_POST);die;
+		//session赋值
+  session_start();
+  $_SESSION['one']=$_POST;
+  //$_SESSION['two']=value2;
+//session值的读取:
+  $one = $_SESSION['one'];//var_dump($one);die;
+  //session值的销毁
+  unset($_SESSION['one']);
+		$this->display();
+	}
+	public function thumbup()
+	{
+		$this->display();
+	}
+}
+?>

@@ -1,0 +1,113 @@
+<?php include '../../common/view/header.html.php';?>
+<?php include '../../common/view/datepicker.html.php';?>
+<?php include '../../common/view/kindeditor.html.php';?>
+<?php include '../../common/view/colorbox.html.php';?>
+<?php include "../../common/view/chosen.html.php";?>
+<style>
+.tt{ width:1000px; height:100px; border:2px; border-bottom:0px solid #000;border: none;outline: none;}
+.ts{ width:1170px; height:100px; border:2px; border-bottom:0px solid #000;border: none;outline: none;}
+.te{width:1050px;height:27px; border:2px; border-bottom:0px solid #000;border: none;outline: none;}
+.tp{ width:1000px; height:27px; border:2px; border-bottom:0px solid #000;border: none;outline: none;}
+.tps{ width:100%; height:25px;border:none;outline: none;text-align:center;}
+.input{ border: none;outline: none;width:100%; height:25px;text-align:center;}
+.input1{ border: none;outline: none;width:100%; height:25px;text-align:center;}
+.input2{ border: none;outline: none;width:79%; height:25px;text-align:left;}
+.input3{ border: none;outline: none;width:100%; height:25px;text-align:center;}
+.input4{ border: none;outline: none;width:100%; height:25px;text-align:center;}
+.input5{ border: none;outline: none;width:100%; height:25px;text-align:center;}
+.inputw{ border: none;outline: none;width:100%; height:25px;text-align:center;}
+.textarea1{ border:none;outline: none;width:100%; height:25px;padding-left:5px;}
+.textarea2{ border:none;outline: none;width:100%; height:25px;padding-left:5px;}
+.textarea3{ border:none;outline: none;width:100%; height:25px;padding-left:5px;}
+.textarea4{ border:none;outline: none;width:100%; height:25px;padding-left:5px;}
+table tr{border:1px solid ;}
+table td{border:black solid 1px;}
+table th{border:black solid 1px; padding-left:16.5px;padding-right:16.5px;}
+.styles{ background-color:#F2F2F2}
+</style>
+<form method='post' target='hiddenwin'>
+<div style="width:1300px;border:1px solid #000; margin:0 150px 0 150px; "text-align="center" >
+<table  style="width:1300px;border:1px solid #000;overflow:hidden;margin-left:-1px;margin-top:-1px" align="center" border-collapse="collapse" >
+<tr><td colspan="10" align="center"><font size="4"><?php echo $lang->performance->performance;?></font></td></tr>
+<tr><td colspan="8"></td><th><?php echo "Date";?></th><td><?php echo html::input('adddate',date("Y-m-d"),"class='input' readonly='readonly'");?></td></tr>
+<tr>
+<th><?php echo $lang->performance->Employee;?></th><td><?php echo html::select("staffcode",$names,"","class='input' onblur=getproandpack(this)");?></td>
+<th><?php echo $lang->performance->type;?></th><td width="150px">
+<?php echo html::select("type",$lang->performance->radios,"","class='input'");?></td>
+<th><?php echo $lang->performance->Department;?></th><td><?php echo html::input("department","","class='inputw'");?></td>
+<th><?php echo $lang->performance->Position;?></th><td ><?php echo html::input("zhiwei","","class='input' readonly='readonly'");?></td>
+<th width="120px"><?php echo $lang->performance->Join_Date;?></th><td ><?php echo html::input("ruzhidate","","class='input' readonly='readonly'");?></td>
+</tr>
+<tr>
+<th><?php echo $lang->performance->Reviewer;?></th><td ><?php echo html::input("zgname",$this->app->user->realname,"class='input' readonly='readonly'");?></td>
+<th><?php echo $lang->performance->Department;?></th><td colspan="2"><?php echo html::input("zgdepartment","","class='inputw' ");?></td>
+<th><?php echo $lang->performance->Position;?></th><td colspan="4" ><?php echo html::input("zgzhiwei","","class='input' readonly='readonly'");?></td>
+</tr>
+<tr>
+<th width="120px"><?php echo $lang->performance->Review_Cycle;?></th><td colspan="9" width="300px" style="text-align:center;"><?php echo html::select("zhouqi",$zhouqi,"","class='tps'");?></td>
+<!--<th width="120px"><?php /*echo $lang->performance->Total_Score;*/?></th><td colspan="4"><?php /*echo html::input("total","","class='tps'disabled='true'");*/?></td>
+--></tr>
+
+</table>
+<table style="width:1300px;border:1px solid #000;overflow:hidden;margin-left:-1px;" align="center"><tr style="border:1px solid #000;"><td colspan="10" height="10px"></td></tr></table>
+<table  style="width:1300px;border:1px solid #000;margin-left:-1px;overflow:hidden;" align="center">
+<tr>
+<th rowspan="2" style="text-align:center;"><?php echo $lang->performance->Categories;?></th>
+<th rowspan="2"><?php echo $lang->performance->content;?></th>
+<!--<th colspan="8" style="padding-left:360px;"><?php /*echo "Performance Review Comparison ";*/?></th>
+--></tr>
+<tr>
+<!--<th><?php /* echo $lang->performance->reviewbymyself;*/?></th>
+--><th style="padding-left:15px;" width="80px"><?php echo $lang->performance->Weight;?></th>
+<!--<th ><?php /*echo $lang->performance->reviewbysuper;*/?></th>
+<th width="100px"><?php /*echo $lang->performance->score;*/?></th>
+<th width="100px"><?php/* echo $lang->performance->scorebysuper;*/?></th>
+<th width="100px"><?php/* echo $lang->performance->worktotal;*/?></th>
+--></tr>
+<?php for($i=1;$i<9;$i++){?>
+<tr>
+<td style="align:center"><?php echo html::input("category[$i]",$i,"class='input5'");?></td>
+<td><?php echo html::textarea("goalitem[$i]","","class='textarea1 styles' ");?></td>
+<!--<td><?php /*echo html::textarea("reviewbymyself[$i]","","class='textarea2'disabled='true'");*/?></td>
+--><td style="text-align:right"><?php echo html::input("weight[$i]","","class='input2 styles'");?><?php echo "%";?></td>
+<!--<td><?php /*echo html::input("score[$i]","","class='input3'disabled='true'");*/?></td>
+//<td><?php /*echo html::input("scorebysuper[$i]","","class='input3'disabled='true'");*/?></td>
+<td><?php /*echo html::input("worktotal[$i]","","class='input3'disabled='true'");*/?></td>
+--></tr>
+<?php }?>
+<!--<tr><td align="right" colspan="7"><?php /*echo "Job Performance Total Score:";*/?></td><td><?php /*echo html::input("workscore","","class='input'disabled='true'");*/?></td></tr>
+--></table>
+
+</div>
+<br>
+<table style="width:1300px;border:2px solid white;margin:0px 150px 0 150px;" align="center">
+<tr><td colspan='8' align="center"><?php echo html::submitButton().html::resetButton();?></td></tr>
+</table>
+
+</form>
+<script type="text/javascript">
+function getproandpack(wgc)
+{ 
+	var name =$("#staffcode").val();
+	$.ajax({
+	    type: "POST",
+	    url: "<?php echo $this->createLink('performance','ajaxgetjoindate');?>",
+	    data: {name:name},
+	    dataType:'json',
+	    success: function(e){
+			
+	    	$("#ruzhidate").val(e.join);
+	    	$("#zhiwei").val(e.position);
+	    	$("#zgname").val(e.supervise);
+	    	$("#zgzhiwei").val(e.zgzhiwei);
+	    	$("#department").val(e.department);
+	    	$("#zgdepartment").val(e.zgdept);
+	    }
+	});
+	
+    	
+}
+
+</script> 
+ 
+ <?php include '../../common/view/footer.html.php';?>

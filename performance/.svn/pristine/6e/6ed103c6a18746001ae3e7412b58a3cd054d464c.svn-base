@@ -1,0 +1,200 @@
+<?php include "../../common/view/header.html.php" ;?>
+<style>
+#ts{text-align:left}
+#it th{border:black solid 1px;text-align:center}
+#it td{border:black solid 1px;}
+#it tr{height:50px;}
+
+.pt{width:100%;height:100%}
+.radio_label{
+				background: url(./data/image/ce.jpg);
+				background-size:30px 60px;
+                background-repeat: no-repeat;
+				display: inline-block;
+				line-height: 30px;
+				height: 30px;
+                width:50px;
+				margin-left: 30px;
+                background-color:1px solid red;
+			}
+			
+			.checked {
+				background-position: 0  -30px;
+			}
+			
+			input[type='radio'] {
+				display:none;
+			}
+</style>
+<form method='post' target='blank'>
+<div style="width:100%;border:none;  "text-align="center" >
+<table  id="it" style="width:70%;border:1px solid black;overflow:hidden;margin-top:-1px" align="center" border-collapse="collapse">
+<caption><font size="4">员工满意度调查问卷 - 杭州地区副卷</font></caption>
+<tr><th>题号</th><th align="left">公司将预计19年搬进“矽力杰大楼”，对此想征求您作为杭州地区办公的员工的宝贵意见</th><th>选项<br/>以下说法您是否赞同</th><th>详细描述或意见与建议</th></tr>
+<tr>
+<td style = "text-align:center">1</td>
+<td id="ts">新大楼，我上下班，路途用时更少</td>
+<td>
+<div style="border:none;width:auto;height:auto;display: block;float:left">
+<div id="t1" style="text-align:center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<label for="t-n1" class="radio_label checked">
+<input type="radio" value="yes" checked="checked" id="t-n1" name="tt1"/>
+</label>
+<label for="t-m1" class="radio_label">
+<input type="radio" value="no" id="t-m1" name="tt1"/>
+</label>
+</label>
+</div>
+</div></td>
+<td><?php echo html::textarea("","","class='pt'")?></td>
+</tr>
+
+<tr>
+<td style = "text-align:center">2</td>
+<td id="ts">新大楼，我上下班交通更便利</td>
+<td>
+<div style="border:none;width:auto;height:auto;display: block;float:left">
+<div id="t1" style="text-align:center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<label for="t-n2" class="radio_label checked">
+<input type="radio" value="yes" checked="checked" id="t-n2" name="tt2"/>
+</label>
+<label for="sex-female" class="radio_label">
+<input type="radio" value="no" id="sex-female" name="tt2"/>
+</label>
+</label>
+</div>
+</div></td>
+<td><?php echo html::textarea("","","class='pt'")?></td>
+</tr>
+
+
+<tr>
+<td style = "text-align:center">3</td>
+<td id="ts">新大楼，班车接送，我跟需要</td>
+<td>
+<div style="border:none;width:auto;height:auto;display: block;float:left">
+<div id="t1" style="text-align:center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<label for="t-n3" class="radio_label checked">
+<input type="radio" value="yes" checked="checked" id="t-n3" name="tt3"/>
+</label>
+<label for="sex-female" class="radio_label">
+<input type="radio" value="no" id="sex-female" name="tt3"/>
+</label>
+</label>
+</div>
+</div></td>
+<td><?php echo html::textarea("","","class='pt'")?></td>
+</tr>
+
+<tr>
+<td style = "text-align:center">4</td>
+<td id="ts">新大楼，以“缩短午休时间” 来换取 “下班时间提早”，我更需要</td>
+<td>
+<div style="border:none;width:auto;height:auto;display: block;float:left">
+<div id="t1" style="text-align:center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<label for="t-n4" class="radio_label checked">
+<input type="radio" value="yes" checked="checked" id="t-n4" name="tt4"/>
+</label>
+<label for="sex-female" class="radio_label">
+<input type="radio" value="no" id="sex-female" name="tt4"/>
+</label>
+</label>
+</div>
+</div></td>
+<td><?php echo html::textarea("","","class='pt'")?></td>
+</tr>
+
+<tr>
+<td style = "text-align:center">5</td>
+<td id="ts">新大楼，茶水间、哺乳室等公共区域，我更需要</td>
+<td>
+<div style="border:none;width:auto;height:auto;display: block;float:left">
+<div id="t1" style="text-align:center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<label for="t-n5" class="radio_label checked">
+<input type="radio" value="yes" checked="checked" id="t-n5" name="tt5"/>
+</label>
+<label for="sex-female" class="radio_label">
+<input type="radio" value="no" id="sex-female" name="tt5"/>
+</label>
+</label>
+</div>
+</div></td>
+<td><?php echo html::textarea("","","class='pt'")?></td>
+</tr>
+
+<tr>
+<td style = "text-align:center">6</td>
+<td id="ts">新大楼，休闲运动、跑道、健身器材等公共区域设施，我更需要</td>
+<td>
+<div style="border:none;width:auto;height:auto;display: block;float:left">
+<div id="t1" style="text-align:center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<label for="sex-man" class="radio_label checked">
+<input type="radio" value="yes" checked="checked" id="sex-man" name="tt6"/>
+</label>
+<label for="sex-female" class="radio_label">
+<input type="radio" value="no" id="sex-female" name="tt6"/>
+</label>
+</label>
+</div>
+</div></td>
+<td><?php echo html::textarea("","","class='pt'")?></td>
+</tr>
+
+<tr>
+<td style = "text-align:center">7</td>
+<td id="ts">新大楼，食堂、超市、水果店、咖啡店、便利店等生活设施，我更需要</td>
+<td>
+<div style="border:none;width:auto;height:auto;display: block;float:left">
+<div id="t1" style="text-align:center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<label for="sex-man" class="radio_label checked">
+<input type="radio" value="yes" checked="checked" id="sex-man" name="tt7"/>
+</label>
+<label for="sex-female" class="radio_label">
+<input type="radio" value="no" id="sex-female" name="tt7"/>
+</label>
+</label>
+</div>
+</div></td>
+<td><?php echo html::textarea("","","class='pt'")?></td>
+</tr>
+
+<tr>
+<td style = "text-align:center">8</td>
+<td id="ts">新大楼，幼儿班、 小托班等家庭服务设施，我更需要</td>
+<td>
+<div style="border:none;width:auto;height:auto;display: block;float:left">
+<div id="t1" style="text-align:center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<label for="sex-man" class="radio_label checked">
+<input type="radio" value="yes" checked="checked" id="sex-man" name="tt8"/>
+</label>
+<label for="sex-female" class="radio_label">
+<input type="radio" value="no" id="sex-female" name="tt8"/>
+</label>
+</label>
+</div>
+</div></td>
+<td><?php echo html::textarea("","","class='pt'")?></td>
+</tr>
+
+</table>
+</div>
+</form>
+<script>
+$(function(){
+	$("input[type='radio']").click(function(){
+	$("input[type='radio'][name='"+$(this).attr('name')+"']").parent().removeClass("checked");
+	$(this).parent().addClass("checked");
+	    });
+	});  
+
+//$(document).ready(function(){
+//	  $("#button1").click(function(){
+//	  $("#t1").toggle();
+//      var button1 = $("input[name='value1']").val();//alert(button1);
+//	  
+//       
+//	  });
+//	});
+
+</script>
+<?php include "../../common/view/footer.html.php";?>

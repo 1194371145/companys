@@ -1,0 +1,169 @@
+<?php
+class surveyModel extends model
+{
+ 
+	
+	
+	public function createsurvey()
+	{
+		$data = fixer::input('post')->get();//var_dump($data);die;
+		  //session赋值
+		  session_start();
+		  $_SESSION['one']=$data;
+		  //session值的读取:
+		  //$one = $_SESSION['one'];var_dump($one);die;
+		  if($this->app->user->account == "S00623")
+		  {   
+		  	 return $_SESSION['one'];
+		  }
+		  else
+		  {
+		  	if(empty($data->val1) && empty($data->val2) && empty($data->val3) && empty($data->val4) && empty($data->val5)
+		  	&& empty($data->val6) && empty($data->val7) && empty($data->val8) && empty($data->val9) && empty($data->val10)
+		  	&& empty($data->val11) && empty($data->val12) && empty($data->val13) && empty($data->val14) && empty($data->val15)
+		    && empty($data->val16) && empty($data->val17) && empty($data->val18) && empty($data->val19) && empty($data->val20)
+		    && empty($data->val21) && empty($data->val22) && empty($data->val23) && empty($data->val24) && empty($data->val25)
+		    && empty($data->val26) && empty($data->val27) && empty($data->val28) && empty($data->val29) && empty($data->val30)
+		    && empty($data->val31) && empty($data->val32) && empty($data->val33) && empty($data->val34) && empty($data->val35)
+		    && empty($data->val36))
+		    {
+		     die(js::error("请补全所有打分项！"));	
+		    }
+		    $arr->staffcode = $this->app->user->account;
+		    $arr->year = date("Y");
+		    $arr->silergyyears = $data->silergyyears[0];
+		    $arr->workyears = $data->workyears[0];
+		    $arr->val1 = $data->val1; $arr->val2 = $data->val2; $arr->val3 = $data->val3;
+		    $arr->val4 = $data->val4; $arr->val5 = $data->val5; $arr->val6 = $data->val6;
+		    $arr->val7 = $data->val7; $arr->val8 = $data->val8; $arr->val9 = $data->val9;
+		    $arr->val10 = $data->val10; $arr->val11 = $data->val11; $arr->val12 = $data->val12;
+		    $arr->val13 = $data->val13; $arr->val14 = $data->val14; $arr->val15 = $data->val15;
+		    $arr->val16 = $data->val16; $arr->val17 = $data->val17; $arr->val18 = $data->val18;
+		    $arr->val19 = $data->val19; $arr->val20 = $data->val20; $arr->val21 = $data->val21;
+		    $arr->val22 = $data->val22; $arr->val23 = $data->val23; $arr->val24 = $data->val24;
+		    $arr->val25 = $data->val25; $arr->val26 = $data->val26; $arr->val27 = $data->val27;
+		    $arr->val28 = $data->val28; $arr->val29 = $data->val29; $arr->val30 = $data->val30;
+		    $arr->val31 = $data->val31; $arr->val32 = $data->val32; $arr->val33 = $data->val33;
+		    $arr->val34 = $data->val34; $arr->val35 = $data->val35; $arr->val36 = $data->val36;
+		    
+		    $arr->idea1 = $data->idea1; $arr->idea2 = $data->idea2; $arr->idea3 = $data->idea3;
+		    $arr->idea4 = $data->idea4; $arr->idea5 = $data->idea5; $arr->idea6 = $data->idea6;
+		    $arr->idea7 = $data->idea7; $arr->idea8 = $data->idea8; $arr->idea9 = $data->idea9;
+		    $arr->idea10 = $data->idea10; $arr->idea11 = $data->idea11; $arr->idea12 = $data->idea12;
+		    $arr->idea13 = $data->idea13; $arr->idea14 = $data->idea14; $arr->idea15 = $data->idea15;
+		    $arr->idea16 = $data->idea16; $arr->idea17 = $data->idea17; $arr->idea18 = $data->idea18;
+		    $arr->idea19 = $data->idea19; $arr->idea20 = $data->idea20; $arr->idea21 = $data->idea21;
+		    $arr->idea22 = $data->idea22; $arr->idea23 = $data->idea23; $arr->idea24 = $data->idea24;
+		    $arr->idea25 = $data->idea25; $arr->idea26 = $data->idea26; $arr->idea27 = $data->idea27;
+		    $arr->idea28= $data->idea28; $arr->idea29 = $data->idea29; $arr->idea30 = $data->idea30;
+		    $arr->idea31 = $data->idea31; $arr->idea32 = $data->idea32; $arr->idea33 = $data->idea33;
+		    $arr->idea34 = $data->idea34; $arr->idea35 = $data->idea35; $arr->idea36 = $data->idea36;
+		    $this->dao->insert('zt_survey')->data($arr)->exec();
+		  	$ID = $this->dao->lastInsertID();
+		  	$tt -> tid = $ID;
+		  	//$tt->staffcode = $this->app->user->account;
+		  	$tt->value1 = $data->value1; $tt->value2 = $data->value2; $tt->value3 = $data->value3;
+		  	$tt->value4 = $data->value4; $tt->value5 = $data->value5; $tt->value6 = $data->value6;
+		  	$tt->value7 = $data->value7;
+		  	$tt->facility1 = $data->facility1; $tt->facility2 = $data->facility2; $tt->facility3 = $data->facility3;
+		  	$tt->facility4 = $data->facility4; $tt->facility5 = $data->facility5; $tt->facility6 = $data->facility6;
+		  	$tt->facility7 = $data->facility7; $tt->facility8 = $data->facility8;
+		  	$tt->welfare1 = $data->welfare1; $tt->welfare2 = $data->welfare2; $tt->welfare3 = $data->welfare3;
+		  	$tt->welfare4 = $data->welfare4; $tt->welfare5 = $data->welfare5; $tt->welfare6 = $data->welfare6;
+		  	$tt->welfare7 = $data->welfare7; $tt->welfare8 = $data->welfare8; $tt->welfare9 = $data->welfare9;
+		  	$tt->welfare10 = $data->welfare10; $tt->welfare11 = $data->welfare11; $tt->welfare12 = $data->welfare12;
+		  	$tt->welfare13 = $data->welfare13; $tt->welfare14 = $data->welfare14; $tt->welfare15 = $data->welfare15;
+		  	$tt->welfare16 = $data->welfare16; $tt->welfare17 = $data->welfare17; $tt->welfare18 = $data->welfare18;
+		  	$tt->welfare19 = $data->welfare19; $tt->welfare20 = $data->welfare20; $tt->welfare21 = $data->welfare21;
+		  	$tt->suggest1 = $data ->suggest1; $tt->suggest2 = $data ->suggest2; $tt->suggest3 = $data ->suggest3;
+		  	$tt->suggest4 = $data ->suggest4; $tt->suggest5 = $data ->suggest5; 
+		  	$this->dao->insert('zt_thumbup')->data($tt)->exec();	
+		  }
+		  //die(js::locate(inlink('thumbup'), 'parent'));
+		  //session值的销毁
+		  //unset($_SESSION['one']);
+	}
+//	public function thumbup()
+//	{
+//		session_start();//var_dump($_SESSION['one']);die;
+//	     $data = $_SESSION['one'];var_dump($data);die;
+//	}
+	public function thumbup()
+	{
+	   session_start();
+	   $data = $_SESSION['one'];
+	   $art = fixer::input('post')->get();//var_dump($gets);die;
+	    if(empty($data->val1) && empty($data->val2) && empty($data->val3) && empty($data->val4) && empty($data->val5)
+		  	&& empty($data->val6) && empty($data->val7) && empty($data->val8) && empty($data->val9) && empty($data->val10)
+		  	&& empty($data->val11) && empty($data->val12) && empty($data->val13) && empty($data->val14) && empty($data->val15)
+		    && empty($data->val16) && empty($data->val17) && empty($data->val18) && empty($data->val19) && empty($data->val20)
+		    && empty($data->val21) && empty($data->val22) && empty($data->val23) && empty($data->val24) && empty($data->val25)
+		    && empty($data->val26) && empty($data->val27) && empty($data->val28) && empty($data->val29) && empty($data->val30)
+		    && empty($data->val31) && empty($data->val32) && empty($data->val33) && empty($data->val34) && empty($data->val35)
+		    && empty($data->val36))
+		    {
+		     die(js::error("请补全所有打分项！"));	
+		    }
+		    $arr->staffcode = $this->app->user->account;
+		    $arr->year = date("Y");
+		    $arr->silergyyears = $data->silergyyears[0];
+		    $arr->workyears = $data->workyears[0];
+		    $arr->val1 = $data->val1; $arr->val2 = $data->val2; $arr->val3 = $data->val3;
+		    $arr->val4 = $data->val4; $arr->val5 = $data->val5; $arr->val6 = $data->val6;
+		    $arr->val7 = $data->val7; $arr->val8 = $data->val8; $arr->val9 = $data->val9;
+		    $arr->val10 = $data->val10; $arr->val11 = $data->val11; $arr->val12 = $data->val12;
+		    $arr->val13 = $data->val13; $arr->val14 = $data->val14; $arr->val15 = $data->val15;
+		    $arr->val16 = $data->val16; $arr->val17 = $data->val17; $arr->val18 = $data->val18;
+		    $arr->val19 = $data->val19; $arr->val20 = $data->val20; $arr->val21 = $data->val21;
+		    $arr->val22 = $data->val22; $arr->val23 = $data->val23; $arr->val24 = $data->val24;
+		    $arr->val25 = $data->val25; $arr->val26 = $data->val26; $arr->val27 = $data->val27;
+		    $arr->val28 = $data->val28; $arr->val29 = $data->val29; $arr->val30 = $data->val30;
+		    $arr->val31 = $data->val31; $arr->val32 = $data->val32; $arr->val33 = $data->val33;
+		    $arr->val34 = $data->val34; $arr->val35 = $data->val35; $arr->val36 = $data->val36;
+		    
+		    $arr->idea1 = $data->idea1; $arr->idea2 = $data->idea2; $arr->idea3 = $data->idea3;
+		    $arr->idea4 = $data->idea4; $arr->idea5 = $data->idea5; $arr->idea6 = $data->idea6;
+		    $arr->idea7 = $data->idea7; $arr->idea8 = $data->idea8; $arr->idea9 = $data->idea9;
+		    $arr->idea10 = $data->idea10; $arr->idea11 = $data->idea11; $arr->idea12 = $data->idea12;
+		    $arr->idea13 = $data->idea13; $arr->idea14 = $data->idea14; $arr->idea15 = $data->idea15;
+		    $arr->idea16 = $data->idea16; $arr->idea17 = $data->idea17; $arr->idea18 = $data->idea18;
+		    $arr->idea19 = $data->idea19; $arr->idea20 = $data->idea20; $arr->idea21 = $data->idea21;
+		    $arr->idea22 = $data->idea22; $arr->idea23 = $data->idea23; $arr->idea24 = $data->idea24;
+		    $arr->idea25 = $data->idea25; $arr->idea26 = $data->idea26; $arr->idea27 = $data->idea27;
+		    $arr->idea28= $data->idea28; $arr->idea29 = $data->idea29; $arr->idea30 = $data->idea30;
+		    $arr->idea31 = $data->idea31; $arr->idea32 = $data->idea32; $arr->idea33 = $data->idea33;
+		    $arr->idea34 = $data->idea34; $arr->idea35 = $data->idea35; $arr->idea36 = $data->idea36;
+		    $this->dao->insert('zt_survey')->data($arr)->exec();
+		  	$ID = $this->dao->lastInsertID();
+		  	$tt -> tid = $ID;
+		  	//$tt->staffcode = $this->app->user->account;
+		  	$tt->value1 = $data->value1; $tt->value2 = $data->value2; $tt->value3 = $data->value3;
+		  	$tt->value4 = $data->value4; $tt->value5 = $data->value5; $tt->value6 = $data->value6;
+		  	$tt->value7 = $data->value7;
+		  	$tt->facility1 = $data->facility1; $tt->facility2 = $data->facility2; $tt->facility3 = $data->facility3;
+		  	$tt->facility4 = $data->facility4; $tt->facility5 = $data->facility5; $tt->facility6 = $data->facility6;
+		  	$tt->facility7 = $data->facility7; $tt->facility8 = $data->facility8;
+		  	$tt->welfare1 = $data->welfare1; $tt->welfare2 = $data->welfare2; $tt->welfare3 = $data->welfare3;
+		  	$tt->welfare4 = $data->welfare4; $tt->welfare5 = $data->welfare5; $tt->welfare6 = $data->welfare6;
+		  	$tt->welfare7 = $data->welfare7; $tt->welfare8 = $data->welfare8; $tt->welfare9 = $data->welfare9;
+		  	$tt->welfare10 = $data->welfare10; $tt->welfare11 = $data->welfare11; $tt->welfare12 = $data->welfare12;
+		  	$tt->welfare13 = $data->welfare13; $tt->welfare14 = $data->welfare14; $tt->welfare15 = $data->welfare15;
+		  	$tt->welfare16 = $data->welfare16; $tt->welfare17 = $data->welfare17; $tt->welfare18 = $data->welfare18;
+		  	$tt->welfare19 = $data->welfare19; $tt->welfare20 = $data->welfare20; $tt->welfare21 = $data->welfare21;
+		  	$tt->suggest1 = $data ->suggest1; $tt->suggest2 = $data ->suggest2; $tt->suggest3 = $data ->suggest3;
+		  	$tt->suggest4 = $data ->suggest4; $tt->suggest5 = $data ->suggest5; 
+		  	$this->dao->insert('zt_thumbup')->data($tt)->exec();
+	    
+		 $ptt -> xid = $ID;
+		 $ptt -> re1 = $art -> re1; $ptt -> re2 = $art -> re2; $ptt -> re3 = $art -> re3; $ptt -> re4 = $art -> re4;
+		 $ptt -> re5 = $art -> re5; $ptt -> re6 = $art -> re6; $ptt -> re7 = $art -> re7; $ptt -> re8 = $art -> re8;
+		 $ptt -> ttx1 = $art -> ttx1; $ptt -> ttx2 = $art -> ttx2; $ptt -> ttx3 = $art -> ttx3; $ptt -> ttx4 = $art -> ttx4;
+		 $ptt -> ttx5 = $art -> ttx5; $ptt -> ttx6 = $art -> ttx6; $ptt -> ttx7 = $art -> ttx7; $ptt -> ttx8 = $art -> ttx8;
+		 $this->dao->insert('zt_hzblock')->data($ptt)->exec();
+//		 unset($_SESSION['one']);
+	}
+	
+	
+	
+}
+?>

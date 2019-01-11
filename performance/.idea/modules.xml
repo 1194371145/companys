@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../ceshi/.idea/ceshi.iml" filepath="$PROJECT_DIR$/../ceshi/.idea/ceshi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../crm/.idea/crm.iml" filepath="$PROJECT_DIR$/../crm/.idea/crm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../device/.idea/device.iml" filepath="$PROJECT_DIR$/../device/.idea/device.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../espm/.idea/espm.iml" filepath="$PROJECT_DIR$/../espm/.idea/espm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/performance.iml" filepath="$PROJECT_DIR$/.idea/performance.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../proandpur/.idea/proandpur.iml" filepath="$PROJECT_DIR$/../proandpur/.idea/proandpur.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../rdcost/.idea/rdcost.iml" filepath="$PROJECT_DIR$/../rdcost/.idea/rdcost.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../silergypm/.idea/silergypm.iml" filepath="$PROJECT_DIR$/../silergypm/.idea/silergypm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../tp5/.idea/tp5.iml" filepath="$PROJECT_DIR$/../tp5/.idea/tp5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../tp5.0/.idea/tp5.0.iml" filepath="$PROJECT_DIR$/../tp5.0/.idea/tp5.0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../zentaopms/.idea/zentaopms.iml" filepath="$PROJECT_DIR$/../zentaopms/.idea/zentaopms.iml" />
+    </modules>
+  </component>
+</project>

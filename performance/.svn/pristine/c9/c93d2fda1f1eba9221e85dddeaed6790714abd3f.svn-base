@@ -1,0 +1,384 @@
+<?php
+ die();
+?>
+20170726 14:46:37: admin-setparam-del-yes-95
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM 510_field ORDER BY `id` desc 
+  SELECT * FROM 510_field WHERE id  = '95'
+  DELETE FROM 510_field WHERE id  = '95'
+  ALTER TABLE 510_fielddata DROP  
+
+20170726 14:49:19: admin-setparam-del-yes-95
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM 510_field ORDER BY `id` desc 
+  SELECT * FROM 510_field WHERE id  = '95'
+  DELETE FROM 510_field WHERE id  = '95'
+  ALTER TABLE 510_fielddata DROP  
+
+20170726 14:49:31: admin-safe
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+
+20170726 14:49:33: admin-buckimportpara
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+
+20170726 14:49:44: admin-setparam
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM 510_field ORDER BY `id` desc 
+  SELECT * FROM 510_field WHERE id  = '0'
+
+20170726 14:51:09: admin-setparam
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM 510_field ORDER BY `id` desc 
+  SELECT * FROM 510_field WHERE id  = '0'
+  INSERT INTO 510_field SET `fieldname` = 'new_part',`fieldvalue` = 'new_part',`fieldtype` = 'varchar',`sort` = ''
+  ALTER TABLE  510_fielddata ADD  new_part VARCHAR( 100 ) NULL ;
+
+20170726 14:51:44: admin-setparam
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM 510_field ORDER BY `id` desc 
+  SELECT * FROM 510_field WHERE id  = '0'
+  INSERT INTO 510_field SET `fieldname` = 'new_part',`fieldvalue` = 'new_part',`fieldtype` = 'varchar',`sort` = ''
+
+20170726 14:52:11: admin-setparam-del-no-93
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM 510_field ORDER BY `id` desc 
+  SELECT * FROM 510_field WHERE id  = '93'
+
+20170726 14:52:13: admin-setparam-del-yes-93
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM 510_field ORDER BY `id` desc 
+  SELECT * FROM 510_field WHERE id  = '93'
+  DELETE FROM 510_field WHERE id  = '93'
+  ALTER TABLE 510_fielddata DROP  vmax2
+
+20170726 14:52:34: admin-setparam
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM 510_field ORDER BY `id` desc 
+  SELECT * FROM 510_field WHERE id  = '0'
+
+20170726 14:53:00: admin-setparam
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM 510_field ORDER BY `id` desc 
+  SELECT * FROM 510_field WHERE id  = '0'
+
+20170726 14:53:06: admin-setparam-del-no-96
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM 510_field ORDER BY `id` desc 
+  SELECT * FROM 510_field WHERE id  = '96'
+
+20170726 14:53:08: admin-setparam-del-yes-96
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM 510_field ORDER BY `id` desc 
+  SELECT * FROM 510_field WHERE id  = '96'
+  DELETE FROM 510_field WHERE id  = '96'
+  ALTER TABLE 510_fielddata DROP  new_part
+
+20170726 14:54:17: admin-setparam
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM 510_field ORDER BY `id` desc 
+  SELECT * FROM 510_field WHERE id  = '0'
+
+20170726 14:54:28: admin-setparam
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM 510_field ORDER BY `id` desc 
+  SELECT * FROM 510_field WHERE id  = '0'
+  INSERT INTO 510_field SET `fieldname` = 'new_part',`fieldvalue` = 'new_part',`fieldtype` = 'varchar',`sort` = ''
+  ALTER TABLE  510_fielddata ADD  new_part VARCHAR( 100 ) NULL ;
+
+20170726 14:54:30: admin-setparam
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM 510_field ORDER BY `id` desc 
+  SELECT * FROM 510_field WHERE id  = '0'
+
+20170726 15:01:32: admin-setparam-del-no-97
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM 510_field ORDER BY `id` desc 
+  SELECT * FROM 510_field WHERE id  = '97'
+
+20170726 15:01:33: admin-setparam-del-yes-97
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM 510_field ORDER BY `id` desc 
+  SELECT * FROM 510_field WHERE id  = '97'
+  DELETE FROM 510_field WHERE id  = '97'
+  ALTER TABLE 510_fielddata DROP  new_part
+
+20170726 15:01:34: admin-setparam
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM 510_field ORDER BY `id` desc 
+  SELECT * FROM 510_field WHERE id  = '0'
+
+20170726 15:11:35: misc-ping
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+
+20170726 15:56:30: admin-buckimportpara
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM zt_field WHERE fieldvalue  = 'new_part'
+
+20170726 16:12:59: admin-buckimportpara
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM 510_field WHERE fieldvalue  = 'new_part'
+  SELECT id FROM 510_field ORDER BY `id` desc  LIMIT 0,1 
+  SELECT * FROM 510_field WHERE fieldvalue  = 'part_number'
+  SELECT * FROM 510_field WHERE fieldvalue  = 'vin_min'
+  SELECT * FROM 510_field WHERE fieldvalue  = 'vin_max'
+  SELECT * FROM 510_field WHERE fieldvalue  = 'uvlo'
+  SELECT * FROM 510_field WHERE fieldvalue  = 'iout_max'
+  SELECT * FROM 510_field WHERE fieldvalue  = 'fsw'
+  SELECT * FROM 510_field WHERE fieldvalue  = 'vout_min'
+  SELECT * FROM 510_field WHERE fieldvalue  = 'output_voltage_acurracy'
+  SELECT * FROM 510_field WHERE fieldvalue  = 'quiescent_current_typ'
+  SELECT * FROM 510_field WHERE fieldvalue  = 'shutdown_current'
+  SELECT * FROM 510_field WHERE fieldvalue  = 'mosfet_ron_h'
+  SELECT * FROM 510_field WHERE fieldvalue  = 'mosfet_ron_l'
+  SELECT * FROM 510_field WHERE fieldvalue  = 'light_load_efficient'
+  SELECT * FROM 510_field WHERE fieldvalue  = 'soft_start_time'
+  SELECT * FROM 510_field WHERE fieldvalue  = 'ccm_mode_input'
+  SELECT * FROM 510_field WHERE fieldvalue  = 'auto_discharge'
+  SELECT * FROM 510_field WHERE fieldvalue  = 'short_circuit_protection'
+  SELECT * FROM 510_field WHERE fieldvalue  = 'over_voltage_protection'
+  SELECT * FROM 510_field WHERE fieldvalue  = 'protection_mode'
+  SELECT * FROM 510_field WHERE fieldvalue  = '100per_dropout_operation'
+  SELECT * FROM 510_field WHERE fieldvalue  = 'enable_input'
+  SELECT * FROM 510_field WHERE fieldvalue  = 'power_good_output'
+  SELECT * FROM 510_field WHERE fieldvalue  = 'feature_special_function'
+  SELECT * FROM 510_field WHERE fieldvalue  = 'package'
+
+20170726 16:53:31: admin-setparam
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM 510_field ORDER BY `id` desc 
+  SELECT * FROM 510_field WHERE id  = '0'
+
+20170726 16:54:11: admin-buckimportpara
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM 510_field WHERE fieldvalue  = 'new_part'
+  SELECT id FROM 510_field ORDER BY `id` desc  LIMIT 0,1 
+  INSERT INTO 510_field SET `fieldname` = 'Package',`fieldvalue` = 'new_part',`fieldtype` = 'varchar',`sort` = '92',`show1` = '1'
+  INSERT INTO 510_fieldproclass SET `pro_cid` = '127',`field_id` = '98',`sort` = '0'
+  ALTER TABLE 510_fielddata ADD  new_part VARCHAR( 100 ) NULL ;
+  SELECT * FROM 510_field WHERE fieldvalue  = 'part_number'
+  SELECT * FROM 510_field WHERE fieldvalue  = 'vin_min'
+  INSERT INTO 510_field SET `fieldname` = 'Package',`fieldvalue` = 'vin_min',`fieldtype` = 'varchar',`sort` = '92',`show1` = '1'
+  INSERT INTO 510_fieldproclass SET `pro_cid` = '127',`field_id` = '99',`sort` = '2'
+  ALTER TABLE 510_fielddata ADD  vin_min VARCHAR( 100 ) NULL ;
+  SELECT * FROM 510_field WHERE fieldvalue  = 'vin_max'
+  INSERT INTO 510_field SET `fieldname` = 'Package',`fieldvalue` = 'vin_max',`fieldtype` = 'varchar',`sort` = '92',`show1` = '1'
+  INSERT INTO 510_fieldproclass SET `pro_cid` = '127',`field_id` = '100',`sort` = '3'
+  ALTER TABLE 510_fielddata ADD  vin_max VARCHAR( 100 ) NULL ;
+  SELECT * FROM 510_field WHERE fieldvalue  = 'uvlo'
+  INSERT INTO 510_field SET `fieldname` = 'Package',`fieldvalue` = 'uvlo',`fieldtype` = 'varchar',`sort` = '92',`show1` = '1'
+  INSERT INTO 510_fieldproclass SET `pro_cid` = '127',`field_id` = '101',`sort` = '4'
+  ALTER TABLE 510_fielddata ADD  uvlo VARCHAR( 100 ) NULL ;
+  SELECT * FROM 510_field WHERE fieldvalue  = 'iout_max'
+  INSERT INTO 510_field SET `fieldname` = 'Package',`fieldvalue` = 'iout_max',`fieldtype` = 'varchar',`sort` = '92',`show1` = '1'
+  INSERT INTO 510_fieldproclass SET `pro_cid` = '127',`field_id` = '102',`sort` = '5'
+  ALTER TABLE 510_fielddata ADD  iout_max VARCHAR( 100 ) NULL ;
+  SELECT * FROM 510_field WHERE fieldvalue  = 'fsw'
+  SELECT * FROM 510_field WHERE fieldvalue  = 'vout_min'
+  INSERT INTO 510_field SET `fieldname` = 'Package',`fieldvalue` = 'vout_min',`fieldtype` = 'varchar',`sort` = '92',`show1` = '1'
+  INSERT INTO 510_fieldproclass SET `pro_cid` = '127',`field_id` = '103',`sort` = '7'
+  ALTER TABLE 510_fielddata ADD  vout_min VARCHAR( 100 ) NULL ;
+  SELECT * FROM 510_field WHERE fieldvalue  = 'output_voltage_acurracy'
+  INSERT INTO 510_field SET `fieldname` = 'Package',`fieldvalue` = 'output_voltage_acurracy',`fieldtype` = 'varchar',`sort` = '92',`show1` = '1'
+  INSERT INTO 510_fieldproclass SET `pro_cid` = '127',`field_id` = '104',`sort` = '8'
+  ALTER TABLE 510_fielddata ADD  output_voltage_acurracy VARCHAR( 100 ) NULL ;
+  SELECT * FROM 510_field WHERE fieldvalue  = 'quiescent_current_typ'
+  INSERT INTO 510_field SET `fieldname` = 'Package',`fieldvalue` = 'quiescent_current_typ',`fieldtype` = 'varchar',`sort` = '92',`show1` = '1'
+  INSERT INTO 510_fieldproclass SET `pro_cid` = '127',`field_id` = '105',`sort` = '9'
+  ALTER TABLE 510_fielddata ADD  quiescent_current_typ VARCHAR( 100 ) NULL ;
+  SELECT * FROM 510_field WHERE fieldvalue  = 'shutdown_current'
+  INSERT INTO 510_field SET `fieldname` = 'Package',`fieldvalue` = 'shutdown_current',`fieldtype` = 'varchar',`sort` = '92',`show1` = '1'
+  INSERT INTO 510_fieldproclass SET `pro_cid` = '127',`field_id` = '106',`sort` = '10'
+  ALTER TABLE 510_fielddata ADD  shutdown_current VARCHAR( 100 ) NULL ;
+  SELECT * FROM 510_field WHERE fieldvalue  = 'mosfet_ron_h'
+  INSERT INTO 510_field SET `fieldname` = 'Package',`fieldvalue` = 'mosfet_ron_h',`fieldtype` = 'varchar',`sort` = '92',`show1` = '1'
+  INSERT INTO 510_fieldproclass SET `pro_cid` = '127',`field_id` = '107',`sort` = '11'
+  ALTER TABLE 510_fielddata ADD  mosfet_ron_h VARCHAR( 100 ) NULL ;
+  SELECT * FROM 510_field WHERE fieldvalue  = 'mosfet_ron_l'
+  INSERT INTO 510_field SET `fieldname` = 'Package',`fieldvalue` = 'mosfet_ron_l',`fieldtype` = 'varchar',`sort` = '92',`show1` = '1'
+  INSERT INTO 510_fieldproclass SET `pro_cid` = '127',`field_id` = '108',`sort` = '12'
+  ALTER TABLE 510_fielddata ADD  mosfet_ron_l VARCHAR( 100 ) NULL ;
+  SELECT * FROM 510_field WHERE fieldvalue  = 'light_load_efficient'
+  INSERT INTO 510_field SET `fieldname` = 'Package',`fieldvalue` = 'light_load_efficient',`fieldtype` = 'varchar',`sort` = '92',`show1` = '1'
+  INSERT INTO 510_fieldproclass SET `pro_cid` = '127',`field_id` = '109',`sort` = '13'
+  ALTER TABLE 510_fielddata ADD  light_load_efficient VARCHAR( 100 ) NULL ;
+  SELECT * FROM 510_field WHERE fieldvalue  = 'soft_start_time'
+  INSERT INTO 510_field SET `fieldname` = 'Package',`fieldvalue` = 'soft_start_time',`fieldtype` = 'varchar',`sort` = '92',`show1` = '1'
+  INSERT INTO 510_fieldproclass SET `pro_cid` = '127',`field_id` = '110',`sort` = '14'
+  ALTER TABLE 510_fielddata ADD  soft_start_time VARCHAR( 100 ) NULL ;
+  SELECT * FROM 510_field WHERE fieldvalue  = 'ccm_mode_input'
+  INSERT INTO 510_field SET `fieldname` = 'Package',`fieldvalue` = 'ccm_mode_input',`fieldtype` = 'varchar',`sort` = '92',`show1` = '1'
+  INSERT INTO 510_fieldproclass SET `pro_cid` = '127',`field_id` = '111',`sort` = '15'
+  ALTER TABLE 510_fielddata ADD  ccm_mode_input VARCHAR( 100 ) NULL ;
+  SELECT * FROM 510_field WHERE fieldvalue  = 'auto_discharge'
+  INSERT INTO 510_field SET `fieldname` = 'Package',`fieldvalue` = 'auto_discharge',`fieldtype` = 'varchar',`sort` = '92',`show1` = '1'
+  INSERT INTO 510_fieldproclass SET `pro_cid` = '127',`field_id` = '112',`sort` = '16'
+  ALTER TABLE 510_fielddata ADD  auto_discharge VARCHAR( 100 ) NULL ;
+  SELECT * FROM 510_field WHERE fieldvalue  = 'short_circuit_protection'
+  INSERT INTO 510_field SET `fieldname` = 'Package',`fieldvalue` = 'short_circuit_protection',`fieldtype` = 'varchar',`sort` = '92',`show1` = '1'
+  INSERT INTO 510_fieldproclass SET `pro_cid` = '127',`field_id` = '113',`sort` = '17'
+  ALTER TABLE 510_fielddata ADD  short_circuit_protection VARCHAR( 100 ) NULL ;
+  SELECT * FROM 510_field WHERE fieldvalue  = 'over_voltage_protection'
+  INSERT INTO 510_field SET `fieldname` = 'Package',`fieldvalue` = 'over_voltage_protection',`fieldtype` = 'varchar',`sort` = '92',`show1` = '1'
+  INSERT INTO 510_fieldproclass SET `pro_cid` = '127',`field_id` = '114',`sort` = '18'
+  ALTER TABLE 510_fielddata ADD  over_voltage_protection VARCHAR( 100 ) NULL ;
+  SELECT * FROM 510_field WHERE fieldvalue  = 'protection_mode'
+  INSERT INTO 510_field SET `fieldname` = 'Package',`fieldvalue` = 'protection_mode',`fieldtype` = 'varchar',`sort` = '92',`show1` = '1'
+  INSERT INTO 510_fieldproclass SET `pro_cid` = '127',`field_id` = '115',`sort` = '19'
+  ALTER TABLE 510_fielddata ADD  protection_mode VARCHAR( 100 ) NULL ;
+  SELECT * FROM 510_field WHERE fieldvalue  = '100per_dropout_operation'
+  INSERT INTO 510_field SET `fieldname` = 'Package',`fieldvalue` = '100per_dropout_operation',`fieldtype` = 'varchar',`sort` = '92',`show1` = '1'
+  INSERT INTO 510_fieldproclass SET `pro_cid` = '127',`field_id` = '116',`sort` = '20'
+  ALTER TABLE 510_fielddata ADD  100per_dropout_operation VARCHAR( 100 ) NULL ;
+  SELECT * FROM 510_field WHERE fieldvalue  = 'enable_input'
+  INSERT INTO 510_field SET `fieldname` = 'Package',`fieldvalue` = 'enable_input',`fieldtype` = 'varchar',`sort` = '92',`show1` = '1'
+  INSERT INTO 510_fieldproclass SET `pro_cid` = '127',`field_id` = '117',`sort` = '21'
+  ALTER TABLE 510_fielddata ADD  enable_input VARCHAR( 100 ) NULL ;
+  SELECT * FROM 510_field WHERE fieldvalue  = 'power_good_output'
+  INSERT INTO 510_field SET `fieldname` = 'Package',`fieldvalue` = 'power_good_output',`fieldtype` = 'varchar',`sort` = '92',`show1` = '1'
+  INSERT INTO 510_fieldproclass SET `pro_cid` = '127',`field_id` = '118',`sort` = '22'
+  ALTER TABLE 510_fielddata ADD  power_good_output VARCHAR( 100 ) NULL ;
+  SELECT * FROM 510_field WHERE fieldvalue  = 'feature_special_function'
+  INSERT INTO 510_field SET `fieldname` = 'Package',`fieldvalue` = 'feature_special_function',`fieldtype` = 'varchar',`sort` = '92',`show1` = '1'
+  INSERT INTO 510_fieldproclass SET `pro_cid` = '127',`field_id` = '119',`sort` = '23'
+  ALTER TABLE 510_fielddata ADD  feature_special_function VARCHAR( 100 ) NULL ;
+  SELECT * FROM 510_field WHERE fieldvalue  = 'package'
+  UPDATE 510_proclass SET `param` = '98,1,99,100,101,102,9,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,14' WHERE id  = '127'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8018A'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20208A',`part_number` = 'SY8018A',`vin_min` = '2.5',`vin_max` = '5.5',`uvlo` = '2.5',`iout_max` = '0.45',`fsw` = '/',`vout_min` = '0.6',`output_voltage_acurracy` = '±2%',`quiescent_current_typ` = '1.5',`shutdown_current` = '0.1',`mosfet_ron_h` = '400',`mosfet_ron_l` = '200',`light_load_efficient` = '√',`soft_start_time` = '1',`ccm_mode_input` = '',`auto_discharge` = '50',`short_circuit_protection` = '√',`over_voltage_protection` = '',`protection_mode` = 'hic-cup',`100per_dropout_operation` = '',`enable_input` = '√',`power_good_output` = '√',`feature_special_function` = 'Ultra Low Quiescent Current',`package` = 'DFN2x2-8',`pid` = '2711'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8030L'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20183L',`part_number` = 'SY8030L',`vin_min` = '2.5',`vin_max` = '5.5',`uvlo` = '2.5',`iout_max` = '0.6',`fsw` = '2.25',`vout_min` = '0.6',`output_voltage_acurracy` = '±1.5%',`quiescent_current_typ` = '50',`shutdown_current` = '0.1',`mosfet_ron_h` = '300',`mosfet_ron_l` = '200',`light_load_efficient` = '',`soft_start_time` = '1',`ccm_mode_input` = '√',`auto_discharge` = '',`short_circuit_protection` = '√',`over_voltage_protection` = '',`protection_mode` = 'hic-cup',`100per_dropout_operation` = '',`enable_input` = '√',`power_good_output` = '',`feature_special_function` = '',`package` = 'DFN2x2-6',`pid` = '2712'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8031L'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20021L',`part_number` = 'SY8031L',`vin_min` = '2.5',`vin_max` = '5.5',`uvlo` = '2.4',`iout_max` = '0.6',`fsw` = '2.25',`vout_min` = '0.6',`output_voltage_acurracy` = '±1.5%',`quiescent_current_typ` = '50',`shutdown_current` = '0.1',`mosfet_ron_h` = '300',`mosfet_ron_l` = '200',`light_load_efficient` = '',`soft_start_time` = '1',`ccm_mode_input` = '',`auto_discharge` = '',`short_circuit_protection` = '',`over_voltage_protection` = '',`protection_mode` = 'hic-cup',`100per_dropout_operation` = '√',`enable_input` = '√',`power_good_output` = '',`feature_special_function` = '',`package` = 'SOT23-5',`pid` = '2713'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8078B'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20213B',`part_number` = 'SY8078B',`vin_min` = '1.85',`vin_max` = '5.5',`uvlo` = '1.85',`iout_max` = '0.6',`fsw` = '3',`vout_min` = '0.4',`output_voltage_acurracy` = '±2%',`quiescent_current_typ` = '40',`shutdown_current` = '0.1',`mosfet_ron_h` = '350',`mosfet_ron_l` = '250',`light_load_efficient` = '√',`soft_start_time` = '0.1',`ccm_mode_input` = '√',`auto_discharge` = '',`short_circuit_protection` = '√',`over_voltage_protection` = '',`protection_mode` = 'hic-cup',`100per_dropout_operation` = '',`enable_input` = '√',`power_good_output` = '',`feature_special_function` = '',`package` = 'DFN1.45x1-6',`pid` = '2714'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8088'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20018',`part_number` = 'SY8088',`vin_min` = '2.5',`vin_max` = '5.5',`uvlo` = '2.5',`iout_max` = '1',`fsw` = '1.5',`vout_min` = '0.6',`output_voltage_acurracy` = '±2%',`quiescent_current_typ` = '40',`shutdown_current` = '0.1',`mosfet_ron_h` = '260',`mosfet_ron_l` = '170',`light_load_efficient` = '√',`soft_start_time` = '1',`ccm_mode_input` = '',`auto_discharge` = '',`short_circuit_protection` = '√',`over_voltage_protection` = '',`protection_mode` = 'hic-cup',`100per_dropout_operation` = '√',`enable_input` = '√',`power_good_output` = '',`feature_special_function` = '',`package` = 'SOT23-5',`pid` = '2715'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8010'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20041',`part_number` = 'SY8010',`vin_min` = '2.5',`vin_max` = '5.5',`uvlo` = '2.5',`iout_max` = '1',`fsw` = '1.5',`vout_min` = '0.6',`output_voltage_acurracy` = '±1.5%',`quiescent_current_typ` = '50',`shutdown_current` = '0.1',`mosfet_ron_h` = '200',`mosfet_ron_l` = '150',`light_load_efficient` = '',`soft_start_time` = '1',`ccm_mode_input` = '',`auto_discharge` = '',`short_circuit_protection` = '',`over_voltage_protection` = '',`protection_mode` = '',`100per_dropout_operation` = '√',`enable_input` = '√',`power_good_output` = '',`feature_special_function` = '',`package` = 'DFN2x2-6',`pid` = '2716'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8010A'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20041A',`part_number` = 'SY8010A',`vin_min` = '2.5',`vin_max` = '5.5',`uvlo` = '2.5',`iout_max` = '1',`fsw` = '1.5',`vout_min` = '0.6',`output_voltage_acurracy` = '±1.5%',`quiescent_current_typ` = '50',`shutdown_current` = '0.1',`mosfet_ron_h` = '200',`mosfet_ron_l` = '150',`light_load_efficient` = '',`soft_start_time` = '1',`ccm_mode_input` = '',`auto_discharge` = '',`short_circuit_protection` = '',`over_voltage_protection` = '',`protection_mode` = '',`100per_dropout_operation` = '√',`enable_input` = '√',`power_good_output` = '',`feature_special_function` = '',`package` = 'DFN3x3-16',`pid` = '2717'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8010B'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20041B',`part_number` = 'SY8010B',`vin_min` = '2.5',`vin_max` = '5.5',`uvlo` = '2.5',`iout_max` = '1',`fsw` = '1.5',`vout_min` = '3.3',`output_voltage_acurracy` = '±1.5%',`quiescent_current_typ` = '50',`shutdown_current` = '0.1',`mosfet_ron_h` = '200',`mosfet_ron_l` = '150',`light_load_efficient` = '',`soft_start_time` = '1',`ccm_mode_input` = '',`auto_discharge` = '',`short_circuit_protection` = '',`over_voltage_protection` = '',`protection_mode` = '',`100per_dropout_operation` = '√',`enable_input` = '√',`power_good_output` = '',`feature_special_function` = '',`package` = 'DFN2x2-6',`pid` = '2718'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8010H'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20041H',`part_number` = 'SY8010H',`vin_min` = '2.5',`vin_max` = '5.5',`uvlo` = '2.5',`iout_max` = '1.5',`fsw` = '1.5',`vout_min` = '0.6',`output_voltage_acurracy` = '±1.5%',`quiescent_current_typ` = '50',`shutdown_current` = '0.1',`mosfet_ron_h` = '180',`mosfet_ron_l` = '120',`light_load_efficient` = '',`soft_start_time` = '1',`ccm_mode_input` = '',`auto_discharge` = '',`short_circuit_protection` = '',`over_voltage_protection` = '',`protection_mode` = '',`100per_dropout_operation` = '√',`enable_input` = '√',`power_good_output` = '',`feature_special_function` = '',`package` = 'DFN2x2-6',`pid` = '2719'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8010V'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20041V',`part_number` = 'SY8010V',`vin_min` = '2.5',`vin_max` = '5.5',`uvlo` = '2.5',`iout_max` = '1.5',`fsw` = '1.5',`vout_min` = '0.6',`output_voltage_acurracy` = '±1.5%',`quiescent_current_typ` = '50',`shutdown_current` = '0.1',`mosfet_ron_h` = '180',`mosfet_ron_l` = '120',`light_load_efficient` = '',`soft_start_time` = '1',`ccm_mode_input` = '',`auto_discharge` = '',`short_circuit_protection` = '',`over_voltage_protection` = '',`protection_mode` = '',`100per_dropout_operation` = '√',`enable_input` = '√',`power_good_output` = '',`feature_special_function` = '',`package` = 'DFN3x3-16',`pid` = '2720'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8011A'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20051A',`part_number` = 'SY8011A',`vin_min` = '2.5',`vin_max` = '5.5',`uvlo` = '2.5',`iout_max` = '1',`fsw` = '1.5',`vout_min` = '0.6',`output_voltage_acurracy` = '±2%',`quiescent_current_typ` = '40',`shutdown_current` = '0.1',`mosfet_ron_h` = '230',`mosfet_ron_l` = '150',`light_load_efficient` = '√',`soft_start_time` = '1',`ccm_mode_input` = '',`auto_discharge` = '120',`short_circuit_protection` = '',`over_voltage_protection` = '',`protection_mode` = '',`100per_dropout_operation` = '√',`enable_input` = '√',`power_good_output` = '',`feature_special_function` = '',`package` = 'DFN1.5x1.5-6',`pid` = '2721'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8061'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20061',`part_number` = 'SY8061',`vin_min` = '2.5',`vin_max` = '5.5',`uvlo` = '2.5',`iout_max` = '1',`fsw` = '1.5',`vout_min` = '0.6',`output_voltage_acurracy` = '±2%',`quiescent_current_typ` = '60',`shutdown_current` = '0.1',`mosfet_ron_h` = '260',`mosfet_ron_l` = '170',`light_load_efficient` = '√',`soft_start_time` = '1',`ccm_mode_input` = '',`auto_discharge` = '',`short_circuit_protection` = '',`over_voltage_protection` = '',`protection_mode` = '',`100per_dropout_operation` = '',`enable_input` = '√',`power_good_output` = '',`feature_special_function` = '',`package` = 'DFN2x2-6',`pid` = '2722'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8061A'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20061A',`part_number` = 'SY8061A',`vin_min` = '2.5',`vin_max` = '5.5',`uvlo` = '2.5',`iout_max` = '1',`fsw` = '1.5',`vout_min` = '0.6',`output_voltage_acurracy` = '±2%',`quiescent_current_typ` = '60',`shutdown_current` = '0.1',`mosfet_ron_h` = '260',`mosfet_ron_l` = '170',`light_load_efficient` = '√',`soft_start_time` = '1',`ccm_mode_input` = '',`auto_discharge` = '',`short_circuit_protection` = '',`over_voltage_protection` = '',`protection_mode` = '',`100per_dropout_operation` = '',`enable_input` = '√',`power_good_output` = '',`feature_special_function` = '',`package` = 'DFN2x2-6',`pid` = '2723'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8061C'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20061C',`part_number` = 'SY8061C',`vin_min` = '2.5',`vin_max` = '5.5',`uvlo` = '2.5',`iout_max` = '1',`fsw` = '1.5',`vout_min` = '0.6',`output_voltage_acurracy` = '±2%',`quiescent_current_typ` = '60',`shutdown_current` = '0.1',`mosfet_ron_h` = '260',`mosfet_ron_l` = '170',`light_load_efficient` = '',`soft_start_time` = '1',`ccm_mode_input` = '',`auto_discharge` = '',`short_circuit_protection` = '',`over_voltage_protection` = '',`protection_mode` = '',`100per_dropout_operation` = '',`enable_input` = '√',`power_good_output` = '',`feature_special_function` = 'Alt pinout',`package` = 'DFN2x2-6',`pid` = '2724'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8065L'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20075L',`part_number` = 'SY8065L',`vin_min` = '2.5',`vin_max` = '5.5',`uvlo` = '2.5',`iout_max` = '1',`fsw` = '1.5',`vout_min` = '0.6',`output_voltage_acurracy` = '±2%',`quiescent_current_typ` = '90',`shutdown_current` = '0.1',`mosfet_ron_h` = '250',`mosfet_ron_l` = '200',`light_load_efficient` = '',`soft_start_time` = '1',`ccm_mode_input` = '',`auto_discharge` = '',`short_circuit_protection` = '',`over_voltage_protection` = '',`protection_mode` = '',`100per_dropout_operation` = '√',`enable_input` = '√',`power_good_output` = '√',`feature_special_function` = '',`package` = 'SOT23-6',`pid` = '2725'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8065'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20075',`part_number` = 'SY8065',`vin_min` = '2.5',`vin_max` = '5.5',`uvlo` = '2.5',`iout_max` = '1.5',`fsw` = '1.5',`vout_min` = '0.6',`output_voltage_acurracy` = '±2%',`quiescent_current_typ` = '90',`shutdown_current` = '0.1',`mosfet_ron_h` = '180',`mosfet_ron_l` = '120',`light_load_efficient` = '',`soft_start_time` = '1',`ccm_mode_input` = '',`auto_discharge` = '',`short_circuit_protection` = '',`over_voltage_protection` = '',`protection_mode` = '',`100per_dropout_operation` = '√',`enable_input` = '√',`power_good_output` = '√',`feature_special_function` = '',`package` = 'SOT23-6',`pid` = '2726'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8071'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20081',`part_number` = 'SY8071',`vin_min` = '2.5',`vin_max` = '5.5',`uvlo` = '2.5',`iout_max` = '1',`fsw` = '2',`vout_min` = '0.6',`output_voltage_acurracy` = '±2%',`quiescent_current_typ` = '40',`shutdown_current` = '0.1',`mosfet_ron_h` = '260',`mosfet_ron_l` = '170',`light_load_efficient` = '√',`soft_start_time` = '1',`ccm_mode_input` = '',`auto_discharge` = '',`short_circuit_protection` = '',`over_voltage_protection` = '',`protection_mode` = '',`100per_dropout_operation` = '√',`enable_input` = '√',`power_good_output` = '',`feature_special_function` = '',`package` = 'SOT23-5',`pid` = '2727'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8075'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20095',`part_number` = 'SY8075',`vin_min` = '2.5',`vin_max` = '6.5',`uvlo` = '2.5',`iout_max` = '1',`fsw` = '1.5',`vout_min` = '0.6',`output_voltage_acurracy` = '±2%',`quiescent_current_typ` = '40',`shutdown_current` = '0.1',`mosfet_ron_h` = '260',`mosfet_ron_l` = '170',`light_load_efficient` = '√',`soft_start_time` = '1',`ccm_mode_input` = '',`auto_discharge` = '',`short_circuit_protection` = '',`over_voltage_protection` = '',`protection_mode` = '',`100per_dropout_operation` = '√',`enable_input` = '√',`power_good_output` = '',`feature_special_function` = '',`package` = 'DFN2x2-6',`pid` = '2728'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8077'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20097',`part_number` = 'SY8077',`vin_min` = '2.5',`vin_max` = '6.5',`uvlo` = '2.5',`iout_max` = '1',`fsw` = '1.5',`vout_min` = '0.6',`output_voltage_acurracy` = '±2%',`quiescent_current_typ` = '40',`shutdown_current` = '0.1',`mosfet_ron_h` = '260',`mosfet_ron_l` = '170',`light_load_efficient` = '√',`soft_start_time` = '1',`ccm_mode_input` = '',`auto_discharge` = '',`short_circuit_protection` = '√',`over_voltage_protection` = '',`protection_mode` = '',`100per_dropout_operation` = '√',`enable_input` = '√',`power_good_output` = '',`feature_special_function` = '',`package` = 'SOT23-5',`pid` = '2729'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8080'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20108',`part_number` = 'SY8080',`vin_min` = '2.5',`vin_max` = '5.5',`uvlo` = '2.5',`iout_max` = '1',`fsw` = '3',`vout_min` = '0.6',`output_voltage_acurracy` = '±2%',`quiescent_current_typ` = '40',`shutdown_current` = '0.1',`mosfet_ron_h` = '270',`mosfet_ron_l` = '160',`light_load_efficient` = '√',`soft_start_time` = '1',`ccm_mode_input` = '',`auto_discharge` = '',`short_circuit_protection` = '',`over_voltage_protection` = '',`protection_mode` = '',`100per_dropout_operation` = '√',`enable_input` = '√',`power_good_output` = '',`feature_special_function` = '',`package` = 'SOT23-5',`pid` = '2730'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8081'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20111',`part_number` = 'SY8081',`vin_min` = '2.5',`vin_max` = '5.5',`uvlo` = '2.5',`iout_max` = '1',`fsw` = '2.5',`vout_min` = '0.6',`output_voltage_acurracy` = '±2%',`quiescent_current_typ` = '40',`shutdown_current` = '0.1',`mosfet_ron_h` = '230',`mosfet_ron_l` = '150',`light_load_efficient` = '√',`soft_start_time` = '1',`ccm_mode_input` = '',`auto_discharge` = '',`short_circuit_protection` = '',`over_voltage_protection` = '',`protection_mode` = '',`100per_dropout_operation` = '',`enable_input` = '√',`power_good_output` = '',`feature_special_function` = '',`package` = 'DFN1.5×1.5-6',`pid` = '2731'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8031'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20021',`part_number` = 'SY8031',`vin_min` = '2.5',`vin_max` = '5.5',`uvlo` = '2.4',`iout_max` = '1.2',`fsw` = '2.25',`vout_min` = '0.6',`output_voltage_acurracy` = '±1.5%',`quiescent_current_typ` = '50',`shutdown_current` = '0.1',`mosfet_ron_h` = '200',`mosfet_ron_l` = '150',`light_load_efficient` = '',`soft_start_time` = '1',`ccm_mode_input` = '',`auto_discharge` = '',`short_circuit_protection` = '',`over_voltage_protection` = '',`protection_mode` = '',`100per_dropout_operation` = '√',`enable_input` = '√',`power_good_output` = '',`feature_special_function` = '',`package` = 'SOT23-5',`pid` = '2732'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8011B'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20122B',`part_number` = 'SY8011B',`vin_min` = '2.5',`vin_max` = '5.5',`uvlo` = '2.5',`iout_max` = '1.5',`fsw` = '1.5',`vout_min` = '0.6',`output_voltage_acurracy` = '±2%',`quiescent_current_typ` = '60',`shutdown_current` = '0.1',`mosfet_ron_h` = '210',`mosfet_ron_l` = '130',`light_load_efficient` = '√',`soft_start_time` = '1',`ccm_mode_input` = '',`auto_discharge` = '120',`short_circuit_protection` = '',`over_voltage_protection` = '',`protection_mode` = '',`100per_dropout_operation` = '√',`enable_input` = '√',`power_good_output` = '',`feature_special_function` = '',`package` = 'DFN1.5x1.5-6',`pid` = '2733'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8030'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20183',`part_number` = 'SY8030',`vin_min` = '2.5',`vin_max` = '5.5',`uvlo` = '2.5',`iout_max` = '1.5',`fsw` = '2.25',`vout_min` = '0.6',`output_voltage_acurracy` = '±1.5%',`quiescent_current_typ` = '50',`shutdown_current` = '0.1',`mosfet_ron_h` = '200',`mosfet_ron_l` = '150',`light_load_efficient` = '',`soft_start_time` = '1',`ccm_mode_input` = '√',`auto_discharge` = '',`short_circuit_protection` = '√',`over_voltage_protection` = '',`protection_mode` = '',`100per_dropout_operation` = '',`enable_input` = '√',`power_good_output` = '',`feature_special_function` = '',`package` = 'DFN2x2-6',`pid` = '2734'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8002E'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20122E',`part_number` = 'SY8002E',`vin_min` = '2.7',`vin_max` = '5.5',`uvlo` = '2.65',`iout_max` = '2',`fsw` = '1',`vout_min` = '0.6',`output_voltage_acurracy` = '±2%',`quiescent_current_typ` = '55',`shutdown_current` = '0.1',`mosfet_ron_h` = '110',`mosfet_ron_l` = '80',`light_load_efficient` = '',`soft_start_time` = '',`ccm_mode_input` = '',`auto_discharge` = '',`short_circuit_protection` = '√',`over_voltage_protection` = '√',`protection_mode` = 'hic-cup',`100per_dropout_operation` = '√',`enable_input` = '√',`power_good_output` = '√',`feature_special_function` = ' Forced CCM ',`package` = 'SOT23-6',`pid` = '2735'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8003L'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20133L',`part_number` = 'SY8003L',`vin_min` = '2.7',`vin_max` = '5.5',`uvlo` = '2.65',`iout_max` = '2',`fsw` = '1',`vout_min` = '0.6',`output_voltage_acurracy` = '±2%',`quiescent_current_typ` = '55',`shutdown_current` = '0.1',`mosfet_ron_h` = '120',`mosfet_ron_l` = '90',`light_load_efficient` = '√',`soft_start_time` = '1.2',`ccm_mode_input` = '',`auto_discharge` = '50',`short_circuit_protection` = '√',`over_voltage_protection` = '√',`protection_mode` = 'hic-cup',`100per_dropout_operation` = '√',`enable_input` = '√',`power_good_output` = '√',`feature_special_function` = '',`package` = 'DFN2x2-8',`pid` = '2736'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8089A'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20149A',`part_number` = 'SY8089A',`vin_min` = '2.7',`vin_max` = '5.5',`uvlo` = '2.65',`iout_max` = '2',`fsw` = '1',`vout_min` = '0.6',`output_voltage_acurracy` = '±2%',`quiescent_current_typ` = '55',`shutdown_current` = '0.1',`mosfet_ron_h` = '110',`mosfet_ron_l` = '80',`light_load_efficient` = '√',`soft_start_time` = '1.2',`ccm_mode_input` = '',`auto_discharge` = '50',`short_circuit_protection` = '√',`over_voltage_protection` = '√',`protection_mode` = 'hic-cup',`100per_dropout_operation` = '√',`enable_input` = '√',`power_good_output` = '',`feature_special_function` = ' 3A Peak current',`package` = 'SOT23-5',`pid` = '2737'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8089'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20149',`part_number` = 'SY8089',`vin_min` = '2.7',`vin_max` = '5.5',`uvlo` = '2.65',`iout_max` = '2',`fsw` = '1',`vout_min` = '0.6',`output_voltage_acurracy` = '±2%',`quiescent_current_typ` = '55',`shutdown_current` = '0.1',`mosfet_ron_h` = '110',`mosfet_ron_l` = '80',`light_load_efficient` = '√',`soft_start_time` = '1.2',`ccm_mode_input` = '',`auto_discharge` = '50',`short_circuit_protection` = '√',`over_voltage_protection` = '√',`protection_mode` = 'Latch off',`100per_dropout_operation` = '√',`enable_input` = '√',`power_good_output` = '',`feature_special_function` = ' 3A Peak current',`package` = 'SOT23-5',`pid` = '2738'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8089B'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20149B',`part_number` = 'SY8089B',`vin_min` = '2.7',`vin_max` = '5.5',`uvlo` = '2.65',`iout_max` = '2',`fsw` = '1',`vout_min` = '0.6',`output_voltage_acurracy` = '±2%',`quiescent_current_typ` = '55',`shutdown_current` = '0.1',`mosfet_ron_h` = '110',`mosfet_ron_l` = '80',`light_load_efficient` = '√',`soft_start_time` = '1.2',`ccm_mode_input` = '',`auto_discharge` = '50',`short_circuit_protection` = '√',`over_voltage_protection` = '√',`protection_mode` = 'Latch off',`100per_dropout_operation` = '√',`enable_input` = '√',`power_good_output` = '',`feature_special_function` = ' 3A Peak current',`package` = 'SOT23-5',`pid` = '2739'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8079'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20159',`part_number` = 'SY8079',`vin_min` = '2.7',`vin_max` = '6.5',`uvlo` = '2.65',`iout_max` = '2',`fsw` = '1',`vout_min` = '0.6',`output_voltage_acurracy` = '±2%',`quiescent_current_typ` = '55',`shutdown_current` = '0.1',`mosfet_ron_h` = '125',`mosfet_ron_l` = '95',`light_load_efficient` = '√',`soft_start_time` = '1',`ccm_mode_input` = '',`auto_discharge` = '50',`short_circuit_protection` = '√',`over_voltage_protection` = '',`protection_mode` = 'hic-cup',`100per_dropout_operation` = '√',`enable_input` = '√',`power_good_output` = '',`feature_special_function` = '',`package` = 'SOT23-5',`pid` = '2740'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8079P'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20159P',`part_number` = 'SY8079P',`vin_min` = '2.7',`vin_max` = '6.5',`uvlo` = '2.65',`iout_max` = '2',`fsw` = '1',`vout_min` = '0.6',`output_voltage_acurracy` = '±2%',`quiescent_current_typ` = '55',`shutdown_current` = '0.1',`mosfet_ron_h` = '125',`mosfet_ron_l` = '95',`light_load_efficient` = '√',`soft_start_time` = '1',`ccm_mode_input` = '',`auto_discharge` = '50',`short_circuit_protection` = '',`over_voltage_protection` = '',`protection_mode` = 'hic-cup',`100per_dropout_operation` = '',`enable_input` = '√',`power_good_output` = '√',`feature_special_function` = '',`package` = 'SOT23-6',`pid` = '2741'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8032'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20162',`part_number` = 'SY8032',`vin_min` = '2.7',`vin_max` = '5.5',`uvlo` = '2.7',`iout_max` = '2.5',`fsw` = '1',`vout_min` = '0.6',`output_voltage_acurracy` = '±2%',`quiescent_current_typ` = '80',`shutdown_current` = '0.1',`mosfet_ron_h` = '100',`mosfet_ron_l` = '80',`light_load_efficient` = '√',`soft_start_time` = '0.8',`ccm_mode_input` = '',`auto_discharge` = '',`short_circuit_protection` = '',`over_voltage_protection` = '',`protection_mode` = 'hic-cup',`100per_dropout_operation` = '√',`enable_input` = '√',`power_good_output` = '√',`feature_special_function` = ' 3A Peak current',`package` = 'SOT23-6',`pid` = '2742'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8032E'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20172E',`part_number` = 'SY8032E',`vin_min` = '2.7',`vin_max` = '5.5',`uvlo` = '2.7',`iout_max` = '2.5',`fsw` = '1',`vout_min` = '0.6',`output_voltage_acurracy` = '±2%',`quiescent_current_typ` = '80',`shutdown_current` = '0.1',`mosfet_ron_h` = '100',`mosfet_ron_l` = '80',`light_load_efficient` = '',`soft_start_time` = '0.8',`ccm_mode_input` = '',`auto_discharge` = '',`short_circuit_protection` = '',`over_voltage_protection` = '',`protection_mode` = 'hic-cup',`100per_dropout_operation` = '',`enable_input` = '√',`power_good_output` = '√',`feature_special_function` = ' Forced CCM ',`package` = 'SOT23-6',`pid` = '2743'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8003'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20113',`part_number` = 'SY8003',`vin_min` = '2.7',`vin_max` = '5.5',`uvlo` = '2.5',`iout_max` = '3',`fsw` = '1',`vout_min` = '0.6',`output_voltage_acurracy` = '±2%',`quiescent_current_typ` = '55',`shutdown_current` = '0.1',`mosfet_ron_h` = '110',`mosfet_ron_l` = '80',`light_load_efficient` = '√',`soft_start_time` = '1.2',`ccm_mode_input` = '',`auto_discharge` = '50',`short_circuit_protection` = '√',`over_voltage_protection` = '√',`protection_mode` = 'latch off',`100per_dropout_operation` = '√',`enable_input` = '√',`power_good_output` = '√',`feature_special_function` = '',`package` = 'DFN2x2-8',`pid` = '2744'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8003A'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20113A',`part_number` = 'SY8003A',`vin_min` = '2.7',`vin_max` = '5.5',`uvlo` = '2.5',`iout_max` = '3',`fsw` = '1',`vout_min` = '0.6',`output_voltage_acurracy` = '±2%',`quiescent_current_typ` = '55',`shutdown_current` = '0.1',`mosfet_ron_h` = '110',`mosfet_ron_l` = '80',`light_load_efficient` = '√',`soft_start_time` = '1.2',`ccm_mode_input` = '',`auto_discharge` = '50',`short_circuit_protection` = '√',`over_voltage_protection` = '√',`protection_mode` = 'hic-cup',`100per_dropout_operation` = '√',`enable_input` = '√',`power_good_output` = '√',`feature_special_function` = '',`package` = 'DFN2x2-8',`pid` = '2745'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8003C'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20113C',`part_number` = 'SY8003C',`vin_min` = '2.7',`vin_max` = '5.5',`uvlo` = '2.65',`iout_max` = '3',`fsw` = '3',`vout_min` = '0.6',`output_voltage_acurracy` = '±2%',`quiescent_current_typ` = '55',`shutdown_current` = '0.1',`mosfet_ron_h` = '100',`mosfet_ron_l` = '80',`light_load_efficient` = '√',`soft_start_time` = '1',`ccm_mode_input` = '',`auto_discharge` = '50',`short_circuit_protection` = '√',`over_voltage_protection` = '',`protection_mode` = 'hic-cup',`100per_dropout_operation` = '√',`enable_input` = '√',`power_good_output` = '√',`feature_special_function` = '',`package` = 'DFN2x2-8',`pid` = '2746'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8003E'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20113E',`part_number` = 'SY8003E',`vin_min` = '2.7',`vin_max` = '5.5',`uvlo` = '2.65',`iout_max` = '3',`fsw` = '1',`vout_min` = '0.6',`output_voltage_acurracy` = '±2%',`quiescent_current_typ` = '55',`shutdown_current` = '0.1',`mosfet_ron_h` = '110',`mosfet_ron_l` = '80',`light_load_efficient` = '',`soft_start_time` = '1.2',`ccm_mode_input` = '',`auto_discharge` = '50',`short_circuit_protection` = '√',`over_voltage_protection` = '√',`protection_mode` = 'hic-cup',`100per_dropout_operation` = '√',`enable_input` = '√',`power_good_output` = '√',`feature_special_function` = ' Forced CCM ',`package` = 'DFN2x2-8',`pid` = '2747'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8043A'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20194A',`part_number` = 'SY8043A',`vin_min` = '2.5',`vin_max` = '5.5',`uvlo` = '2.5',`iout_max` = '3',`fsw` = '1.25',`vout_min` = '0.8',`output_voltage_acurracy` = '±1.5%',`quiescent_current_typ` = '18',`shutdown_current` = '0.1',`mosfet_ron_h` = '75',`mosfet_ron_l` = '55',`light_load_efficient` = '√',`soft_start_time` = 'ext',`ccm_mode_input` = '',`auto_discharge` = '50',`short_circuit_protection` = '√',`over_voltage_protection` = '',`protection_mode` = 'hic-cup',`100per_dropout_operation` = '',`enable_input` = '√',`power_good_output` = '√',`feature_special_function` = 'Ext soft-start, Internal feed-forward cap',`package` = 'DFN3X3-16',`pid` = '2748'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8047L'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20207L',`part_number` = 'SY8047L',`vin_min` = '2.5',`vin_max` = '5.5',`uvlo` = '2.5',`iout_max` = '3',`fsw` = '1.25',`vout_min` = '0.6',`output_voltage_acurracy` = '±1.5%',`quiescent_current_typ` = '18',`shutdown_current` = '0.1',`mosfet_ron_h` = '75',`mosfet_ron_l` = '55',`light_load_efficient` = '√',`soft_start_time` = 'ext',`ccm_mode_input` = '',`auto_discharge` = '50',`short_circuit_protection` = '√',`over_voltage_protection` = '',`protection_mode` = 'hic-cup',`100per_dropout_operation` = '',`enable_input` = '√',`power_good_output` = '√',`feature_special_function` = 'Ext soft-start',`package` = 'QFN3x3-16',`pid` = '2749'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8859'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20193',`part_number` = 'SY8859',`vin_min` = '2.7',`vin_max` = '5.5',`uvlo` = '1.8',`iout_max` = '3',`fsw` = '1',`vout_min` = '0.6',`output_voltage_acurracy` = '±1%',`quiescent_current_typ` = '55',`shutdown_current` = '0.1',`mosfet_ron_h` = '85',`mosfet_ron_l` = '50',`light_load_efficient` = '√',`soft_start_time` = '0.35',`ccm_mode_input` = '√',`auto_discharge` = '75',`short_circuit_protection` = '√',`over_voltage_protection` = '',`protection_mode` = 'hic-cup',`100per_dropout_operation` = '',`enable_input` = '√',`power_good_output` = '√',`feature_special_function` = '',`package` = 'QFN1.5x1.6-7',`pid` = '2750'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8823'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY 20153',`part_number` = 'SY8823',`vin_min` = '2.5',`vin_max` = '5.5',`uvlo` = '2.5',`iout_max` = '3.5',`fsw` = '2',`vout_min` = '0.6',`output_voltage_acurracy` = '±1.5%',`quiescent_current_typ` = '18',`shutdown_current` = '0.1',`mosfet_ron_h` = '55',`mosfet_ron_l` = '35',`light_load_efficient` = '√',`soft_start_time` = '1',`ccm_mode_input` = '',`auto_discharge` = '50',`short_circuit_protection` = '√',`over_voltage_protection` = '',`protection_mode` = 'hic-cup',`100per_dropout_operation` = '√',`enable_input` = '√',`power_good_output` = '√',`feature_special_function` = '',`package` = 'DFN2x1.5-8',`pid` = '2751'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8047'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20214',`part_number` = 'SY8047',`vin_min` = '2.5',`vin_max` = '5.5',`uvlo` = '2.5',`iout_max` = '4',`fsw` = '1.25',`vout_min` = '0.6',`output_voltage_acurracy` = '±1.5%',`quiescent_current_typ` = '18',`shutdown_current` = '0.1',`mosfet_ron_h` = '75',`mosfet_ron_l` = '55',`light_load_efficient` = '√',`soft_start_time` = 'ext',`ccm_mode_input` = '',`auto_discharge` = '50',`short_circuit_protection` = '√',`over_voltage_protection` = '',`protection_mode` = 'hic-cup',`100per_dropout_operation` = '√',`enable_input` = '√',`power_good_output` = '√',`feature_special_function` = '',`package` = 'QFN3x3-16',`pid` = '2752'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8057'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20217',`part_number` = 'SY8057',`vin_min` = '2.5',`vin_max` = '5.5',`uvlo` = '2.5',`iout_max` = '4',`fsw` = '1',`vout_min` = '0.7',`output_voltage_acurracy` = '±1%',`quiescent_current_typ` = '30',`shutdown_current` = '0.1',`mosfet_ron_h` = '70',`mosfet_ron_l` = '40',`light_load_efficient` = '√',`soft_start_time` = '0.1',`ccm_mode_input` = '',`auto_discharge` = '',`short_circuit_protection` = '√',`over_voltage_protection` = '√',`protection_mode` = '',`100per_dropout_operation` = '',`enable_input` = '√',`power_good_output` = '√',`feature_special_function` = ' VID control,\nLatch OVP/SCP/OTP',`package` = 'QFN3x3-16',`pid` = '2753'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8856'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20216',`part_number` = 'SY8856',`vin_min` = '2.7',`vin_max` = '5.5',`uvlo` = '2.7',`iout_max` = '4',`fsw` = '3',`vout_min` = '0.6',`output_voltage_acurracy` = '±1.5%',`quiescent_current_typ` = '60',`shutdown_current` = '0.1',`mosfet_ron_h` = '35',`mosfet_ron_l` = '15',`light_load_efficient` = '√',`soft_start_time` = '0.8',`ccm_mode_input` = '',`auto_discharge` = '50',`short_circuit_protection` = '√',`over_voltage_protection` = '',`protection_mode` = 'hic-cup',`100per_dropout_operation` = '√',`enable_input` = '√',`power_good_output` = '√',`feature_special_function` = '',`package` = 'DFN2x2-8',`pid` = '2754'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8035'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20215',`part_number` = 'SY8035',`vin_min` = '2.7',`vin_max` = '5.5',`uvlo` = '2.7',`iout_max` = '5',`fsw` = '1',`vout_min` = '0.6',`output_voltage_acurracy` = '±1.5%',`quiescent_current_typ` = '150',`shutdown_current` = '0.1',`mosfet_ron_h` = '45',`mosfet_ron_l` = '35',`light_load_efficient` = '',`soft_start_time` = '0.6',`ccm_mode_input` = '',`auto_discharge` = '40',`short_circuit_protection` = '√',`over_voltage_protection` = '',`protection_mode` = '',`100per_dropout_operation` = '',`enable_input` = '√',`power_good_output` = '√',`feature_special_function` = 'Ext soft-start',`package` = 'DFN3x3-10',`pid` = '2755'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8805A'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20225A',`part_number` = 'SY8805A',`vin_min` = '3',`vin_max` = '5.5',`uvlo` = '2.8',`iout_max` = '5',`fsw` = '1',`vout_min` = '0.6',`output_voltage_acurracy` = '±1.5%',`quiescent_current_typ` = '100',`shutdown_current` = '0.1',`mosfet_ron_h` = '35',`mosfet_ron_l` = '15',`light_load_efficient` = '',`soft_start_time` = '1.5',`ccm_mode_input` = '',`auto_discharge` = '10',`short_circuit_protection` = '',`over_voltage_protection` = '',`protection_mode` = '',`100per_dropout_operation` = '',`enable_input` = '√',`power_good_output` = '√',`feature_special_function` = '',`package` = 'DFN2x2-8',`pid` = '2756'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8825'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20235',`part_number` = 'SY8825',`vin_min` = '2.5',`vin_max` = '5.5',`uvlo` = '2.5',`iout_max` = '5',`fsw` = '2',`vout_min` = '0.6',`output_voltage_acurracy` = '±1.5%',`quiescent_current_typ` = '18',`shutdown_current` = '0.1',`mosfet_ron_h` = '55',`mosfet_ron_l` = '35',`light_load_efficient` = '√',`soft_start_time` = '1',`ccm_mode_input` = '',`auto_discharge` = '50',`short_circuit_protection` = '√',`over_voltage_protection` = '',`protection_mode` = 'hic-cup',`100per_dropout_operation` = '',`enable_input` = '√',`power_good_output` = '√',`feature_special_function` = '',`package` = 'QFN2x1.5-8',`pid` = '2757'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8036'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20218',`part_number` = 'SY8036',`vin_min` = '2.7',`vin_max` = '5.5',`uvlo` = '',`iout_max` = '6',`fsw` = '1',`vout_min` = '0.6',`output_voltage_acurracy` = '±1.5%',`quiescent_current_typ` = '150',`shutdown_current` = '0.1',`mosfet_ron_h` = '40',`mosfet_ron_l` = '30',`light_load_efficient` = '',`soft_start_time` = '0.6',`ccm_mode_input` = '',`auto_discharge` = '40',`short_circuit_protection` = '',`over_voltage_protection` = '',`protection_mode` = '',`100per_dropout_operation` = '',`enable_input` = '√',`power_good_output` = '√',`feature_special_function` = 'Ext soft-start',`package` = 'DFN3x3-10',`pid` = '2758'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8876'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20246',`part_number` = 'SY8876',`vin_min` = '2.7',`vin_max` = '6.5',`uvlo` = '2.7',`iout_max` = '6',`fsw` = '1.2',`vout_min` = '0.6',`output_voltage_acurracy` = '±1.5%',`quiescent_current_typ` = '60',`shutdown_current` = '0.1',`mosfet_ron_h` = '38',`mosfet_ron_l` = '15',`light_load_efficient` = '√',`soft_start_time` = '0.8',`ccm_mode_input` = '',`auto_discharge` = '50',`short_circuit_protection` = '√',`over_voltage_protection` = '',`protection_mode` = 'hic-cup',`100per_dropout_operation` = '',`enable_input` = '√',`power_good_output` = '√',`feature_special_function` = 'OCP/UVLO/OTP',`package` = 'DFN2x2-8',`pid` = '2759'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8827K'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20257K',`part_number` = 'SY8827K',`vin_min` = '2.6',`vin_max` = '5.5',`uvlo` = '2.6',`iout_max` = '6',`fsw` = '2.4',`vout_min` = '0.7125',`output_voltage_acurracy` = '±1.5%',`quiescent_current_typ` = '75',`shutdown_current` = '0.1',`mosfet_ron_h` = '28',`mosfet_ron_l` = '17',`light_load_efficient` = '√',`soft_start_time` = '0.3',`ccm_mode_input` = '',`auto_discharge` = '150',`short_circuit_protection` = '√',`over_voltage_protection` = '√',`protection_mode` = 'hic-cup',`100per_dropout_operation` = '',`enable_input` = '√',`power_good_output` = '√',`feature_special_function` = 'I2C Programmable Vout: 0.7125V~ 1.5V in 12.5mV steps, Addr: 1000001x',`package` = 'CSP1.56*1.96-20',`pid` = '2760'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8806'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20226',`part_number` = 'SY8806',`vin_min` = '3',`vin_max` = '5.5',`uvlo` = '2.9',`iout_max` = '6',`fsw` = '1.3',`vout_min` = '0.6',`output_voltage_acurracy` = '±1.5%',`quiescent_current_typ` = '100',`shutdown_current` = '0.1',`mosfet_ron_h` = '35',`mosfet_ron_l` = '15',`light_load_efficient` = '',`soft_start_time` = '1.5',`ccm_mode_input` = '',`auto_discharge` = '10',`short_circuit_protection` = '',`over_voltage_protection` = '',`protection_mode` = 'hic-cup',`100per_dropout_operation` = '√',`enable_input` = '√',`power_good_output` = '√',`feature_special_function` = '',`package` = 'DFN 2x2-8',`pid` = '2761'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8816'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20228',`part_number` = 'SY8816',`vin_min` = '2.75',`vin_max` = '6',`uvlo` = '2.7',`iout_max` = '6',`fsw` = '1.2',`vout_min` = '0.6',`output_voltage_acurracy` = '±1.5%',`quiescent_current_typ` = '60',`shutdown_current` = '0.1',`mosfet_ron_h` = '35',`mosfet_ron_l` = '15',`light_load_efficient` = '√',`soft_start_time` = '0.8',`ccm_mode_input` = '',`auto_discharge` = '50',`short_circuit_protection` = '',`over_voltage_protection` = '',`protection_mode` = 'hic-cup',`100per_dropout_operation` = '√',`enable_input` = '√',`power_good_output` = '√',`feature_special_function` = '',`package` = 'DFN 2x2-8',`pid` = '2762'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8868'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20268',`part_number` = 'SY8868',`vin_min` = '2.7',`vin_max` = '5.5',`uvlo` = '2.65',`iout_max` = '6',`fsw` = '1',`vout_min` = '0.6',`output_voltage_acurracy` = '±1%',`quiescent_current_typ` = '50',`shutdown_current` = '0.1',`mosfet_ron_h` = '35',`mosfet_ron_l` = '15',`light_load_efficient` = '√',`soft_start_time` = '1',`ccm_mode_input` = '',`auto_discharge` = '70',`short_circuit_protection` = '',`over_voltage_protection` = '√',`protection_mode` = 'latch-off',`100per_dropout_operation` = '',`enable_input` = '√',`power_good_output` = '√',`feature_special_function` = 'COT mode,max duty',`package` = 'QFN2x2-10',`pid` = '2763'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8099'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20269',`part_number` = 'SY8099',`vin_min` = '2.7',`vin_max` = '5.5',`uvlo` = '2.65',`iout_max` = '6',`fsw` = '1',`vout_min` = '0.6',`output_voltage_acurracy` = '±1%',`quiescent_current_typ` = '40',`shutdown_current` = '0.1',`mosfet_ron_h` = '30',`mosfet_ron_l` = '12',`light_load_efficient` = '√',`soft_start_time` = '1',`ccm_mode_input` = '',`auto_discharge` = '10',`short_circuit_protection` = '√',`over_voltage_protection` = '',`protection_mode` = 'hic-cup',`100per_dropout_operation` = '',`enable_input` = '√',`power_good_output` = '',`feature_special_function` = 'High efficiency',`package` = 'TSOT23-6',`pid` = '2764'
+  INSERT INTO 510_procut SET `cid` = '127',`part_number` = 'SY8812'
+  INSERT INTO 510_fielddata SET `new_part` = 'SY20276',`part_number` = 'SY8812',`vin_min` = '2.75',`vin_max` = '5.5',`uvlo` = '2.7',`iout_max` = '12',`fsw` = '1',`vout_min` = '0.6',`output_voltage_acurracy` = '±1%',`quiescent_current_typ` = '80',`shutdown_current` = '0.5',`mosfet_ron_h` = '12',`mosfet_ron_l` = '6',`light_load_efficient` = '√',`soft_start_time` = '0.3',`ccm_mode_input` = '',`auto_discharge` = '120',`short_circuit_protection` = '',`over_voltage_protection` = '',`protection_mode` = 'hic-cup',`100per_dropout_operation` = '',`enable_input` = '√',`power_good_output` = '√',`feature_special_function` = 'I2C Programmable Vout: 0.6~ 1.5V in 10mV steps, remote voltage sense',`package` = 'QFN 3x3-12',`pid` = '2765'
+
+20170726 18:01:10: admin-buckimportpara
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+

@@ -1,0 +1,965 @@
+
+<?php
+class performanceModel extends model
+{
+    /**
+     * Set menu. 
+     * 
+     * @param  array  $performances 
+     * @param  int    $performanceID 
+     * @param  string $extra 
+     * @access public
+     * @return void
+     */
+    public function setMenu($performances,$CID, $branch = 0, $extra = '')
+    {
+
+    	
+        $currentModule = $this->app->getModuleName();
+        $currentMethod = $this->app->getMethodName();
+
+
+        $selectHtml = $this->select($performances, $CID, $currentModule, $currentMethod, $extra, $branch);
+        
+        foreach($this->lang->performance->menu as $key => $menu)
+        { 
+        	if($key == 'create')	
+        	{
+        	$ty = $this->checkHRGroup();
+        	$zhuguan = $this->dao->select('supersid')->from('zt_user')->where('supersid')->eq($this->app->user->account)->fetch();//var_dump($zhuguan);die;
+	        	if($ty==false && $this->app->user->account != 'admin' && $zhuguan==false)
+	        	{
+                   unset($this->lang->performance->menu->create);
+	            }
+	            
+        	}
+        	 
+        	 $replace = ($key == 'list' ? $selectHtml : $CID);
+        	 
+             common::setMenuVars($this->lang->performance->menu, $key, $replace);
+        	 
+            
+        }//die;
+        
+    }
+
+    /**
+     * Create the select code of circle. 
+     * 
+     * @param  array     $products 
+     * @param  int       $productID 
+     * @param  string    $currentModule 
+     * @param  string    $currentMethod 
+     * @param  string    $extra 
+     * @access public
+     * @return string
+     */
+    public function select($circles, $circleID, $currentModule, $currentMethod, $extra = '', $branch = 0)
+    {
+    	
+        if(!$circleID)
+        {
+            unset($this->lang->performance->menu->branch);
+            return;
+        }
+        if($currentMethod == "view") $currentMethod = "browse";
+        setCookie("lastcircle", $circleID, $this->config->cookieLife, $this->config->webRoot);
+        
+        $currentCircle = $this->getCircleById($circleID);
+        
+        $output  = "<a id='currentItem' href=\"javascript:showDropMenu('performance', '$circleID', '$currentModule', '$currentMethod', '$extra')\">".$this->getDesCircle($currentCircle->circle)." <span class='icon-caret-down'></span></a><div id='dropMenu'><i class='icon icon-spin icon-spinner'></i></div>";
+       
+        if($currentCircle->status != 'hold')
+        {
+           
+            $this->lang->performance->menu->branch = str_replace('@branch@', $this->lang->performance->branchName[$currentProduct->type], $this->lang->performance->menu->branch);
+            
+            $branchName = isset($branches[$branch]) ? $branches[$branch] : $branches[0];
+            $output    .= '</li><li>';
+            //$output    .= "<a id='currentBranch' href=\"javascript:showDropMenu('branch', '$circleID', '$currentModule', '$currentMethod', '$extra')\">{$branchName} <span class='icon-caret-down'></span></a><div id='dropMenu'><i class='icon icon-spin icon-spinner'></i></div>";
+        }
+        
+        return $output;
+    }    
+
+    
+    /*
+     * get description of circle
+     */
+    public function getDesCircle($circle)
+    {
+    	$tmpname = substr($circle,0,4)." ".substr($circle,4,1)."H ";
+    	$tmpname .= " Performance Appraisal";
+    	return $tmpname;
+    }
+    
+    /**
+     * Get circle by id.
+     * 
+     * @param  int    $circleID 
+     * @access public
+     * @return object
+     */
+    public function getCircleById($circle)
+    {
+        
+        return $this->dao->select('*')->from('zt_circletime')->where('circle')->eq($circle)->fetch();
+    }    
+    
+    /**
+     * Check privilege.
+     * 
+     * @param object  $performance 
+     * @access public
+     * @return bool
+     */
+    public function checkPriv($performance)
+    {
+        /* Is admin? */
+        $account = ',' . $this->app->user->account . ',';
+        if(strpos($this->app->company->admins, $account) !== false) return true; 
+        /* Is HR Group */
+        $hrgroup = $this->dao->select('group')->from('zt_usergroup')->where('account')->eq($this->app->user->account)->andWhere('group')->eq(14)->fetch('group');
+        if($hrgroup == 14) return true;
+        /* Is Superviser members. */
+        if($performance->zgsid == $this->app->user->account) return true;
+        
+        return false;
+    }
+
+    /**
+     * Check HR group
+     * @access public
+     * @return bool
+     */
+    public function checkHRGroup()
+    {
+        $hrgroup = $this->dao->select('`group`')->from('zt_usergroup')->where('account')->eq($this->app->user->account)->andWhere('`group`')->eq(14)->fetch('group');
+        if($hrgroup == 14)
+        { 
+           return true;   
+        }
+        else
+        {
+           return false;
+        }  
+    }
+    
+    /**
+     * Create the link from module,method,extra
+     * 
+     * @param  string  $module 
+     * @param  string  $method 
+     * @param  mix     $extra 
+     * @access public
+     * @return void
+     */
+    public function getProductLink($module, $method, $extra, $branch = false)
+    {
+        $link = '';
+        if(strpos('performance', $module) !== false)
+        {
+
+            $link = helper::createLink('performance', 'all', "CID=%s");
+        }
+        else if($module == 'tree')
+        {
+            $link = helper::createLink($module, $method, "CID=%s&type=$extra&currentModuleID=0" . ($branch ? "&branch=%s" : ''));
+        }
+        else if(strpos('crossexams', $module) !== false)
+        {
+            $link = helper::createLink('crossexams', 'crosslist', "program=normal&circletime=%s");
+
+        }
+        return $link;
+    }
+
+    /**
+     * Get performance pairs. 
+     * 
+     * @param  string $mode 
+     * @return array
+     */
+    public function getPairs($mode = '')
+    {
+        $orderBy  = !empty($this->config->performance->orderBy) ? $this->config->performance->orderBy : 'circle';
+        $mode    .= $this->cookie->performanceMode;
+        $performances = $this->dao->select('*')
+            ->from('zt_circletime')
+            ->orderBy($orderBy)
+            ->fetchAll();
+        $pairs = array();
+        foreach($performances as $performance)
+        {
+        	//if($this->checkPriv($performance))
+            $pairs[$performance->id] = $performance->circle;
+        }
+        return $pairs;
+    }
+
+
+
+
+
+    
+    /**
+     * Update a performance.
+     * 
+     * @param  int    $performanceID 
+     * @access public
+     * @return array
+     */
+    public function update($performanceID)
+    {
+        $performanceID  = (int)$performanceID;
+        $oldperformance = $this->getById($performanceID);
+        $classinfo = fixer::input('post')
+            ->setIF(count($_POST['selectR']) > 0, 'param', mysql_escape_string(implode(",",$_POST['selectR'])))
+            ->remove('selectR')
+            ->stripTags($this->config->performance->editor->edit['id'], $this->config->allowedTags)
+            ->get();
+        $classinfo = $this->loadModel('file')->processEditor($classinfo, $this->config->performance->editor->edit['id']);
+        $this->dao->update('zt_performancemaster')->data($classinfo)
+            ->autoCheck()
+            ->batchCheck('name,code', 'notempty')
+            ->check('name', 'unique', "id != $performanceID ")
+            ->where('id')->eq($performanceID)
+            ->exec();
+            
+        if(!dao::isError()) return common::createChanges($oldperformance, $performance);
+    }
+    
+    public function delete($PID)
+    {
+       
+       $this->dao->delete()->from('zt_performancemaster')->where('id')->eq($PID)->exec();
+       $this->dao->delete()->from('zt_performanceitem')->where('mid')->eq($PID)->exec();
+       $this->dao->delete()->from('zt_performanceability')->where('mid')->eq($PID)->exec();
+       if(dao::isError()) die(js::error(dao::getError()));
+       
+    }
+
+    
+
+    /**
+     * Build search form.
+     *
+     * @param  int    $performanceID
+     * @param  array  $performances
+     * @param  int    $queryID
+     * @param  int    $actionURL
+     * @access public
+     * @return void
+     */
+    public function buildSearchForm($performanceID, $performances, $queryID, $actionURL)
+    {
+        $this->config->performance->search['actionURL'] = $actionURL;
+        $this->config->performance->search['queryID']   = $queryID;
+        
+        //$this->config->performance->search['params']['performance']['values'] = array($performanceID => $performances[$performanceID], 'all' => $this->lang->performance->allperformance);
+        //$this->config->performance->search['params']['module']['values']  = $this->loadModel('tree')->getOptionMenu($performanceID, $viewType = 'story', $startModuleID = 0);
+        if($this->session->currentperformanceType == 'normal')
+        {
+            unset($this->config->performance->search['fields']['branch']);
+            unset($this->config->performance->search['params']['branch']);
+        }
+        else
+        {
+            $this->config->performance->search['fields']['branch'] = $this->lang->performance->branch;
+            
+        }
+
+        $this->loadModel('search')->setSearchParams($this->config->performance->search);
+    }
+
+
+
+    /**
+     * Get team members of a performance from projects.
+     * 
+     * @param  object   $performance 
+     * @access public
+     * @return array
+     */
+    public function getTeamMemberPairs($performance)
+    {
+        $members[$performance->PO] = $performance->PO;
+        $members[$performance->QD] = $performance->QD;
+        $members[$performance->RD] = $performance->RD;
+        $members[$performance->createdBy] = $performance->createdBy;
+
+        /* Set projects and teams as static thus we can only query sql one times. */
+        static $projects, $teams;
+        if(empty($projects))
+        {
+            $projects = $this->dao->select('t1.project, t1.performance')->from(TABLE_PROJECTperformance)->alias('t1')
+                ->leftJoin(TABLE_PROJECT)->alias('t2')->on('t1.project = t2.id')
+                ->where('t2.deleted')->eq(0)
+                ->fetchGroup('performance', 'project');
+        }
+        if(empty($teams))
+        {
+            $teams = $this->dao->select('t1.project, t1.account')->from(TABLE_TEAM)->alias('t1')
+                ->leftJoin(TABLE_PROJECT)->alias('t2')->on('t1.project = t2.id')
+                ->where('t2.deleted')->eq(0)
+                ->fetchGroup('project', 'account');
+        }
+
+        if(!isset($projects[$performance->id])) return $members;
+        $performanceProjects = $projects[$performance->id];
+
+        $projectTeams = array();
+        foreach(array_keys($performanceProjects) as $projectID) $projectTeams = array_merge($projectTeams, array_keys($teams[$projectID]));
+
+        return array_flip(array_merge($members, $projectTeams));
+    }
+    
+    /**
+     * Get per list.
+     * 
+     * @param  string $status 
+     * @param  int    $itemCounts 
+     * @param  string $orderBy 
+     * @param  int    $pager 
+     * @access public
+     * @return void
+     */
+    public function getPerList($CID,$status = 'all', $itemCounts = 30, $orderBy = 'id_desc', $pager = null)
+    {
+        $hr = $this->checkHRGroup();
+        $status = htmlspecialchars(strtolower($status));
+    	$lists = $this->dao->select('*')->from('zt_performancemaster')
+    	->where('id')->ge(1)
+    	->beginIF(strpos("open,submitted,close,hold",$status) !== false)->andWhere('status')->eq($status)->fi()
+    	->beginIF($CID > 0)->andWhere('zhouqi')->eq($CID)->fi()
+    	->beginIF($hr === false && $this->app->user->account != 'admin')
+    	->andWhere(' ( staffcode')->eq($this->app->user->account)
+    	->orWhere('zgsid')->eq($this->app->user->account)
+    	->markright(1)
+    	->fi()
+    	->orderBy($orderBy)
+    	->page($pager)
+    	->fetchAll();
+       // var_dump($lists);die;
+        return $lists;
+    }
+    
+    /**
+     * Get performance list by search.
+     * 
+     * @param  string $where 
+     * @param  object $pager 
+     * @param  string $orderBy 
+     * @access public
+     * @return array
+     */
+	public function getsearch($CID,$where,$orderBy,$pager)
+	{
+		 $hr = $this->checkHRGroup();
+		 $rqs = $this->dao->select("*")->from("zt_performancemaster")
+		                       ->where($where)
+		                       ->andWhere('status')->ne('hold')
+		                       ->andWhere('zhouqi')->eq($CID)
+		                       ->beginIF($hr === false && $this->app->user->account != 'admin')
+		                       ->andWhere(' ( staffcode')->eq($this->app->user->account)
+		                       ->orWhere('zgsid')->eq($this->app->user->account)
+		                       ->markright(1)
+		                       ->fi()
+							   ->orderBy($orderBy)
+							   ->page($pager)
+							   ->fetchAll();
+					   
+		return $rqs;
+
+	}
+    
+    
+    
+	/**
+	 * Get the total score of employees' assessment performance.
+	 * 
+	 * @param  int   $cid 
+	 * @param  int   $zhouqi 
+	 * @access public
+	 * @return object 
+	 */
+     public function getTotalScore($staffcode,$zhouqi)
+     {
+     	$basic = $this->dao->select('*')->from('zt_performancemaster')->where('staffcode')->eq($staffcode)->andwhere('zhouqi')->eq($zhouqi)->fetch();
+     	$tt = $this->dao->select('*')->from('zt_performanceitem')->where('mid')->eq($basic->id)->andWhere('itemfrom')->eq("S")->andwhere("zhouqi")->eq($zhouqi)->fetchAll();
+        foreach($tt as $k=>$v)
+        {
+        	$itemtotal += $v->weight*$v->scorebysuper;
+        }
+        $re = $this->dao->select('*')->from('zt_performanceability')->where('mid')->eq($basic->id)->andwhere("zhouqi")->eq($zhouqi)->fetchAll();
+        foreach($re as $kk=>$vv)
+        {
+        	$abilitytotal += $vv->weight*$vv->scorebysuper;
+        }
+        $averaged = number_format(($itemtotal*0.7 + $abilitytotal*0.3),2);
+        $total->total=$averaged;
+        $total->worktotal=$itemtotal;
+        $total->abilitytotal=$abilitytotal;
+        return $total;
+     }
+     
+     /**
+      * 
+      * @param int $Pid
+      * @access public
+      * @return int
+      */
+     public function reviewmyself($PID)
+     {
+     	$masterinfo = $this->getById($PID);
+     	if(validater::checkEmpty($this->post->statement)) die(js::error('Employee statement must be filled out !'));
+     	if(validater::checkEmpty($this->post->staffsignature)) die(js::error('Emplyee Signature must be filled out !'));
+     	$data = fixer::input('post')->get();
+     	//save master
+     	$master->statement = $data->statement;
+     	$master->staffsignature = $data->staffsignature;
+     	$master->status = 'submitted';
+     	$this->dao->update('zt_performancemaster')
+     	     ->data($master)
+     	     ->where('id')->eq($PID)
+     	     ->andWhere('staffcode')->eq($masterinfo->staffcode)
+     	     ->andWhere('zhouqi')->eq($masterinfo->zhouqi)
+     	     ->autoCheck()
+     	     ->batchCheck($this->config->performance->review->requiredFields, 'notempty')
+     	     ->exec();
+     	$change_master = common::createChanges($masterinfo, $master);
+     	if(dao::isError()) die(js::error(dao::getError())); 
+     	//save review items
+     	foreach($this->post->scoreitem as $key => $value)
+     	{
+     	   if( (validater::checkInt($value) || $value == '0') && $value >= 0 && $value <= 100) 
+     	   {
+     	      $itemdata = array('reviewbymyself'=>$this->post->reviewbymyself[$key],'score'=>intval($this->post->scoreitem[$key]));
+     	      $olditem = $this->dao->select('*')->from('zt_performanceitem')
+     	                      ->where('mid')->eq($PID)
+     	                      ->andWhere('staffcode')->eq($masterinfo->staffcode)
+     	                      ->andWhere('zhouqi')->eq($masterinfo->zhouqi)
+     	                      ->andWhere('category')->eq($key)
+     	                      ->fetch(); 
+     	      $this->dao->update('zt_performanceitem')
+     	           ->data($itemdata)
+     	           ->where('mid')->eq($PID) 
+     	           ->andWhere('staffcode')->eq($masterinfo->staffcode)
+     	           ->andWhere('zhouqi')->eq($masterinfo->zhouqi)
+     	           ->andWhere('category')->eq($key)
+     	           ->exec();
+   
+     	      $change_item = common::createChanges($olditem, $itemdata); 
+     	      $change_master = array_merge($change_master,$change_item);    
+     	      if(dao::isError()) die(js::error(dao::getError())); 
+     	   }
+     	   else 
+     	   {
+     	      die(js::error("Employee self assessment must integer "));
+     	   }
+     	}    
+     	//save additional item
+     	foreach($this->post->ad_scoreitem as $key => $value)
+     	{
+     		if(strlen($this->post->ad_goalitem[$key]) > 2)
+     		{
+     			if(validater::checkInt($value) || intval($value) == '0')
+     			{
+     				$ad_itemdata = array('mid'=>$PID,
+     				                     'staffcode'=>$masterinfo->staffcode,
+     				                     'category'=>$key,
+     				                     'zhouqi'=>$masterinfo->zhouqi,
+     				                     'goalitem'=>$this->post->ad_goalitem[$key],
+     				                     'reviewbymyself'=>$this->post->ad_reviewbymyself[$key],
+     				                     'itemfrom'=>"M",
+     				                     'score'=>intval($this->post->ad_scoreitem[$key]));
+     				$this->dao->insert('zt_performanceitem')
+     				->data($ad_itemdata)
+     				->exec();
+     				 
+     				if(dao::isError()) die(js::error(dao::getError()));
+     			}
+     			else
+     			{
+     				die(js::error("Employee self assessment must integer "));
+     			}
+     		}
+     	}
+        //save ability score
+     	foreach($this->post->scoreability as $skey => $svalue)
+     	{
+     		if( (validater::checkInt($svalue) || intval($svalue) == 0)  && $svalue >= 0 && $svalue <= 100)
+     		{
+     			$ab_itemdata = array('score'=>intval($svalue));
+     	        $this->dao->update('zt_performanceability')
+     	           ->data($ab_itemdata)
+     	           ->where('mid')->eq($PID) 
+     	           ->andWhere('staffcode')->eq($masterinfo->staffcode)
+     	           ->andWhere('zhouqi')->eq($masterinfo->zhouqi)
+     	           ->andWhere('category')->eq($skey)
+     	           ->exec();
+     			if(dao::isError()) die(js::error(dao::getError()));
+     		}
+     		else
+     		{
+     			die(js::error("Employee self assessment must integer(0-100)  "));
+     		}
+     		
+     	}     	
+    
+       return $change_master;
+     }
+     
+     
+     /**
+      * save review content by superviser
+      * @param int $Pid
+      * @access public
+      * @return array
+      */
+     public function superviserreview($PID)
+     {
+     	$masterinfo = $this->getById($PID);
+     	//if(validater::checkEmpty($this->post->review_strength)) die(js::error('Employee strength must be filled out !'));
+     	if(validater::checkEmpty($this->post->review_improve)) die(js::error('Identify improvements and development must be filled out !'));
+     	//if(validater::checkEmpty($this->post->supersignature)) die(js::error('Reviewer Signature & Date must be filled out !'));
+     	$data = fixer::input('post')->get();
+     	//save master
+     	$master->review_strength = $data->review_strength;
+     	$master->review_improve = $data->review_improve;
+     	$master->supersignature = $data->supersignature;
+     	$this->dao->update('zt_performancemaster')
+     	     ->data($master)
+     	     ->where('id')->eq($PID)
+     	     ->andWhere('staffcode')->eq($masterinfo->staffcode)
+     	     ->andWhere('zhouqi')->eq($masterinfo->zhouqi)
+     	     ->autoCheck()
+     	     ->batchCheck('review_strength,review_improve', 'notempty')
+     	     ->exec();
+     	$change_master = common::createChanges($masterinfo, $master);
+     	if(dao::isError()) die(js::error(dao::getError())); 
+     	//save review items
+     	foreach($this->post->scorebysuper as $key => $value)
+     	{
+     	   if( (validater::checkInt($value) || $value == '0') && $value >= 0 && $value <= 100) 
+     	   {
+     	      $itemdata = array('reviewbysuper'=>$this->post->reviewbysuper[$key],'scorebysuper'=>intval($this->post->scorebysuper[$key]));
+     	      $olditem = $this->dao->select('*')->from('zt_performanceitem')
+     	                      ->where('mid')->eq($PID)
+     	                      ->andWhere('staffcode')->eq($masterinfo->staffcode)
+     	                      ->andWhere('zhouqi')->eq($masterinfo->zhouqi)
+     	                      ->andWhere('category')->eq($key)
+     	                      ->fetch(); 
+     	      $this->dao->update('zt_performanceitem')
+     	           ->data($itemdata)
+     	           ->where('mid')->eq($PID) 
+     	           ->andWhere('staffcode')->eq($masterinfo->staffcode)
+     	           ->andWhere('zhouqi')->eq($masterinfo->zhouqi)
+     	           ->andWhere('category')->eq($key)
+     	           ->exec();
+   
+     	      $change_item = common::createChanges($olditem, $itemdata); 
+     	      $change_master = array_merge($change_master,$change_item);    
+     	      if(dao::isError()) die(js::error(dao::getError())); 
+     	   }
+     	   else 
+     	   {
+     	      die(js::error("Score by Reviewer must integer(0-100) "));
+     	   }
+     	}    
+        //save ability score
+     	foreach($this->post->scorebysuperab as $skey => $svalue)
+     	{
+     		if( (validater::checkInt($svalue) || intval($svalue) == 0)  && $svalue >= 0 && $svalue <= 100)
+     		{
+     			$ab_itemdata = array('scorebysuper'=>intval($svalue),'reviewitem'=>$this->post->reviewitem[$skey]);
+     			$oldability = $this->dao->select('*')->from('zt_performanceability')
+     			->where('mid')->eq($PID)
+     			->andWhere('staffcode')->eq($masterinfo->staffcode)
+     			->andWhere('zhouqi')->eq($masterinfo->zhouqi)
+     			->andWhere('category')->eq($skey)
+     			->fetch();
+     			$tmpability[] = $oldability;
+     	        $this->dao->update('zt_performanceability')
+     	           ->data($ab_itemdata)
+     	           ->where('mid')->eq($PID) 
+     	           ->andWhere('staffcode')->eq($masterinfo->staffcode)
+     	           ->andWhere('zhouqi')->eq($masterinfo->zhouqi)
+     	           ->andWhere('category')->eq($skey)
+     	           ->exec();
+     	         $change_ability = common::createChanges($oldability, $ab_itemdata);
+     	         $change_master = array_merge($change_master,$change_ability);
+     			if(dao::isError()) die(js::error(dao::getError()));
+     		}
+     		else
+     		{
+     			die(js::error("Score by Reviewer must integer(0-100)  "));
+     		}
+     		
+     	}   
+       	
+       //save next citcle goal item
+       //check if exist next circle in master table
+        $nextcircle = $this->loadModel('admin')->getnextzhouqi($masterinfo->zhouqi);
+        $existid = $this->dao->select('id')->from('zt_performancemaster')->where('staffcode')->eq($masterinfo->staffcode)->andWhere('zhouqi')->eq($nextcircle)->fetch('id');
+     	if($existid < 1)
+     	{
+     	    $nextmasterdata = array('zhouqi'=>$nextcircle,
+     	                            'staffcode'=>$masterinfo->staffcode,
+     	                            'uid'=>$masterinfo->uid,
+     	                            'name'=>$masterinfo->name,
+     	                            'zhiwei'=>$masterinfo->zhiwei,
+     	                            'ruzhidate'=>$masterinfo->ruzhidate,
+     	                            'zgname'=>$masterinfo->zgname,
+     	                            'zgsid'=>$masterinfo->zgsid,
+     	                            'adddate'=>date('Y-m-d'),
+     	                            'status'=>'open'
+     	                            );
+     	    $this->dao->insert('zt_performancemaster')->data($nextmasterdata)->exec();                        
+     	    $nextmid = $this->dao->lastInsertID();
+     	    //insert ability of next circle
+     	    foreach($tmpability as $value)
+     	    {
+     	       $value->mid = $nextmid;
+     	       $value->zhouqi = $nextcircle;
+     	       $value->score = $this->app->user->realname;
+     	       $value->adddate = date('Y-m-d');
+     	       $value->score = 0;
+     	       unset($value->id);
+     	       $this->dao->insert('zt_performanceability')->data($value)->exec();
+     	     
+     	    }
+     	}
+     	else 
+     	{
+     	   $nextmid = $existid;
+     	}
+     	//check weight is 100 in total.
+     	$totalweight = 0;
+     	foreach($this->post->weight as $kk => $gg)
+     	{
+     	   $totalweight += $gg;
+     	}
+     	if($totalweight != 100 ) die(js::error('Sum of the weight must be 100 !'));
+        foreach($this->post->weight as $gkey => $gvalue)
+     	{
+     		if( (validater::checkInt($gvalue) || intval($gvalue) == 0)  && $gvalue >= 0 && $gvalue <= 100)
+     		{
+     			if(strlen($this->post->goalitem[$gkey]) > 1)
+     			{
+     				$nextgoalitem = array('mid'=>$nextmid,
+     				                     'goalitem'=>$this->post->goalitem[$gkey],
+     				                     'weight'=>$gvalue/100,
+     				                     'zhouqi'=>$nextcircle,
+     				                     'staffcode'=>$masterinfo->staffcode,
+     				                     'itemfrom'=>'S',
+     				                     'category'=>$gkey,
+     				                     'addby'=>$this->app->user->account,
+     				                     'adddate'=>date('Y-m-d')
+     				                     );
+     				//check if exist this category
+     				$existcate = $this->dao->select('*')->from('zt_performanceitem')
+     				             ->where('staffcode')->eq($masterinfo->staffcode)
+     				             ->andWhere('zhouqi')->eq($nextcircle)
+     				             ->andWhere('category')->eq($gkey)
+     				             ->fetch();   
+     				if($existcate->category > 0) 
+     				{                              
+     					$this->dao->update('zt_performanceitem')
+     					->data($nextgoalitem)
+     					->where('staffcode')->eq($masterinfo->staffcode)
+     					->andWhere('zhouqi')->eq($nextcircle)
+     					->andWhere('category')->eq($gkey)
+     					->exec();
+     					
+     					$change_nextitem = common::createChanges($existcate, $nextgoalitem);
+     					$change_master = array_merge($change_master,$change_nextitem);
+     				}
+     				else 
+     				{
+     				   $this->dao->insert('zt_performanceitem')->data($nextgoalitem)->exec();
+     				}
+     				if(dao::isError()) die(js::error(dao::getError()));
+     			}
+     		}
+     		else
+     		{
+     			die(js::error("Weight must be integer(0-100) "));
+     		}
+     		 
+     	}
+       return $change_master;
+     }     
+	  public function creategoal()
+		{
+		 if(empty($_POST['type']) || empty($_POST['staffcode']) || empty($_POST['zhouqi']) )
+		 {
+		 	die(js::error("The [Type],[Cycle],[Account] "." can not be empty!"));
+		 }
+		 //var_dump(date("Y-m-d",strtotime("+5 month",strtotime($_POST['ruzhidate']))));die;
+		 //var_dump(date($_POST['ruzhidate'],strtotime("+5 month")));die;
+		 if(date("Y-m-d")<date("Y-m-d",strtotime("+5 month",strtotime($_POST['ruzhidate']))))
+		 {
+		 	die(js::error("该员工未转正,请等待转正之后在订目标！"));
+		 }
+//		 if(empty($_POST['department']) || empty($_POST['zgdepartment']))
+//		 {
+//		 	die(js::error("The [Department] or [Manager Department] can not be empty!"));
+//		 }
+         
+		 if(!isset($_POST['type']) || empty($_POST['type'])){die(js::error("[Type]"." can not be empty!"));} 
+		 $data=fixer::input('post')->add('status',"open")->add('adddate',date("Y-m-d"))->get();
+		 $get_user = $this->dao->select('*')->from('zt_user')->where('account')->eq($data->staffcode)->fetch();
+		 $zgids = $this->dao->select('*')->from('zt_user')->where('realname')->eq($data->zgname)->fetch();
+		 for($i=1;$i<=8;$i++)
+     	 {
+     	 $item[$i]->mid=$ID;
+     	 $item[$i]->zhouqi=$data->zhouqi[$i];
+     	 $item[$i]->staffcode   = $get_user->account;
+     	 $item[$i]->category    = $data->category[$i];
+     	 $item[$i]->goalitem    = $data->goalitem[$i];
+     	 $item[$i]->weight      = rtrim($data->weight[$i]);
+     	 $item[$i]->itemfrom = "S";
+     	 $item[$i]->zhouqi      = $data->zhouqi;
+     	 if(empty($item[1]->goalitem) || empty($item[1]->weight))
+     	 {
+     	 	die(js::error("The [Job Performance Evaluation item] and [weight] of category 1 can not be empty !"));
+     	 }
+	     if(empty($item[$i]->goalitem) || empty($item[$i]->weight))
+	     {
+	     	unset($item[$i]);
+	     }
+	     if(is_int($item[$i]->weight))
+	     {
+	     	die(js::error($this->lang->performance->fieldtype));
+	     }
+	     $weight += $item[$i]->weight;
+     	 }
+     	 if($weight != 100){die(js::error("The weight in total is not equal to 100"));}
+	     $master->name=$get_user->realname; 
+     	 $master->staffcode=$data->staffcode;
+     	 $master->uid=$get_user->id;
+     	 $master->zgname= $get_user->realname;
+     	 $master->department=$data->department;
+     	 $master->zhiwei=$data->zhiwei;
+     	 $master->ruzhidate=$data->ruzhidate;
+     	 $master->zgdepartment=$data->zgdepartment;
+     	 $master->zgzhiwei=$data->zgzhiwei;
+     	 $master->zgname=$data->zgname;
+     	 $master->zhouqi=$data->zhouqi;
+     	 $master->statement=$data->statement;
+     	 $master->zgsid=$zgids->account;
+     	 $master->status=$data->status;
+     	 $master->adddate=date("Y-m-d");
+//		$rt = $this->dao->select('*')->from('zt_performancemaster')->where("staffcode")->eq($master->staffcode)->fetch();//var_dump($this->dao->get(),$rt);die;
+//	    if(strlen($rt->staffcode)>3 && $rt->zhoui==$_POST['zhouqi']){die(js::error("You can not add when it exists in list ."));}
+     	 $cf = $this->dao->select('*')->from('zt_performancemaster')->where('zhouqi')->eq($master->zhouqi)->andWhere('staffcode')->eq($master->staffcode)->fetch();
+     	 //if($cf){die(js::error($cf->name." already has the data for ".$cf->zhouqi."..."));}
+		 if($cf){die(js::error("You can not add when it exists in list ."));}
+     	 $this->dao->insert('zt_performancemaster')->data($master)->exec();
+     	 $ID = $this->dao->lastInsertID();
+     	 for($i=1;$i<=8;$i++)
+     	 {
+     	 $item[$i]->mid=$ID;
+     	 $item[$i]->addby=$this->app->user->realname;
+     	 $item[$i]->zhouqi=$data->zhouqi[$i];
+     	 $item[$i]->staffcode   = $get_user->account;
+     	 $item[$i]->category    = $data->category[$i];
+     	 $item[$i]->goalitem    = $data->goalitem[$i];
+     	 $item[$i]->weight      = rtrim($data->weight[$i],"%")/100;
+     	 //$item[$i]->reviewbymyself= $data->reviewbymyself[$i];
+     	 //$item[$i]->reviewbysuper= $data->reviewbysuper[$i];
+     	 //$item[$i]->score       = $data->score[$i];
+     	 //$item[$i]->scorebysuper       = $data->score[$i];
+     	 $item[$i]->itemfrom = "S";
+     	 $item[$i]->zhouqi      = $data->zhouqi;
+	     	 if(empty($item[$i]->goalitem) || empty($item[$i]->weight))
+	     	 {
+	     	 	unset($item[$i]);
+	     	 }
+     	 }//var_dump($item);die;
+     	 foreach($item as $k=>$v)
+     	 {//var_dump($v);die;
+     	 	$this->dao->insert('zt_performanceitem')->data($v)->exec();
+     	 }
+     	 if($data->type=="staff")
+     	 {
+     	 	$ability->addby = $this->app->user->realname;
+     	 	$ability->mid = $ID;
+     	 	$ability->category=$this->lang->performance->categorputstaff;
+     	 	$ability->staffcode=$get_user->account;
+     	 	$ability->zhouqi=$data->zhouqi;
+     	 	$ability->item=$this->lang->performance->abilitysstaff;
+     	 	$ability->weight=$this->lang->performance->weightstaff;
+     	 for($j=0;$j<=4;$j++)
+     	 {
+     	  $abl->addby      =$ability->addby;
+     	  $abl->mid         =$ability->mid;
+     	  $abl->category    =$ability->category[$j];
+     	  $abl->staffcode   =$ability->staffcode;
+     	  $abl->zhouqi      =$ability->zhouqi;
+     	  $abl->item        =$ability->item[$j];
+     	  $abl->weight      =$ability->weight[$j];
+     	 //var_dump($abl);die;
+     	  $this->dao->insert('zt_performanceability')->data($abl)->exec();
+     	 }
+     	 }
+		elseif($data->type=="manager")
+     	 {
+     	 	 $abilitys->addby = $this->app->user->realname;
+     	 	 $abilitys->mid = $ID;
+     	 	 $abilitys->category=$this->lang->performance->categorypuj;
+     	 	 $abilitys->staffcode=$get_user->account;
+     	 	 $abilitys->zhouqi=$data->zhouqi;
+     	 	 $abilitys->item=$this->lang->performance->abilitys;
+     	 	 $abilitys->weight=$this->lang->performance->weightmanager;
+	     	 for($j=0;$j<=6;$j++)
+	     	 {
+	     	  $abls->addby       =$abilitys->addby;
+	     	  $abls->mid         =$abilitys->mid;
+	     	  $abls->category    =$abilitys->category[$j];
+	     	  $abls->staffcode   =$abilitys->staffcode;
+	     	  $abls->zhouqi      =$abilitys->zhouqi;
+	     	  $abls->item        =$abilitys->item[$j];
+	     	  $abls->weight      =$abilitys->weight[$j];
+	     	  $this->dao->insert('zt_performanceability')->data($abls)->exec();
+	     	 }
+     	 }
+		 elseif($data->type=="DE")
+     	 {   
+     	 	 $abilitys->addby = $this->app->user->realname;
+     	 	 $abilitys->mid = $ID;
+     	 	 $abilitys->category=$this->lang->performance->category;
+     	 	 $abilitys->staffcode=$get_user->account;
+     	 	 $abilitys->zhouqi=$data->zhouqi;
+     	 	 $abilitys->item=$this->lang->performance->deabilitystaff;
+     	 	 $abilitys->weight=$this->lang->performance->destaff;
+	     	 for($j=0;$j<=6;$j++)
+	     	 {
+	     	  $abls->addby     =$abilitys->addby;
+	     	  $abls->mid         =$abilitys->mid;
+	     	  $abls->category    =$abilitys->category[$j];
+	     	  $abls->staffcode   =$abilitys->staffcode;
+	     	  $abls->zhouqi      =$abilitys->zhouqi;
+	     	  $abls->item        =$abilitys->item[$j];
+	     	  $abls->weight      =$abilitys->weight[$j];
+	     	  $this->dao->insert('zt_performanceability')->data($abls)->exec();
+	     	 }
+     	 }
+		elseif($data->type=="DeManager")
+     	 {
+     	 	 $abilitys->addby = $this->app->user->realname;
+     	 	 $abilitys->mid = $ID;
+     	 	 $abilitys->category=$this->lang->performance->decategory;
+     	 	 $abilitys->staffcode=$get_user->account;
+     	 	 $abilitys->zhouqi=$data->zhouqi;
+     	 	 $abilitys->item=$this->lang->performance->deability;
+     	 	 $abilitys->weight=$this->lang->performance->demanager;
+	     	 for($j=0;$j<=7;$j++)
+	     	 {
+	     	  $abls->addby     =$abilitys->addby;
+	     	  $abls->mid         =$abilitys->mid;
+	     	  $abls->category    =$abilitys->category[$j];
+	     	  $abls->staffcode   =$abilitys->staffcode;
+	     	  $abls->zhouqi      =$abilitys->zhouqi;
+	     	  $abls->item        =$abilitys->item[$j];
+	     	  $abls->weight      =$abilitys->weight[$j];
+	     	  $this->dao->insert('zt_performanceability')->data($abls)->exec();
+	     	 }
+     	 }
+     	return $ID;
+	}
+
+     
+     
+     
+     
+    /**
+     * Get performance info by id.
+     * 
+     * @param  int    $circleID 
+     * @access public
+     * @return object
+     */
+    public function getById($PID)
+    {
+        $master = $this->dao->select('*')->from('zt_performancemaster')->where('id')->eq($PID)->fetch();
+        $nextzhouqi = $this->loadModel('admin')->getnextzhouqi($master->zhouqi);
+        $master->items = $this->dao->select('*')->from('zt_performanceitem')->where('mid')->eq($master->id)->andWhere('staffcode')->eq($master->staffcode)->andWhere("zhouqi")->eq($master->zhouqi)->OrderBy('id')->fetchAll();
+        $master->nextitems = $this->dao->select('*')->from('zt_performanceitem')->Where('staffcode')->eq($master->staffcode)->andWhere("zhouqi")->eq($nextzhouqi)->OrderBy('id')->fetchAll();
+        $circleinfo = $this->dao->select('*')->from('zt_circletime')->where('circle')->eq($master->zhouqi)->fetch();
+        $nextcircle = $this->dao->select('*')->from('zt_circletime')->where('circle')->gt($master->zhouqi)->fetch();
+        $master->circlestatus = $circleinfo->status;
+        $master->periodbegin = $circleinfo->periodbegin;
+        $master->periodend = $circleinfo->periodend;
+        $master->nextperiodbegin = $nextcircle->periodbegin;
+        $master->nextperiodend = $nextcircle->periodend;
+        $master->ability = $this->dao->select('*')->from('zt_performanceability')->where('mid')->eq($master->id)->andWhere('staffcode')->eq($master->staffcode)->OrderBy('category asc')->fetchAll();
+        $userinfo = $this->dao->select("manager,`join`,position")->from('zt_user')->where('account')->eq($master->staffcode)->fetch();
+        $master->manager = $userinfo->manager;
+        $master->ruzhidate = $userinfo->join;
+        $master->zhiwei = $userinfo->position;
+        //get count category
+        $master->maxcate = $this->dao->select('category')->from('zt_performanceability')->where('mid')->eq($master->id)->andWhere('staffcode')->eq($master->staffcode)->OrderBy('category desc')->fetch('category');
+        
+        return $master;
+    }      
+     
+    public function getxiashu($CID, $itemCounts = 30, $orderBy = 'id_desc', $pager = null)
+    {
+    	//$cao = $this->dao->select('*')->from('zt_user')->where('account')->eq($this->app->user->account)->fetch();
+    	$tr = $this->dao->select('*')->from('zt_user')
+    	                       ->where('userpath')->like("%".$this->app->user->account.";%")
+    	                       ->andwhere('deep')->ge($this->app->user->deep + "2")
+    	                       ->fetchAll();//var_dump($tr);die;
+       foreach($tr as $k=>$v)
+       {
+        $at[] = $v->account;
+       }
+            $getl = $this->dao->select('*')->from('zt_performancemaster')
+                                       ->where('staffcode')->in($at)
+                                       ->beginIF($CID > 0)->andWhere('zhouqi')->eq($CID)->fi()
+                                       ->orderBy($orderBy)
+    	                               ->page($pager)
+                                       ->fetchAll();
+	      return $getl;
+    }
+     public function getxiashusearch($CID,$where,$orderBy,$pager)
+     {
+      $tr = $this->dao->select('*')->from('zt_user')
+    	                       ->where('userpath')->like("%".$this->app->user->account.";%")
+    	                       ->andwhere('deep')->ge($this->app->user->deep + "2")
+    	                       ->fetchAll();//var_dump($tr);die;
+       foreach($tr as $k=>$v)
+       {
+        $at[] = $v->account;
+       }
+            $getl = $this->dao->select('*')->from('zt_performancemaster')
+                                       ->where('staffcode')->in($at)
+                                       ->beginIF($CID > 0)->andWhere('zhouqi')->eq($CID)->fi()
+                                       ->andwhere($where)
+                                       ->orderBy($orderBy)
+    	                               ->page($pager)
+                                       ->fetchAll();
+
+	      return $getl;
+     }
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+}

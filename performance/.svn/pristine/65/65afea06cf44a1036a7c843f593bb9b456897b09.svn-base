@@ -1,0 +1,15 @@
+$(function()
+{
+    var sp = $('[data-id="import"] a');
+	var sp1=$('[data-id="batchdownload"] a');
+    var sign = config.requestType == 'GET' ? '&' : '?';
+    sp.attr('href', sp.attr('href')   + sign + 'onlybody=yes').modalTrigger({width:'80%', type:'iframe'});
+	sp1.attr('href', sp1.attr('href')   + sign + 'onlybody=yes').modalTrigger({width:'70%',height:'600', type:'iframe'});
+	$(".see").modalTrigger({type: 'iframe', width: '80%'});
+
+});
+function setWhite(acl)
+{
+    acl == 'custom' ? $('#whitelistBox').removeClass('hidden') : $('#whitelistBox').addClass('hidden');
+}
+

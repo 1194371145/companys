@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<header id='header' style="min-width:1368px;">
+  <div id='topbar'>
+    <div class='pull-right' id='topnav'><div class='dropdown' id='userMenu'><a href='javascript:;' data-toggle='dropdown'><i class='icon-user'></i> administrator <span class='caret'></span></a><ul class='dropdown-menu'><li><a href='/company/performance/www/index.php?m=my&f=profile&onlybody=yes' class='iframe' data-width='600'>Profile</a>
+</li><li><a href='/company/performance/www/index.php?m=my&f=changepassword&onlybody=yes' class='iframe' data-width='500'>Password</a>
+</li><li class='divider'></li></ul></div><a href='/company/performance/www/index.php?m=user&f=logout' >Logout</a>
+<a href='#'>December 21, 2018, 10:54 am</a></div>
+    <h5 id='companyname'>
+      Silergy Performance Appraisal System     </h5>
+  </div>
+  <nav id='mainmenu'>
+    <ul class='nav'>
+<li  data-id='my'><a href='/company/performance/www/index.php?m=my&f=index' ><i class="icon-home"></i> <span>Dashboard</span></a></li>
+<li  data-id='performance'><a href='/company/performance/www/index.php?m=performance&f=all' >Performance</a></li>
+<li  data-id='crossexams'><a href='/company/performance/www/index.php?m=crossexams&f=grades' >Cross Evaluation</a></li>
+<li  data-id='survey'><a href='/company/performance/www/index.php?m=survey&f=createsurvey' >Staff Satisfaction Survey</a></li>
+<li  data-id='item_content'><a href='/company/performance/www/index.php?m=item&f=index' >item_content</a></li>
+<li  data-id='admin'><a href='/company/performance/www/index.php?m=admin&f=safe' >Admin</a></li>
+<li  data-id='company'><a href='/company/performance/www/index.php?m=company&f=index' >Company</a></li>
+<li  data-id='train'><a href='/company/performance/www/index.php?m=train&f=index' >User Manual</a></li>
+</ul>
+  </nav>
+  <nav id="modulemenu">
+   <ul></ul>  </nav>
+</header>
+
+<div id='wrap'>
+  <div class='outer' style="min-width:1350px;">
+</script>
+<style>
+#item th{border:black solid 1px;}
+#item td{border:black solid 1px;}
+#item tr{height:50px;}
+.tp{width:100%;height:100%}
+.ipt{width:100%;height:47px;}
+.sug{width:100%;height:270px;}
+.fac{width:100%;height:200px;}
+.welf{width:100%;height:390px;}
+.radio_label{
+				background: url(./data/image/qc.jpg);
+				background-size:16px 40px;
+                background-repeat: no-repeat;
+				display: inline-block;
+				line-height: 20px;
+				height: 20px;
+                width:40px;
+				margin-right:5px;
+                background-color:1px solid red;
+			}
+			
+			.checked {
+				background-position: 0  -20px;
+			}
+			/*
+			input[type='radio'] {
+				display:none;
+			}*/
+		#te{margin-top:-20px}	
+</style>
+<script type="text/javascript" src="/js/jquery-3.1.1.min.js"></script>
+     <script type="text/javascript">
+    //     function sumbit_sure()
+    //         {//js读取数据
+    //                var d = {};
+    // var t = $('form').serializeArray();
+    // $.each(t, function() {
+    //   d[this.name] = this.value;
+    // });
+    // alert(JSON.stringify(d));
+              
+    //         }
+             function sumbit_sure()
+            {
+              
+            }
+            // function sumbit_sure()
+            // {
+            //    for(var i=0;i<document.form1.elements.length-1;i++)
+            //    {
+            //       if(document.form1.elements[i].value=="")
+            //       {
+            //          alert("当前表单不能有空项");
+            //          document.form1.elements[i].focus();
+            //          return false;
+            //       }
+            //    }
+            //    return true;
+              
+            // }
+        </script>
+<form name="form1" method='post' target="hidden" onsubmit="return sumbit_sure()">
+<div style="width:100%;border:none;  "text-align="center" >
+<table style="width:90%;border:none;overflow:hidden;margin-top:-1px;" align="center" border-collapse="collapse" >
+<!--<tr><td><div id="timer" style="color:#2828FF"></div></td></tr>-->
+<tr><th style="text-align:center;"><font size="5">矽力杰股份有限公司(Silergy Corp. )</font></th></tr>
+<tr><th style="text-align:center;"><font size="3">内部控制制度测试-题目卷</font></th></tr>
+</table>
+<table style="width:90%;border:none;overflow:hidden;margin-left:5%;margin-top:-1px" align="center" border-collapse="collapse">
+<tr><th style="text-align:left;margin-right:20%">部门:0</th><th style="text-align:right;padding-right:20%">卷别:(免填)</th></tr>
+<tr><th style="text-align:left;margin-right:20%">姓名:admin</th><th style="text-align:right;padding-right:20%">年度 / Year:2018.12</th></tr>
+</table>
+<table style="width:90%;border:1px solid #000;overflow:hidden;margin-left:5%;margin-top:-1px" align="center" border-collapse="collapse">
+<tr><td >&nbsp;&nbsp;&nbsp;&nbsp;<font color="red" size="3">请如实、完整地填写试题，我们将以专业的态度对您的试题严格保密。感谢您的支持和配合。 
+        </font></td></tr>
+<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;<font color="red" size="2">Please fill this secret completely. Your real thoughts and suggetions are key to Silergy's development and progress.  HR Dept. guarantee that no information will be revealed. Thank you for your cooperation.
+</font></td></tr>
+</table>
+<br/>
+<!-- 开始答题 -->
+<p>
+<h3>选择题（每题5分，共20题,含单选及"*"多选题）</h3><br>
+            <ol>
+                <!-- 初始化答题成绩 -->
+                               1                A                5                      <!-- 单选题 -->
+                   <li>
+                    年度评估为（）的员工业绩不行，你觉得呢32222223222222222222222222222222222234ww<br>
+                    <input type="radio" name="record1"" value="A">（A）好像<br>
+                    <input type="radio" name="record1"" value="B">（B）是的<br>
+                    <input type="radio" name="record1"" value="C">（C）不可能<br>
+                    <input type="radio" name="record1"" value="D">（D）我反正不信<br>
+                </li>
+                                
+                                2                A                5                      <!-- 单选题 -->
+                   <li>
+                    因为个人的工作不当，你认为该如何处罚<br>
+                    <input type="radio" name="record2"" value="A">（A）展示不触发<br>
+                    <input type="radio" name="record2"" value="B">（B）哈罗<br>
+                    <input type="radio" name="record2"" value="C">（C）笨蛋<br>
+                    <input type="radio" name="record2"" value="D">（D）管你呢<br>
+                </li>
+                                
+                                3                B                5                      <!-- 单选题 -->
+                   <li>
+                    请猜猜(      )里的答案<br>
+                    <input type="radio" name="record3"" value="A">（A）A级<br>
+                    <input type="radio" name="record3"" value="B">（B）B级<br>
+                    <input type="radio" name="record3"" value="C">（C）C级<br>
+                    <input type="radio" name="record3"" value="D">（D）D级<br>
+                </li>
+                                
+                                6                A,C                5                      <!-- 多选题 -->
+                    <li>
+                    <span style="color: red;font-weight:bold">*</span>&nbsp;&nbsp;多选题(      )里的答案<br>
+                    <input type="checkbox" name="record6[]" value="A">（A）A级<br>
+                    <input type="checkbox" name="record6[]"" value="B">（B）B级<br>
+                    <input type="checkbox" name="record6[]"" value="C">（C）C级<br>
+                    <input type="checkbox" name="record6[]"" value="D">（D）D级<br>
+                </li>
+                                
+                                7                A,B,C,D                5                      <!-- 多选题 -->
+                    <li>
+                    <span style="color: red;font-weight:bold">*</span>&nbsp;&nbsp;请猜221121猜(      )里的答案<br>
+                    <input type="checkbox" name="record7[]" value="A">（A）A级<br>
+                    <input type="checkbox" name="record7[]"" value="B">（B）B级<br>
+                    <input type="checkbox" name="record7[]"" value="C">（C）C级<br>
+                    <input type="checkbox" name="record7[]"" value="D">（D）D级<br>
+                </li>
+                                
+                                8                B                5                      <!-- 单选题 -->
+                   <li>
+                    请猜猜(      )里的答案<br>
+                    <input type="radio" name="record8"" value="A">（A）A级<br>
+                    <input type="radio" name="record8"" value="B">（B）B级<br>
+                    <input type="radio" name="record8"" value="C">（C）C级<br>
+                    <input type="radio" name="record8"" value="D">（D）D级<br>
+                </li>
+                                
+                                10                B                5                      <!-- 单选题 -->
+                   <li>
+                    请猜猜( wdwdwd     )里的答案<br>
+                    <input type="radio" name="record10"" value="A">（A）A级<br>
+                    <input type="radio" name="record10"" value="B">（B）B级<br>
+                    <input type="radio" name="record10"" value="C">（C）C级<br>
+                    <input type="radio" name="record10"" value="D">（D）D级<br>
+                </li>
+                                
+                                11                B,D                5                      <!-- 多选题 -->
+                    <li>
+                    <span style="color: red;font-weight:bold">*</span>&nbsp;&nbsp;请猜猜(      )里的dadwadw<br>
+                    <input type="checkbox" name="record11[]" value="A">（A）A级<br>
+                    <input type="checkbox" name="record11[]"" value="B">（B）B级<br>
+                    <input type="checkbox" name="record11[]"" value="C">（C）C级<br>
+                    <input type="checkbox" name="record11[]"" value="D">（D）D级<br>
+                </li>
+                                
+                                12                A                5                      <!-- 单选题 -->
+                   <li>
+                    再出一题<br>
+                    <input type="radio" name="record12"" value="A">（A）A级<br>
+                    <input type="radio" name="record12"" value="B">（B）B级<br>
+                    <input type="radio" name="record12"" value="C">（C）C级<br>
+                    <input type="radio" name="record12"" value="D">（D）D级<br>
+                </li>
+                                
+                            </ol>
+        </p>
+        <p>
+            <h4>判断题（每空10分，共20分）</h4><br>
+            <ol>
+                                <li>
+                    这道理应该选择对吧                    <input type="radio" name="select4" value="5">&radic;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="select4"value="6">X
+                    <br>
+                </li>
+                                <li>
+                    这道题应该是错误的吧                    <input type="radio" name="select5" value="5">&radic;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="select5"value="6">X
+                    <br>
+                </li>
+                                <li>
+                    请猜猜(    ww  )里的答案                    <input type="radio" name="select9" value="5">&radic;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="select9"value="6">X
+                    <br>
+                </li>
+                            </ol>
+        </p>
+
+<table style="width:90%;border:none;overflow:hidden;margin-left:5%;margin-top:-1px" text-align="center" border-collapse="collapse" >
+<tr><td align="center"> <button type='submit' id='submit' class='btn btn-primary'  data-loading='Wait...'>Submit</button></td></tr>
+</table>
+</div>
+    <input type="hidden" name="account" value="admin"> 
+    <input type="hidden" name="user_id" value="1"> 
+</form>
+  </div>  <script>setTreeBox()</script>
+    
+  <div id='divider'></div>
+  <iframe frameborder='0' name='hiddenwin' id='hiddenwin' scrolling='no' class='debugwin hidden'></iframe>
+</div><div id='footer'>
+  <div id="crumbs">
+      </div>
+  <div id="poweredby">
+  Powered by <a href='http://www.silergy.com' target='_blank' class='text-primary'> Silergy(2.0)</a> &nbsp;
+   
+  </div>
+</div>
+
+<script>
+browserNotice = 'Using the browser may not be able to get the best browsing effect, it is recommended to use chrome, Firefox, IE9 +, opera, Safari browser.'
+function ajaxIgnoreBrowser(){$.get(createLink('misc', 'ajaxIgnoreBrowser'));}
+$(function(){showBrowserNotice()});
+</script>
+
+
+<script>config.onlybody = 'no';</script>
+<script language='Javascript'>$(function()
+{
+    var sp = $('[data-id="export"] a');
+    var sign = config.requestType == 'GET' ? '&' : '?';
+    sp.attr('href', sp.attr('href')   + sign + 'onlybody=yes').modalTrigger({width:900,height:350, type:'iframe'});
+
+});
+</script>
+</body>
+</html>

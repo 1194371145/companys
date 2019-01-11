@@ -1,0 +1,219 @@
+<?php
+
+class survey extends control
+{
+    //var $one;
+    public function __construct($module = '', $method = '')
+    {
+        parent::__construct($module, $method);
+        $this->loadModel('user');
+        $this->loadModel('dept');
+        //$this->my->setMenu();
+    }
+    
+	public function surveylist()
+	{
+		$this->display();
+	}
+	public function createsurvey()
+	{
+		if(!empty($_POST))
+		{
+			if($this->app->user->account != "S00038")
+			{
+				$id = $this->survey->createsurvey();
+				if(dao::isError()) die(js::error(dao::getError()));
+			    $this->loadModel('action')->create('survey', $id, 'createsurvey');
+			    echo js::alert('Create successful ');
+			    die(js::locate($this->createLink('survey','createsurvey'), 'parent'));
+			}
+			else 
+			{
+				$one= $this->survey->createsurvey();//var_dump($one);die;
+				die(js::locate(inlink('thumbup'), 'parent'));
+			}
+		 $this->survey->createsurvey();
+		}
+		
+		  $this->display();
+	}
+public function thumbup()
+	{  
+		if(!empty($_POST))
+		{
+        $ID = $this->survey->thumbup();
+        if(dao::isError()) die(js::error(dao::getError()));
+	    $this->loadModel('action')->create('survey', $ID, 'createsurvey');
+	    echo js::alert('Create successful ');
+	    die(js::locate($this->createLink('survey','surveylist'), 'parent'));
+		}
+		$this->display();
+	}
+	
+	public function export()
+    {
+    	if(!empty($_POST)){
+        header("Content-type: text/html; charset=utf-8");
+		include"../../lib/PHPExcel/PHPExcel.php";
+		include"../../lib/PHPExcel/PHPExcel/IOFactory.php";
+		$ob=new PHPExcel();	
+		$ob->getActiveSheet()->getColumnDimension('A')->setWidth(15);
+		$ob->getActiveSheet()->getColumnDimension('B')->setWidth(15);
+		$ob->getActiveSheet()->getColumnDimension('C')->setWidth(40);
+		$ob->getActiveSheet()->getColumnDimension('D')->setWidth(20);
+		$ob->getActiveSheet()->getColumnDimension('E')->setWidth(20);
+		$ob->getActiveSheet()->getColumnDimension('F')->setWidth(20);
+		$ob->getActiveSheet()->getColumnDimension('G')->setWidth(20);
+		$ob->getActiveSheet()->getColumnDimension('H')->setWidth(20);
+		$ob->getActiveSheet()->getColumnDimension('I')->setWidth(60);
+		$ob->getActiveSheet()->getColumnDimension('J')->setWidth(20);
+		$ob->getActiveSheet()->getStyle( 'A2')->getFont()->setSize(15); 
+		$ob->getActiveSheet()->getStyle( 'B2')->getFont()->setSize(15);
+		$ob->getActiveSheet()->getStyle( 'C2')->getFont()->setSize(15);
+		$ob->getActiveSheet()->getStyle( 'D2')->getFont()->setSize(15);
+		$ob->getActiveSheet()->getStyle( 'E2')->getFont()->setSize(15);
+		$ob->getActiveSheet()->getStyle( 'F2')->getFont()->setSize(15);
+		$ob->getActiveSheet()->getStyle( 'G2')->getFont()->setSize(15);
+		$ob->getActiveSheet()->getStyle( 'H2')->getFont()->setSize(15);
+		$ob->getActiveSheet()->getStyle( 'I2')->getFont()->setSize(15);
+		$ob->getActiveSheet()->getStyle( 'J2')->getFont()->setSize(15);
+		$ob->getActiveSheet()->getStyle('A2')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+		$ob->getActiveSheet()->getStyle('B2')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+		$ob->getActiveSheet()->getStyle('C2')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+		$ob->getActiveSheet()->getStyle('D2')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+		$ob->getActiveSheet()->getStyle('E2')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+		$ob->getActiveSheet()->getStyle('F2')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+		$ob->getActiveSheet()->getStyle('G2')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+		$ob->getActiveSheet()->getStyle('H2')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+		$ob->getActiveSheet()->getStyle('I2')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+		$ob->getActiveSheet()->getStyle('J2')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+		//$get_exams = $this->dao->select('*')->from('zt_crossexams')->fetchAll();//var_dump($get_exams);die;
+	    $get_list = $this->dao->select('*')->from('zt_survey')->where('year')->eq($_POST['circle'])->beginIF(!empty($_POST['user']))->andWhere('staffode')->in($_POST['user'])->fi()->fetchAll();
+	    //var_dump($get_list);die;
+	    //$arr= array();
+        foreach($get_list as $kk=>$vv)
+        {   $arr[$vv->id][] = $vv;
+        	$arr[$vv->id][] = $this->dao->select('*')->from('zt_thumbup')->where('tid')->eq($vv->id)->fetch();
+        	$arr[$vv->id][] = $this->dao->select('*')->from('zt_hzblock')->where('xid')->eq($vv->id)->fetch();
+        	
+        }//var_dump($arr);die;
+        foreach($arr as $k=>$v)
+        {
+        	$data[$k]['id']=$v[0]->id;/*$data[$k]['staffcode']=$v[0]->staffcode;*/$data[$k]['year']=$v[0]->year;
+        	$data[$k]['silergyyears']=$v[0]->silergyyears;$data[$k]['workyears']=$v[0]->workyears;$data[$k]['val1']=$v[0]->val1;
+        	$data[$k]['val2']=$v[0]->val2;$data[$k]['val3']=$v[0]->val3;$data[$k]['val4']=$v[0]->val4;
+        	$data[$k]['val5']=$v[0]->val5;$data[$k]['val6']=$v[0]->val6;$data[$k]['val7']=$v[0]->val7;
+        	$data[$k]['val8']=$v[0]->val8;$data[$k]['val9']=$v[0]->val9;$data[$k]['val10']=$v[0]->val10;
+        	$data[$k]['val11']=$v[0]->val11;$data[$k]['val12']=$v[0]->val12;$data[$k]['val13']=$v[0]->val13;
+        	$data[$k]['val14']=$v[0]->val14;$data[$k]['val15']=$v[0]->val15;$data[$k]['val16']=$v[0]->val16;
+        	$data[$k]['val17']=$v[0]->val17;$data[$k]['val18']=$v[0]->val18;$data[$k]['val19']=$v[0]->val19;
+        	$data[$k]['val20']=$v[0]->val20;$data[$k]['val21']=$v[0]->val21;$data[$k]['val22']=$v[0]->val22;
+        	$data[$k]['val23']=$v[0]->val23;$data[$k]['val24']=$v[0]->val24;$data[$k]['val25']=$v[0]->val25;
+        	$data[$k]['val26']=$v[0]->val26;$data[$k]['val27']=$v[0]->val27;$data[$k]['val28']=$v[0]->val28;
+        	$data[$k]['val29']=$v[0]->val29;$data[$k]['val30']=$v[0]->val30;$data[$k]['val30']=$v[0]->val30;
+        	$data[$k]['val31']=$v[0]->val31;$data[$k]['val31']=$v[0]->val31;$data[$k]['val32']=$v[0]->val32;
+        	$data[$k]['val33']=$v[0]->val33;$data[$k]['val34']=$v[0]->val34;$data[$k]['val35']=$v[0]->val35;
+        	$data[$k]['val36']=$v[0]->val36;
+        	
+        	$data[$k]['idea1']=$v[0]->idea1;$data[$k]['idea2']=$v[0]->idea2;
+        	$data[$k]['idea3']=$v[0]->idea3;$data[$k]['idea4']=$v[0]->idea4;$data[$k]['idea5']=$v[0]->idea5;
+        	$data[$k]['idea6']=$v[0]->idea6;$data[$k]['idea7']=$v[0]->idea7;$data[$k]['idea8']=$v[0]->idea8;
+        	$data[$k]['idea9']=$v[0]->idea9;$data[$k]['idea10']=$v[0]->idea10;$data[$k]['idea11']=$v[0]->idea11;
+        	$data[$k]['idea12']=$v[0]->idea12;$data[$k]['idea13']=$v[0]->idea13;$data[$k]['idea14']=$v[0]->idea14;
+        	$data[$k]['idea15']=$v[0]->idea15;$data[$k]['idea16']=$v[0]->idea16;$data[$k]['idea17']=$v[0]->idea17;
+        	$data[$k]['idea18']=$v[0]->idea18;$data[$k]['idea19']=$v[0]->idea19;$data[$k]['idea20']=$v[0]->idea20;
+        	$data[$k]['idea21']=$v[0]->idea21;$data[$k]['idea22']=$v[0]->idea22;$data[$k]['idea23']=$v[0]->idea23;
+        	$data[$k]['idea24']=$v[0]->idea24;$data[$k]['idea25']=$v[0]->idea25;$data[$k]['idea26']=$v[0]->idea26;
+        	$data[$k]['idea27']=$v[0]->idea27;$data[$k]['idea28']=$v[0]->idea28;$data[$k]['idea29']=$v[0]->idea29;
+        	$data[$k]['idea30']=$v[0]->idea30;$data[$k]['idea31']=$v[0]->idea31;$data[$k]['idea32']=$v[0]->idea32;
+        	$data[$k]['idea33']=$v[0]->idea33;$data[$k]['idea34']=$v[0]->idea34;$data[$k]['idea35']=$v[0]->idea35;
+        	$data[$k]['idea36']=$v[0]->idea36;
+        	
+        	$data[$k]['value1']=$v[1]->value1;$data[$k]['value2']=$v[1]->value2;$data[$k]['value3']=$v[1]->value3;
+        	$data[$k]['value4']=$v[1]->value4;$data[$k]['value5']=$v[1]->value5;$data[$k]['value6']=$v[1]->value6;
+        	$data[$k]['value7']=$v[1]->value7;$data[$k]['suggest1']=$v[1]->suggest1;$data[$k]['facility1']=$v[1]->facility1;
+        	$data[$k]['facility2']=$v[1]->facility2;$data[$k]['facility3']=$v[1]->facility3;$data[$k]['facility4']=$v[1]->facility4;
+        	$data[$k]['facility5']=$v[1]->facility5;$data[$k]['facility6']=$v[1]->facility6;$data[$k]['facility7']=$v[1]->facility7;
+        	$data[$k]['facility8']=$v[1]->facility8;$data[$k]['suggest2']=$v[1]->suggest2;$data[$k]['welfare1']=$v[1]->welfare1;
+        	$data[$k]['welfare2']=$v[1]->welfare2;$data[$k]['welfare3']=$v[1]->welfare3;$data[$k]['welfare4']=$v[1]->welfare4;
+        	$data[$k]['welfare5']=$v[1]->welfare5;$data[$k]['welfare6']=$v[1]->welfare6;$data[$k]['welfare7']=$v[1]->welfare7;
+        	$data[$k]['welfare8']=$v[1]->welfare8;$data[$k]['welfare9']=$v[1]->welfare9;$data[$k]['welfare10']=$v[1]->welfare10;
+        	$data[$k]['welfare11']=$v[1]->welfare11;$data[$k]['welfare12']=$v[1]->welfare12;$data[$k]['welfare13']=$v[1]->welfare13;
+        	$data[$k]['welfare14']=$v[1]->welfare14;$data[$k]['welfare15']=$v[1]->welfare15;$data[$k]['welfare16']=$v[1]->welfare16;
+        	$data[$k]['welfare17']=$v[1]->welfare17;$data[$k]['welfare18']=$v[1]->welfare18;$data[$k]['welfare19']=$v[1]->welfare19;
+        	$data[$k]['welfare20']=$v[1]->welfare20;$data[$k]['welfare21']=$v[1]->welfare21;$data[$k]['suggest3']=$v[1]->suggest3;
+        	$data[$k]['suggest4']=$v[1]->suggest4;$data[$k]['suggest5']=$v[1]->suggest5;
+        	
+        	$data[$k]['re1']=$v[2]->re1;$data[$k]['re2']=$v[2]->re2;$data[$k]['re3']=$v[2]->re3;
+        	$data[$k]['re4']=$v[2]->re4;$data[$k]['re5']=$v[2]->re5;$data[$k]['re6']=$v[2]->re6;
+        	$data[$k]['re7']=$v[2]->re7;$data[$k]['re8']=$v[2]->re8;$data[$k]['ttx1']=$v[2]->ttx1;
+        	$data[$k]['ttx2']=$v[2]->ttx2;$data[$k]['ttx3']=$v[2]->ttx3;$data[$k]['ttx4']=$v[2]->ttx4;
+        	$data[$k]['ttx5']=$v[2]->ttx5;$data[$k]['ttx6']=$v[2]->ttx6;$data[$k]['ttx7']=$v[2]->ttx7;
+        	$data[$k]['ttx8']=$v[2]->ttx8;
+        }
+		var_dump($data);die;
+		$ob->getActiveSheet()->setCellValue('A2',"Staff Code")
+		                     ->setCellValue('B2',"Manager")
+		                     ->setCellValue('C2',"Items")
+		                     ->setCellValue('D2',"Professionality")
+		                     ->setCellValue('E2',"Co-operation")
+		                     ->setCellValue('F2',"Execution")
+		                     ->setCellValue('G2',"Responsibility")
+		                     ->setCellValue('H2',"Integrity")
+		                     ->setCellValue('I2',"Other Comments")
+		                     ->setCellValue('J2',"Circle");
+		   $ss=3;                  
+		 foreach($data as $ke=>$ve)
+		 {                   
+		 	$ob->getActiveSheet()->setCellValue("A$ss",$ve['sid'])
+			                     ->setCellValue("B$ss",$ve['manager'])
+			                     ->setCellValue("C$ss",$ve['item'])
+			                     ->setCellValue("D$ss",$ve['professionality'])
+			                     ->setCellValue("E$ss",$ve['cooperation'])
+			                     ->setCellValue("F$ss",$ve['execution'])
+			                     ->setCellValue("G$ss",$ve['responsibility'])
+			                     ->setCellValue("H$ss",$ve['integrity'])
+			                     ->setCellValue("I$ss",$ve['comment'])
+			                     ->setCellValue("J$ss",$ve['circletime'])
+			                     ;
+		$ob->getActiveSheet()->getDefaultRowDimension("A$ss")->setRowHeight(30);
+		$ob->getActiveSheet()->getStyle("A$ss")->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+		$ob->getActiveSheet()->getStyle("B$ss")->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+		$ob->getActiveSheet()->getStyle("C$ss")->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+		$ob->getActiveSheet()->getStyle("D$ss")->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+		$ob->getActiveSheet()->getStyle("E$ss")->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+		$ob->getActiveSheet()->getStyle("F$ss")->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+		$ob->getActiveSheet()->getStyle("G$ss")->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+		$ob->getActiveSheet()->getStyle("H$ss")->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+		$ob->getActiveSheet()->getStyle("I$ss")->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+		$ob->getActiveSheet()->getStyle("J$ss")->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+		
+		$ob->getActiveSheet()->getStyle( "A$ss")->getAlignment()->setShrinkToFit(true);
+		$ob->getActiveSheet()->getStyle( "B$ss")->getAlignment()->setShrinkToFit(true);
+		$ob->getActiveSheet()->getStyle( "C$ss")->getAlignment()->setShrinkToFit(true);
+		$ob->getActiveSheet()->getStyle( "D$ss")->getAlignment()->setShrinkToFit(true);
+		$ob->getActiveSheet()->getStyle( "E$ss")->getAlignment()->setShrinkToFit(true);
+		$ob->getActiveSheet()->getStyle( "F$ss")->getAlignment()->setShrinkToFit(true);
+		$ob->getActiveSheet()->getStyle( "G$ss")->getAlignment()->setShrinkToFit(true);
+		$ob->getActiveSheet()->getStyle( "H$ss")->getAlignment()->setShrinkToFit(true);
+		$ob->getActiveSheet()->getStyle( "I$ss")->getAlignment()->setShrinkToFit(true);
+		$ob->getActiveSheet()->getStyle( "J$ss")->getAlignment()->setShrinkToFit(true);
+			                     $ss++;
+		 }
+		
+		$ob->getActiveSheet()->setTitle("Cross Exams"); 
+		$wob=PHPExcel_IOFactory::createWriter($ob,'Excel5');
+		if(PATH_SEPARATOR!=":"){$filename="Cross Exams.xls";}else{$filename=iconv(auto,"UTF8" , "Cross Exams").".xls";}
+		ob_end_clean();
+		header("Content-type:application/vnd.ms-excel");
+		header("Content-Disposition:attachment;filename=$filename");
+		header("Cache-Control:max-age=0");
+		$wob->save('php://output');
+    	}
+		$this->display();
+		
+    }
+	
+	
+}
+?>

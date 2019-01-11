@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/../crm" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/../device" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/../espm" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/../proandpur" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/../rdcost" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/../silergypm" vcs="svn" />
+  </component>
+</project>

@@ -1,0 +1,532 @@
+<?php
+ die();
+?>
+
+14:46:37 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+14:46:37 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+14:46:37 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+14:46:37 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+14:46:37 Creating default object from empty value in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 198 when visiting 
+
+14:46:37 include(D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php): failed to open stream: No such file or directory in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+14:46:37 include(): Failed opening 'D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php' for inclusion (include_path='.;C:\php\pear') in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+14:46:37 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 69 when visiting admin-setparam-del-yes-95
+
+14:46:37 ERROR: SQLSTATE[42000]: Syntax error or access violation: 1064 Erreur de syntaxe près de '' à la ligne 1The sql is: ALTER TABLE 510_fielddata DROP   in D:\wamp\www\webvipsystem\lib\base\dao\dao.class.php on line 1334, last called by D:\wamp\www\webvipsystem\lib\base\dao\dao.class.php on line 707 through function sqlError.
+ in D:\wamp\www\webvipsystem\framework\base\router.class.php on line 1919 when visiting admin-setparam-del-yes-95
+
+14:49:19 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+14:49:19 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+14:49:19 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+14:49:19 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+14:49:19 Creating default object from empty value in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 198 when visiting 
+
+14:49:19 include(D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php): failed to open stream: No such file or directory in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+14:49:19 include(): Failed opening 'D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php' for inclusion (include_path='.;C:\php\pear') in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+14:49:19 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 69 when visiting admin-setparam-del-yes-95
+
+14:49:19 ERROR: SQLSTATE[42000]: Syntax error or access violation: 1064 Erreur de syntaxe près de '' à la ligne 1The sql is: ALTER TABLE 510_fielddata DROP   in D:\wamp\www\webvipsystem\lib\base\dao\dao.class.php on line 1334, last called by D:\wamp\www\webvipsystem\lib\base\dao\dao.class.php on line 707 through function sqlError.
+ in D:\wamp\www\webvipsystem\framework\base\router.class.php on line 1919 when visiting admin-setparam-del-yes-95
+
+14:49:31 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+14:49:31 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+14:49:31 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+14:49:31 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+14:49:31 Creating default object from empty value in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 198 when visiting 
+
+14:49:31 include(D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php): failed to open stream: No such file or directory in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+14:49:31 include(): Failed opening 'D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php' for inclusion (include_path='.;C:\php\pear') in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+14:49:32 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+14:49:32 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+14:49:32 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+14:49:32 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+14:49:32 Creating default object from empty value in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 198 when visiting 
+
+14:49:32 include(D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php): failed to open stream: No such file or directory in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+14:49:32 include(): Failed opening 'D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php' for inclusion (include_path='.;C:\php\pear') in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+14:49:44 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+14:49:44 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+14:49:44 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+14:49:44 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+14:49:44 Creating default object from empty value in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 198 when visiting 
+
+14:49:44 include(D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php): failed to open stream: No such file or directory in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+14:49:44 include(): Failed opening 'D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php' for inclusion (include_path='.;C:\php\pear') in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+14:49:44 Undefined variable: pagenav in D:\wamp\www\webvipsystem\module\admin\view\setparam.html.php on line 57 when visiting admin-setparam
+
+14:49:44 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\view\setparam.html.php on line 75 when visiting admin-setparam
+
+14:49:44 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\view\setparam.html.php on line 79 when visiting admin-setparam
+
+14:49:44 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\view\setparam.html.php on line 94 when visiting admin-setparam
+
+14:51:08 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+14:51:08 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+14:51:08 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+14:51:08 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+14:51:08 Creating default object from empty value in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 198 when visiting 
+
+14:51:08 include(D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php): failed to open stream: No such file or directory in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+14:51:08 include(): Failed opening 'D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php' for inclusion (include_path='.;C:\php\pear') in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+14:51:09 Call to undefined method PDOStatement::exec() in D:\wamp\www\webvipsystem\module\admin\control.php on line 49 when visiting admin-setparam
+
+14:51:44 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+14:51:44 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+14:51:44 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+14:51:44 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+14:51:44 Creating default object from empty value in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 198 when visiting 
+
+14:51:44 include(D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php): failed to open stream: No such file or directory in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+14:51:44 include(): Failed opening 'D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php' for inclusion (include_path='.;C:\php\pear') in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+14:51:44 ERROR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicata du champ 'new_part' pour la clef 'value unique'The sql is: INSERT INTO 510_field SET `fieldname` = 'new_part',`fieldvalue` = 'new_part',`fieldtype` = 'varchar',`sort` = '' in D:\wamp\www\webvipsystem\lib\base\dao\dao.class.php on line 1334, last called by D:\wamp\www\webvipsystem\lib\base\dao\dao.class.php on line 759 through function sqlError.
+ in D:\wamp\www\webvipsystem\framework\base\router.class.php on line 1919 when visiting admin-setparam
+
+14:52:11 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+14:52:11 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+14:52:11 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+14:52:11 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+14:52:11 Creating default object from empty value in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 198 when visiting 
+
+14:52:11 include(D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php): failed to open stream: No such file or directory in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+14:52:11 include(): Failed opening 'D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php' for inclusion (include_path='.;C:\php\pear') in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+14:52:13 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+14:52:13 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+14:52:13 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+14:52:13 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+14:52:13 Creating default object from empty value in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 198 when visiting 
+
+14:52:13 include(D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php): failed to open stream: No such file or directory in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+14:52:13 include(): Failed opening 'D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php' for inclusion (include_path='.;C:\php\pear') in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+14:52:13 ERROR: SQLSTATE[42000]: Syntax error or access violation: 1091 Ne peut effacer (DROP) 'vmax2'. Vérifiez s'il existeThe sql is: ALTER TABLE 510_fielddata DROP  vmax2 in D:\wamp\www\webvipsystem\lib\base\dao\dao.class.php on line 1334, last called by D:\wamp\www\webvipsystem\lib\base\dao\dao.class.php on line 707 through function sqlError.
+ in D:\wamp\www\webvipsystem\framework\base\router.class.php on line 1919 when visiting admin-setparam-del-yes-93
+
+14:52:34 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+14:52:34 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+14:52:34 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+14:52:34 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+14:52:34 Creating default object from empty value in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 198 when visiting 
+
+14:52:34 include(D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php): failed to open stream: No such file or directory in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+14:52:34 include(): Failed opening 'D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php' for inclusion (include_path='.;C:\php\pear') in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+14:52:34 Undefined variable: pagenav in D:\wamp\www\webvipsystem\module\admin\view\setparam.html.php on line 57 when visiting admin-setparam
+
+14:52:34 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\view\setparam.html.php on line 75 when visiting admin-setparam
+
+14:52:34 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\view\setparam.html.php on line 79 when visiting admin-setparam
+
+14:52:34 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\view\setparam.html.php on line 94 when visiting admin-setparam
+
+14:53:00 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+14:53:00 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+14:53:00 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+14:53:00 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+14:53:00 Creating default object from empty value in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 198 when visiting 
+
+14:53:00 include(D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php): failed to open stream: No such file or directory in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+14:53:00 include(): Failed opening 'D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php' for inclusion (include_path='.;C:\php\pear') in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+14:53:00 Undefined variable: pagenav in D:\wamp\www\webvipsystem\module\admin\view\setparam.html.php on line 57 when visiting admin-setparam
+
+14:53:00 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\view\setparam.html.php on line 75 when visiting admin-setparam
+
+14:53:00 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\view\setparam.html.php on line 79 when visiting admin-setparam
+
+14:53:00 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\view\setparam.html.php on line 94 when visiting admin-setparam
+
+14:53:06 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+14:53:06 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+14:53:06 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+14:53:06 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+14:53:06 Creating default object from empty value in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 198 when visiting 
+
+14:53:06 include(D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php): failed to open stream: No such file or directory in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+14:53:06 include(): Failed opening 'D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php' for inclusion (include_path='.;C:\php\pear') in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+14:53:08 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+14:53:08 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+14:53:08 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+14:53:08 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+14:53:08 Creating default object from empty value in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 198 when visiting 
+
+14:53:08 include(D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php): failed to open stream: No such file or directory in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+14:53:08 include(): Failed opening 'D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php' for inclusion (include_path='.;C:\php\pear') in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+14:53:08 Call to undefined method PDOStatement::exec() in D:\wamp\www\webvipsystem\module\admin\control.php on line 70 when visiting admin-setparam-del-yes-96
+
+14:54:17 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+14:54:17 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+14:54:17 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+14:54:17 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+14:54:17 Creating default object from empty value in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 198 when visiting 
+
+14:54:17 include(D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php): failed to open stream: No such file or directory in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+14:54:17 include(): Failed opening 'D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php' for inclusion (include_path='.;C:\php\pear') in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+14:54:17 Undefined variable: pagenav in D:\wamp\www\webvipsystem\module\admin\view\setparam.html.php on line 57 when visiting admin-setparam
+
+14:54:17 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\view\setparam.html.php on line 75 when visiting admin-setparam
+
+14:54:17 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\view\setparam.html.php on line 79 when visiting admin-setparam
+
+14:54:17 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\view\setparam.html.php on line 94 when visiting admin-setparam
+
+14:54:28 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+14:54:28 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+14:54:28 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+14:54:28 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+14:54:28 Creating default object from empty value in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 198 when visiting 
+
+14:54:28 include(D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php): failed to open stream: No such file or directory in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+14:54:28 include(): Failed opening 'D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php' for inclusion (include_path='.;C:\php\pear') in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+14:54:30 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+14:54:30 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+14:54:30 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+14:54:30 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+14:54:30 Creating default object from empty value in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 198 when visiting 
+
+14:54:30 include(D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php): failed to open stream: No such file or directory in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+14:54:30 include(): Failed opening 'D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php' for inclusion (include_path='.;C:\php\pear') in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+14:54:30 Undefined variable: pagenav in D:\wamp\www\webvipsystem\module\admin\view\setparam.html.php on line 57 when visiting admin-setparam
+
+14:54:30 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\view\setparam.html.php on line 75 when visiting admin-setparam
+
+14:54:30 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\view\setparam.html.php on line 79 when visiting admin-setparam
+
+14:54:30 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\view\setparam.html.php on line 94 when visiting admin-setparam
+
+15:01:32 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+15:01:32 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+15:01:32 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+15:01:32 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+15:01:32 Creating default object from empty value in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 198 when visiting 
+
+15:01:32 include(D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php): failed to open stream: No such file or directory in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+15:01:32 include(): Failed opening 'D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php' for inclusion (include_path='.;C:\php\pear') in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+15:01:33 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+15:01:33 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+15:01:33 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+15:01:33 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+15:01:33 Creating default object from empty value in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 198 when visiting 
+
+15:01:33 include(D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php): failed to open stream: No such file or directory in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+15:01:33 include(): Failed opening 'D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php' for inclusion (include_path='.;C:\php\pear') in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+15:01:34 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+15:01:34 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+15:01:34 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+15:01:34 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+15:01:34 Creating default object from empty value in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 198 when visiting 
+
+15:01:34 include(D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php): failed to open stream: No such file or directory in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+15:01:34 include(): Failed opening 'D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php' for inclusion (include_path='.;C:\php\pear') in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+15:01:34 Undefined variable: pagenav in D:\wamp\www\webvipsystem\module\admin\view\setparam.html.php on line 57 when visiting admin-setparam
+
+15:01:34 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\view\setparam.html.php on line 75 when visiting admin-setparam
+
+15:01:34 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\view\setparam.html.php on line 79 when visiting admin-setparam
+
+15:01:34 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\view\setparam.html.php on line 94 when visiting admin-setparam
+
+15:11:35 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+15:11:35 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+15:11:35 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+15:11:35 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+15:11:35 Creating default object from empty value in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 198 when visiting 
+
+15:11:35 include(D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php): failed to open stream: No such file or directory in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+15:11:35 include(): Failed opening 'D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php' for inclusion (include_path='.;C:\php\pear') in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+15:11:35 ERROR: the control file D:\wamp\www\webvipsystem\module\misc\control.php not found. in D:\wamp\www\webvipsystem\framework\base\router.class.php on line 1237, last called by D:\wamp\www\webvipsystem\framework\base\router.class.php on line 1355 through function setControlFile.
+ in D:\wamp\www\webvipsystem\framework\base\router.class.php on line 1919 when visiting misc-ping
+
+15:56:30 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+15:56:30 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+15:56:30 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+15:56:30 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+15:56:30 Creating default object from empty value in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 198 when visiting 
+
+15:56:30 include(D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php): failed to open stream: No such file or directory in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+15:56:30 include(): Failed opening 'D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php' for inclusion (include_path='.;C:\php\pear') in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+15:56:30 ERROR: SQLSTATE[42S02]: Base table or view not found: 1146 La table 'webvipsystem.zt_field' n'existe pasThe sql is: SELECT * FROM zt_field wHeRe fieldvalue  = 'new_part' in D:\wamp\www\webvipsystem\lib\base\dao\dao.class.php on line 1334, last called by D:\wamp\www\webvipsystem\lib\base\dao\dao.class.php on line 707 through function sqlError.
+ in D:\wamp\www\webvipsystem\framework\base\router.class.php on line 1919 when visiting admin-buckimportpara
+
+16:12:59 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+16:12:59 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+16:12:59 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+16:12:59 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+16:12:59 Creating default object from empty value in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 198 when visiting 
+
+16:12:59 include(D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php): failed to open stream: No such file or directory in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+16:12:59 include(): Failed opening 'D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php' for inclusion (include_path='.;C:\php\pear') in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+16:12:59 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 344 when visiting admin-buckimportpara
+
+16:12:59 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 344 when visiting admin-buckimportpara
+
+16:12:59 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 344 when visiting admin-buckimportpara
+
+16:12:59 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 344 when visiting admin-buckimportpara
+
+16:12:59 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 344 when visiting admin-buckimportpara
+
+16:12:59 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 344 when visiting admin-buckimportpara
+
+16:12:59 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 344 when visiting admin-buckimportpara
+
+16:12:59 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 344 when visiting admin-buckimportpara
+
+16:12:59 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 344 when visiting admin-buckimportpara
+
+16:12:59 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 344 when visiting admin-buckimportpara
+
+16:12:59 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 344 when visiting admin-buckimportpara
+
+16:12:59 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 344 when visiting admin-buckimportpara
+
+16:12:59 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 344 when visiting admin-buckimportpara
+
+16:12:59 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 344 when visiting admin-buckimportpara
+
+16:12:59 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 344 when visiting admin-buckimportpara
+
+16:12:59 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 344 when visiting admin-buckimportpara
+
+16:12:59 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 344 when visiting admin-buckimportpara
+
+16:12:59 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 344 when visiting admin-buckimportpara
+
+16:12:59 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 344 when visiting admin-buckimportpara
+
+16:12:59 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 344 when visiting admin-buckimportpara
+
+16:12:59 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 344 when visiting admin-buckimportpara
+
+16:12:59 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 344 when visiting admin-buckimportpara
+
+16:53:31 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+16:53:31 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+16:53:31 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+16:53:31 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+16:53:31 Creating default object from empty value in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 198 when visiting 
+
+16:53:31 include(D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php): failed to open stream: No such file or directory in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+16:53:31 include(): Failed opening 'D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php' for inclusion (include_path='.;C:\php\pear') in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+16:53:31 Undefined variable: pagenav in D:\wamp\www\webvipsystem\module\admin\view\setparam.html.php on line 57 when visiting admin-setparam
+
+16:53:31 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\view\setparam.html.php on line 75 when visiting admin-setparam
+
+16:53:31 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\view\setparam.html.php on line 79 when visiting admin-setparam
+
+16:53:31 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\view\setparam.html.php on line 94 when visiting admin-setparam
+
+16:54:10 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+16:54:10 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+16:54:10 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+16:54:10 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+16:54:10 Creating default object from empty value in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 198 when visiting 
+
+16:54:10 include(D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php): failed to open stream: No such file or directory in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+16:54:10 include(): Failed opening 'D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php' for inclusion (include_path='.;C:\php\pear') in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+16:54:11 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 346 when visiting admin-buckimportpara
+
+16:54:11 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 346 when visiting admin-buckimportpara
+
+16:54:11 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 346 when visiting admin-buckimportpara
+
+16:54:11 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 346 when visiting admin-buckimportpara
+
+16:54:11 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 346 when visiting admin-buckimportpara
+
+16:54:11 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 346 when visiting admin-buckimportpara
+
+16:54:11 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 346 when visiting admin-buckimportpara
+
+16:54:11 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 346 when visiting admin-buckimportpara
+
+16:54:11 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 346 when visiting admin-buckimportpara
+
+16:54:11 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 346 when visiting admin-buckimportpara
+
+16:54:11 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 346 when visiting admin-buckimportpara
+
+16:54:11 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 346 when visiting admin-buckimportpara
+
+16:54:11 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 346 when visiting admin-buckimportpara
+
+16:54:11 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 346 when visiting admin-buckimportpara
+
+16:54:11 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 346 when visiting admin-buckimportpara
+
+16:54:11 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 346 when visiting admin-buckimportpara
+
+16:54:11 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 346 when visiting admin-buckimportpara
+
+16:54:11 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 346 when visiting admin-buckimportpara
+
+16:54:11 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 346 when visiting admin-buckimportpara
+
+16:54:11 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 346 when visiting admin-buckimportpara
+
+16:54:11 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 346 when visiting admin-buckimportpara
+
+16:54:11 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\admin\control.php on line 346 when visiting admin-buckimportpara
+
+18:01:10 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+18:01:10 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 182 when visiting 
+
+18:01:10 Undefined property: language::$project in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+18:01:10 Trying to get property of non-object in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 183 when visiting 
+
+18:01:10 Creating default object from empty value in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 198 when visiting 
+
+18:01:10 include(D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php): failed to open stream: No such file or directory in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+18:01:10 include(): Failed opening 'D:\wamp\www\webvipsystem\module\common\lang/menuOrder.php' for inclusion (include_path='.;C:\php\pear') in D:\wamp\www\webvipsystem\module\common\lang\en.php on line 434 when visiting 
+
+18:01:10 Uncaught exception 'Exception' with message 'Could not open BuckParaTable222.xlsx for reading! File does not exist.' in D:\wamp\www\webvipsystem\lib\PHPExcel\PHPExcel\Reader\Excel2007.php:487
+Stack trace:
+#0 D:\wamp\www\webvipsystem\module\admin\control.php(312): PHPExcel_Reader_Excel2007->load('BuckParaTable22...')
+#1 [internal function]: admin->buckimportpara()
+#2 D:\wamp\www\webvipsystem\framework\base\router.class.php(1467): call_user_func_array(Array, Array)
+#3 D:\wamp\www\webvipsystem\www\index.php(68): baseRouter->loadModule()
+#4 {main}
+  thrown in D:\wamp\www\webvipsystem\lib\PHPExcel\PHPExcel\Reader\Excel2007.php on line 487 when visiting admin-buckimportpara

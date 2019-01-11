@@ -1,0 +1,2551 @@
+<?php
+ die();
+?>
+20170417 08:38:09: my
+  SELECT * FROM `zt_company` ORDER BY `id`  LIMIT 1 
+  SELECT * FROM `zt_config` WHERE owner IN ('system','') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+
+20170417 08:38:09: user-login-L2JhY2tncm91bmQvd3d3L215Lmh0bWw=
+  SELECT * FROM `zt_config` WHERE owner IN ('system','') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+
+20170417 08:38:17: user-login-L2JhY2tncm91bmQvd3d3L215Lmh0bWw=
+  SELECT * FROM `zt_config` WHERE owner IN ('system','') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT locked FROM `zt_user` WHERE account  = 'admin'
+  SELECT * FROM `zt_user` WHERE account  = 'admin' AND  deleted  = '0'
+  UPDATE `zt_user` SET  visits = visits + 1, `ip` = '::1', `last` = '1492389497' WHERE account  = 'admin'
+  UPDATE `zt_user` SET  `fails` = '0', `locked` = '0000-00-00 00:00:00' WHERE account  = 'admin'
+  SELECT t1.acl FROM `zt_group` AS t1  LEFT JOIN `zt_usergroup` AS t2  ON t1.id=t2.group  WHERE t2.account  = 'admin'
+  SELECT module, method FROM `zt_usergroup` AS t1  LEFT JOIN `zt_grouppriv` AS t2  ON t1.group = t2.group  WHERE t1.account  = 'admin'
+  SELECT `group` FROM `zt_usergroup` WHERE `account` = 'admin' 
+  INSERT INTO `zt_action` SET `objectType` = 'user',`objectID` = '1',`actor` = 'admin',`action` = 'login',`date` = '2017-04-17 08:38:17',`comment` = '',`extra` = '',`product` = ',0,',`project` = '0'
+
+20170417 08:38:17: my
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `zt_block` WHERE account  = 'admin' AND  module  = 'my' AND  hidden  = '0' ORDER BY `order`  LIMIT 0,3 
+
+20170417 08:38:18: block-printBlock-14-my
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `zt_block` WHERE id  = '14'
+  SELECT * FROM 510_messages ORDER BY `id` desc  LIMIT 0,30 
+
+20170417 08:38:18: block-printBlock-2-my
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `zt_block` WHERE id  = '2'
+  SELECT * FROM `zt_action` WHERE 1  AND  date  > '2017-04-17 00:00:00' AND  date  < '2017-04-23 23:59:59 23:59:59' AND  (1)  ORDER BY `date` desc 
+  SELECT commiter, account, realname FROM `zt_user` WHERE commiter  != ''
+  SELECT id, account AS name FROM `zt_user` WHERE id IN ('1')
+  SELECT account, realname, deleted FROM `zt_user` ORDER BY `account` 
+
+20170417 08:38:18: block-printBlock-3-my
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `zt_block` WHERE id  = '3'
+  SELECT * FROM 510_user WHERE id  > '300' ORDER BY `id` desc 
+  SELECT COUNT(*) AS recTotal FROM 510_user WHERE id  > '300' 
+  SELECT * FROM 510_user WHERE id  > '300' ORDER BY `id` desc   limit 0, 20 
+
+20170417 08:41:01: my
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `zt_block` WHERE account  = 'admin' AND  module  = 'my' AND  hidden  = '0' ORDER BY `order`  LIMIT 0,3 
+
+20170417 08:41:02: block-printBlock-3-my
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `zt_block` WHERE id  = '3'
+  SELECT * FROM 510_user WHERE id  > '300' ORDER BY `id` desc 
+  SELECT COUNT(*) AS recTotal FROM 510_user WHERE id  > '300' 
+  SELECT * FROM 510_user WHERE id  > '300' ORDER BY `id` desc   limit 0, 20 
+
+20170417 08:41:02: block-printBlock-2-my
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `zt_block` WHERE id  = '2'
+  SELECT * FROM `zt_action` WHERE 1  AND  date  > '2017-04-17 00:00:00' AND  date  < '2017-04-23 23:59:59 23:59:59' AND  (1)  ORDER BY `date` desc 
+  SELECT commiter, account, realname FROM `zt_user` WHERE commiter  != ''
+  SELECT id, account AS name FROM `zt_user` WHERE id IN ('1')
+  SELECT account, realname, deleted FROM `zt_user` ORDER BY `account` 
+
+20170417 08:41:02: block-printBlock-14-my
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `zt_block` WHERE id  = '14'
+  SELECT * FROM 510_messages ORDER BY `id` desc  LIMIT 0,30 
+
+20170417 08:51:03: misc-ping
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+
+20170417 09:09:19: product
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+
+20170417 09:09:20: product-all
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM `510_proclass` ORDER BY `sort` asc,`id` asc 
+  SELECT COUNT(*) AS recTotal FROM `510_proclass` 
+  SELECT * FROM `510_proclass` ORDER BY `sort` asc,`id` asc 
+  SELECT id FROM `510_proclass` WHERE ( id  = '127' OR parpath  LIKE '%,127%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('127')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','8','14','9','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '130' OR parpath  LIKE '%,130%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('130')
+  SELECT id FROM `510_proclass` WHERE ( id  = '129' OR parpath  LIKE '%,129%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('129')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','31','35','14','9','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '128' OR parpath  LIKE '%,128%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('128')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','18','14','30','34')
+  SELECT id FROM `510_proclass` WHERE ( id  = '132' OR parpath  LIKE '%,132%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('132')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','36','37','38','13','30')
+  SELECT id FROM `510_proclass` WHERE ( id  = '124' OR parpath  LIKE '%,124%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('124')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','6','7','19','8','21','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '135' OR parpath  LIKE '%,135%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('135')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','15','16','17','18','7','19','8','20','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '143' OR parpath  LIKE '%,143%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('143')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','9','14','22','23','13','30')
+  SELECT id FROM `510_proclass` WHERE ( id  = '134' OR parpath  LIKE '%,134%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('134','147','148','149')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','6','14','24','25','26','27','28','43')
+  SELECT id FROM `510_proclass` WHERE ( id  = '147' OR parpath  LIKE '%,147%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('147')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','49','24','50','51','52','53','54','55','56','14','57','58','59')
+  SELECT id FROM `510_proclass` WHERE ( id  = '148' OR parpath  LIKE '%,148%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('148')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','49','14','50','51','52','53','54','55')
+  SELECT id FROM `510_proclass` WHERE ( id  = '149' OR parpath  LIKE '%,149%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('149')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','49','24','50','51','52','53','54','55')
+  SELECT id FROM `510_proclass` WHERE ( id  = '151' OR parpath  LIKE '%,151%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('151')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','30','60','61','62','63','64','65','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '152' OR parpath  LIKE '%,152%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('152')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','66','67','68','69','70','71','72','73','74','75','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '153' OR parpath  LIKE '%,153%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('153')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','76','77','78','79','80','81','82','83','84','85','86')
+  SELECT id FROM `510_proclass` WHERE ( id  = '154' OR parpath  LIKE '%,154%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('154')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','87','88','89','77','78','90','91')
+
+20170417 09:09:29: product
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+
+20170417 09:09:29: product-all
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM `510_proclass` ORDER BY `sort` asc,`id` asc 
+  SELECT COUNT(*) AS recTotal FROM `510_proclass` 
+  SELECT * FROM `510_proclass` ORDER BY `sort` asc,`id` asc 
+  SELECT id FROM `510_proclass` WHERE ( id  = '127' OR parpath  LIKE '%,127%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('127')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','8','14','9','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '130' OR parpath  LIKE '%,130%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('130')
+  SELECT id FROM `510_proclass` WHERE ( id  = '129' OR parpath  LIKE '%,129%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('129')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','31','35','14','9','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '128' OR parpath  LIKE '%,128%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('128')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','18','14','30','34')
+  SELECT id FROM `510_proclass` WHERE ( id  = '132' OR parpath  LIKE '%,132%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('132')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','36','37','38','13','30')
+  SELECT id FROM `510_proclass` WHERE ( id  = '124' OR parpath  LIKE '%,124%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('124')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','6','7','19','8','21','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '135' OR parpath  LIKE '%,135%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('135')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','15','16','17','18','7','19','8','20','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '143' OR parpath  LIKE '%,143%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('143')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','9','14','22','23','13','30')
+  SELECT id FROM `510_proclass` WHERE ( id  = '134' OR parpath  LIKE '%,134%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('134','147','148','149')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','6','14','24','25','26','27','28','43')
+  SELECT id FROM `510_proclass` WHERE ( id  = '147' OR parpath  LIKE '%,147%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('147')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','49','24','50','51','52','53','54','55','56','14','57','58','59')
+  SELECT id FROM `510_proclass` WHERE ( id  = '148' OR parpath  LIKE '%,148%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('148')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','49','14','50','51','52','53','54','55')
+  SELECT id FROM `510_proclass` WHERE ( id  = '149' OR parpath  LIKE '%,149%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('149')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','49','24','50','51','52','53','54','55')
+  SELECT id FROM `510_proclass` WHERE ( id  = '151' OR parpath  LIKE '%,151%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('151')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','30','60','61','62','63','64','65','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '152' OR parpath  LIKE '%,152%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('152')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','66','67','68','69','70','71','72','73','74','75','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '153' OR parpath  LIKE '%,153%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('153')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','76','77','78','79','80','81','82','83','84','85','86')
+  SELECT id FROM `510_proclass` WHERE ( id  = '154' OR parpath  LIKE '%,154%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('154')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','87','88','89','77','78','90','91')
+
+20170417 09:11:33: product-all
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM `510_proclass` ORDER BY `sort` asc,`id` asc 
+  SELECT COUNT(*) AS recTotal FROM `510_proclass` 
+  SELECT * FROM `510_proclass` ORDER BY `sort` asc,`id` asc 
+  SELECT id FROM `510_proclass` WHERE ( id  = '127' OR parpath  LIKE '%,127%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('127')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','8','14','9','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '130' OR parpath  LIKE '%,130%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('130')
+  SELECT id FROM `510_proclass` WHERE ( id  = '129' OR parpath  LIKE '%,129%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('129')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','31','35','14','9','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '128' OR parpath  LIKE '%,128%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('128')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','18','14','30','34')
+  SELECT id FROM `510_proclass` WHERE ( id  = '132' OR parpath  LIKE '%,132%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('132')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','36','37','38','13','30')
+  SELECT id FROM `510_proclass` WHERE ( id  = '124' OR parpath  LIKE '%,124%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('124')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','6','7','19','8','21','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '135' OR parpath  LIKE '%,135%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('135')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','15','16','17','18','7','19','8','20','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '143' OR parpath  LIKE '%,143%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('143')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','9','14','22','23','13','30')
+  SELECT id FROM `510_proclass` WHERE ( id  = '134' OR parpath  LIKE '%,134%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('134','147','148','149')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','6','14','24','25','26','27','28','43')
+  SELECT id FROM `510_proclass` WHERE ( id  = '147' OR parpath  LIKE '%,147%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('147')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','49','24','50','51','52','53','54','55','56','14','57','58','59')
+  SELECT id FROM `510_proclass` WHERE ( id  = '148' OR parpath  LIKE '%,148%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('148')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','49','14','50','51','52','53','54','55')
+  SELECT id FROM `510_proclass` WHERE ( id  = '149' OR parpath  LIKE '%,149%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('149')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','49','24','50','51','52','53','54','55')
+  SELECT id FROM `510_proclass` WHERE ( id  = '151' OR parpath  LIKE '%,151%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('151')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','30','60','61','62','63','64','65','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '152' OR parpath  LIKE '%,152%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('152')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','66','67','68','69','70','71','72','73','74','75','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '153' OR parpath  LIKE '%,153%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('153')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','76','77','78','79','80','81','82','83','84','85','86')
+  SELECT id FROM `510_proclass` WHERE ( id  = '154' OR parpath  LIKE '%,154%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('154')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','87','88','89','77','78','90','91')
+
+20170417 09:11:48: product-all
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM `510_proclass` ORDER BY `sort` asc,`id` asc 
+  SELECT COUNT(*) AS recTotal FROM `510_proclass` 
+  SELECT * FROM `510_proclass` ORDER BY `sort` asc,`id` asc 
+  SELECT id FROM `510_proclass` WHERE ( id  = '127' OR parpath  LIKE '%,127%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('127')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','8','14','9','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '130' OR parpath  LIKE '%,130%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('130')
+  SELECT id FROM `510_proclass` WHERE ( id  = '129' OR parpath  LIKE '%,129%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('129')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','31','35','14','9','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '128' OR parpath  LIKE '%,128%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('128')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','18','14','30','34')
+  SELECT id FROM `510_proclass` WHERE ( id  = '132' OR parpath  LIKE '%,132%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('132')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','36','37','38','13','30')
+  SELECT id FROM `510_proclass` WHERE ( id  = '124' OR parpath  LIKE '%,124%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('124')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','6','7','19','8','21','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '135' OR parpath  LIKE '%,135%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('135')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','15','16','17','18','7','19','8','20','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '143' OR parpath  LIKE '%,143%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('143')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','9','14','22','23','13','30')
+  SELECT id FROM `510_proclass` WHERE ( id  = '134' OR parpath  LIKE '%,134%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('134','147','148','149')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','6','14','24','25','26','27','28','43')
+  SELECT id FROM `510_proclass` WHERE ( id  = '147' OR parpath  LIKE '%,147%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('147')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','49','24','50','51','52','53','54','55','56','14','57','58','59')
+  SELECT id FROM `510_proclass` WHERE ( id  = '148' OR parpath  LIKE '%,148%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('148')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','49','14','50','51','52','53','54','55')
+  SELECT id FROM `510_proclass` WHERE ( id  = '149' OR parpath  LIKE '%,149%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('149')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','49','24','50','51','52','53','54','55')
+  SELECT id FROM `510_proclass` WHERE ( id  = '151' OR parpath  LIKE '%,151%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('151')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','30','60','61','62','63','64','65','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '152' OR parpath  LIKE '%,152%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('152')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','66','67','68','69','70','71','72','73','74','75','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '153' OR parpath  LIKE '%,153%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('153')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','76','77','78','79','80','81','82','83','84','85','86')
+  SELECT id FROM `510_proclass` WHERE ( id  = '154' OR parpath  LIKE '%,154%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('154')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','87','88','89','77','78','90','91')
+
+20170417 09:14:12: product-updateOrder
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+
+20170417 09:14:14: product-updateOrder
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+
+20170417 09:14:23: product-updateOrder
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+
+20170417 09:14:25: product-updateOrder
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+
+20170417 09:14:27: product-all
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM `510_proclass` ORDER BY `sort` asc,`id` asc 
+  SELECT COUNT(*) AS recTotal FROM `510_proclass` 
+  SELECT * FROM `510_proclass` ORDER BY `sort` asc,`id` asc 
+  SELECT id FROM `510_proclass` WHERE ( id  = '127' OR parpath  LIKE '%,127%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('127')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','8','14','9','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '130' OR parpath  LIKE '%,130%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('130')
+  SELECT id FROM `510_proclass` WHERE ( id  = '129' OR parpath  LIKE '%,129%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('129')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','31','35','14','9','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '128' OR parpath  LIKE '%,128%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('128')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','18','14','30','34')
+  SELECT id FROM `510_proclass` WHERE ( id  = '132' OR parpath  LIKE '%,132%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('132')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','36','37','38','13','30')
+  SELECT id FROM `510_proclass` WHERE ( id  = '124' OR parpath  LIKE '%,124%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('124')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','6','7','19','8','21','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '135' OR parpath  LIKE '%,135%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('135')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','15','16','17','18','7','19','8','20','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '143' OR parpath  LIKE '%,143%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('143')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','9','14','22','23','13','30')
+  SELECT id FROM `510_proclass` WHERE ( id  = '134' OR parpath  LIKE '%,134%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('134','147','148','149')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','6','14','24','25','26','27','28','43')
+  SELECT id FROM `510_proclass` WHERE ( id  = '147' OR parpath  LIKE '%,147%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('147')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','49','24','50','51','52','53','54','55','56','14','57','58','59')
+  SELECT id FROM `510_proclass` WHERE ( id  = '148' OR parpath  LIKE '%,148%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('148')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','49','14','50','51','52','53','54','55')
+  SELECT id FROM `510_proclass` WHERE ( id  = '149' OR parpath  LIKE '%,149%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('149')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','49','24','50','51','52','53','54','55')
+  SELECT id FROM `510_proclass` WHERE ( id  = '151' OR parpath  LIKE '%,151%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('151')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','30','60','61','62','63','64','65','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '152' OR parpath  LIKE '%,152%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('152')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','66','67','68','69','70','71','72','73','74','75','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '153' OR parpath  LIKE '%,153%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('153')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','76','77','78','79','80','81','82','83','84','85','86')
+  SELECT id FROM `510_proclass` WHERE ( id  = '154' OR parpath  LIKE '%,154%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('154')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','87','88','89','77','78','90','91')
+
+20170417 09:15:42: product-updateOrder
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+
+20170417 09:15:49: product-updateOrder
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+
+20170417 09:20:06: product-all
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM `510_proclass` ORDER BY `sort` asc,`id` asc 
+  SELECT COUNT(*) AS recTotal FROM `510_proclass` 
+  SELECT * FROM `510_proclass` ORDER BY `sort` asc,`id` asc 
+  SELECT id FROM `510_proclass` WHERE ( id  = '127' OR parpath  LIKE '%,127%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('127')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','8','14','9','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '130' OR parpath  LIKE '%,130%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('130')
+  SELECT id FROM `510_proclass` WHERE ( id  = '129' OR parpath  LIKE '%,129%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('129')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','31','35','14','9','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '128' OR parpath  LIKE '%,128%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('128')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','18','14','30','34')
+  SELECT id FROM `510_proclass` WHERE ( id  = '132' OR parpath  LIKE '%,132%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('132')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','36','37','38','13','30')
+  SELECT id FROM `510_proclass` WHERE ( id  = '124' OR parpath  LIKE '%,124%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('124')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','6','7','19','8','21','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '135' OR parpath  LIKE '%,135%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('135')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','15','16','17','18','7','19','8','20','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '143' OR parpath  LIKE '%,143%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('143')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','9','14','22','23','13','30')
+  SELECT id FROM `510_proclass` WHERE ( id  = '134' OR parpath  LIKE '%,134%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('134','147','148','149')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','6','14','24','25','26','27','28','43')
+  SELECT id FROM `510_proclass` WHERE ( id  = '147' OR parpath  LIKE '%,147%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('147')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','49','24','50','51','52','53','54','55','56','14','57','58','59')
+  SELECT id FROM `510_proclass` WHERE ( id  = '148' OR parpath  LIKE '%,148%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('148')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','49','14','50','51','52','53','54','55')
+  SELECT id FROM `510_proclass` WHERE ( id  = '149' OR parpath  LIKE '%,149%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('149')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','49','24','50','51','52','53','54','55')
+  SELECT id FROM `510_proclass` WHERE ( id  = '151' OR parpath  LIKE '%,151%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('151')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','30','60','61','62','63','64','65','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '152' OR parpath  LIKE '%,152%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('152')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','66','67','68','69','70','71','72','73','74','75','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '153' OR parpath  LIKE '%,153%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('153')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','76','77','78','79','80','81','82','83','84','85','86')
+  SELECT id FROM `510_proclass` WHERE ( id  = '154' OR parpath  LIKE '%,154%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('154')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','87','88','89','77','78','90','91')
+
+20170417 09:20:08: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+
+20170417 09:21:35: product-all
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM `510_proclass` ORDER BY `sort` asc,`id` asc 
+  SELECT COUNT(*) AS recTotal FROM `510_proclass` 
+  SELECT * FROM `510_proclass` ORDER BY `sort` asc,`id` asc 
+  SELECT id FROM `510_proclass` WHERE ( id  = '127' OR parpath  LIKE '%,127%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('127')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','8','14','9','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '130' OR parpath  LIKE '%,130%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('130')
+  SELECT id FROM `510_proclass` WHERE ( id  = '129' OR parpath  LIKE '%,129%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('129')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','31','35','14','9','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '128' OR parpath  LIKE '%,128%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('128')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','18','14','30','34')
+  SELECT id FROM `510_proclass` WHERE ( id  = '132' OR parpath  LIKE '%,132%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('132')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','36','37','38','13','30')
+  SELECT id FROM `510_proclass` WHERE ( id  = '124' OR parpath  LIKE '%,124%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('124')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','6','7','19','8','21','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '135' OR parpath  LIKE '%,135%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('135')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','15','16','17','18','7','19','8','20','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '143' OR parpath  LIKE '%,143%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('143')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','9','14','22','23','13','30')
+  SELECT id FROM `510_proclass` WHERE ( id  = '134' OR parpath  LIKE '%,134%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('134','147','148','149')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','6','14','24','25','26','27','28','43')
+  SELECT id FROM `510_proclass` WHERE ( id  = '147' OR parpath  LIKE '%,147%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('147')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','49','24','50','51','52','53','54','55','56','14','57','58','59')
+  SELECT id FROM `510_proclass` WHERE ( id  = '148' OR parpath  LIKE '%,148%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('148')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','49','14','50','51','52','53','54','55')
+  SELECT id FROM `510_proclass` WHERE ( id  = '149' OR parpath  LIKE '%,149%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('149')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','49','24','50','51','52','53','54','55')
+  SELECT id FROM `510_proclass` WHERE ( id  = '151' OR parpath  LIKE '%,151%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('151')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','30','60','61','62','63','64','65','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '152' OR parpath  LIKE '%,152%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('152')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','66','67','68','69','70','71','72','73','74','75','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '153' OR parpath  LIKE '%,153%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('153')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','76','77','78','79','80','81','82','83','84','85','86')
+  SELECT id FROM `510_proclass` WHERE ( id  = '154' OR parpath  LIKE '%,154%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('154')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','87','88','89','77','78','90','91')
+
+20170417 09:22:52: product-all
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM `510_proclass` ORDER BY `sort` asc,`id` asc 
+  SELECT COUNT(*) AS recTotal FROM `510_proclass` 
+  SELECT * FROM `510_proclass` ORDER BY `sort` asc,`id` asc 
+  SELECT id FROM `510_proclass` WHERE ( id  = '127' OR parpath  LIKE '%,127%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('127')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','8','14','9','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '130' OR parpath  LIKE '%,130%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('130')
+  SELECT id FROM `510_proclass` WHERE ( id  = '129' OR parpath  LIKE '%,129%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('129')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','31','35','14','9','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '128' OR parpath  LIKE '%,128%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('128')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','18','14','30','34')
+  SELECT id FROM `510_proclass` WHERE ( id  = '132' OR parpath  LIKE '%,132%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('132')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','36','37','38','13','30')
+  SELECT id FROM `510_proclass` WHERE ( id  = '124' OR parpath  LIKE '%,124%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('124')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','6','7','19','8','21','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '135' OR parpath  LIKE '%,135%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('135')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','15','16','17','18','7','19','8','20','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '143' OR parpath  LIKE '%,143%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('143')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','9','14','22','23','13','30')
+  SELECT id FROM `510_proclass` WHERE ( id  = '134' OR parpath  LIKE '%,134%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('134','147','148','149')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','6','14','24','25','26','27','28','43')
+  SELECT id FROM `510_proclass` WHERE ( id  = '147' OR parpath  LIKE '%,147%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('147')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','49','24','50','51','52','53','54','55','56','14','57','58','59')
+  SELECT id FROM `510_proclass` WHERE ( id  = '148' OR parpath  LIKE '%,148%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('148')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','49','14','50','51','52','53','54','55')
+  SELECT id FROM `510_proclass` WHERE ( id  = '149' OR parpath  LIKE '%,149%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('149')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','49','24','50','51','52','53','54','55')
+  SELECT id FROM `510_proclass` WHERE ( id  = '151' OR parpath  LIKE '%,151%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('151')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','30','60','61','62','63','64','65','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '152' OR parpath  LIKE '%,152%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('152')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','66','67','68','69','70','71','72','73','74','75','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '153' OR parpath  LIKE '%,153%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('153')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','76','77','78','79','80','81','82','83','84','85','86')
+  SELECT id FROM `510_proclass` WHERE ( id  = '154' OR parpath  LIKE '%,154%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('154')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','87','88','89','77','78','90','91')
+
+20170417 09:22:56: product-configure
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+
+20170417 09:23:19: product-index-no-154
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+
+20170417 09:23:19: product-all
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM `510_proclass` ORDER BY `sort` asc,`id` asc 
+  SELECT COUNT(*) AS recTotal FROM `510_proclass` 
+  SELECT * FROM `510_proclass` ORDER BY `sort` asc,`id` asc 
+  SELECT id FROM `510_proclass` WHERE ( id  = '127' OR parpath  LIKE '%,127%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('127')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','8','14','9','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '130' OR parpath  LIKE '%,130%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('130')
+  SELECT id FROM `510_proclass` WHERE ( id  = '129' OR parpath  LIKE '%,129%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('129')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','31','35','14','9','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '128' OR parpath  LIKE '%,128%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('128')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','18','14','30','34')
+  SELECT id FROM `510_proclass` WHERE ( id  = '132' OR parpath  LIKE '%,132%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('132')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','36','37','38','13','30')
+  SELECT id FROM `510_proclass` WHERE ( id  = '124' OR parpath  LIKE '%,124%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('124')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','6','7','19','8','21','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '135' OR parpath  LIKE '%,135%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('135')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','15','16','17','18','7','19','8','20','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '143' OR parpath  LIKE '%,143%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('143')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','9','14','22','23','13','30')
+  SELECT id FROM `510_proclass` WHERE ( id  = '134' OR parpath  LIKE '%,134%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('134','147','148','149')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','6','14','24','25','26','27','28','43')
+  SELECT id FROM `510_proclass` WHERE ( id  = '147' OR parpath  LIKE '%,147%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('147')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','49','24','50','51','52','53','54','55','56','14','57','58','59')
+  SELECT id FROM `510_proclass` WHERE ( id  = '148' OR parpath  LIKE '%,148%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('148')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','49','14','50','51','52','53','54','55')
+  SELECT id FROM `510_proclass` WHERE ( id  = '149' OR parpath  LIKE '%,149%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('149')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','49','24','50','51','52','53','54','55')
+  SELECT id FROM `510_proclass` WHERE ( id  = '151' OR parpath  LIKE '%,151%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('151')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','30','60','61','62','63','64','65','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '152' OR parpath  LIKE '%,152%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('152')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','66','67','68','69','70','71','72','73','74','75','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '153' OR parpath  LIKE '%,153%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('153')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','76','77','78','79','80','81','82','83','84','85','86')
+  SELECT id FROM `510_proclass` WHERE ( id  = '154' OR parpath  LIKE '%,154%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('154')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','87','88','89','77','78','90','91')
+
+20170417 09:23:28: product-configure
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+
+20170417 09:30:01: product-configure
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+
+20170417 09:36:12: product-all
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM `510_proclass` ORDER BY `sort` asc,`id` asc 
+  SELECT COUNT(*) AS recTotal FROM `510_proclass` 
+  SELECT * FROM `510_proclass` ORDER BY `sort` asc,`id` asc 
+  SELECT id FROM `510_proclass` WHERE ( id  = '127' OR parpath  LIKE '%,127%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('127')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','8','14','9','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '130' OR parpath  LIKE '%,130%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('130')
+  SELECT id FROM `510_proclass` WHERE ( id  = '129' OR parpath  LIKE '%,129%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('129')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','31','35','14','9','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '128' OR parpath  LIKE '%,128%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('128')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','18','14','30','34')
+  SELECT id FROM `510_proclass` WHERE ( id  = '132' OR parpath  LIKE '%,132%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('132')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','36','37','38','13','30')
+  SELECT id FROM `510_proclass` WHERE ( id  = '124' OR parpath  LIKE '%,124%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('124')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','6','7','19','8','21','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '135' OR parpath  LIKE '%,135%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('135')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','15','16','17','18','7','19','8','20','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '143' OR parpath  LIKE '%,143%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('143')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','9','14','22','23','13','30')
+  SELECT id FROM `510_proclass` WHERE ( id  = '134' OR parpath  LIKE '%,134%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('134','147','148','149')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','6','14','24','25','26','27','28','43')
+  SELECT id FROM `510_proclass` WHERE ( id  = '147' OR parpath  LIKE '%,147%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('147')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','49','24','50','51','52','53','54','55','56','14','57','58','59')
+  SELECT id FROM `510_proclass` WHERE ( id  = '148' OR parpath  LIKE '%,148%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('148')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','49','14','50','51','52','53','54','55')
+  SELECT id FROM `510_proclass` WHERE ( id  = '149' OR parpath  LIKE '%,149%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('149')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','49','24','50','51','52','53','54','55')
+  SELECT id FROM `510_proclass` WHERE ( id  = '151' OR parpath  LIKE '%,151%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('151')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','30','60','61','62','63','64','65','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '152' OR parpath  LIKE '%,152%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('152')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','66','67','68','69','70','71','72','73','74','75','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '153' OR parpath  LIKE '%,153%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('153')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','76','77','78','79','80','81','82','83','84','85','86')
+  SELECT id FROM `510_proclass` WHERE ( id  = '154' OR parpath  LIKE '%,154%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('154')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','87','88','89','77','78','90','91')
+
+20170417 09:36:19: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+
+20170417 09:37:55: product-browse-154
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT b.fieldname,b.fieldvalue FROM 510_fieldproclass AS a  LEFT JOIN 510_field AS b  ON a.field_id = b.id  WHERE a.pro_cid  = '147' ORDER BY a.`sort` asc 
+  SELECT id FROM `510_proclass` WHERE ( id  = '154' OR f_id  = '154')
+  SELECT * FROM `510_procut` WHERE cid IN ('154') AND  cid IN ('147') ORDER BY `id` desc 
+  SELECT COUNT(*) AS recTotal FROM `510_procut` WHERE cid IN ('154') AND  cid IN ('147') 
+  SELECT * FROM `510_procut` WHERE cid IN ('154') AND  cid IN ('147') ORDER BY `id` desc 
+  SELECT * FROM `510_procut` WHERE cid IN ('154') AND  cid IN ('147') ORDER BY `id` desc 
+  SELECT * FROM `zt_module` WHERE root  = '154' AND  type  = 'story' AND  branch  = '0' ORDER BY `grade` desc,`order` 
+  SELECT DISTINCT story FROM `zt_case` WHERE story IN ('')
+  SELECT * FROM `zt_module` WHERE root  = '154' AND  type  = 'story' AND  branch  = '147' ORDER BY `grade` desc,`order` 
+  SELECT account, realname, deleted, INSTR(',pd,po,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+  SELECT * FROM `zt_module` WHERE root  = '154' AND  type  = 'story' AND  branch  = '0' ORDER BY `grade` desc,`order` 
+  SELECT * FROM `zt_module` WHERE root  = '154' AND  type  = 'story' AND  branch  = '147' ORDER BY `grade` desc,`order` 
+  SELECT * FROM `zt_storystage` WHERE story IN ('')
+
+20170417 09:38:02: product-browse-154
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT b.fieldname,b.fieldvalue FROM 510_fieldproclass AS a  LEFT JOIN 510_field AS b  ON a.field_id = b.id  WHERE a.pro_cid  = '147' ORDER BY a.`sort` asc 
+  SELECT id FROM `510_proclass` WHERE ( id  = '154' OR f_id  = '154')
+  SELECT * FROM `510_procut` WHERE cid IN ('154') AND  cid IN ('147') ORDER BY `id` desc 
+  SELECT COUNT(*) AS recTotal FROM `510_procut` WHERE cid IN ('154') AND  cid IN ('147') 
+  SELECT * FROM `510_procut` WHERE cid IN ('154') AND  cid IN ('147') ORDER BY `id` desc 
+  SELECT * FROM `510_procut` WHERE cid IN ('154') AND  cid IN ('147') ORDER BY `id` desc 
+  SELECT * FROM `zt_module` WHERE root  = '154' AND  type  = 'story' AND  branch  = '0' ORDER BY `grade` desc,`order` 
+  SELECT DISTINCT story FROM `zt_case` WHERE story IN ('')
+  SELECT * FROM `zt_module` WHERE root  = '154' AND  type  = 'story' AND  branch  = '147' ORDER BY `grade` desc,`order` 
+  SELECT account, realname, deleted, INSTR(',pd,po,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+  SELECT * FROM `zt_module` WHERE root  = '154' AND  type  = 'story' AND  branch  = '0' ORDER BY `grade` desc,`order` 
+  SELECT * FROM `zt_module` WHERE root  = '154' AND  type  = 'story' AND  branch  = '147' ORDER BY `grade` desc,`order` 
+  SELECT * FROM `zt_storystage` WHERE story IN ('')
+
+20170417 09:38:04: product-browse-154
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT b.fieldname,b.fieldvalue FROM 510_fieldproclass AS a  LEFT JOIN 510_field AS b  ON a.field_id = b.id  WHERE a.pro_cid  = '147' ORDER BY a.`sort` asc 
+  SELECT id FROM `510_proclass` WHERE ( id  = '154' OR f_id  = '154')
+  SELECT * FROM `510_procut` WHERE cid IN ('154') AND  cid IN ('147') ORDER BY `id` desc 
+  SELECT COUNT(*) AS recTotal FROM `510_procut` WHERE cid IN ('154') AND  cid IN ('147') 
+  SELECT * FROM `510_procut` WHERE cid IN ('154') AND  cid IN ('147') ORDER BY `id` desc 
+  SELECT * FROM `510_procut` WHERE cid IN ('154') AND  cid IN ('147') ORDER BY `id` desc 
+  SELECT * FROM `zt_module` WHERE root  = '154' AND  type  = 'story' AND  branch  = '0' ORDER BY `grade` desc,`order` 
+  SELECT DISTINCT story FROM `zt_case` WHERE story IN ('')
+  SELECT * FROM `zt_module` WHERE root  = '154' AND  type  = 'story' AND  branch  = '147' ORDER BY `grade` desc,`order` 
+  SELECT account, realname, deleted, INSTR(',pd,po,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+  SELECT * FROM `zt_module` WHERE root  = '154' AND  type  = 'story' AND  branch  = '0' ORDER BY `grade` desc,`order` 
+  SELECT * FROM `zt_module` WHERE root  = '154' AND  type  = 'story' AND  branch  = '147' ORDER BY `grade` desc,`order` 
+  SELECT * FROM `zt_storystage` WHERE story IN ('')
+
+20170417 09:38:13: branch-ajaxGetDropMenu-154-product-browse-
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+
+20170417 09:38:14: product-browse-154-0
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT b.fieldname,b.fieldvalue FROM 510_fieldproclass AS a  LEFT JOIN 510_field AS b  ON a.field_id = b.id  WHERE a.pro_cid  = '154' ORDER BY a.`sort` asc 
+  SELECT id FROM `510_proclass` WHERE ( id  = '154' OR f_id  = '154')
+  SELECT * FROM `510_procut` WHERE cid IN ('154') ORDER BY `id` desc 
+  SELECT COUNT(*) AS recTotal FROM `510_procut` WHERE cid IN ('154') 
+  SELECT * FROM `510_procut` WHERE cid IN ('154') ORDER BY `id` desc 
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2684'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2683'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2669'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2668'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2667'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2666'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2665'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2664'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2663'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2662'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2662'
+  SELECT * FROM `zt_module` WHERE root  = '154' AND  type  = 'story' AND  branch  = '0' ORDER BY `grade` desc,`order` 
+  SELECT DISTINCT story FROM `zt_case` WHERE story IN ('2684','2683','2669','2668','2667','2666','2665','2664','2663','2662')
+  SELECT * FROM `zt_module` WHERE root  = '154' AND  type  = 'story' AND  branch  = '0' ORDER BY `grade` desc,`order` 
+  SELECT account, realname, deleted, INSTR(',pd,po,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+  SELECT * FROM `zt_module` WHERE root  = '154' AND  type  = 'story' AND  branch  = '0' ORDER BY `grade` desc,`order` 
+  SELECT * FROM `zt_storystage` WHERE story IN ('2684','2683','2669','2668','2667','2666','2665','2664','2663','2662')
+
+20170417 09:38:20: product-browse-154
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT b.fieldname,b.fieldvalue FROM 510_fieldproclass AS a  LEFT JOIN 510_field AS b  ON a.field_id = b.id  WHERE a.pro_cid  = '154' ORDER BY a.`sort` asc 
+  SELECT id FROM `510_proclass` WHERE ( id  = '154' OR f_id  = '154')
+  SELECT * FROM `510_procut` WHERE cid IN ('154') ORDER BY `id` desc 
+  SELECT COUNT(*) AS recTotal FROM `510_procut` WHERE cid IN ('154') 
+  SELECT * FROM `510_procut` WHERE cid IN ('154') ORDER BY `id` desc 
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2684'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2683'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2669'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2668'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2667'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2666'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2665'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2664'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2663'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2662'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2662'
+  SELECT * FROM `zt_module` WHERE root  = '154' AND  type  = 'story' AND  branch  = '0' ORDER BY `grade` desc,`order` 
+  SELECT DISTINCT story FROM `zt_case` WHERE story IN ('2684','2683','2669','2668','2667','2666','2665','2664','2663','2662')
+  SELECT * FROM `zt_module` WHERE root  = '154' AND  type  = 'story' AND  branch  = '0' ORDER BY `grade` desc,`order` 
+  SELECT account, realname, deleted, INSTR(',pd,po,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+  SELECT * FROM `zt_module` WHERE root  = '154' AND  type  = 'story' AND  branch  = '0' ORDER BY `grade` desc,`order` 
+  SELECT * FROM `zt_storystage` WHERE story IN ('2684','2683','2669','2668','2667','2666','2665','2664','2663','2662')
+
+20170417 09:38:30: story-view-2684
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_procut` WHERE `id` = '2684' 
+  SELECT f_id FROM 510_proclass WHERE id  = '154'
+  SELECT b.fieldname,b.fieldvalue FROM 510_fieldproclass AS a  LEFT JOIN 510_field AS b  ON a.field_id = b.id  WHERE a.pro_cid  = '154' ORDER BY a.`sort` asc 
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2684'
+  SELECT * FROM `zt_file` WHERE objectType  = 'story' AND  objectID  = '2684'
+  SELECT name, id FROM `510_proclass` WHERE `id` = '154' 
+  SELECT account, realname, deleted FROM `zt_user` ORDER BY `account` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT a.id,a.uid,b.username,b.firstname,b.lastname,a.pid FROM zt_customerpri AS a  LEFT JOIN 510_user AS b  ON a.uid = b.id  WHERE pid  = '2684' ORDER BY a.`id` desc 
+  SELECT uid,username,count(id) as sumdown,downdate FROM zt_download WHERE pid  = '2684' GROUP BY uid
+  SELECT commiter, account, realname FROM `zt_user` WHERE commiter  != ''
+  SELECT * FROM `zt_action` WHERE objectType  = 'story' AND  objectID  = '2684' ORDER BY `date`,`id` 
+  SELECT * FROM `zt_history` WHERE action IN ('204') ORDER BY `id` 
+
+20170417 09:38:33: product-browse-154
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT b.fieldname,b.fieldvalue FROM 510_fieldproclass AS a  LEFT JOIN 510_field AS b  ON a.field_id = b.id  WHERE a.pro_cid  = '154' ORDER BY a.`sort` asc 
+  SELECT id FROM `510_proclass` WHERE ( id  = '154' OR f_id  = '154')
+  SELECT * FROM `510_procut` WHERE cid IN ('154') ORDER BY `id` desc 
+  SELECT COUNT(*) AS recTotal FROM `510_procut` WHERE cid IN ('154') 
+  SELECT * FROM `510_procut` WHERE cid IN ('154') ORDER BY `id` desc 
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2684'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2683'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2669'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2668'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2667'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2666'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2665'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2664'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2663'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2662'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2662'
+  SELECT * FROM `zt_module` WHERE root  = '154' AND  type  = 'story' AND  branch  = '0' ORDER BY `grade` desc,`order` 
+  SELECT DISTINCT story FROM `zt_case` WHERE story IN ('2684','2683','2669','2668','2667','2666','2665','2664','2663','2662')
+  SELECT * FROM `zt_module` WHERE root  = '154' AND  type  = 'story' AND  branch  = '0' ORDER BY `grade` desc,`order` 
+  SELECT account, realname, deleted, INSTR(',pd,po,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+  SELECT * FROM `zt_module` WHERE root  = '154' AND  type  = 'story' AND  branch  = '0' ORDER BY `grade` desc,`order` 
+  SELECT * FROM `zt_storystage` WHERE story IN ('2684','2683','2669','2668','2667','2666','2665','2664','2663','2662')
+
+20170417 09:38:34: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+
+20170417 09:38:38: story-view-2684
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_procut` WHERE `id` = '2684' 
+  SELECT f_id FROM 510_proclass WHERE id  = '154'
+  SELECT b.fieldname,b.fieldvalue FROM 510_fieldproclass AS a  LEFT JOIN 510_field AS b  ON a.field_id = b.id  WHERE a.pro_cid  = '154' ORDER BY a.`sort` asc 
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2684'
+  SELECT * FROM `zt_file` WHERE objectType  = 'story' AND  objectID  = '2684'
+  SELECT name, id FROM `510_proclass` WHERE `id` = '154' 
+  SELECT account, realname, deleted FROM `zt_user` ORDER BY `account` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT a.id,a.uid,b.username,b.firstname,b.lastname,a.pid FROM zt_customerpri AS a  LEFT JOIN 510_user AS b  ON a.uid = b.id  WHERE pid  = '2684' ORDER BY a.`id` desc 
+  SELECT uid,username,count(id) as sumdown,downdate FROM zt_download WHERE pid  = '2684' GROUP BY uid
+  SELECT commiter, account, realname FROM `zt_user` WHERE commiter  != ''
+  SELECT * FROM `zt_action` WHERE objectType  = 'story' AND  objectID  = '2684' ORDER BY `date`,`id` 
+  SELECT * FROM `zt_history` WHERE action IN ('204') ORDER BY `id` 
+
+20170417 09:38:41: story-create-154-0-0
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM `zt_module` WHERE root  = '154' AND  type  = 'story' AND  branch  = '0' ORDER BY `grade` desc,`order` 
+
+20170417 09:41:20: product-browse-154
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT b.fieldname,b.fieldvalue FROM 510_fieldproclass AS a  LEFT JOIN 510_field AS b  ON a.field_id = b.id  WHERE a.pro_cid  = '154' ORDER BY a.`sort` asc 
+  SELECT id FROM `510_proclass` WHERE ( id  = '154' OR f_id  = '154')
+  SELECT * FROM `510_procut` WHERE cid IN ('154') ORDER BY `id` desc 
+  SELECT COUNT(*) AS recTotal FROM `510_procut` WHERE cid IN ('154') 
+  SELECT * FROM `510_procut` WHERE cid IN ('154') ORDER BY `id` desc 
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2684'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2683'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2669'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2668'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2667'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2666'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2665'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2664'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2663'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2662'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2662'
+  SELECT * FROM `zt_module` WHERE root  = '154' AND  type  = 'story' AND  branch  = '0' ORDER BY `grade` desc,`order` 
+  SELECT DISTINCT story FROM `zt_case` WHERE story IN ('2684','2683','2669','2668','2667','2666','2665','2664','2663','2662')
+  SELECT * FROM `zt_module` WHERE root  = '154' AND  type  = 'story' AND  branch  = '0' ORDER BY `grade` desc,`order` 
+  SELECT account, realname, deleted, INSTR(',pd,po,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+  SELECT * FROM `zt_module` WHERE root  = '154' AND  type  = 'story' AND  branch  = '0' ORDER BY `grade` desc,`order` 
+  SELECT * FROM `zt_storystage` WHERE story IN ('2684','2683','2669','2668','2667','2666','2665','2664','2663','2662')
+
+20170417 09:41:22: story-create-154-0-0
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM `zt_module` WHERE root  = '154' AND  type  = 'story' AND  branch  = '0' ORDER BY `grade` desc,`order` 
+
+20170417 09:41:37: story-create-154-0-0
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM `zt_module` WHERE root  = '154' AND  type  = 'story' AND  branch  = '0' ORDER BY `grade` desc,`order` 
+
+20170417 09:42:12: product-browse-154
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT b.fieldname,b.fieldvalue FROM 510_fieldproclass AS a  LEFT JOIN 510_field AS b  ON a.field_id = b.id  WHERE a.pro_cid  = '154' ORDER BY a.`sort` asc 
+  SELECT id FROM `510_proclass` WHERE ( id  = '154' OR f_id  = '154')
+  SELECT * FROM `510_procut` WHERE cid IN ('154') ORDER BY `id` desc 
+  SELECT COUNT(*) AS recTotal FROM `510_procut` WHERE cid IN ('154') 
+  SELECT * FROM `510_procut` WHERE cid IN ('154') ORDER BY `id` desc 
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2684'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2683'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2669'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2668'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2667'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2666'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2665'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2664'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2663'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2662'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2662'
+  SELECT * FROM `zt_module` WHERE root  = '154' AND  type  = 'story' AND  branch  = '0' ORDER BY `grade` desc,`order` 
+  SELECT DISTINCT story FROM `zt_case` WHERE story IN ('2684','2683','2669','2668','2667','2666','2665','2664','2663','2662')
+  SELECT * FROM `zt_module` WHERE root  = '154' AND  type  = 'story' AND  branch  = '0' ORDER BY `grade` desc,`order` 
+  SELECT account, realname, deleted, INSTR(',pd,po,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+  SELECT * FROM `zt_module` WHERE root  = '154' AND  type  = 'story' AND  branch  = '0' ORDER BY `grade` desc,`order` 
+  SELECT * FROM `zt_storystage` WHERE story IN ('2684','2683','2669','2668','2667','2666','2665','2664','2663','2662')
+
+20170417 09:42:32: product-browse-154
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT b.fieldname,b.fieldvalue FROM 510_fieldproclass AS a  LEFT JOIN 510_field AS b  ON a.field_id = b.id  WHERE a.pro_cid  = '154' ORDER BY a.`sort` asc 
+  SELECT id FROM `510_proclass` WHERE ( id  = '154' OR f_id  = '154')
+  SELECT * FROM `510_procut` WHERE cid IN ('154') ORDER BY `id` desc 
+  SELECT COUNT(*) AS recTotal FROM `510_procut` WHERE cid IN ('154') 
+  SELECT * FROM `510_procut` WHERE cid IN ('154') ORDER BY `id` desc 
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2684'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2683'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2669'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2668'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2667'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2666'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2665'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2664'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2663'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2662'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2662'
+  SELECT * FROM `zt_module` WHERE root  = '154' AND  type  = 'story' AND  branch  = '0' ORDER BY `grade` desc,`order` 
+  SELECT DISTINCT story FROM `zt_case` WHERE story IN ('2684','2683','2669','2668','2667','2666','2665','2664','2663','2662')
+  SELECT * FROM `zt_module` WHERE root  = '154' AND  type  = 'story' AND  branch  = '0' ORDER BY `grade` desc,`order` 
+  SELECT account, realname, deleted, INSTR(',pd,po,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+  SELECT * FROM `zt_module` WHERE root  = '154' AND  type  = 'story' AND  branch  = '0' ORDER BY `grade` desc,`order` 
+  SELECT * FROM `zt_storystage` WHERE story IN ('2684','2683','2669','2668','2667','2666','2665','2664','2663','2662')
+
+20170417 09:42:45: product-browse-154
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT b.fieldname,b.fieldvalue FROM 510_fieldproclass AS a  LEFT JOIN 510_field AS b  ON a.field_id = b.id  WHERE a.pro_cid  = '154' ORDER BY a.`sort` asc 
+  SELECT id FROM `510_proclass` WHERE ( id  = '154' OR f_id  = '154')
+  SELECT * FROM `510_procut` WHERE cid IN ('154') ORDER BY `id` desc 
+  SELECT COUNT(*) AS recTotal FROM `510_procut` WHERE cid IN ('154') 
+  SELECT * FROM `510_procut` WHERE cid IN ('154') ORDER BY `id` desc 
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2684'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2683'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2669'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2668'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2667'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2666'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2665'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2664'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2663'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2662'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2662'
+  SELECT * FROM `zt_module` WHERE root  = '154' AND  type  = 'story' AND  branch  = '0' ORDER BY `grade` desc,`order` 
+  SELECT DISTINCT story FROM `zt_case` WHERE story IN ('2684','2683','2669','2668','2667','2666','2665','2664','2663','2662')
+  SELECT * FROM `zt_module` WHERE root  = '154' AND  type  = 'story' AND  branch  = '0' ORDER BY `grade` desc,`order` 
+  SELECT account, realname, deleted, INSTR(',pd,po,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+  SELECT * FROM `zt_module` WHERE root  = '154' AND  type  = 'story' AND  branch  = '0' ORDER BY `grade` desc,`order` 
+  SELECT * FROM `zt_storystage` WHERE story IN ('2684','2683','2669','2668','2667','2666','2665','2664','2663','2662')
+
+20170417 09:43:37: product-browse-154
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT b.fieldname,b.fieldvalue FROM 510_fieldproclass AS a  LEFT JOIN 510_field AS b  ON a.field_id = b.id  WHERE a.pro_cid  = '154' ORDER BY a.`sort` asc 
+  SELECT id FROM `510_proclass` WHERE ( id  = '154' OR f_id  = '154')
+  SELECT * FROM `510_procut` WHERE cid IN ('154') ORDER BY `id` desc 
+  SELECT COUNT(*) AS recTotal FROM `510_procut` WHERE cid IN ('154') 
+  SELECT * FROM `510_procut` WHERE cid IN ('154') ORDER BY `id` desc 
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2684'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2683'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2669'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2668'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2667'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2666'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2665'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2664'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2663'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2662'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2662'
+  SELECT * FROM `zt_module` WHERE root  = '154' AND  type  = 'story' AND  branch  = '0' ORDER BY `grade` desc,`order` 
+  SELECT DISTINCT story FROM `zt_case` WHERE story IN ('2684','2683','2669','2668','2667','2666','2665','2664','2663','2662')
+  SELECT * FROM `zt_module` WHERE root  = '154' AND  type  = 'story' AND  branch  = '0' ORDER BY `grade` desc,`order` 
+  SELECT account, realname, deleted, INSTR(',pd,po,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+  SELECT * FROM `zt_module` WHERE root  = '154' AND  type  = 'story' AND  branch  = '0' ORDER BY `grade` desc,`order` 
+  SELECT * FROM `zt_storystage` WHERE story IN ('2684','2683','2669','2668','2667','2666','2665','2664','2663','2662')
+
+20170417 09:43:38: product
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+
+20170417 09:43:39: product-all
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM `510_proclass` ORDER BY `sort` asc,`id` asc 
+  SELECT COUNT(*) AS recTotal FROM `510_proclass` 
+  SELECT * FROM `510_proclass` ORDER BY `sort` asc,`id` asc 
+  SELECT id FROM `510_proclass` WHERE ( id  = '127' OR parpath  LIKE '%,127%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('127')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','8','14','9','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '130' OR parpath  LIKE '%,130%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('130')
+  SELECT id FROM `510_proclass` WHERE ( id  = '129' OR parpath  LIKE '%,129%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('129')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','31','35','14','9','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '128' OR parpath  LIKE '%,128%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('128')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','18','14','30','34')
+  SELECT id FROM `510_proclass` WHERE ( id  = '132' OR parpath  LIKE '%,132%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('132')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','36','37','38','13','30')
+  SELECT id FROM `510_proclass` WHERE ( id  = '124' OR parpath  LIKE '%,124%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('124')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','6','7','19','8','21','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '135' OR parpath  LIKE '%,135%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('135')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','15','16','17','18','7','19','8','20','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '143' OR parpath  LIKE '%,143%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('143')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','9','14','22','23','13','30')
+  SELECT id FROM `510_proclass` WHERE ( id  = '134' OR parpath  LIKE '%,134%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('134','147','148','149')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','6','14','24','25','26','27','28','43')
+  SELECT id FROM `510_proclass` WHERE ( id  = '147' OR parpath  LIKE '%,147%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('147')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','49','24','50','51','52','53','54','55','56','14','57','58','59')
+  SELECT id FROM `510_proclass` WHERE ( id  = '148' OR parpath  LIKE '%,148%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('148')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','49','14','50','51','52','53','54','55')
+  SELECT id FROM `510_proclass` WHERE ( id  = '149' OR parpath  LIKE '%,149%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('149')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','49','24','50','51','52','53','54','55')
+  SELECT id FROM `510_proclass` WHERE ( id  = '151' OR parpath  LIKE '%,151%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('151')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','30','60','61','62','63','64','65','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '152' OR parpath  LIKE '%,152%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('152')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','66','67','68','69','70','71','72','73','74','75','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '153' OR parpath  LIKE '%,153%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('153')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','76','77','78','79','80','81','82','83','84','85','86')
+  SELECT id FROM `510_proclass` WHERE ( id  = '154' OR parpath  LIKE '%,154%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('154')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','87','88','89','77','78','90','91')
+
+20170417 09:43:46: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+
+20170417 09:45:52: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+
+20170417 09:46:07: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT id, name FROM `zt_group`
+  SELECT account, realname, deleted, INSTR(',pd,po,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+  SELECT account, realname, deleted, INSTR(',qa,qd,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+  SELECT account, realname, deleted, INSTR(',td,pm,qd,qa,dev,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+
+20170417 09:49:31: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT id, name FROM `zt_group`
+  SELECT account, realname, deleted, INSTR(',pd,po,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+  SELECT account, realname, deleted, INSTR(',qa,qd,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+  SELECT account, realname, deleted, INSTR(',td,pm,qd,qa,dev,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+
+20170417 09:49:34: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT id, name FROM `zt_group`
+  SELECT account, realname, deleted, INSTR(',pd,po,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+  SELECT account, realname, deleted, INSTR(',qa,qd,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+  SELECT account, realname, deleted, INSTR(',td,pm,qd,qa,dev,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+
+20170417 09:50:52: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT id, name FROM `zt_group`
+  SELECT account, realname, deleted, INSTR(',pd,po,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+  SELECT account, realname, deleted, INSTR(',qa,qd,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+  SELECT account, realname, deleted, INSTR(',td,pm,qd,qa,dev,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+
+20170417 09:51:31: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT id, name FROM `zt_group`
+  SELECT account, realname, deleted, INSTR(',pd,po,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+  SELECT account, realname, deleted, INSTR(',qa,qd,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+  SELECT account, realname, deleted, INSTR(',td,pm,qd,qa,dev,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+
+20170417 09:51:49: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT id, name FROM `zt_group`
+  SELECT account, realname, deleted, INSTR(',pd,po,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+  SELECT account, realname, deleted, INSTR(',qa,qd,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+  SELECT account, realname, deleted, INSTR(',td,pm,qd,qa,dev,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+
+20170417 09:51:52: product-index-no-154
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+
+20170417 09:51:52: product-all
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM `510_proclass` ORDER BY `sort` asc,`id` asc 
+  SELECT COUNT(*) AS recTotal FROM `510_proclass` 
+  SELECT * FROM `510_proclass` ORDER BY `sort` asc,`id` asc 
+  SELECT id FROM `510_proclass` WHERE ( id  = '127' OR parpath  LIKE '%,127%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('127')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','8','14','9','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '130' OR parpath  LIKE '%,130%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('130')
+  SELECT id FROM `510_proclass` WHERE ( id  = '129' OR parpath  LIKE '%,129%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('129')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','31','35','14','9','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '128' OR parpath  LIKE '%,128%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('128')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','18','14','30','34')
+  SELECT id FROM `510_proclass` WHERE ( id  = '132' OR parpath  LIKE '%,132%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('132')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','36','37','38','13','30')
+  SELECT id FROM `510_proclass` WHERE ( id  = '124' OR parpath  LIKE '%,124%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('124')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','6','7','19','8','21','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '135' OR parpath  LIKE '%,135%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('135')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','15','16','17','18','7','19','8','20','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '143' OR parpath  LIKE '%,143%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('143')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','9','14','22','23','13','30')
+  SELECT id FROM `510_proclass` WHERE ( id  = '134' OR parpath  LIKE '%,134%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('134','147','148','149')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','6','14','24','25','26','27','28','43')
+  SELECT id FROM `510_proclass` WHERE ( id  = '147' OR parpath  LIKE '%,147%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('147')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','49','24','50','51','52','53','54','55','56','14','57','58','59')
+  SELECT id FROM `510_proclass` WHERE ( id  = '148' OR parpath  LIKE '%,148%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('148')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','49','14','50','51','52','53','54','55')
+  SELECT id FROM `510_proclass` WHERE ( id  = '149' OR parpath  LIKE '%,149%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('149')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','49','24','50','51','52','53','54','55')
+  SELECT id FROM `510_proclass` WHERE ( id  = '151' OR parpath  LIKE '%,151%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('151')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','30','60','61','62','63','64','65','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '152' OR parpath  LIKE '%,152%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('152')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','66','67','68','69','70','71','72','73','74','75','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '153' OR parpath  LIKE '%,153%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('153')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','76','77','78','79','80','81','82','83','84','85','86')
+  SELECT id FROM `510_proclass` WHERE ( id  = '154' OR parpath  LIKE '%,154%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('154')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','87','88','89','77','78','90','91')
+
+20170417 09:52:02: product-updateOrder
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+
+20170417 09:54:49: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT id, name FROM `zt_group`
+  SELECT account, realname, deleted, INSTR(',pd,po,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+  SELECT account, realname, deleted, INSTR(',qa,qd,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+  SELECT account, realname, deleted, INSTR(',td,pm,qd,qa,dev,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+
+20170417 09:54:50: uppic
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+
+20170417 09:55:27: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT id, name FROM `zt_group`
+  SELECT account, realname, deleted, INSTR(',pd,po,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+  SELECT account, realname, deleted, INSTR(',qa,qd,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+  SELECT account, realname, deleted, INSTR(',td,pm,qd,qa,dev,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+
+20170417 09:55:28: uppic
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+
+20170417 09:57:37: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT id, name FROM `zt_group`
+  SELECT account, realname, deleted, INSTR(',pd,po,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+  SELECT account, realname, deleted, INSTR(',qa,qd,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+  SELECT account, realname, deleted, INSTR(',td,pm,qd,qa,dev,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+
+20170417 09:57:37: uppic
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+
+20170417 09:58:09: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT id, name FROM `zt_group`
+  SELECT account, realname, deleted, INSTR(',pd,po,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+  SELECT account, realname, deleted, INSTR(',qa,qd,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+  SELECT account, realname, deleted, INSTR(',td,pm,qd,qa,dev,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+
+20170417 09:58:09: uppic
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+
+20170417 09:58:28: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT id, name FROM `zt_group`
+  SELECT account, realname, deleted, INSTR(',pd,po,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+  SELECT account, realname, deleted, INSTR(',qa,qd,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+  SELECT account, realname, deleted, INSTR(',td,pm,qd,qa,dev,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+
+20170417 09:58:29: uppic
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+
+20170417 10:01:10: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT id, name FROM `zt_group`
+  SELECT account, realname, deleted, INSTR(',pd,po,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+  SELECT account, realname, deleted, INSTR(',qa,qd,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+  SELECT account, realname, deleted, INSTR(',td,pm,qd,qa,dev,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+
+20170417 10:01:10: uppic
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+
+20170417 10:01:32: misc-ping
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+
+20170417 10:11:10: misc-ping
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+
+20170417 10:11:13: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+
+20170417 10:12:35: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+
+20170417 10:13:16: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+
+20170417 10:14:08: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+
+20170417 10:15:09: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+
+20170417 10:24:09: misc-ping
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+
+20170417 10:25:10: misc-ping
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+
+20170417 10:26:31: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+
+20170417 10:32:02: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+
+20170417 10:33:02: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+
+20170417 10:34:01: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+
+20170417 10:36:25: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+
+20170417 10:42:14: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+
+20170417 10:42:41: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+
+20170417 10:42:59: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+
+20170417 10:45:33: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+
+20170417 10:46:31: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+
+20170417 10:46:47: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+
+20170417 10:47:54: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+
+20170417 10:49:01: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+
+20170417 10:49:49: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+
+20170417 10:55:47: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+
+20170417 10:57:25: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+
+20170417 10:59:50: misc-ping
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+
+20170417 11:04:03: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+
+20170417 11:06:39: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+
+20170417 11:12:00: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+
+20170417 11:12:00: Images/arr
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+
+20170417 11:14:11: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+
+20170417 11:14:11: arr
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+
+20170417 11:15:14: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+
+20170417 11:15:46: register-all
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM 510_user WHERE id  > '300' ORDER BY `id` desc 
+  SELECT COUNT(*) AS recTotal FROM 510_user WHERE id  > '300' 
+  SELECT * FROM 510_user WHERE id  > '300' ORDER BY `id` desc   limit 0, 30 
+
+20170417 11:15:47: product
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+
+20170417 11:15:48: product-all
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM `510_proclass` ORDER BY `sort` asc,`id` asc 
+  SELECT COUNT(*) AS recTotal FROM `510_proclass` 
+  SELECT * FROM `510_proclass` ORDER BY `sort` asc,`id` asc 
+  SELECT id FROM `510_proclass` WHERE ( id  = '127' OR parpath  LIKE '%,127%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('127')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','8','14','9','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '130' OR parpath  LIKE '%,130%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('130')
+  SELECT id FROM `510_proclass` WHERE ( id  = '129' OR parpath  LIKE '%,129%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('129')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','31','35','14','9','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '128' OR parpath  LIKE '%,128%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('128')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','18','14','30','34')
+  SELECT id FROM `510_proclass` WHERE ( id  = '132' OR parpath  LIKE '%,132%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('132')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','36','37','38','13','30')
+  SELECT id FROM `510_proclass` WHERE ( id  = '124' OR parpath  LIKE '%,124%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('124')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','6','7','19','8','21','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '135' OR parpath  LIKE '%,135%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('135')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','15','16','17','18','7','19','8','20','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '143' OR parpath  LIKE '%,143%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('143')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','9','14','22','23','13','30')
+  SELECT id FROM `510_proclass` WHERE ( id  = '134' OR parpath  LIKE '%,134%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('134','147','148','149')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','6','14','24','25','26','27','28','43')
+  SELECT id FROM `510_proclass` WHERE ( id  = '147' OR parpath  LIKE '%,147%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('147')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','49','24','50','51','52','53','54','55','56','14','57','58','59')
+  SELECT id FROM `510_proclass` WHERE ( id  = '148' OR parpath  LIKE '%,148%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('148')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','49','14','50','51','52','53','54','55')
+  SELECT id FROM `510_proclass` WHERE ( id  = '149' OR parpath  LIKE '%,149%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('149')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','49','24','50','51','52','53','54','55')
+  SELECT id FROM `510_proclass` WHERE ( id  = '151' OR parpath  LIKE '%,151%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('151')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','30','60','61','62','63','64','65','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '152' OR parpath  LIKE '%,152%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('152')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','66','67','68','69','70','71','72','73','74','75','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '153' OR parpath  LIKE '%,153%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('153')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','76','77','78','79','80','81','82','83','84','85','86')
+  SELECT id FROM `510_proclass` WHERE ( id  = '154' OR parpath  LIKE '%,154%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('154')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','87','88','89','77','78','90','91')
+
+20170417 11:15:50: product-browse-154
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT b.fieldname,b.fieldvalue FROM 510_fieldproclass AS a  LEFT JOIN 510_field AS b  ON a.field_id = b.id  WHERE a.pro_cid  = '154' ORDER BY a.`sort` asc 
+  SELECT id FROM `510_proclass` WHERE ( id  = '154' OR f_id  = '154')
+  SELECT * FROM `510_procut` WHERE cid IN ('154') ORDER BY `id` desc 
+  SELECT COUNT(*) AS recTotal FROM `510_procut` WHERE cid IN ('154') 
+  SELECT * FROM `510_procut` WHERE cid IN ('154') ORDER BY `id` desc 
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2684'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2683'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2669'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2668'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2667'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2666'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2665'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2664'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2663'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2662'
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2662'
+  SELECT * FROM `zt_module` WHERE root  = '154' AND  type  = 'story' AND  branch  = '0' ORDER BY `grade` desc,`order` 
+  SELECT DISTINCT story FROM `zt_case` WHERE story IN ('2684','2683','2669','2668','2667','2666','2665','2664','2663','2662')
+  SELECT * FROM `zt_module` WHERE root  = '154' AND  type  = 'story' AND  branch  = '0' ORDER BY `grade` desc,`order` 
+  SELECT account, realname, deleted, INSTR(',pd,po,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+  SELECT * FROM `zt_module` WHERE root  = '154' AND  type  = 'story' AND  branch  = '0' ORDER BY `grade` desc,`order` 
+  SELECT * FROM `zt_storystage` WHERE story IN ('2684','2683','2669','2668','2667','2666','2665','2664','2663','2662')
+
+20170417 11:15:54: story-view-2684
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_procut` WHERE `id` = '2684' 
+  SELECT f_id FROM 510_proclass WHERE id  = '154'
+  SELECT b.fieldname,b.fieldvalue FROM 510_fieldproclass AS a  LEFT JOIN 510_field AS b  ON a.field_id = b.id  WHERE a.pro_cid  = '154' ORDER BY a.`sort` asc 
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2684'
+  SELECT * FROM `zt_file` WHERE objectType  = 'story' AND  objectID  = '2684'
+  SELECT name, id FROM `510_proclass` WHERE `id` = '154' 
+  SELECT account, realname, deleted FROM `zt_user` ORDER BY `account` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT a.id,a.uid,b.username,b.firstname,b.lastname,a.pid FROM zt_customerpri AS a  LEFT JOIN 510_user AS b  ON a.uid = b.id  WHERE pid  = '2684' ORDER BY a.`id` desc 
+  SELECT uid,username,count(id) as sumdown,downdate FROM zt_download WHERE pid  = '2684' GROUP BY uid
+  SELECT commiter, account, realname FROM `zt_user` WHERE commiter  != ''
+  SELECT * FROM `zt_action` WHERE objectType  = 'story' AND  objectID  = '2684' ORDER BY `date`,`id` 
+  SELECT * FROM `zt_history` WHERE action IN ('204') ORDER BY `id` 
+
+20170417 11:15:58: story-edit-2684
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_procut` WHERE `id` = '2684' 
+  SELECT f_id FROM 510_proclass WHERE id  = '154'
+  SELECT b.fieldname,b.fieldvalue FROM 510_fieldproclass AS a  LEFT JOIN 510_field AS b  ON a.field_id = b.id  WHERE a.pro_cid  = '154' ORDER BY a.`sort` asc 
+  SELECT part_number,mpu_core,v_supply,total_sensor_input,internal_flash,internal_ram,slave_host_interface,package_pins FROM 510_fielddata WHERE pid  = '2684'
+  SELECT name, id FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM `510_proclass` WHERE id 
+  SELECT * FROM `510_proclass` WHERE `id` = '124' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '124' ORDER BY `sort` asc 
+  SELECT * FROM `zt_module` WHERE root  = '124' AND  type  = 'story' AND  branch  = '0' ORDER BY `grade` desc,`order` 
+  SELECT commiter, account, realname FROM `zt_user` WHERE commiter  != ''
+  SELECT * FROM `zt_action` WHERE objectType  = 'story' AND  objectID  = '2684' ORDER BY `date`,`id` 
+  SELECT * FROM `zt_history` WHERE action IN ('204') ORDER BY `id` 
+  SELECT account, realname, deleted, INSTR(',pd,po,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+  SELECT account, realname, deleted, INSTR(',pd,po,', role) AS roleOrder FROM `zt_user` WHERE account IN ('','','')
+
+20170417 11:19:30: product-edit-2684
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '2684' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '2684' ORDER BY `sort` asc 
+  SELECT id, name FROM `zt_group`
+  SELECT account, realname, deleted, INSTR(',pd,po,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+  SELECT account, realname, deleted, INSTR(',qa,qd,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+  SELECT account, realname, deleted, INSTR(',td,pm,qd,qa,dev,', role) AS roleOrder FROM `zt_user` WHERE deleted  = '0' ORDER BY `roleOrder` DESC,`account` 
+
+20170417 11:21:06: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+
+20170417 11:22:22: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+
+20170417 11:23:10: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+
+20170417 11:29:30: misc-ping
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+
+20170417 11:33:11: misc-ping
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+
+20170417 13:04:17: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+
+20170417 13:06:53: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+
+20170417 13:16:54: misc-ping
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+
+20170417 13:42:34: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+
+20170417 13:43:45: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+
+20170417 13:45:14: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+
+20170417 13:45:37: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+
+20170417 13:45:50: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+
+20170417 13:46:19: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+
+20170417 13:52:20: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+
+20170417 14:02:21: misc-ping
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+
+20170417 14:08:38: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT fieldname FROM 510_field WHERE show1  = '1' ORDER BY `sort` asc,`id` desc 
+
+20170417 14:09:03: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT fieldname FROM 510_field WHERE show1  = '1' ORDER BY `sort` asc,`id` desc 
+
+20170417 14:12:14: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT fieldname FROM 510_field WHERE show1  = '1' ORDER BY `sort` asc,`id` desc 
+
+20170417 14:12:20: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT fieldname FROM 510_field WHERE show1  = '1' ORDER BY `sort` asc,`id` desc 
+
+20170417 14:12:38: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_field WHERE show1  = '1' ORDER BY `sort` asc,`id` desc 
+
+20170417 14:13:11: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_field WHERE show1  = '1' ORDER BY `sort` asc,`id` desc 
+
+20170417 14:15:27: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_field WHERE show1  = '1' ORDER BY `sort` asc,`id` desc 
+
+20170417 14:25:27: misc-ping
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+
+20170417 15:38:50: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_field WHERE show1  = '1' ORDER BY `sort` asc,`id` desc 
+
+20170417 15:46:24: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_field WHERE show1  = '1' ORDER BY `sort` asc,`id` desc 
+
+20170417 15:49:02: product
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+
+20170417 15:49:02: product-all
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM `510_proclass` ORDER BY `sort` asc,`id` asc 
+  SELECT COUNT(*) AS recTotal FROM `510_proclass` 
+  SELECT * FROM `510_proclass` ORDER BY `sort` asc,`id` asc 
+  SELECT id FROM `510_proclass` WHERE ( id  = '127' OR parpath  LIKE '%,127%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('127')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','8','14','9','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '130' OR parpath  LIKE '%,130%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('130')
+  SELECT id FROM `510_proclass` WHERE ( id  = '129' OR parpath  LIKE '%,129%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('129')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','31','35','14','9','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '128' OR parpath  LIKE '%,128%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('128')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','18','14','30','34')
+  SELECT id FROM `510_proclass` WHERE ( id  = '132' OR parpath  LIKE '%,132%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('132')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','36','37','38','13','30')
+  SELECT id FROM `510_proclass` WHERE ( id  = '124' OR parpath  LIKE '%,124%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('124')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','6','7','19','8','21','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '135' OR parpath  LIKE '%,135%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('135')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','15','16','17','18','7','19','8','20','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '143' OR parpath  LIKE '%,143%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('143')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','9','14','22','23','13','30')
+  SELECT id FROM `510_proclass` WHERE ( id  = '134' OR parpath  LIKE '%,134%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('134','147','148','149')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','6','14','24','25','26','27','28','43')
+  SELECT id FROM `510_proclass` WHERE ( id  = '147' OR parpath  LIKE '%,147%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('147')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','49','24','50','51','52','53','54','55','56','14','57','58','59')
+  SELECT id FROM `510_proclass` WHERE ( id  = '148' OR parpath  LIKE '%,148%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('148')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','49','14','50','51','52','53','54','55')
+  SELECT id FROM `510_proclass` WHERE ( id  = '149' OR parpath  LIKE '%,149%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('149')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','49','24','50','51','52','53','54','55')
+  SELECT id FROM `510_proclass` WHERE ( id  = '151' OR parpath  LIKE '%,151%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('151')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','30','60','61','62','63','64','65','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '152' OR parpath  LIKE '%,152%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('152')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','66','67','68','69','70','71','72','73','74','75','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '153' OR parpath  LIKE '%,153%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('153')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','76','77','78','79','80','81','82','83','84','85','86')
+  SELECT id FROM `510_proclass` WHERE ( id  = '154' OR parpath  LIKE '%,154%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('154')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','87','88','89','77','78','90','91')
+
+20170417 15:49:20: product-create
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_field WHERE show1  = '1' ORDER BY `sort` asc,`id` desc 
+
+20170417 15:55:45: product-all
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM `510_proclass` ORDER BY `sort` asc,`id` asc 
+  SELECT COUNT(*) AS recTotal FROM `510_proclass` 
+  SELECT * FROM `510_proclass` ORDER BY `sort` asc,`id` asc 
+  SELECT id FROM `510_proclass` WHERE ( id  = '127' OR parpath  LIKE '%,127%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('127')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','8','14','9','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '130' OR parpath  LIKE '%,130%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('130')
+  SELECT id FROM `510_proclass` WHERE ( id  = '129' OR parpath  LIKE '%,129%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('129')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','31','35','14','9','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '128' OR parpath  LIKE '%,128%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('128')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','18','14','30','34')
+  SELECT id FROM `510_proclass` WHERE ( id  = '132' OR parpath  LIKE '%,132%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('132')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','36','37','38','13','30')
+  SELECT id FROM `510_proclass` WHERE ( id  = '124' OR parpath  LIKE '%,124%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('124')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','6','7','19','8','21','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '135' OR parpath  LIKE '%,135%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('135')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','15','16','17','18','7','19','8','20','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '143' OR parpath  LIKE '%,143%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('143')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','9','14','22','23','13','30')
+  SELECT id FROM `510_proclass` WHERE ( id  = '134' OR parpath  LIKE '%,134%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('134','147','148','149')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','6','14','24','25','26','27','28','43')
+  SELECT id FROM `510_proclass` WHERE ( id  = '147' OR parpath  LIKE '%,147%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('147')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','49','24','50','51','52','53','54','55','56','14','57','58','59')
+  SELECT id FROM `510_proclass` WHERE ( id  = '148' OR parpath  LIKE '%,148%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('148')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','49','14','50','51','52','53','54','55')
+  SELECT id FROM `510_proclass` WHERE ( id  = '149' OR parpath  LIKE '%,149%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('149')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','49','24','50','51','52','53','54','55')
+  SELECT id FROM `510_proclass` WHERE ( id  = '151' OR parpath  LIKE '%,151%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('151')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','30','60','61','62','63','64','65','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '152' OR parpath  LIKE '%,152%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('152')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','66','67','68','69','70','71','72','73','74','75','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '153' OR parpath  LIKE '%,153%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('153')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','76','77','78','79','80','81','82','83','84','85','86')
+  SELECT id FROM `510_proclass` WHERE ( id  = '154' OR parpath  LIKE '%,154%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('154')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','87','88','89','77','78','90','91')
+
+20170417 15:55:52: product-edit-154
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_field WHERE show1  = '1' ORDER BY `sort` asc,`id` desc 
+
+20170417 16:02:40: product
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+
+20170417 16:02:41: product-all
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM `510_proclass` ORDER BY `sort` asc,`id` asc 
+  SELECT COUNT(*) AS recTotal FROM `510_proclass` 
+  SELECT * FROM `510_proclass` ORDER BY `sort` asc,`id` asc 
+  SELECT id FROM `510_proclass` WHERE ( id  = '127' OR parpath  LIKE '%,127%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('127')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','8','14','9','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '130' OR parpath  LIKE '%,130%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('130')
+  SELECT id FROM `510_proclass` WHERE ( id  = '129' OR parpath  LIKE '%,129%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('129')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','31','35','14','9','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '128' OR parpath  LIKE '%,128%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('128')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','18','14','30','34')
+  SELECT id FROM `510_proclass` WHERE ( id  = '132' OR parpath  LIKE '%,132%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('132')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','36','37','38','13','30')
+  SELECT id FROM `510_proclass` WHERE ( id  = '124' OR parpath  LIKE '%,124%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('124')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','6','7','19','8','21','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '135' OR parpath  LIKE '%,135%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('135')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','15','16','17','18','7','19','8','20','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '143' OR parpath  LIKE '%,143%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('143')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','9','14','22','23','13','30')
+  SELECT id FROM `510_proclass` WHERE ( id  = '134' OR parpath  LIKE '%,134%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('134','147','148','149')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','6','14','24','25','26','27','28','43')
+  SELECT id FROM `510_proclass` WHERE ( id  = '147' OR parpath  LIKE '%,147%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('147')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','49','24','50','51','52','53','54','55','56','14','57','58','59')
+  SELECT id FROM `510_proclass` WHERE ( id  = '148' OR parpath  LIKE '%,148%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('148')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','49','14','50','51','52','53','54','55')
+  SELECT id FROM `510_proclass` WHERE ( id  = '149' OR parpath  LIKE '%,149%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('149')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','49','24','50','51','52','53','54','55')
+  SELECT id FROM `510_proclass` WHERE ( id  = '151' OR parpath  LIKE '%,151%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('151')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','30','60','61','62','63','64','65','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '152' OR parpath  LIKE '%,152%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('152')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','66','67','68','69','70','71','72','73','74','75','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '153' OR parpath  LIKE '%,153%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('153')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','76','77','78','79','80','81','82','83','84','85','86')
+  SELECT id FROM `510_proclass` WHERE ( id  = '154' OR parpath  LIKE '%,154%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('154')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','87','88','89','77','78','90','91')
+
+20170417 16:03:16: product-edit-154
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_field WHERE show1  = '1' ORDER BY `sort` asc,`id` desc 
+
+20170417 16:05:55: product-edit-2684
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM 510_proclass WHERE id  = '2684'
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_field WHERE show1  = '1' ORDER BY `sort` asc,`id` desc 
+
+20170417 16:13:17: misc-ping
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+
+20170417 16:13:51: product-edit-2684
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM 510_proclass WHERE id  = '2684'
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_field WHERE show1  = '1' ORDER BY `sort` asc,`id` desc 
+
+20170417 16:14:29: product-edit-154
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM 510_proclass WHERE id  = '154'
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_field WHERE show1  = '1' ORDER BY `sort` asc,`id` desc 
+
+20170417 16:14:34: product
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+
+20170417 16:14:34: product-all
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM `510_proclass` ORDER BY `sort` asc,`id` asc 
+  SELECT COUNT(*) AS recTotal FROM `510_proclass` 
+  SELECT * FROM `510_proclass` ORDER BY `sort` asc,`id` asc 
+  SELECT id FROM `510_proclass` WHERE ( id  = '127' OR parpath  LIKE '%,127%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('127')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','8','14','9','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '130' OR parpath  LIKE '%,130%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('130')
+  SELECT id FROM `510_proclass` WHERE ( id  = '129' OR parpath  LIKE '%,129%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('129')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','31','35','14','9','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '128' OR parpath  LIKE '%,128%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('128')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','7','18','14','30','34')
+  SELECT id FROM `510_proclass` WHERE ( id  = '132' OR parpath  LIKE '%,132%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('132')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','36','37','38','13','30')
+  SELECT id FROM `510_proclass` WHERE ( id  = '124' OR parpath  LIKE '%,124%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('124')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','6','7','19','8','21','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '135' OR parpath  LIKE '%,135%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('135')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','15','16','17','18','7','19','8','20','13')
+  SELECT id FROM `510_proclass` WHERE ( id  = '143' OR parpath  LIKE '%,143%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('143')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','9','14','22','23','13','30')
+  SELECT id FROM `510_proclass` WHERE ( id  = '134' OR parpath  LIKE '%,134%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('134','147','148','149')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','6','14','24','25','26','27','28','43')
+  SELECT id FROM `510_proclass` WHERE ( id  = '147' OR parpath  LIKE '%,147%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('147')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','49','24','50','51','52','53','54','55','56','14','57','58','59')
+  SELECT id FROM `510_proclass` WHERE ( id  = '148' OR parpath  LIKE '%,148%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('148')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','49','14','50','51','52','53','54','55')
+  SELECT id FROM `510_proclass` WHERE ( id  = '149' OR parpath  LIKE '%,149%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('149')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','14','49','24','50','51','52','53','54','55')
+  SELECT id FROM `510_proclass` WHERE ( id  = '151' OR parpath  LIKE '%,151%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('151')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','30','60','61','62','63','64','65','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '152' OR parpath  LIKE '%,152%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('152')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','66','67','68','69','70','71','72','73','74','75','14')
+  SELECT id FROM `510_proclass` WHERE ( id  = '153' OR parpath  LIKE '%,153%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('153')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','76','77','78','79','80','81','82','83','84','85','86')
+  SELECT id FROM `510_proclass` WHERE ( id  = '154' OR parpath  LIKE '%,154%')
+  SELECT count(id) AS countnum FROM `510_procut` WHERE cid IN ('154')
+  SELECT fieldname FROM 510_field WHERE id IN ('1','87','88','89','77','78','90','91')
+
+20170417 16:14:39: product-edit-127
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM 510_proclass WHERE id  = '127'
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_field WHERE show1  = '1' ORDER BY `sort` asc,`id` desc 
+
+20170417 16:15:14: product-edit-127
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM 510_proclass WHERE id  = '127'
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_field WHERE show1  = '1' ORDER BY `sort` asc,`id` desc 
+
+20170417 16:15:19: product-edit-147
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM 510_proclass WHERE id  = '147'
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_field WHERE show1  = '1' ORDER BY `sort` asc,`id` desc 
+
+20170417 16:15:57: product-edit-127
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM 510_proclass WHERE id  = '127'
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_field WHERE show1  = '1' ORDER BY `sort` asc,`id` desc 
+
+20170417 16:16:18: product-edit-127
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM 510_proclass WHERE id  = '127'
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_field WHERE show1  = '1' ORDER BY `sort` asc,`id` desc 
+
+20170417 16:16:41: product-edit-153
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM 510_proclass WHERE id  = '153'
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_field WHERE show1  = '1' ORDER BY `sort` asc,`id` desc 
+
+20170417 16:17:11: product-edit-153
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM 510_proclass WHERE id  = '153'
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_field WHERE show1  = '1' ORDER BY `sort` asc,`id` desc 
+
+20170417 16:17:30: product-edit-153
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM 510_proclass WHERE id  = '153'
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_field WHERE show1  = '1' ORDER BY `sort` asc,`id` desc 
+
+20170417 16:17:57: product-edit-153
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM 510_proclass WHERE id  = '153'
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_field WHERE show1  = '1' ORDER BY `sort` asc,`id` desc 
+
+20170417 16:19:38: product-edit-153
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM 510_proclass WHERE id  = '153'
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_field WHERE show1  = '1' ORDER BY `sort` asc,`id` desc 
+
+20170417 16:21:24: product-edit-153
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM 510_proclass WHERE id  = '153'
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_field WHERE show1  = '1' ORDER BY `sort` asc,`id` desc 
+
+20170417 16:24:21: misc-ping
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+
+20170417 16:29:04: product-edit-153
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM 510_proclass WHERE id  = '153'
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_field WHERE show1  = '1' ORDER BY `sort` asc,`id` desc 
+  SELECT b.id,b.fieldname,a.sort FROM 510_fieldproclass AS a  LEFT JOIN 510_field AS b  ON a.field_id = b.id  WHERE a.pro_cid  = '153' AND  b.id IN ('1','76','77','78','79','80','81','82','83','84','85','86') ORDER BY a.`sort` asc 
+
+20170417 16:29:13: product-edit-153
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM 510_proclass WHERE id  = '153'
+  SELECT * FROM `510_proclass` WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_field WHERE show1  = '1' ORDER BY `sort` asc,`id` desc 
+  SELECT b.id,b.fieldname,a.sort FROM 510_fieldproclass AS a  LEFT JOIN 510_field AS b  ON a.field_id = b.id  WHERE a.pro_cid  = '153' AND  b.id IN ('1','76','77','78','79','80','81','82','83','84','85','86') ORDER BY a.`sort` asc 
+
+20170417 16:39:00: product-edit-153
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM 510_proclass WHERE id  = '153'
+  SELECT * FROM 510_proclass WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_field WHERE show1  = '1' ORDER BY `sort` asc,`id` desc 
+  SELECT b.id,b.fieldname,a.sort FROM 510_fieldproclass AS a  LEFT JOIN 510_field AS b  ON a.field_id = b.id  WHERE a.pro_cid  = '153' AND  b.id IN ('1','76','77','78','79','80','81','82','83','84','85','86') ORDER BY a.`sort` asc 
+
+20170417 16:39:06: product-edit-153
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM 510_proclass WHERE `id` = '153' 
+
+20170417 16:39:46: product-edit-153
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM 510_proclass WHERE id  = '153'
+  SELECT * FROM 510_proclass WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_field WHERE show1  = '1' ORDER BY `sort` asc,`id` desc 
+  SELECT b.id,b.fieldname,a.sort FROM 510_fieldproclass AS a  LEFT JOIN 510_field AS b  ON a.field_id = b.id  WHERE a.pro_cid  = '153' AND  b.id IN ('1','76','77','78','79','80','81','82','83','84','85','86') ORDER BY a.`sort` asc 
+
+20170417 16:39:49: product-edit-153
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM 510_proclass WHERE `id` = '153' 
+  UPDATE 510_proclass SET `clid` = '0',`name` = 'Electricity Metering ICs',`cnname` = '电表IC',`zhname` = '電錶IC2',`remark` = '<p>Highly integrated metering products feature a customer-programmable MPU core, RTC with battery backup, and a high-performance analog sensor interface combined with a dedicated 32-bit computation engine (CE) that handles all sample rate signal processing. With the provided CE binary files and reference MPU code, electricity meter vendors can design a wide range of single- and polyphase meter architectures using the same device platform.</p>\r\n<p>These SoC metering products provide maximum design flexibility by incorporating a wide range of peripherals like LCD drivers, multiple UARTs, an IR interface, I2C, MICROWIRE™ master EEPROM interface, a number of configurable DIO pins, and in-system programmable flash memory. In addition, a complete set of ICE and development tools, programming libraries, and reference schematics enable rapid development and certification of TOU, AMR, and prepay meters that comply with worldwide electricity metering standards.</p>',`selectR` = 'Array',`id` = '153' WHERE id  = '153'
+
+20170417 16:40:05: product-edit-153
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM 510_proclass WHERE id  = '153'
+  SELECT * FROM 510_proclass WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_field WHERE show1  = '1' ORDER BY `sort` asc,`id` desc 
+  SELECT b.id,b.fieldname,a.sort FROM 510_fieldproclass AS a  LEFT JOIN 510_field AS b  ON a.field_id = b.id  WHERE a.pro_cid  = '153' AND  b.id IN ('1','76','77','78','79','80','81','82','83','84','85','86') ORDER BY a.`sort` asc 
+
+20170417 16:40:39: product-edit-153
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM 510_proclass WHERE `id` = '153' 
+  UPDATE 510_proclass SET `clid` = '0',`name` = 'Electricity Metering ICs',`cnname` = '电表IC',`zhname` = '電錶IC2',`remark` = '<p>Highly integrated metering products feature a customer-programmable MPU core, RTC with battery backup, and a high-performance analog sensor interface combined with a dedicated 32-bit computation engine (CE) that handles all sample rate signal processing. With the provided CE binary files and reference MPU code, electricity meter vendors can design a wide range of single- and polyphase meter architectures using the same device platform.</p>\r\n<p>These SoC metering products provide maximum design flexibility by incorporating a wide range of peripherals like LCD drivers, multiple UARTs, an IR interface, I2C, MICROWIRE™ master EEPROM interface, a number of configurable DIO pins, and in-system programmable flash memory. In addition, a complete set of ICE and development tools, programming libraries, and reference schematics enable rapid development and certification of TOU, AMR, and prepay meters that comply with worldwide electricity metering standards.</p>',`selectR` = 'Array',`id` = '153' WHERE id  = '153'
+
+20170417 16:42:36: product-edit-153
+  SELECT * FROM `zt_config` WHERE owner IN ('system','admin') ORDER BY `id` 
+  SELECT * FROM `zt_lang` ORDER BY `lang`,`id` 
+  SELECT * FROM `510_proclass` WHERE f_id  = '0' ORDER BY `sort` desc 
+  SELECT * FROM 510_proclass WHERE id  = '153'
+  SELECT * FROM 510_proclass WHERE `id` = '154' 
+  SELECT * FROM `510_proclass` WHERE f_id  = '154' ORDER BY `sort` asc 
+  SELECT * FROM 510_proclass ORDER BY `sort` asc,`id` desc 
+  SELECT * FROM 510_field WHERE show1  = '1' ORDER BY `sort` asc,`id` desc 
+  SELECT b.id,b.fieldname,a.sort FROM 510_fieldproclass AS a  LEFT JOIN 510_field AS b  ON a.field_id = b.id  WHERE a.pro_cid  = '153' AND  b.id IN ('1','76','77','78','79','80','81','82','83','84','85','86') ORDER BY a.`sort` asc 
+

@@ -1,0 +1,477 @@
+<?php
+
+$lang->arrow        = '&nbsp;<i class="icon-angle-right"></i>&nbsp;';
+$lang->colon        = '::';
+$lang->comma        = ',';
+$lang->dot          = '.';
+$lang->at           = ' at ';
+$lang->downArrow    = '↓';
+$lang->null         = '空';
+$lang->ellipsis     = '...';
+
+$lang->zentaoPMS      = 'Silergy Performance Appraisal System';
+$lang->welcome        = "%s ";
+$lang->logout         = 'Logout';
+$lang->login          = 'Login';
+$lang->help           = 'Help';
+$lang->aboutZenTao    = 'About';
+$lang->profile        = 'Profile';
+$lang->changePassword = 'Password';
+$lang->runInfo        = "<div class='row'><div class='u-1 a-center' id='debugbar'>Time: %s ms, Memory: %s KB, Queries: %s.  </div></div>";
+$lang->agreement      = "I Agree to the <a href='http://zpl.pub/page/zplv12.html' target='_blank'>Z PUBLIC LICENSE 1.2</a>, <span class='text-danger'>and promise to keep the logo, link of ZenTao.</span>";
+
+$lang->reset        = 'Reset';
+$lang->refresh      = 'Refresh';
+$lang->edit         = 'Edit';
+$lang->delete       = 'Delete';
+$lang->close        = 'Close';
+$lang->unlink       = 'Unlink';
+$lang->import       = 'Import';
+$lang->export       = 'Export';
+$lang->setFileName  = 'Filename:';
+$lang->submitting   = 'Saving...';
+$lang->save         = 'Save';
+$lang->confirm      = 'Confirm';
+$lang->preview      = 'View';
+$lang->goback       = 'Back';
+$lang->goPC         = 'PC';
+$lang->more         = 'More';
+$lang->day          = 'Day';
+$lang->customConfig = 'Custom';
+$lang->public       = 'Public';
+
+$lang->actions         = 'Actions';
+$lang->comment         = 'Comment';
+$lang->history         = 'History';
+$lang->attatch         = 'Attatch';
+$lang->reverse         = 'Reverse';
+$lang->switchDisplay   = 'Toggle Show';
+$lang->addFiles        = 'Add Files';
+$lang->files           = 'Files ';
+$lang->pasteText       = 'Paste text';
+$lang->uploadImages    = 'Upload images ';
+$lang->timeout         = 'Timed out, please check the network, or retry!';
+$lang->repairTable     = 'The table may be damaged, please repair by phpmyadmin or myisamchk!';
+$lang->duplicate       = '%s has the same title';
+$lang->ipLimited       = "<html><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8' /></head><body>Sorry, current IP is limited by Administrator. Please contact the Administrator to lift the restrictions.</body></html>";
+$lang->unfold          = '+';
+$lang->fold            = '-';
+$lang->homepage        = 'Set homepage';
+$lang->tutorial        = 'Novice tutorial';
+$lang->changeLog       = 'Change log';
+$lang->manual          = 'Manual';
+$lang->customMenu      = 'Custom menu';
+$lang->tutorialConfirm = 'Detected you have not quit tutorial mode, quit now?';
+
+$lang->preShortcutKey  = '[Shortcut key:←]';
+$lang->nextShortcutKey = '[Shortcut key:→]';
+
+$lang->select        = 'Select';
+$lang->selectAll     = 'All';
+$lang->selectReverse = 'Inverse';
+$lang->loading       = 'Wait...';
+$lang->notFound      = 'Sorry, the object not found.';
+$lang->showAll       = "[[Show all {$lang->projectCommon}s]]";
+
+$lang->future       = 'Future';
+$lang->year         = 'Year';
+$lang->workingHour  = 'Hour';
+
+$lang->idAB         = 'ID';
+$lang->priAB        = 'P';
+$lang->statusAB     = 'Status';
+$lang->openedByAB   = 'Open';
+$lang->assignedToAB = 'To';
+$lang->typeAB       = 'Type';
+
+$lang->common = new stdclass();
+$lang->common->common = 'Common module';
+
+/* The main menu. */
+$lang->menu = new stdclass();
+$lang->menu->my       = '<i class="icon-home"></i> <span>Dashboard</span>|my|index';
+$lang->menu->performance  = "Performance|performance|all";
+$lang->menu->crossexams  = "Cross Evaluation|crossexams|grades";
+// $lang->menu->doc      = 'Doc|doc|index';
+//$lang->menu->register    = 'Register User|register|all';
+//$lang->menu->rqneed  = "Apply Download|rqneed|index";
+$lang->menu->survey    = "Staff Satisfaction Survey|survey|createsurvey";	
+
+//$lang->menu->survey    = "Staff Satisfaction Survey|survey|createsurvey";
+// $lang->menu->contract    = 'Contract Review|contract|contractlist';
+$lang->menu->admin       = 'Admin|admin|safe';
+$lang->menu->company     = 'Company|company|index';
+$lang->menu->train       = 'User Manual|train|index';
+// $lang->menu->ecn         = 'ECN|ecn|ecnlist';
+// $lang->menu->pcn         = 'PCN|pcn|createform';
+/* The objects in the search box. */
+
+$lang->searchObjects['story']     = "performance";
+$lang->searchTips                   = 'ID here(ctrl+g)';
+
+/* Encode list of impot. */
+$lang->importEncodeList['gbk']   = 'GBK';
+$lang->importEncodeList['big5']  = 'BIG5';
+$lang->importEncodeList['utf-8'] = 'UTF-8';
+
+/* File type list of export. */
+$lang->exportFileTypeList['csv']  = 'csv';
+$lang->exportFileTypeList['xml']  = 'xml';
+$lang->exportFileTypeList['html'] = 'html';
+
+$lang->exportTypeList['all']      = 'All records';
+$lang->exportTypeList['selected'] = 'Only checked';
+
+/* Language. */
+$lang->lang = 'Language';
+
+/* Themes. */
+$lang->theme                = 'Theme';
+$lang->themes['default']    = 'Default';
+$lang->themes['green']      = 'Green';
+$lang->themes['red']        = 'Red';
+$lang->themes['lightblue']  = 'Light Blue';
+$lang->themes['blackberry'] = 'Blackberry';
+
+/* Index mododule menu. */
+$lang->index = new stdclass();
+$lang->index->menu = new stdclass();
+
+$lang->index->menu->performance = "Performance|performance|browse";
+$lang->index->menu->project = "{$lang->projectCommon}s|register|browse";
+
+/* Dashboard menu. */
+$lang->my = new stdclass();
+$lang->my->menu = new stdclass();
+
+$lang->my->menu->account        = array('link' => '<span id="myname"><i class="icon-user"></i> %s' . $lang->arrow . '</span>', 'fixed' => true);
+$lang->my->menu->dynamic        = 'Dynamic|my|dynamic|';
+$lang->my->menu->profile        = array('link' => 'Profile|my|profile|', 'alias' => 'editprofile');
+$lang->my->menu->changePassword = 'Change Password|my|changepassword|';
+
+$lang->todo = new stdclass();
+$lang->todo->menu = $lang->my->menu;
+
+
+/* performance menu. */
+$lang->performance = new stdclass();
+$lang->performance->menu = new stdclass();
+$lang->performance->menu->All   = array('link' => 'Direct subordinate list|performance|all|CID=%s','subModule' => 'performance');
+$lang->performance->menu->list    = array('link' => '%s', 'fixed' => true);
+$lang->performance->menu->subordinates = array('link' => 'Indirect subordinate list|performance|subordinates|CID=%s');
+$lang->performance->menu->export  = array('link' => '<span class="icon-plus">&nbsp;</span>Export|performance|export|CID=%s', 'float' => 'right');
+$lang->performance->menu->create  = array('link' => '<span class="icon-plus">&nbsp;</span>Create Performance|performance|create', 'float' => 'right');
+//$lang->performance->menu->export  = array('link' => '<span class="icon-plus">&nbsp;</span>Export|performance|export', 'float' => 'right');
+$lang->performance->menu->import  = array('link' => '<span class="icon-plus">&nbsp;</span>Import Excel|performance|import', 'float' => 'right');
+$lang->performance->menu->batchdownload  = array('link' => '<span class="icon-plus">&nbsp;</span>Batch Download|performance|batchdownload', 'float' => 'right');
+
+
+
+/*培训文档*/
+$lang->train = new stdclass();
+$lang->train->menu = new stdclass();
+$lang->train->menu->createtrain='Create Train|train|createtrain|';
+$lang->train->menu->createcontent=array('link'=>'Publish Article|train|createcontent');
+$lang->train->menu->commentlist=array('link'=>'Comment List|train|commentlist');
+
+
+
+/* crossexams menu. */
+$lang->crossexams = new stdclass();
+$lang->crossexams->menu = new stdclass();
+$lang->crossexams->menu->list = array('link'=> '%s','fixed' => true);
+$lang->crossexams->menu->crosslist='Cross List|crossexams|crosslist|';
+$lang->crossexams->menu->grades='Cross Table|crossexams|grades|';
+// $lang->crossexams->menu->list = array('link'=> '%s','fixed' => true);
+$lang->crossexams->menu->import = array('link'=>'Import|crossexams|import','float'=>"right");
+$lang->crossexams->menu->export = array('link'=>'Export|crossexams|export','float'=>"right");
+
+/* contract合同会审 */
+$lang->contract = new stdclass();
+$lang->contract->menu = new stdclass();
+$lang->contract->menu->contractdoc = 'All Doc|contract|contractdoc|';
+$lang->contract->menu->list        = 'Contract List|contract|contractlist|';
+$lang->contract->menu->index       = 'Contract Form|contract|index|';
+
+/*调查问卷*/
+$lang->survey = new stdclass();
+$lang->survey->menu = new stdclass();
+//$lang->survey->menu->surveylist = 'ALL Survey|survey|surveylist';
+$lang->survey->menu->export = 'Export|survey|export';
+//$lang->survey->menu->createsurvey = array('link'=>'Survey|survey|createsurvey','float'=>"right");
+//$lang->survey->menu->thumbup = array('link'=>'Thumbup|survey|thumbup','float'=>"right");
+/* ecn 工程更改 */  
+$lang->ecn = new stdclass();
+$lang->ecn->menu = new stdclass();
+$lang->ecn->menu->ecnlist    = 'ECN List|ecn|ecnlist';
+$lang->ecn->menu->createform = 'ECN Form|ecn|createform';
+
+
+/* pcn 表单 */
+$lang->pcn = new stdclass();
+$lang->pcn->menu = new stdclass();
+$lang->pcn->menu->pcnlist    = 'PCN List|pcn|pcnlist';
+$lang->pcn->menu->createform = 'PCN Form|pcn|createform';
+
+
+$lang->release     = new stdclass();
+$lang->branch      = new stdclass();
+
+$lang->branch->menu      = $lang->performance->menu;
+$lang->release->menu     = $lang->performance->menu;
+
+/* Project menu. */
+$lang->register = new stdclass();
+$lang->register->menu = new stdclass();
+
+$lang->task  = new stdclass();
+$lang->build = new stdclass();
+$lang->build->menu = $lang->project->menu;
+
+
+/* Doc menu. */
+$lang->doc = new stdclass();
+$lang->doc->menu = new stdclass();
+
+$lang->doc->menu->list    = array('link' => '%s', 'fixed' => true);
+$lang->doc->menu->browse  = array('link' => 'Doc|doc|browse|libID=%s', 'alias' => 'view,create,edit');
+$lang->doc->menu->edit    = 'Edit Library|doc|editLib|libID=%s';
+$lang->doc->menu->module  = 'Modules|tree|browse|libID=%s&viewType=doc';
+$lang->doc->menu->delete  = array('link' => 'Delete Library|doc|deleteLib|libID=%s', 'target' => 'hiddenwin');
+$lang->doc->menu->create  = array('link' => '<span class="icon-plus">&nbsp;</span>New Library|doc|createLib', 'float' => 'right');
+
+
+/* Company menu. */
+$lang->company = new stdclass();
+$lang->company->menu = new stdclass();
+$lang->company->menu->name         = array('link' => '%s' . $lang->arrow, 'fixed' => true);
+$lang->company->menu->browseUser   = array('link' => 'Users|company|browse', 'subModule' => 'user');
+
+$lang->company->menu->browseGroup  = array('link' => 'Group|group|browse', 'subModule' => 'group');
+$lang->company->menu->view         = array('link' => 'Company|company|view', 'alias' => 'edit');
+$lang->company->menu->dynamic      = 'Dynamic|company|dynamic|';
+$lang->company->menu->tree   = array('link' => 'Tree|company|tree');
+$lang->company->menu->addGroup     = array('link' => '<span class="icon-plus">&nbsp;</span>Add Group|group|create', 'float' => 'right');
+
+$lang->company->menu->addUser      = array('link' => '<span class="icon-plus">&nbsp;</span>Add User|user|create|dept=%s&from=company', 'subModule' => 'user', 'float' => 'right');
+
+$lang->dept  = new stdclass();
+$lang->group = new stdclass();
+$lang->user  = new stdclass();
+
+$lang->dept->menu  = $lang->company->menu;
+$lang->group->menu = $lang->company->menu;
+$lang->user->menu  = $lang->company->menu;
+
+/* Admin menu. */
+$lang->admin = new stdclass();
+$lang->admin->menu = new stdclass();
+$lang->admin->menu->mail      = array('link' => 'Email|mail|index', 'subModule' => 'mail');
+$lang->admin->menu->backup    = array('link' => 'Backup|backup|index', 'subModule' => 'backup');
+$lang->admin->menu->safe      = array('link' => 'Safe|admin|safe', 'alias' => 'checkweak');
+$lang->admin->menu->trashes   = array('link' => 'Trash|action|trash', 'subModule' => 'action');
+$lang->admin->menu->setcircle   = array('link' => 'Set Circle Time|admin|setcircle', 'subModule' => 'setcircle');
+//$lang->admin->menu->synUserData   = array('link' => 'Synchronize User Data|admin|synUserData','target' => 'hiddenwin', 'subModule' => 'synUserData');
+//$lang->admin->menu->getDatabyExcels   = array('link' => 'Capture Excel Data|admin|getDatabyExcels','target' => 'hiddenwin', 'subModule' => 'getDatabyExcels');
+
+
+$lang->convert   = new stdclass();
+$lang->upgrade   = new stdclass();
+$lang->action    = new stdclass();
+$lang->backup    = new stdclass();
+$lang->extension = new stdclass();
+$lang->custom    = new stdclass();
+$lang->editor    = new stdclass();
+$lang->mail      = new stdclass();
+$lang->cron      = new stdclass();
+$lang->dev       = new stdclass();
+$lang->search    = new stdclass();
+
+$lang->convert->menu   = $lang->admin->menu;
+$lang->upgrade->menu   = $lang->admin->menu;
+$lang->action->menu    = $lang->admin->menu;
+$lang->backup->menu    = $lang->admin->menu;
+$lang->cron->menu      = $lang->admin->menu;
+$lang->extension->menu = $lang->admin->menu;
+$lang->custom->menu    = $lang->admin->menu;
+$lang->editor->menu    = $lang->admin->menu;
+$lang->mail->menu      = $lang->admin->menu;
+$lang->dev->menu       = $lang->admin->menu;
+
+/* Groups. */
+$lang->menugroup = new stdclass();
+$lang->menugroup->release     = 'performance';
+$lang->menugroup->story       = 'performance';
+$lang->menugroup->branch      = 'performance';
+$lang->menugroup->task        = 'project';
+$lang->menugroup->build       = 'project';
+$lang->menugroup->convert     = 'admin';
+$lang->menugroup->upgrade     = 'admin';
+$lang->menugroup->user        = 'company';
+$lang->menugroup->group       = 'company';
+$lang->menugroup->bug         = 'qa';
+$lang->menugroup->testcase    = 'qa';
+$lang->menugroup->testtask    = 'qa';
+$lang->menugroup->people      = 'company';
+$lang->menugroup->dept        = 'company';
+$lang->menugroup->todo        = 'my';
+$lang->menugroup->action      = 'admin';
+$lang->menugroup->backup      = 'admin';
+$lang->menugroup->cron        = 'admin';
+$lang->menugroup->extension   = 'admin';
+$lang->menugroup->custom      = 'admin';
+$lang->menugroup->editor      = 'admin';
+$lang->menugroup->mail        = 'admin';
+$lang->menugroup->dev         = 'admin';
+
+/* Error info. */
+$lang->error = new stdclass();
+$lang->error->companyNotFound = "The domain %s does not exist.";
+$lang->error->length          = array("『%s』length should be『%s』", "『%s』length should between『%s』and 『%s』.");
+$lang->error->reg             = "『%s』should like『%s』";
+$lang->error->unique          = "『%s』has『%s』already. If you are sure this record has been deleted, you can restore it in admin panel, trash page.";
+$lang->error->gt              = "『%s』must greater than『%s』.";
+$lang->error->ge              = "『%s』must greater than or equal『%s』.";
+$lang->error->notempty        = "『%s』can not be empty.";
+$lang->error->empty           = "『%s』 must be empty.";
+$lang->error->equal           = "『%s』must be『%s』.";
+$lang->error->int             = array("『%s』should be interger", "『%s』should between『%s-%s』.");
+$lang->error->float           = "『%s』should be a interger or float.";
+$lang->error->email           = "『%s』should be email.";
+$lang->error->date            = "『%s』should be date";
+$lang->error->account         = "『%s』should be a valid account.";
+$lang->error->passwordsame    = "Two passwords must be the same";
+$lang->error->passwordrule    = "Password should more than six letters.";
+$lang->error->accessDenied    = 'No purview';
+$lang->error->pasteImg        = 'Your browser does not support the paste image!';
+$lang->error->noData          = 'No data';
+$lang->error->editedByOther   = 'The record may have been changed. Please refresh and re edit!';
+$lang->error->tutorialData    = 'Novice mode will not insert data, please exit it to operation';
+
+/* Pager. */
+$lang->pager = new stdclass();
+$lang->pager->noRecord  = "No records yet.";
+$lang->pager->digest    = "<strong>%s</strong> records, %s <strong>%s/%s</strong> &nbsp; ";
+$lang->pager->recPerPage= "<strong>%s</strong> per page";
+$lang->pager->first     = "<i class='icon-step-backward' title='First'></i>";
+$lang->pager->pre       = "<i class='icon-play icon-rotate-180' title='Previous'></i>";
+$lang->pager->next      = "<i class='icon-play' title='Next'></i>";
+$lang->pager->last      = "<i class='icon-step-forward' title='Last'></i>";
+$lang->pager->locate    = "GO!";
+
+$lang->proVersion     = "<a href='http://api.zentao.net/goto.php?item=proversion&from=footer' target='_blank' class='text-important'>PRO <i class='text-danger icon-pro-version'></i></a> &nbsp; ";
+$lang->downNotify     = "Down notify";
+
+$lang->suhosinInfo   = "Warming:data is too large! Please enlarge the setting of <font color=red>sohusin.post.max_vars</font> and <font color=red>sohusin.request.max_vars</font> in php.ini. Otherwise partial data can't be saved.";
+$lang->pasteTextInfo = "Paste the text into a text field, each line of text as a data header.";
+$lang->noticeImport  = "<p style='font-size:14px'>Import data, containing the existing system of data, please confirm these data to cover or insert</p><p><a href='javascript:submitForm(\"cover\")' class='btn btn-mini'>Cover</a> <a href='javascript:submitForm(\"insert\")' class='btn btn-mini'>Insert</a></p>";
+
+$lang->noResultsMatch    = "No results match";
+$lang->searchMore        = "Search more results with the key:";
+$lang->chooseUsersToMail = "Choose users to mail...";
+$lang->browserNotice     = 'Using the browser may not be able to get the best browsing effect, it is recommended to use chrome, Firefox, IE9 +, opera, Safari browser.';
+
+/* Date times. */
+define('DT_DATETIME1',  'Y-m-d H:i:s');
+define('DT_DATETIME2',  'y-m-d H:i');
+define('DT_MONTHTIME1', 'n/d H:i');
+define('DT_MONTHTIME2', 'F j, H:i');
+define('DT_DATE1',     'Y-m-d');
+define('DT_DATE2',     'Ymd');
+define('DT_DATE3',     'F j, Y ');
+define('DT_DATE4',     'M j');
+define('DT_TIME1',     'H:i:s');
+define('DT_TIME2',     'H:i');
+
+/* datepicker 时间*/
+$lang->datepicker = new stdclass();
+$lang->datepicker->dpText = new stdclass();
+$lang->datepicker->dpText->TEXT_OR          = 'Or ';
+$lang->datepicker->dpText->TEXT_PREV_YEAR   = 'Last year';
+$lang->datepicker->dpText->TEXT_PREV_MONTH  = 'Last month';
+$lang->datepicker->dpText->TEXT_PREV_WEEK   = 'Last week';
+$lang->datepicker->dpText->TEXT_YESTERDAY   = 'Yesterday';
+$lang->datepicker->dpText->TEXT_THIS_MONTH  = 'This month';
+$lang->datepicker->dpText->TEXT_THIS_WEEK   = 'This week';
+$lang->datepicker->dpText->TEXT_TODAY       = 'Today';
+$lang->datepicker->dpText->TEXT_NEXT_YEAR   = 'Next year';
+$lang->datepicker->dpText->TEXT_NEXT_MONTH  = 'Next month';
+$lang->datepicker->dpText->TEXT_CLOSE       = 'Close';
+$lang->datepicker->dpText->TEXT_DATE        = 'Please select date range';
+$lang->datepicker->dpText->TEXT_CHOOSE_DATE = 'Choose date';
+
+$lang->datepicker->dayNames     = array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
+$lang->datepicker->abbrDayNames = array('Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat');
+$lang->datepicker->monthNames   = array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');
+
+/* Common action icons */
+$lang->icons['todo']      = 'check';
+$lang->icons['performance']   = 'cube';
+$lang->icons['bug']       = 'bug';
+$lang->icons['task']      = 'check-sign';
+$lang->icons['tasks']     = 'tasks';
+$lang->icons['project']   = 'folder-close-alt';
+$lang->icons['doc']       = 'file-text';
+$lang->icons['doclib']    = 'folder-close';
+$lang->icons['story']     = 'lightbulb';
+$lang->icons['release']   = 'tags';
+$lang->icons['roadmap']   = 'code-fork';
+$lang->icons['plan']      = 'flag';
+$lang->icons['dynamic']   = 'volume-up';
+$lang->icons['build']     = 'tag';
+$lang->icons['test']      = 'check';
+$lang->icons['testtask']  = 'check';
+$lang->icons['group']     = 'group';
+$lang->icons['team']      = 'group';
+$lang->icons['company']   = 'building';
+$lang->icons['user']      = 'user';
+$lang->icons['dept']      = 'sitemap';
+$lang->icons['tree']      = 'sitemap';
+$lang->icons['usecase']   = 'sitemap';
+$lang->icons['testcase']  = 'smile';
+$lang->icons['result']    = 'list-alt';
+$lang->icons['mail']      = 'envelope';
+$lang->icons['trash']     = 'trash';
+$lang->icons['extension'] = 'th-large';
+$lang->icons['app']       = 'th-large';
+
+$lang->icons['results']        = 'list-alt';
+$lang->icons['create']         = 'plus';
+$lang->icons['post']           = 'edit';
+
+$lang->icons['batchEdit']      = 'edit-sign';
+$lang->icons['batchClose']     = 'off';
+$lang->icons['edit']           = 'pencil';
+$lang->icons['delete']         = 'remove';
+$lang->icons['copy']           = 'copy';
+$lang->icons['report']         = 'bar-chart';
+$lang->icons['export']         = 'download-alt';
+$lang->icons['report-file']    = 'file-powerpoint';
+$lang->icons['import']         = 'upload-alt';
+$lang->icons['finish']         = 'ok-sign';
+$lang->icons['resolve']        = 'ok-sign';
+$lang->icons['start']          = 'play';
+$lang->icons['restart']        = 'play';
+$lang->icons['run']            = 'play';
+$lang->icons['runCase']        = 'play';
+$lang->icons['batchRun']       = 'play-sign';
+$lang->icons['assign']         = 'hand-right';
+$lang->icons['assignTo']       = 'hand-right';
+$lang->icons['change']         = 'random';
+$lang->icons['link']           = 'link';
+$lang->icons['close']          = 'off';
+$lang->icons['activate']       = 'off';
+$lang->icons['review']         = 'search';
+$lang->icons['confirm']        = 'search';
+$lang->icons['confirmBug']     = 'search';
+$lang->icons['putoff']         = 'calendar';
+$lang->icons['suspend']        = 'pause';
+$lang->icons['pause']          = 'pause';
+$lang->icons['cancel']         = 'ban-circle';
+$lang->icons['recordEstimate'] = 'time';
+$lang->icons['customFields']   = 'cogs';
+$lang->icons['manage']         = 'cog';
+$lang->icons['unlock']         = 'unlock-alt';
+$lang->icons['confirmStoryChange'] = 'search';
+
+include (dirname(__FILE__) . '/menuOrder.php');

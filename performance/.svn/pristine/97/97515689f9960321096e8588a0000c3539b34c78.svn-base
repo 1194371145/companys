@@ -1,0 +1,146 @@
+
+<?php include '../../common/view/header.html.php';?>
+<?php include '../../common/view/sortable.html.php';?>
+
+<script language='Javascript'>
+var browseType = '<?php echo $browseType;?>';
+</script>
+<div class='block' id='productbox'>
+
+<div id='featurebar' style="margin-bottom:0px;">
+
+  <ul class='nav'>
+    <?php echo "<li id='allTab' ".$tabstyle['all'].">" . html::a(inlink("all", "CID=".$CID."&status=all"), "All") . '</li>';?>
+    <?php echo "<li id='openTab' ".$tabstyle['open'].">" . html::a(inlink("all", "CID=".$CID."&status=open"), "Open") . '</li>';?>
+    <?php echo "<li id='submittedTab' ".$tabstyle['submitted'].">" . html::a(inlink("all", "CID=".$CID."&status=submitted"), "Submitted") . '</li>';?>
+    <?php echo "<li id='closeTab' ".$tabstyle['close'].">" .  html::a(inlink("all", "CID=".$CID."&status=close"),"Close") . '</li>';?>
+    <li id='bysearchTab'><a href='#'><i class='icon-search icon'></i>&nbsp;Search</a></li>
+  </ul>
+</div>
+<div id='querybox' style="margin-top:0px;" class="<?php if($type=='bysearch'){echo "show";}?>"><?php echo $searchForm?></div>
+<form method='post' action='<?php echo inLink('batchEdit', "productID=$productID");?>' id='productsForm'>
+  <table class='table table-condensed table-hover table-striped tablesorter table-datatable' id='performancetList' style="margin-top:20px;">
+    <?php $vars = "CID=$CID&status=$status&param=0&orderBy=%s&recTotal={$pager->recTotal}&recPerPage={$pager->recPerPage}&pageID={$pager->pageID}";?>
+    <thead>
+      <tr>
+        <th class='w-id text-left' ><?php common::printOrderLink('id', $orderBy, $vars, $lang->idAB);?></th>
+        <th class='w-90px text-left' text-left><?php common::printOrderLink('staffcode', $orderBy, $vars, $lang->performance->staffcode);?></th>
+        <th class="w-60px text-left"><?php common::printOrderLink('circle', $orderBy, $vars, $lang->performance->circle);?></th>
+        <th class='w-90px text-left'><?php echo "Name";?></th>
+        <th class='w-90px text-left'><?php echo "Position";?></th>
+        <th class='w-80px text-left'><?php echo "Supervisor";?></th>
+        <th class='w-200px text-left'><?php echo "Employee's Statement";?></th>
+        <th class="w-200px text-left"><a title="评估者综合  评估总结,总结主要优点"><?php echo "Employee's strength";?></th>
+        <th class="w-200px text-left"><a title="确定改进及发展需求"><?php echo "Improvements and development";?></th>
+        <th class='w-90px text-left'>Update Date</th>
+        <th class='w-70px text-left'>Score</th>
+        <th class='w-60px text-left'>Status</th>
+        <th class='w-160px text-left' style="color:#304269">Action</th>
+      </tr>
+    </thead>
+    <tbody class='sortable' id='productTableList'>
+      <?php foreach($perlists as $list):?>
+      <tr class='text-left' data-id='<?php echo $list->id ?>' data-order='<?php echo $list->id ?>'>
+        <td>
+          <?php echo  $list->id;?>
+        </td>
+        <td><?php echo $list->staffcode;?></td>
+        <td><?php echo substr($list->zhouqi,0,4)." ".substr($list->zhouqi,4,1)."H";?></td>
+        <td><?php echo $list->name;?></td>
+        <td class='text-left' title='<?php echo $list->zhiwei?>'>
+		<?php
+		echo $list->zhiwei;
+		?>
+        </td>
+        <td class='text-left'><a  title="<?php echo $list->zgname;?>"><?php echo $list->zgname;?></a></td>
+        <td class='text-left'><a  title="<?php echo $list->statement;?>">
+		<?php
+		if(strlen($list->statement) < 40)
+		{
+		   echo $list->statement;
+		}
+		else
+		{
+		   echo html::msubstr($list->statement,0,38)."...";
+		}
+		
+		?>
+        </a></td>
+        <td class='text-left' title="<?php echo $list->review_strength;?>">
+        <?php
+		if(strlen($list->review_strength) < 40)
+		{
+		   echo $list->review_strength;
+		}
+		else
+		{
+		   echo html::msubstr($list->review_strength,0,38)."...";
+		}
+		?>
+        </td>
+        <td class='text-left' title="<?php echo $list->review_improve;?>">
+        <?php
+		if(strlen($list->review_improve) < 50)
+		{
+		   echo $list->review_improve;
+		}
+		else
+		{
+		   echo html::msubstr($list->review_improve,0,38)."...";
+		}
+		?>
+        </td>
+        <td><?php echo $list->adddate;?></td>
+        <td><?php echo $list->totalscore->total;?></td>
+        <td class='text-left'><?php 
+         echo $list->status;
+		?>
+        </td>
+        <td class='text-left'>
+		<?php 
+		if($this->app->user->account == $list->staffcode)
+		{
+		    echo html::a($this->createLink('performance', 'review', "PID=$list->id"), "Self Evaluation" ,"","style='color:#304269'");
+		}
+		elseif($this->app->user->account == $list->zgsid)
+		{
+			echo html::a($this->createLink('performance', 'superviserreview', "PID=$list->id"), "Review" ,"","style='color:#304269'");
+			if($list->status != "close") common::printLink('performance','close','PID='.$list->id,'Close','hiddenwin',"style='color:#304269'");
+			
+		}
+		else
+		{
+			echo html::a($this->createLink('performance', 'review', "PID=$list->id"), "Self Evaluation" ,"","style='color:#304269'");
+		}
+		?>&nbsp;&nbsp;&nbsp;
+        
+        <?php echo html::a($this->createLink('performance', 'download', "PID=$list->id"), "Download" ,"","style='color:#304269'");
+        if($this->app->user->account == "admin" || $this->app->user->account == "S00058")
+		{
+		   if($list->status != "close") common::printLink('performance','close','PID='.$list->id,'Close','hiddenwin',"style='color:#304269'");
+		   echo "&nbsp;&nbsp;".html::a($this->createLink('performance', 'delete', "PID=$list->id&confirm=no"), "Delete" ,"hiddenwin","style='color:#304269'");
+		}
+		?>
+        </td>
+        
+      </tr>
+      <?php endforeach;?>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan='13'>
+          <div class='table-actions clearfix'>
+
+           
+          </div>
+          <div class='text-right'><?php $pager->show();?></div>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</form>
+
+</div>
+<script>$("#<?php echo $status;?>Tab").addClass('active');</script>
+<?php js::set('orderBy', $orderBy)?>
+<?php include '../../common/view/footer.html.php';?>

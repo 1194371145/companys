@@ -1,0 +1,239 @@
+<?php
+$lang->item->common    = "Item";
+// $lang->survey->surveylist       = "Survey List";
+// $lang->survey->createsurvey       = "Create Survey";
+// $lang->survey->thumbup       = "Create Thumbup";
+// $lang->survey->export       = "Export";
+$lang->item->browse       = "browse";
+$lang->item->useditem       = "useditem";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$lang->survey->citems[1] = "高层管理人员能够让员工清晰地了解公司的发展方向";
+$lang->survey->citems[2] = "高层管理人员在展现公司价值观方面做出了榜样";
+$lang->survey->citems[3] = "员工总能找到合适的渠道向公司反映问题和意见";
+$lang->survey->citems[4] = "公司的产品或国际化品牌是我选择在这里工作的重要原因之一";
+$lang->survey->citems[5] = "公司非常重视产品的质量，公司内把关非常严格";
+$lang->survey->citems[6] = "我会自豪地对我周围的朋友家人说我在矽力杰工作，并愿意在公司长期发展";
+$lang->survey->citems[7] = "公司建立了与部门/岗位相关的业务流程，并建立了明确的制度规定";
+$lang->survey->citems[8] = "主管传达给我的指令，清晰，明确";
+$lang->survey->citems[9] = "下属/合作人员，提交给我的反馈，及时，有效";
+$lang->survey->citems[10] = "我总是努力想办法，达成主管既定的目标与要求";
+$lang->survey->citems[11] = "我部门主导的事项，总能得到其他部门的积极配合";
+$lang->survey->citems[12] = "我部门同样也总能积极配合其他部门主导的事项";
+$lang->survey->citems[13] = "我与主管/下属/其他部门，跨地区，但这丝毫不影响日常沟通效率";
+$lang->survey->citems[14] = "我与主管跨地区，但主管仍能及时批复我的申请";
+$lang->survey->citems[15] = "各国语言/时差不同，对我的日常工作沟通，影响不大";
+$lang->survey->citems[16] = "财务内容，让我明白了公司报销流程及制度";
+$lang->survey->citems[17] = "人事内容，让我明白了公司的发展历程及规章制度";
+$lang->survey->citems[18] = "安全内容，让我明白消防安全的预防和自救措施";
+$lang->survey->citems[19] = "质量内容，让我明白质量体系及有害物质管理制度";
+$lang->survey->citems[20] = "内控内容，让我明白公司的内控管理办法";
+$lang->survey->citems[21] = "岗位相关的部门内部培训，公司内安排，不产生培训费用";
+$lang->survey->citems[22] = "岗位相关的外部培训，申请通过后，费用由公司承担";
+$lang->survey->citems[23] = "美国受训，为期三个月，费用由公司承担";
+$lang->survey->citems[24] = "台湾受训，为期十五天，费用由公司承担";
+$lang->survey->citems[25] = "在职进修，专升本/本升硕/硕升博/博士后，申请通过后，学费80%由公司承担";
+$lang->survey->citems[26] = "公司允许并鼓励员工在工作职责范围内进行合理的改进";
+$lang->survey->citems[27] = "工作能发挥我的能力、专业或技术特长，符合我的职业兴趣";
+$lang->survey->citems[28] = "我清楚自己所在岗位所需的知识、能力及综合素养要求";
+$lang->survey->citems[29] = "现有的发展通道（如晋升机制、晋升空间），公平合理";
+$lang->survey->citems[30] = "在过去的十二个月中，主管和我谈及我的职业发展规划";
+$lang->survey->citems[31] = "奖惩管理办法中，奖惩执行，公平合理";
+$lang->survey->citems[32] = "季度优秀员工/年度优秀员工评选，公平合理";
+$lang->survey->citems[33] = "季度明星产品评选，公平合理";
+$lang->survey->citems[34] = "公司非常认可我在专利创新方面的成果";
+$lang->survey->citems[35] = "当个人工作与家庭出现冲突时，公司能够体谅员工，尽量给予方便和照顾";
+$lang->survey->citems[36] = "人事系统请假调休加班等流程，申请方便，审批及时";
+
+
+$lang->survey->eitems[1] = "Top management makes it clear the direction the company is heading in";
+$lang->survey->eitems[2] = "Top management sets good examples of showing company's values";
+$lang->survey->eitems[3] = "Staff can always find ways to deliver questions and suggestions";
+$lang->survey->eitems[4] = "Company's products or intertional brand is mainly why I choose to work here";
+$lang->survey->eitems[5] = "Company focuses much on product quality and sets strict quality-cheking rules";
+$lang->survey->eitems[6] = "I am proud of telling friends or my familly that I work for Silegy and still do it";
+$lang->survey->eitems[7] = "Company sets procedures regarding respective department/post and make clear regulations";
+$lang->survey->eitems[8] = "Line supervisor gives clear and explicit orders";
+$lang->survey->eitems[9] = "Feedback from subordinates or partners is timely and effective";
+$lang->survey->eitems[10] = "I try to reach the goals and demands set by line manager";
+$lang->survey->eitems[11] = "Projects led by our department can always get the active support of other departments";
+$lang->survey->eitems[12] = "Our department offer good cooperation on projects by other departments";
+$lang->survey->eitems[13] = "Efficient communication is guaranteed despite tha fact that I and line manager or subordinate or other departments belong to different regions";
+$lang->survey->eitems[14] = "Line supervior approves in time of my application despite working in different regions";
+$lang->survey->eitems[15] = "Daily commnunication in work is little affected in spite of different languages or jet lags";
+$lang->survey->eitems[16] = "Finance information gives clear  reimbursement  procedures and rules";
+$lang->survey->eitems[17] = "Human resourece information  gives clear compay's historical events and rules ";
+$lang->survey->eitems[18] = "Safety information gives clear precaustions on fire control and self-rescue steps";
+$lang->survey->eitems[19] = "QA information gives clear quality system rules and toxic substance management";
+$lang->survey->eitems[20] = "Audit information give clear audit management  rules";
+$lang->survey->eitems[21] = "Internal department traning regarding my post is organised for free by company ";
+$lang->survey->eitems[22] = "The expense for external training approved of regarding my post is afforded by the company  ";
+$lang->survey->eitems[23] = "The expense for three-month training in American  office is afforded by the company ";
+$lang->survey->eitems[24] = "The expense for fifteen-day training in Taiwan office is afforded by the company";
+$lang->survey->eitems[25] = "80 percent of expense of further study  approved of is afforded by the company  ";
+$lang->survey->eitems[26] = "Company allows and encourages resonable improvements with job duties";
+$lang->survey->eitems[27] = "My abilities, professional capability or expertise is fully applied, consistent with my career interests";
+$lang->survey->eitems[28] = "I know well the knowledge, ability and comprehensive requrements for my job";
+$lang->survey->eitems[29] = "Existing development path(including promotion rules and space) is fair and reasonable";
+$lang->survey->eitems[30] = "Line supervisor and I have had a conversation about career plan in the past twelve months";
+$lang->survey->eitems[31] = "Punishing and awarding set in punishment and award rules is fair and reasonable";
+$lang->survey->eitems[32] = "Evaluation for seasonly or annualy excellent employees is fair and reasonable";
+$lang->survey->eitems[33] = "Evaluation for a seasonly product is fair and reasonable";
+$lang->survey->eitems[34] = "Company recognises my achievement on patent creativity";
+$lang->survey->eitems[35] = "Company shows as much consideration as possible to employees when there is a conflict between work and family";
+$lang->survey->eitems[36] = "Application for leaves, time shifts or overtime work is easy in HR system and  approved of in time";
+
+
+
+
+
+$lang->survey->csanitation[1] = "整洁卫生，安静舒适";
+$lang->survey->csanitation[2] = "消防指示清晰，防火设备齐全";
+$lang->survey->csanitation[3] = "桌椅，配备充足，完整舒适";
+$lang->survey->csanitation[4] = "文具、饮用水等，配备充足，补充及时 ";
+$lang->survey->csanitation[5] = "用电、自来水等，充足，维修及时";
+$lang->survey->csanitation[6] = "实验室警示标语";
+$lang->survey->csanitation[7] = "实验室安全防护设备设施（护目镜、口罩、实验服、袖套、吸排风设备）";
+
+$lang->survey->esanitation[1] = "clean and tidy, quiet and comfortable";
+$lang->survey->esanitation[2] = "clear exit signs, enough firefighting equipment";
+$lang->survey->esanitation[3] = "adequate, comfortable office chairs and desks ";
+$lang->survey->esanitation[4] = "adequate office supplies including stationary and drinking water  and  timely supplement";
+$lang->survey->esanitation[5] = "adequate electricity, tap-water and timey reparing ";
+$lang->survey->esanitation[6] = "warning signs in lab";
+$lang->survey->esanitation[7] = "safety equipment(including stationery and drinking water and timely supplements) ";
+
+
+$lang->survey->cfacility[1] = "配备充足";
+$lang->survey->cfacility[2] = "质量很好";
+$lang->survey->cfacility[3] = "保存妥善";
+$lang->survey->cfacility[4] = "专人采购";
+$lang->survey->cfacility[5] = "取用登记";
+$lang->survey->cfacility[6] = "借用有序";
+$lang->survey->cfacility[7] = "专人维修 ";
+$lang->survey->cfacility[8] = "专人校准";
+
+$lang->survey->efacility[1] = "adequate";
+$lang->survey->efacility[2] = "high-quality";
+$lang->survey->efacility[3] = "well-preserved";
+$lang->survey->efacility[4] = "purchased by specially-assigned staff";
+$lang->survey->efacility[5] = "registering before using";
+$lang->survey->efacility[6] = "systematic borrowing and returning";
+$lang->survey->efacility[7] = "repaired by specially-assigned staff";
+$lang->survey->efacility[8] = "calibrated by specially-assigned staff";
+
+
+$lang->survey->cwelfare[1] = "年薪 ";
+$lang->survey->cwelfare[2] = "绩效奖金";
+$lang->survey->cwelfare[3] = "项目奖金";
+$lang->survey->cwelfare[4] = "专利奖金";
+$lang->survey->cwelfare[5] = "优秀员工奖金";
+$lang->survey->cwelfare[6] = "伯乐奖金";
+$lang->survey->cwelfare[7] = "节日福利（生日/春节/中秋/妇女节/儿童等）";
+$lang->survey->cwelfare[8] = "员工俱乐部";
+$lang->survey->cwelfare[9] = "周年庆旅游";
+$lang->survey->cwelfare[10] = "年末尾牙";
+$lang->survey->cwelfare[11] = "五周年假";
+$lang->survey->cwelfare[12] = "家庭假";
+$lang->survey->cwelfare[13] = "季度部门活动经费";
+$lang->survey->cwelfare[14] = "五险一金";
+$lang->survey->cwelfare[15] = "档案户口";
+$lang->survey->cwelfare[16] = "政府财政补贴";
+$lang->survey->cwelfare[17] = "出差补贴 ";
+$lang->survey->cwelfare[18] = "业务招待费";
+$lang->survey->cwelfare[19] = "健康体检（每年一次）";
+$lang->survey->cwelfare[20] = "商业保险（含大病、重疾、意外等）";
+$lang->survey->cwelfare[21] = "矽力杰互助金";
+
+$lang->survey->ewelfare[1] = "annual salary";
+$lang->survey->ewelfare[2] = "performance bonus";
+$lang->survey->ewelfare[3] = "project bonus";
+$lang->survey->ewelfare[4] = "patent bonus";
+$lang->survey->ewelfare[5] = "excellent employee award";
+$lang->survey->ewelfare[6] = "bonus for talent scouts";
+$lang->survey->ewelfare[7] = "holiday (including birthday, Spring Festival, Mid Autumn Festival,Women's Day and Children's Day) benefits";
+$lang->survey->ewelfare[8] = "staff clubs";
+$lang->survey->ewelfare[9] = "annual tourism";
+$lang->survey->ewelfare[10] = "new year party";
+$lang->survey->ewelfare[11] = "special leave for 5th anniversary";
+$lang->survey->ewelfare[12] = "family holiday";
+$lang->survey->ewelfare[13] = "quarterly outing expense";
+$lang->survey->ewelfare[14] = "social insurance and housing funds";
+$lang->survey->ewelfare[15] = "archive preservation and hukou management";
+$lang->survey->ewelfare[16] = "financial  subsidy from goverment";
+$lang->survey->ewelfare[17] = "businesstrip subsidy";
+$lang->survey->ewelfare[18] = "business entertainment expense";
+$lang->survey->ewelfare[19] = "annual health check";
+$lang->survey->ewelfare[20] = "commercial insurance (including serious illnesses, severe illesses, accidents, etc.)";
+$lang->survey->ewelfare[21] = "silergy  mutual fund";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$lang->survey->silergyyears = array("silergy1"=>"0-1 Years","silergy2"=>"1-3 Years","silergy3"=>"3-5 Years","silergy4"=>"5-10 Years");
+$lang->survey->workyears = array("work1"=>"0-1 Years","work2"=>"1-5 Years","work3"=>"5-10 Years","work4"=>"10-15 Years","work5"=>"Over 15 Years")
+
+
+
+
+
+
+
+?>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>jQuery客户端分页插件cPager</title>
+	
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/demo.css">
+	
+	<!--主要样式-->
+	<link rel="stylesheet" type="text/css" href="css/cPager.css">
+	
+	<style type="text/css">
+    html,
+    body,
+    ul,
+    li {
+        margin: 0;
+        padding: 0;
+    }
+    .container{
+    	width: 800px;
+    	max-width: 100%;
+    	margin: 30px auto;
+    }
+
+    ul li.li-item{
+        list-style: none;
+        line-height: 35px;
+        border-bottom: 1px solid #eee;
+        font-family: 微软雅黑;
+        animation: fadeIn 1s 1 0s;
+        -webkit-animation:fadeIn 1s 1 0s;
+        -moz-animation:fadeIn 1s 1 0s;
+        -ms-animation:fadeIn 1s 1 0s;
+        -o-animation:fadeIn 1s 1 0s;
+    }
+	/**淡入淡出过渡效果**/
+	@keyframes fadeIn {
+		0% {
+			opacity: 0; /*初始状态 透明度为0*/
+		}
+		50% {
+			opacity: 0.5; /*中间状态 透明度为0.5*/
+		}
+		100% {
+			opacity: 1; /*结尾状态 透明度为1*/
+		}
+	}
+    @-webkit-keyframes fadeIn {
+		0% {
+			opacity: 0; /*初始状态 透明度为0*/
+		}
+		50% {
+			opacity: 0.5; /*中间状态 透明度为0.5*/
+		}
+		100% {
+			opacity: 1; /*结尾状态 透明度为1*/
+		}
+	}
+	@-moz-keyframes fadeIn {
+		0% {
+			opacity: 0; /*初始状态 透明度为0*/
+		}
+		50% {
+			opacity: 0.5; /*中间状态 透明度为0.5*/
+		}
+		100% {
+			opacity: 1; /*结尾状态 透明度为1*/
+		}
+	}
+	@-ms-keyframes fadeIn {
+		0% {
+			opacity: 0; /*初始状态 透明度为0*/
+		}
+		50% {
+			opacity: 0.5; /*中间状态 透明度为0.5*/
+		}
+		100% {
+			opacity: 1; /*结尾状态 透明度为1*/
+		}
+	}
+	@-o-keyframes fadeIn {
+		0% {
+			opacity: 0; /*初始状态 透明度为0*/
+		}
+		50% {
+			opacity: 0.5; /*中间状态 透明度为0.5*/
+		}
+		100% {
+			opacity: 1; /*结尾状态 透明度为1*/
+		}
+	}
+    .li-item {
+        margin: auto 20px;
+    }
+    </style>
+</head>
+<body>
+	
+	<div class="container">
+		<!--容器-->
+		<ul id="listShow"></ul>
+		<!--分页容器-->
+		<div class="turn-page" id="pager"></div>
+		<!--模板-->
+		<textarea id="listTemplate" style="display: none;">
+			{for item in data}
+			<li class="li-item hide">${item.name}</li>
+			{/for}
+		</textarea>
+	</div>
+	
+	<script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>
+	<!--引入JS模板引擎-->
+	<script type="text/javascript" src="js/template.js"></script>
+	<!--引入客服端分页插件-->
+	<script type="text/javascript" src="js/cPager.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		var json = { data: [] };
+		for (var i = 1; i <= 350; i++) {
+			json.data.push({ name: "姓名--000" + i });
+		}
+
+		//渲染模板
+		$("#listShow").html(TrimPath.processDOMTemplate("listTemplate", json));
+		//调用客户端分页
+		$(this).cPager({
+			pageSize: 8, //每一页显示的记录条数
+			pageid: "pager", //分页容器ID
+			itemClass: "li-item" //个体元素名称
+		});
+	});
+	</script>
+	
+</body>
+</html>

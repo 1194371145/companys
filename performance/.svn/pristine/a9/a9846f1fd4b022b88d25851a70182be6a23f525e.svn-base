@@ -1,0 +1,58 @@
+<?php
+global $lang, $app;
+$config->performance->search['module']             = 'performance';
+$config->performance->search['fields']['id']       = "ID";
+$config->performance->search['fields']['zhouqi'] = "Cycle";
+$config->performance->search['fields']['staffcode']    = "Staff Code";
+$config->performance->search['fields']['name']    = "Staff Name";
+$config->performance->search['fields']['zgname']   = "Supervisor";
+$config->performance->search['fields']['zhiwei']   = "Position";
+$config->performance->search['fields']['status']   = "Status";
+$config->performance->search['fields']['review_strength']   = "Review Strength";
+
+
+
+$config->performance->search['params']['id']          = array('operator' => 'include', 'control' => 'input',  'values' => '');
+$config->performance->search['params']['zhouqi']       = array('operator' => 'include', 'control' => 'input',  'values' => '');
+$config->performance->search['params']['zgname']       = array('operator' => 'include', 'control' => 'input',  'values' => '');
+$config->performance->search['params']['zhiwei']       = array('operator' => 'include', 'control' => 'input',  'values' => '');
+$config->performance->search['params']['staffcode']       = array('operator' => 'include', 'control' => 'input',  'values' => '');
+$config->performance->search['params']['status']         = array('operator' => 'include', 'control' => 'input',  'values' => '');
+$config->performance->search['params']['review_strength']         = array('operator' => 'include', 'control' => 'input',  'values' => '');
+
+
+
+$config->performance->subordinates->search['module']             = 'sub';
+$config->performance->subordinates->search['fields']['id']       = "ID";
+$config->performance->subordinates->search['fields']['zhouqi'] = "Cycle";
+$config->performance->subordinates->search['fields']['staffcode']    = "Staff Code";
+$config->performance->subordinates->search['fields']['name']    = "Staff Name";
+$config->performance->subordinates->search['fields']['zgname']   = "Supervisor";
+$config->performance->subordinates->search['fields']['zhiwei']   = "Position";
+$config->performance->subordinates->search['fields']['status']   = "Status";
+$config->performance->subordinates->search['fields']['review_strength']   = "Review Strength";
+
+
+
+$config->performance->subordinates->search['params']['id']          = array('operator' => 'include', 'control' => 'input',  'values' => '');
+$config->performance->subordinates->search['params']['zhouqi']       = array('operator' => 'include', 'control' => 'input',  'values' => '');
+$config->performance->subordinates->search['params']['zgname']       = array('operator' => 'include', 'control' => 'input',  'values' => '');
+$config->performance->subordinates->search['params']['zhiwei']       = array('operator' => 'include', 'control' => 'input',  'values' => '');
+$config->performance->subordinates->search['params']['staffcode']       = array('operator' => 'include', 'control' => 'input',  'values' => '');
+$config->performance->subordinates->search['params']['status']         = array('operator' => 'include', 'control' => 'input',  'values' => '');
+$config->performance->subordinates->search['params']['review_strength']         = array('operator' => 'include', 'control' => 'input',  'values' => '');
+
+
+$config->performance->review = new stdclass();
+$config->performance->edit   = new stdclass();
+
+//$config->performance->create->requiredFields = 'name';
+$config->performance->review->requiredFields = 'statement,staffsignature';
+
+$config->performance->edit->requiredFields   = 'name';
+
+/*
+$config->performance->editor = new stdclass();
+$config->performance->editor->create = array('id' => 'remark', 'tools' => 'simpleTools');
+$config->performance->editor->edit   = array('id' => 'remark', 'tools' => 'simpleTools');
+*/

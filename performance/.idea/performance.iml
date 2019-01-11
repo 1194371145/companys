@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="espm" />
+    <orderEntry type="module" module-name="silergypm" />
+    <orderEntry type="module" module-name="device" />
+    <orderEntry type="module" module-name="crm" />
+    <orderEntry type="module" module-name="ceshi" />
+    <orderEntry type="module" module-name="tp5.0" />
+    <orderEntry type="module" module-name="espm" />
+    <orderEntry type="module" module-name="rdcost" />
+    <orderEntry type="module" module-name="zentaopms" />
+    <orderEntry type="module" module-name="zentaopms" />
+    <orderEntry type="module" module-name="tp5" />
+    <orderEntry type="module" module-name="rdcost" />
+    <orderEntry type="module" module-name="proandpur" />
+  </component>
+</module>
